@@ -213,7 +213,7 @@ class DriverTest(unittest.TestCase):
         self.assertIn("== Reference only ==", out)
         self.assertIn("-- stock-vocabulary", out)
         self.assertNotIn("-- acronyms", out)
-        self.assertIn("Not run on", out)
+        self.assertIn("Not run: numbers", out)
 
     def test_known_file(self):
         known = os.path.join(self.dir.name, "known.txt")
@@ -230,3 +230,188 @@ class DriverTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+LATEX = r"""\documentclass{article}
+\usepackage{amsmath}
+\newcommand{\bb}[1]{\boldsymbol{#1}}
+\newcommand{\bx}{\bb{x}}
+\begin{document}
+\section{Method}\label{sec:method}
+We bound the error. $n$ is the number of nodes. Consider $S_q$, $q < p$.
+With $\beta_1 = 0.9$, $\beta_2 = 0.98$ we train. Then $\forall x$ the bound holds.
+The SLO is 45\% of the budget~\cite{knuth89,lamport78}. See Figure~\ref{fig:arch}.
+% TODO: tighten the bound
+\begin{equation}\label{eq:main}
+  f(\bx) = \sum_i x_i
+\end{equation}
+\begin{equation}
+  g(x) = 1
+\end{equation}
+\begin{equation*}
+  h(x) = 2
+\end{equation*}
+\begin{figure}\caption{Architecture.}\label{fig:arch}\end{figure}
+\begin{figure}\caption{Results.}\label{fig:results}\end{figure}
+\begin{figure}\caption{Unlabeled.}\end{figure}
+\begin{table}\begin{tabular}{lc} Model & 28.4 \\ Ours & 31.2 \end{tabular}\caption{Scores.}\label{tab:scores}\end{table}
+As Table~\ref{tab:scores} and Section~\ref{sec:missing} show, it works.
+\begin{verbatim}
+EXPR = VAR $x$
+\end{verbatim}
+\end{document}
+"""
+
+MARKDOWN = """---
+title: Draft
+---
+
+# Design
+
+We bound the error. $n$ is the number of nodes, as @fig:arch shows [@knuth89; @lamport78].
+
+![Architecture](arch.png){#fig:arch}
+
+![Results](res.png){#fig:results}
+
+$$ f(x) = 1 $$ {#eq:main}
+
+| Model | Score |
+|-------|-------|
+| Ours  | 31.2  |
+
+```python
+EXPR = VAR
+```
+
+Costs $5 and $10, which is not math. Call `TIMEOUT` here. <!-- TODO: check -->
+"""
+
+
+def doc_checks(text, fmt, source=None, profile_names=None):
+    doc = check.Document("t", text, fmt)
+    ctx = {
+        "user_known": set(), "known": check.BUILTIN_KNOWN,
+        "source_values": check.source_values([source or ""]),
+        "source_tokens": check.source_tokens([source or ""]),
+        "label_keys": {k for k, _, _ in doc.structure.labels},
+        "ref_keys": {k for k, _ in doc.structure.refs},
+    }
+    out = {}
+    for c in check.CHECKS:
+        if profile_names and c["name"] not in profile_names:
+            continue
+        out[c["name"]] = [f.message for f in c["func"](doc, ctx)]
+    return doc, out
+
+
+class LatexTest(unittest.TestCase):
+    def setUp(self):
+        self.doc, self.hits = doc_checks(LATEX, "latex", source="@article{knuth89, title={x}}")
+
+    def test_structure(self):
+        s = self.doc.structure
+        self.assertEqual(sorted(k for k, _ in s.citations), ["knuth89", "lamport78"])
+        kinds = {k: kind for k, kind, _ in s.labels}
+        self.assertEqual(kinds["fig:arch"], "figure")
+        self.assertEqual(kinds["eq:main"], "equation")
+        self.assertEqual(kinds["tab:scores"], "table")
+        self.assertEqual(kinds["sec:method"], "other")
+
+    def test_prose_view_hides_markup_code_and_math(self):
+        prose = self.doc.prose
+        for gone in ("\\cite", "knuth89", "documentclass", "EXPR", "tighten", "Model"):
+            self.assertNotIn(gone, prose)
+        self.assertIn("We bound the error.", prose)
+
+    def test_numbers_view_keeps_table_values_and_percent(self):
+        nums = self.doc.numbers
+        self.assertIn("28.4", nums)
+        self.assertRegex(nums, r"45\s?%")
+
+    def test_bookkeeping_checks(self):
+        self.assertEqual(len(self.hits["unreferenced-floats"]), 2)  # fig:results, unlabeled
+        self.assertIn("fig:results", self.hits["unreferenced-floats"][0])
+        eq = self.hits["unreferenced-equations"]
+        self.assertEqual(len(eq), 2)  # eq:main unreferenced, one unlabeled numbered
+        self.assertEqual(len(self.hits["undefined-refs"]), 1)
+        self.assertIn("sec:missing", self.hits["undefined-refs"][0])
+        self.assertEqual(len(self.hits["added-citations"]), 1)
+        self.assertIn("lamport78", self.hits["added-citations"][0])
+
+    def test_formula_checks(self):
+        self.assertEqual(len(self.hits["formula-starts"]), 1)    # "$n$ is ..."
+        self.assertEqual(len(self.hits["adjacent-formulas"]), 1)  # "$S_q$, $q < p$" only
+        self.assertEqual(len(self.hits["inline-logic-symbols"]), 1)
+
+    def test_todo_in_comment(self):
+        self.assertEqual(len(self.hits["todo"]), 1)
+        self.assertIn("in a comment", self.hits["todo"][0])
+
+    def test_code_is_not_acronyms(self):
+        self.assertEqual([m for m in self.hits["acronyms"] if "EXPR" in m or "VAR" in m], [])
+
+    def test_symbols_expand_macros(self):
+        syms = check.symbol_inventory(self.doc)
+        self.assertIn("\\boldsymbol{x}", syms)
+        self.assertIn("\\beta", syms)
+
+    def test_blah_view(self):
+        text = " ".join(check.blah_view(self.doc))
+        self.assertIn("Consider S_q, blah.", text)
+        self.assertIn("blah", text)
+        self.assertNotIn("\\sum", text)
+
+
+class MarkdownTest(unittest.TestCase):
+    def setUp(self):
+        self.doc, self.hits = doc_checks(MARKDOWN, "markdown", source="knuth89 lamport78")
+
+    def test_structure(self):
+        s = self.doc.structure
+        self.assertEqual(sorted(k for k, _ in s.citations), ["knuth89", "lamport78"])
+        self.assertEqual(sorted(k for k, _ in s.refs), ["fig:arch"])
+        self.assertEqual(len([m for m in s.math if not m.display]), 1)  # $n$, not "$5 and $"
+
+    def test_bookkeeping(self):
+        self.assertEqual(len(self.hits["unreferenced-floats"]), 1)
+        self.assertIn("fig:results", self.hits["unreferenced-floats"][0])
+        self.assertEqual(len(self.hits["unreferenced-equations"]), 1)
+        self.assertEqual(self.hits["added-citations"], [])
+        self.assertEqual(len(self.hits["formula-starts"]), 1)  # "$n$ is ..."
+
+    def test_prose_view(self):
+        for gone in ("title: Draft", "EXPR", "TIMEOUT", "arch.png", "31.2", "knuth89"):
+            self.assertNotIn(gone, self.doc.prose)
+        self.assertIn("31.2", self.doc.numbers)
+        self.assertIn("in a comment", self.hits["todo"][0])
+
+    def test_bare_at_mentions_are_not_citations_without_brackets(self):
+        doc = check.Document("t", "Thanks to @alice for the review.", "markdown")
+        self.assertEqual(doc.structure.citations, [])
+
+
+class FormatDriverTest(unittest.TestCase):
+    def test_detect_format(self):
+        self.assertEqual(check.formats.detect_format("a.tex"), "latex")
+        self.assertEqual(check.formats.detect_format("a.qmd"), "markdown")
+        self.assertEqual(check.formats.detect_format("a.rst"), "text")
+        self.assertEqual(check.formats.detect_format("-"), "text")
+        self.assertEqual(check.formats.detect_format("a.txt", "markdown"), "markdown")
+
+    def test_cross_file_references_and_aids(self):
+        with tempfile.TemporaryDirectory() as d:
+            a = os.path.join(d, "a.tex")
+            b = os.path.join(d, "b.tex")
+            with open(a, "w") as f:
+                f.write("\\begin{figure}\\caption{X.}\\label{fig:x}\\end{figure}\n")
+            with open(b, "w") as f:
+                f.write("As Figure~\\ref{fig:x} shows, $x = 1$ holds.\n")
+            out = run_main([a, b, "--aid", "refs", "--aid", "blah", "--aid", "symbols"])
+            self.assertNotIn("-- unreferenced-floats", out)
+            self.assertNotIn("-- undefined-refs", out)
+            self.assertIn("fig:x (figure) defined", out)
+            self.assertIn("As Figure shows, blah holds.", out)
+            self.assertIn("== Aids for the reviewer ==", out)
+            alone = run_main([b])
+            self.assertIn("-- undefined-refs", alone)

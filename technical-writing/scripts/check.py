@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Mechanical review triggers for the technical-writing skill.
 
-The script reads raw text and assumes no markup, so it works on Markdown,
-LaTeX, reStructuredText, plain text, or text extracted from a PDF. Markup
-that leaks into a check shows up as noise, not as an error.
+Most checks read raw text and assume no markup, so they work on any format,
+including text extracted from a PDF. For LaTeX and Markdown files the script
+also removes code, math and comments before the prose checks, and runs
+checks that need exact bookkeeping: unreferenced figures and equations,
+undefined references, citations the author did not supply, and formula
+placement. The format comes from the file extension or --format.
 
 It runs in one of two profiles:
 
@@ -18,6 +21,7 @@ argument. See SKILL.md, section 7.
 Examples:
 
   check.py draft.md --source notes/ --source results.csv
+  check.py paper.tex sections/*.tex --source refs.bib --aid blah --aid refs
   check.py draft.tex --profile reference --known SLO,QPS
   pdftotext paper.pdf - | check.py - --known-file glossary.txt
 """
@@ -26,8 +30,12 @@ import argparse
 import os
 import re
 import sys
+import textwrap
 from collections import defaultdict
 from decimal import Decimal, InvalidOperation
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import formats  # noqa: E402
 
 STRICT = "strict"
 REFERENCE = "reference"
@@ -36,10 +44,7 @@ NOT_CHECKED = (
     "This script does not check substance or argument: whether claims have "
     "context and evidence, whether steps are motivated, whether citations are "
     "positioned, whether decision records are complete, or whether decision "
-    "history was invented. It also does not check anything that depends on "
-    "markup: unused figures, tables and equations by label, citation keys, "
-    "formula punctuation, headings, bold and bullets. Those stay with the "
-    "reviewer (SKILL.md, section 7)."
+    "history was invented. Those stay with the reviewer (SKILL.md, section 7)."
 )
 
 REFERENCE_BANNER = (
@@ -54,11 +59,25 @@ REFERENCE_BANNER = (
 
 
 class Document:
-    def __init__(self, name, text):
+    """A file plus its views.
+
+    prose: the text that prose checks read. For a known format, code,
+    comments and markup are blanked and formulas become placeholders.
+    numbers: like prose, but formulas keep their digits.
+    """
+
+    def __init__(self, name, text, fmt="text"):
         self.name = name
         self.text = text
+        self.format = fmt
         self.line_starts = [0] + [m.end() for m in re.finditer(r"\n", text)]
-        self.urls = mask(text, URL_RE)
+        self.structure = formats.analyze(text, fmt)
+        if self.structure:
+            prose, numbers = self.structure.views(text)
+        else:
+            prose = numbers = text
+        self.prose = mask(prose, URL_RE)
+        self.numbers = mask(numbers, URL_RE)
         self._sentences = None
         self._paragraphs = None
 
@@ -82,7 +101,7 @@ class Document:
     @property
     def paragraphs(self):
         if self._paragraphs is None:
-            self._paragraphs = list(split_paragraphs(self.text))
+            self._paragraphs = list(split_paragraphs(self.prose))
         return self._paragraphs
 
     @property
@@ -90,7 +109,7 @@ class Document:
         if self._sentences is None:
             self._sentences = []
             for p_start, p_end in self.paragraphs:
-                self._sentences.append(list(split_sentences(self.text, p_start, p_end)))
+                self._sentences.append(list(split_sentences(self.prose, p_start, p_end)))
         return self._sentences
 
     def all_sentences(self):
@@ -125,7 +144,8 @@ SENTENCE_END_RE = re.compile(r"[.!?]+[\"'”’)\]]*(?=\s)")
 NEVER_END = {
     "e.g", "i.e", "cf", "vs", "fig", "figs", "eq", "eqs", "eqn", "sec", "secs",
     "no", "nos", "al", "dr", "mr", "mrs", "prof", "st", "ch", "pp", "vol",
-    "ref", "refs", "thm", "viz", "approx", "resp", "ca", "ibid",
+    "ref", "refs", "thm", "viz", "approx", "resp", "ca", "ibid", "w.r.t", "wrt",
+    "s.d", "i.i.d", "a.k.a", "e.t.c",
 }
 
 
@@ -178,7 +198,7 @@ class Finding:
 CHECKS = []
 
 
-def check(name, profile, description, needs=None):
+def check(name, profile, description, needs=()):
     def register(func):
         CHECKS.append(
             {"name": name, "profile": profile, "description": description,
@@ -198,7 +218,7 @@ def phrase_check(name, profile, description, patterns, message, flags=re.I,
     compiled = [re.compile(p, flags) for p in patterns]
 
     def run(doc, ctx):
-        text = doc.urls
+        text = doc.prose
         if unless_digit:
             for offset, sent in doc.all_sentences():
                 masked = text[offset:offset + len(sent)]
@@ -219,10 +239,17 @@ def phrase_check(name, profile, description, patterns, message, flags=re.I,
 # Strict checks
 
 
-@check("todo", STRICT, "Leftover TODO, TBD and FIXME markers.")
+@check("todo", STRICT, "Leftover TODO, TBD and FIXME markers, and LaTeX \\todo notes.")
 def check_todo(doc, ctx):
-    for m in re.finditer(r"\[TODO\b[^\]]*\]|\b(?:TODO|TBD|FIXME)\b", doc.text):
-        yield Finding(m.start(), f"unresolved marker \"{m.group(0)[:60]}\"")
+    rx = r"\[TODO\b[^\]]*\]|\b(?:TODO|TBD|FIXME)\b|\\todo\b(?:\[[^\]]*\])?(?:\{[^}]*\})?"
+    for m in re.finditer(rx, doc.text):
+        if doc.structure and doc.structure.preamble and \
+                doc.structure.preamble[0] <= m.start() < doc.structure.preamble[1]:
+            continue  # a definition of \todo, not a note
+        where = ""
+        if doc.structure and doc.structure.in_comment(m.start()):
+            where = " (in a comment, so a reader of the rendered output will not see it)"
+        yield Finding(m.start(), f"unresolved marker \"{m.group(0)[:60]}\"{where}")
 
 
 # Numbers --------------------------------------------------------------------
@@ -299,7 +326,7 @@ def is_minor_number(v, unit, frac):
 
 def number_findings(doc, ctx, minor):
     known = ctx["source_values"]
-    text = mask(doc.urls, NUMBER_NOISE_RE)
+    text = mask(doc.numbers, NUMBER_NOISE_RE)
     seen = set()
     for m in DRAFT_NUM_RE.finditer(text):
         line_start = text.rfind("\n", 0, m.start()) + 1
@@ -328,7 +355,7 @@ def number_findings(doc, ctx, minor):
 
 @check("numbers", STRICT,
        "Numbers that do not appear in the source material (needs --source).",
-       needs="source")
+       needs=("source",))
 def check_numbers(doc, ctx):
     return number_findings(doc, ctx, minor=False)
 
@@ -390,7 +417,7 @@ def acronym_uses(doc):
     document ("NONE" when "none" also appears), which are usually emphasis or
     code keywords.
     """
-    text = doc.urls
+    text = doc.prose
     lower_words = set(re.findall(r"\b[a-z][a-z0-9]*\b", text))
     uses = defaultdict(list)
     lines = text.split("\n")
@@ -414,7 +441,7 @@ def check_acronyms(doc, ctx):
     for acr, offsets in sorted(acronym_uses(doc).items(), key=lambda kv: kv[1][0]):
         if acr in known:
             continue
-        defs = definition_offsets(doc.urls, acr)
+        defs = definition_offsets(doc.prose, acr)
         first = offsets[0]
         if not defs:
             yield Finding(first, f"\"{acr}\" is never defined; define it, or pass "
@@ -472,6 +499,122 @@ phrase_check(
 )
 
 
+# Structural checks (LaTeX and Markdown) ------------------------------------
+
+STRUCTURE = ("structure",)
+
+
+@check("unreferenced-floats", STRICT,
+       "Figures, tables, listings and algorithms that no reference points to, "
+       "or that have no label (LaTeX or Markdown).", needs=STRUCTURE)
+def check_unreferenced_floats(doc, ctx):
+    for key, kind, off in doc.structure.labels:
+        if kind in formats.FLOAT_KINDS and key not in ctx["ref_keys"]:
+            yield Finding(off, f"{kind} \"{key}\" is never referenced; refer to it from "
+                               f"a sentence that reads something off it, or cut it")
+    for kind, off in doc.structure.unlabeled_floats:
+        yield Finding(off, f"{kind} has a caption but no label, so the text cannot "
+                           f"refer to it")
+
+
+@check("unreferenced-equations", STRICT,
+       "Numbered equations that no reference points to (LaTeX or Markdown).",
+       needs=STRUCTURE)
+def check_unreferenced_equations(doc, ctx):
+    for key, kind, off in doc.structure.labels:
+        if kind == "equation" and key not in ctx["ref_keys"]:
+            yield Finding(off, f"equation \"{key}\" is never referenced; number only the "
+                               f"equations you refer to")
+    for off in doc.structure.unlabeled_numbered:
+        yield Finding(off, "numbered equation with no label, so nothing can refer to "
+                           "it; use the starred form or \\[...\\]")
+
+
+@check("undefined-refs", STRICT,
+       "References to labels that no input file defines (LaTeX or Markdown; "
+       "pass every file of the document).", needs=STRUCTURE)
+def check_undefined_refs(doc, ctx):
+    seen = set()
+    for key, off in doc.structure.refs:
+        if key not in ctx["label_keys"] and key not in seen:
+            seen.add(key)
+            yield Finding(off, f"refers to \"{key}\", which no input file defines")
+
+
+@check("added-citations", STRICT,
+       "Citation keys that do not appear in the source material (LaTeX or "
+       "Markdown; needs --source with the author's .bib or notes).",
+       needs=STRUCTURE + ("source",))
+def check_added_citations(doc, ctx):
+    seen = set()
+    for key, off in doc.structure.citations:
+        if key not in ctx["source_tokens"] and key not in seen:
+            seen.add(key)
+            yield Finding(off, f"cites \"{key}\", which is not in the source material; "
+                               f"do not add references the author did not supply")
+
+
+@check("formula-starts", STRICT,
+       "Sentences that start with an inline formula (LaTeX or Markdown).",
+       needs=STRUCTURE)
+def check_formula_starts(doc, ctx):
+    starts = {m.start: m for m in doc.structure.math}
+    for offset, sent in doc.all_sentences():
+        if sent.startswith(formats.INLINE_MATH):
+            m = starts.get(offset)
+            if m and FOOTNOTE_MARK_RE.match(doc.text[m.body_start:m.body_end].strip()):
+                continue
+            yield Finding(offset, "sentence starts with a formula; start it with a word")
+
+
+# Formulas that are footnote or table marks, not mathematics.
+FOOTNOTE_MARK_RE = re.compile(r"^\^?\{?(?:\\(?:dagger|ddagger|ast|star|S|P|sharp|natural|flat)|\*+)\}?$")
+
+
+RELATION_RE = re.compile(
+    r"[=<>]|\\(?:le|ge|leq|geq|neq|ne|in|notin|subset|subseteq|supset|supseteq|"
+    r"approx|sim|simeq|equiv|cong|propto|to|mapsto|ll|gg|prec|succ)(?![A-Za-z])")
+
+
+@check("adjacent-formulas", STRICT,
+       "An inline formula followed, after only a comma or semicolon, by a "
+       "relation such as \"$q < p$\" (LaTeX or Markdown).", needs=STRUCTURE)
+def check_adjacent_formulas(doc, ctx):
+    inline = sorted((m for m in doc.structure.math if not m.display), key=lambda m: m.start)
+    for a, b in zip(inline, inline[1:]):
+        # Knuth's case is an object followed by a condition on it ("S_q, q < p").
+        # Parallel settings such as "beta_1 = 0.9, beta_2 = 0.98" are fine.
+        if re.fullmatch(r"\s*[,;]\s*", doc.text[a.end:b.start]) and \
+                not RELATION_RE.search(doc.text[a.body_start:a.body_end]) and \
+                RELATION_RE.search(doc.text[b.body_start:b.body_end]):
+            yield Finding(a.start, "formulas separated only by punctuation read as one "
+                                   "formula; join them with words, as in \"S_q, where "
+                                   "q < p\"")
+
+
+LOGIC_RE = re.compile(
+    r"\\(?:forall|exists|nexists|Rightarrow|Longrightarrow|implies|impliedby|iff|"
+    r"Leftrightarrow|Longleftrightarrow|therefore|because)(?![A-Za-z])"
+    r"|[∀∃⇒⇔∴∵⟹]")
+
+
+@check("inline-logic-symbols", STRICT,
+       "Quantifiers, implication arrows and \"therefore\" used as words in "
+       "running text: at the start or end of an inline formula, or alone "
+       "(LaTeX or Markdown).", needs=STRUCTURE)
+def check_inline_logic(doc, ctx):
+    for m in doc.structure.math:
+        if m.display:
+            continue
+        body = doc.text[m.body_start:m.body_end].strip()
+        for hit in LOGIC_RE.finditer(body):
+            if hit.start() == 0 or hit.end() == len(body):
+                yield Finding(m.start, f"\"{hit.group(0)}\" in running text; write "
+                                       f"\"for all\", \"there exists\", \"implies\" or "
+                                       f"\"therefore\"")
+                break
+
+
 # ---------------------------------------------------------------------------
 # Reference checks
 
@@ -479,7 +622,7 @@ phrase_check(
 @check("numbers-minor", REFERENCE,
        "Small counts (0-10) and years that do not appear in the source "
        "material (needs --source).",
-       needs="source")
+       needs=("source",))
 def check_numbers_minor(doc, ctx):
     return number_findings(doc, ctx, minor=True)
 
@@ -489,7 +632,7 @@ def check_numbers_minor(doc, ctx):
        "reader already knows.")
 def check_defines_known(doc, ctx):
     for acr in sorted(ctx["user_known"]):
-        for off in definition_offsets(doc.urls, acr)[:1]:
+        for off in definition_offsets(doc.prose, acr)[:1]:
             yield Finding(off, f"\"{acr}\" is defined, but it was passed as known "
                                f"to the reader; never define what the reader knows")
 
@@ -609,7 +752,7 @@ def check_long_sentences(doc, ctx):
 @check("long-paragraphs", REFERENCE, "Paragraphs over 150 words.")
 def check_long_paragraphs(doc, ctx):
     for start, end in doc.paragraphs:
-        n = len(words(doc.text[start:end]))
+        n = len(words(doc.prose[start:end]))
         if n > 150:
             yield Finding(start, f"paragraph of {n} words")
 
@@ -625,7 +768,7 @@ def check_passive(doc, ctx):
         r"(?!\s+(?:to|that)\b)",
         re.I,
     )
-    for m in rx.finditer(doc.urls):
+    for m in rx.finditer(doc.prose):
         yield Finding(m.start(), f"possible passive \"{m.group(0)}\"; name the actor "
                                  f"if it matters")
 
@@ -633,8 +776,8 @@ def check_passive(doc, ctx):
 @check("em-dashes", REFERENCE, "Em dashes, which the section 5 list flags when frequent.")
 def check_em_dashes(doc, ctx):
     rx = re.compile(r"—|(?<=\w)---(?=\w)|(?<=\w) -- (?=\w)")
-    hits = list(rx.finditer(doc.text))
-    n_words = len(words(doc.text)) or 1
+    hits = list(rx.finditer(doc.prose))
+    n_words = len(words(doc.prose)) or 1
     rate = 1000 * len(hits) / n_words
     if rate < 3:
         return
@@ -724,7 +867,7 @@ def check_symbol_starts(doc, ctx):
 def check_figures(doc, ctx):
     rx = re.compile(r"\b(Figure|Fig\.|Table|Listing|Diagram)\s+(\d+[a-z]?)\b")
     seen = defaultdict(list)
-    for m in rx.finditer(doc.text):
+    for m in rx.finditer(doc.prose):
         kind = "Figure" if m.group(1).startswith("Fig") else m.group(1)
         seen[(kind, m.group(2))].append(m.start())
     for (kind, num), offsets in seen.items():
@@ -737,7 +880,7 @@ def check_figures(doc, ctx):
        "One term spelled several ways: hyphenated, spaced or closed up, or "
        "with different internal capitals.")
 def check_term_variants(doc, ctx):
-    text = doc.urls
+    text = doc.prose
     lower = text.lower()
     for compound in sorted({m.group(0).lower() for m in
                             re.finditer(r"\b[A-Za-z]{2,}(?:-[A-Za-z]{2,})+\b", text)}):
@@ -809,6 +952,154 @@ def check_noun_clusters(doc, ctx):
 
 
 # ---------------------------------------------------------------------------
+# Aids: material for judgments the script cannot make. They are printed as
+# information, never as findings.
+
+AIDS_BANNER = (
+    "These are not findings. They collect material for judgments that only "
+    "the reviewer can make."
+)
+TRIVIAL_FORMULA_RE = re.compile(
+    r"^(?:\\?[A-Za-z]+|\d+(?:\.\d+)?)(?:_\{?\\?\w+\}?)?(?:\^\{?[\w'*]+\}?)?'*$")
+
+
+def blah_view(doc):
+    """The prose with every nontrivial formula replaced by "blah"."""
+    s = doc.structure
+    chars = list(doc.text)
+    formats.blank(chars, s.hidden + s.code_blocks + s.comments)
+    out, pos = [], 0
+    for m in sorted(s.math, key=lambda m: m.start):
+        body = doc.text[m.body_start:m.body_end].strip()
+        word = body if not m.display and TRIVIAL_FORMULA_RE.match(body) else "blah"
+        out.append("".join(chars[pos:m.start]))
+        out.append(f" {word} " if m.display else word)
+        pos = m.end
+    out.append("".join(chars[pos:]))
+    paragraphs = re.split(r"\n[ \t]*\n", "".join(out))
+    return [" ".join(p.split()) for p in paragraphs if p.strip()]
+
+
+GREEK = ("alpha|beta|gamma|delta|epsilon|varepsilon|zeta|eta|theta|vartheta|iota|"
+         "kappa|lambda|mu|nu|xi|pi|rho|sigma|tau|upsilon|phi|varphi|chi|psi|omega|"
+         "Gamma|Delta|Theta|Lambda|Xi|Pi|Sigma|Upsilon|Phi|Psi|Omega")
+DECORATORS = "mathcal|mathbb|mathbf|mathsf|mathfrak|mathscr|mathit|bm|boldsymbol"
+SYMBOL_RE = re.compile(
+    r"(?P<deco>\\(?:" + DECORATORS + r"))\s*(?:\{\s*(?P<arg>\\?[A-Za-z]+)\s*\}"
+    r"|(?P<bare>\\[A-Za-z]+|(?<=\s)[A-Za-z](?![A-Za-z])))"
+    r"|(?P<greek>\\(?:" + GREEK + r"))(?![A-Za-z])"
+    r"|(?P<letter>(?<![A-Za-z\\])[A-Za-z](?![A-Za-z]))"
+    r"|\\[A-Za-z]+"  # any other command: skipped, so its letters are not symbols
+)
+NOT_SYMBOLS = re.compile(r"\\(?:text\w*|mathrm|operatorname|label|tag|mbox|hbox)\s*\{[^{}]*\}")
+
+
+def expand_macros(body, macros):
+    """Expand LaTeX macros, so that \\bx counts as the \\mathbf{x} it stands for."""
+    pattern = re.compile(r"\\([A-Za-z]+)")
+    for _ in range(4):
+        out, i, changed = [], 0, False
+        while True:
+            m = pattern.search(body, i)
+            if not m:
+                out.append(body[i:])
+                break
+            out.append(body[i:m.start()])
+            if m.group(1) not in macros:
+                out.append(m.group(0))
+                i = m.end()
+                continue
+            nargs, repl = macros[m.group(1)]
+            j = m.end()
+            for k in range(1, nargs + 1):
+                while j < len(body) and body[j].isspace():
+                    j += 1
+                if j >= len(body):
+                    break
+                if body[j] == "{":
+                    e = formats.brace_end(body, j)
+                    arg = body[j + 1:e - 1]
+                else:
+                    e = j + len(re.match(r"\\[A-Za-z]+|\\?.", body[j:], re.S).group(0))
+                    arg = body[j:e]
+                repl = repl.replace(f"#{k}", arg)
+                j = e
+            out.append(" " + repl + " ")
+            i, changed = j, True
+        body = "".join(out)
+        if not changed:
+            break
+    return body
+
+
+def symbol_inventory(doc, macros=None):
+    """Map each math symbol to the offsets of its uses, in order of first use."""
+    macros = doc.structure.macros if macros is None else macros
+    uses = {}
+    for m in sorted(doc.structure.math, key=lambda m: m.start):
+        body = expand_macros(doc.text[m.body_start:m.body_end], macros)
+        body = NOT_SYMBOLS.sub(" ", body)
+        for hit in SYMBOL_RE.finditer(body):
+            if hit.group("deco"):
+                sym = f"{hit.group('deco')}{{{hit.group('arg') or hit.group('bare')}}}"
+            else:
+                sym = hit.group("greek") or hit.group("letter")
+            if sym:
+                uses.setdefault(sym, []).append(m.start)
+    return uses
+
+
+def write_aids(out, docs, aids):
+    out.write("\n== Aids for the reviewer ==\n" + AIDS_BANNER + "\n")
+    structured = [d for d in docs if d.structure]
+    for d in docs:
+        if not d.structure:
+            out.write(f"\n{d.name} was read as plain text, so it has no aids "
+                      f"(use --format latex or markdown).\n")
+    if "refs" in aids and structured:
+        out.write("\n-- refs: every label, where it is defined and referenced, and "
+                  "every citation key. Compare it with the dependency map in your "
+                  "plan (section 1).\n")
+        refs = defaultdict(list)
+        for d in structured:
+            for key, off in d.structure.refs:
+                refs[key].append(f"{d.name}:{d.line_of(off)}")
+        for d in structured:
+            for key, kind, off in d.structure.labels:
+                where = ("referenced " + ", ".join(refs[key])) if key in refs \
+                    else "never referenced"
+                out.write(f"  {key} ({kind}) defined {d.name}:{d.line_of(off)}; "
+                          f"{where}\n")
+            for off in d.structure.unlabeled_numbered:
+                out.write(f"  (numbered equation, no label) {d.name}:{d.line_of(off)}\n")
+        cites = defaultdict(list)
+        for d in structured:
+            for key, off in d.structure.citations:
+                cites[key].append(f"{d.name}:{d.line_of(off)}")
+        if cites:
+            out.write("  Citations:\n")
+            for key, places in cites.items():
+                out.write(f"    {key}: {', '.join(places)}\n")
+    macros = {}
+    for d in structured:
+        macros.update(d.structure.macros)
+    for d in structured:
+        if "symbols" in aids:
+            out.write(f"\n-- symbols in {d.name}, in order of first use. Check that each "
+                      f"is defined where it first appears, and that no symbol means two "
+                      f"things.\n")
+            for sym, offs in symbol_inventory(d, macros).items():
+                out.write(f"  {sym:<14} first {d.name}:{d.line_of(offs[0])} "
+                          f"({len(offs)} uses)  {d.snippet(offs[0], width=30)}\n")
+        if "blah" in aids:
+            out.write(f"\n-- blah view of {d.name}: every nontrivial formula replaced by "
+                      f"\"blah\". The prose should still give the goal, the obstacle, "
+                      f"the idea and the payoff (section 4).\n")
+            for para in blah_view(d):
+                out.write("\n" + textwrap.fill(para, 100) + "\n")
+
+
+# ---------------------------------------------------------------------------
 # Driver
 
 
@@ -856,18 +1147,40 @@ def read_known_file(path):
         return parse_known(line.split("#", 1)[0] for line in f)
 
 
+def source_tokens(texts):
+    """Every token in the source material, for matching citation keys."""
+    tokens = set()
+    for text in texts:
+        tokens.update(re.findall(r"[^\s{}\[\](),;@\"'=%]+", text))
+    return tokens
+
+
+NOT_RUN_REASONS = {
+    "source": "pass the author's material with --source",
+    "structure": "the file was read as plain text; these need --format latex or markdown",
+}
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__.split("\n\n")[0],
         epilog="Run with --list-checks to see every check and its profile.",
     )
-    ap.add_argument("files", nargs="*", help="text files to check; - reads stdin")
+    ap.add_argument("files", nargs="*",
+                    help="files to check; - reads stdin. Pass every file of a "
+                         "multi-file document together, so references across "
+                         "files resolve")
     ap.add_argument("--profile", choices=[STRICT, REFERENCE], default=STRICT,
                     help="strict (default): low false positives; reference: every "
                          "check, extra hits for reference only")
+    ap.add_argument("--format", choices=["auto", "text", "latex", "markdown"],
+                    default="auto",
+                    help="how to read the files; auto (default) goes by extension "
+                         "(.tex is LaTeX, .md and .qmd are Markdown, anything else "
+                         "and stdin are plain text)")
     ap.add_argument("--source", action="append", default=[], metavar="PATH",
                     help="the author's material (file or directory, repeatable); "
-                         "enables the number checks")
+                         "enables the number and citation checks")
     ap.add_argument("--known", action="append", default=[], metavar="LIST",
                     help="acronyms the reader knows, comma or space separated "
                          "(repeatable)")
@@ -876,6 +1189,11 @@ def main(argv=None):
                          "line, # starts a comment")
     ap.add_argument("--no-builtin-known", action="store_true",
                     help="do not treat the built-in common acronyms as known")
+    ap.add_argument("--aid", action="append", default=[],
+                    choices=["blah", "refs", "symbols"],
+                    help="also print material for the reviewer (repeatable): the "
+                         "blah view, the label and citation map, or the symbol "
+                         "inventory (LaTeX or Markdown only)")
     ap.add_argument("--max-per-check", type=int, default=30, metavar="N",
                     help="show at most N findings per check (0 for all; default 30)")
     ap.add_argument("--list-checks", action="store_true",
@@ -895,23 +1213,32 @@ def main(argv=None):
     user_known = parse_known(args.known)
     for path in args.known_file:
         user_known |= read_known_file(path)
+    sources = [read_source(p) for p in iter_source_files(args.source)]
+    docs = [Document("<stdin>" if path == "-" else path, read_text(path),
+                     formats.detect_format(path, args.format))
+            for path in args.files]
     ctx = {
         "user_known": user_known,
         "known": user_known | (set() if args.no_builtin_known else BUILTIN_KNOWN),
-        "source_values": source_values(read_source(p) for p in
-                                       iter_source_files(args.source)),
+        "source_values": source_values(sources),
+        "source_tokens": source_tokens(sources),
+        "label_keys": {k for d in docs if d.structure for k, _, _ in d.structure.labels},
+        "ref_keys": {k for d in docs if d.structure for k, _ in d.structure.refs},
     }
+    have = {"source"} if args.source else set()
     active = [c for c in CHECKS if args.profile == REFERENCE or c["profile"] == STRICT]
 
     out = sys.stdout
     out.write(f"technical-writing checks, profile: {args.profile}\n")
-    for path in args.files:
-        doc = Document("<stdin>" if path == "-" else path, read_text(path))
-        not_run = []
+    for doc in docs:
+        out.write(f"\n==== {doc.name} (read as {doc.format}) ====\n")
+        doc_have = have | ({"structure"} if doc.structure else set())
+        not_run = defaultdict(list)
         banner_shown = False
         for c in active:
-            if c["needs"] == "source" and not args.source:
-                not_run.append(c["name"])
+            missing = [n for n in c["needs"] if n not in doc_have]
+            if missing:
+                not_run[missing[0]].append(c["name"])
                 continue
             findings = sorted(c["func"](doc, ctx), key=lambda f: f.offset)
             if not findings:
@@ -927,9 +1254,10 @@ def main(argv=None):
             if len(findings) > limit:
                 out.write(f"    ... {len(findings) - limit} more not shown "
                           f"(--max-per-check 0 shows all)\n")
-        if not_run:
-            out.write(f"\nNot run on {doc.name}: {', '.join(not_run)} "
-                      f"(pass the author's material with --source)\n")
+        for reason, names in not_run.items():
+            out.write(f"\nNot run: {', '.join(names)} ({NOT_RUN_REASONS[reason]})\n")
+    if args.aid:
+        write_aids(out, docs, args.aid)
     out.write("\n" + NOT_CHECKED + "\n")
     return 0
 

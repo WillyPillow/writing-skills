@@ -63,6 +63,21 @@ python3 technical-writing/scripts/check.py --list-checks
 
 Acronyms passed with `--known` or `--known-file` count as known to the reader and are not flagged. Use them for the terms a design doc's readers already know, such as the team's own systems.
 
+For LaTeX (`.tex`) and Markdown (`.md`, `.qmd`) files, a small adapter in `scripts/formats.py` finds code, math, comments, labels, references and citation keys. Other formats are read as plain text, and `--format` overrides the guess from the extension. With a known format, the script removes code and math before the prose checks, which cuts their noise. It also adds strict checks that need exact bookkeeping:
+
+- Figures, tables and equations that nothing refers to.
+- References to labels that no input file defines.
+- Citation keys that do not appear in the author's material.
+- Formulas at the start of a sentence, formulas separated only by a comma, and logic symbols used as words.
+
+On five arXiv papers, nearly every hit from these checks was a real instance of the rule. Pass all files of a multi-file document in one run, so that references across files resolve.
+
+For the judgments a script cannot make, `--aid` prints material for the reviewer instead of findings. `--aid blah` prints the prose with formulas replaced by "blah", `--aid symbols` lists where each symbol first appears, and `--aid refs` maps every label and citation:
+
+```sh
+python3 technical-writing/scripts/check.py paper.tex sections/*.tex --source refs.bib --aid blah
+```
+
 The script cannot check substance or argument, so a clean run does not mean a good draft. Section 7 of `SKILL.md` says when the agent runs it and how it treats the output. To run the script's tests, run `python3 -m unittest discover tests` from the repository root.
 
 The rules draw on Knuth's *Mathematical Writing*, Williams's *Style*, Gopen and Swan's "The Science of Scientific Writing", Ubl's "Design Docs at Google", Nygard's architecture decision records and other sources. The full list is in a comment at the end of `SKILL.md`.

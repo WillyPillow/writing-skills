@@ -192,6 +192,13 @@ Blog posts can use the first person and more voice. Open with the concrete probl
    Report each finding with its location and a proposed minimal fix, rather than silently rewriting.
 4. After your own review, run `scripts/check.py` from this skill's directory on the draft, and pass the author's material with `--source`. The script reads raw text, so it works on any format. Its default `strict` profile reports checks with few false positives: numbers that do not appear in the material, unresolved TODO markers, undefined acronyms, and a few stock phrases. `--profile reference` adds noisier checks, such as long sentences, passive voice, the section 5 vocabulary and noun clusters. Their hits are places to look, not errors. Run `--list-checks` for the full list.
 
+   For LaTeX and Markdown files, the script also removes code and math before the prose checks. It then adds checks that need exact bookkeeping: figures, tables and equations that nothing refers to, references to undefined labels, citation keys missing from the author's material, and the formula rules of section 4. Pass every file of a multi-file document in one run, so that references across files resolve.
+
+   The script can also print material for the math and argument passes of step 3. Unlike the checks, these aids are meant for use during that review:
+   - `--aid blah` prints the prose with every nontrivial formula replaced by "blah", for the blah test.
+   - `--aid symbols` lists each symbol where it first appears, so you can check that it is defined there.
+   - `--aid refs` lists every label with where it is defined and referenced, and every citation key. Compare it with the dependency map in your plan.
+
    Pass the acronyms the reader already knows with `--known` or `--known-file`, based on the reader in your plan (section 1). A design doc's reviewers usually know the team's systems and the standard terms of its field. Defining those terms for them is itself a fault (section 5, the curse of knowledge).
 
    Use the output under these rules:
