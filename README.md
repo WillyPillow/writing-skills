@@ -57,6 +57,10 @@ The skill names no particular model or agent. Where a step depends on what the a
 
 The rules draw on Knuth's *Mathematical Writing*, Williams's *Style*, Gopen and Swan's "The Science of Scientific Writing", Ubl's "Design Docs at Google", Nygard's architecture decision records and other sources. The full list is in a comment at the end of `SKILL.md`.
 
+## Examples
+
+[`examples/technical-writing`](examples/technical-writing/README.md) holds five complete documents (a design doc, an architecture decision record, a workshop paper, a blog post and lecture notes), each written twice from the same author's material: once without the skill and once with it, including its separate review pass. The README there describes how they were made and what the pairs show. Like `research/`, the directory is not part of any skill.
+
 ## Research
 
 The `research/` directory holds the evidence behind individual rules. It is not part of any skill, and installing a skill does not need it. [`research/rfc-slop-forensics`](research/rfc-slop-forensics/README.md) compares PEPs and Rust RFCs written by Claude models with human-written ones on the same topics. It is the source of three `technical-writing` rules: universal, compatibility and cost claims need support; gaps in the author's material go to the author, not into the prose; and the decision-record terms are not vocabulary for the document.
