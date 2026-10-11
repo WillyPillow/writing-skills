@@ -1,0 +1,962 @@
+[
+ {
+  "id": "2141-alternative-registries",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2141: cargo_alternative_registries",
+  "abstract": "This RFC proposes the addition of the support for alternative crates.io servers to be used alongside the public crates.io server. This would allow users to publish crates to their own private instance of crates.io, while still able to use the public instance of crates.io.",
+  "words": 2172,
+  "split": "train"
+ },
+ {
+  "id": "pep-0447",
+  "corpus": "pep",
+  "title": "PEP 447: Add __getdescriptor__ method to metaclass",
+  "abstract": "Currently ``object.__getattribute__`` and ``super.__getattribute__`` peek in the ``__dict__`` of classes on the MRO for a class when looking for an attribute. This PEP adds an optional ``__getdescriptor__`` method to a metaclass that replaces this behavior and gives more control over attribute lookup, especially when using a `super`_ object. That is, the MRO walking loop in ``_PyType_Lookup`` and ``super.__getattribute__`` gets changed from:: def lookup(mro_list, name): for cls in mro_list: if name in cls.__dict__: return cls.__dict__ return NotFound to:: def lookup(mro_list, name): for cls in mro_list: try: return cls.__getdescriptor__(name) except AttributeError: pass return NotFound The default implementation of ``__getdescriptor__`` looks in the class dictionary:: class type: def __getdescriptor__(cls, name): try: return cls.__dict__[name] except KeyError: raise AttributeError(name) from None",
+  "words": 1736,
+  "split": "train"
+ },
+ {
+  "id": "pep-0296",
+  "corpus": "pep",
+  "title": "PEP 296: Adding a bytes Object Type",
+  "abstract": "This PEP proposes the creation of a new standard type and builtin constructor called 'bytes'. The bytes object is an efficiently stored array of bytes with some additional characteristics that set it apart from several implementations that are similar.",
+  "words": 2206,
+  "split": "test"
+ },
+ {
+  "id": "pep-0405",
+  "corpus": "pep",
+  "title": "PEP 405: Python Virtual Environments",
+  "abstract": "This PEP proposes to add to Python a mechanism for lightweight \"virtual environments\" with their own site directories, optionally isolated from system site directories. Each virtual environment has its own Python binary (allowing creation of environments with various Python versions) and can have its own independent set of installed Python packages in its site directories, but shares the standard library with the base installed Python.",
+  "words": 2662,
+  "split": "train"
+ },
+ {
+  "id": "2136-build-systems",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2136: N/A",
+  "abstract": "This **experimental RFC** lays out a high-level plan for improving Cargo's ability to integrate with other build systems and environments. As an experimental RFC, it opens the door to landing [unstable features] in Cargo to try out ideas, but *not* to stabilizing those features, which will require follow-up RFCs. It proposes a variety of features which, in total, permit a wide spectrum of integration cases -- from customizing a single aspect of Cargo to letting an external build system run almost the entire show.",
+  "words": 4045,
+  "split": "train"
+ },
+ {
+  "id": "pep-3141",
+  "corpus": "pep",
+  "title": "PEP 3141: A Type Hierarchy for Numbers",
+  "abstract": "This proposal defines a hierarchy of Abstract Base Classes (ABCs) (PEP 3119) to represent number-like classes. It proposes a hierarchy of ``Number :> Complex :> Real :> Rational :> Integral`` where ``A :> B`` means \"A is a supertype of B\". The hierarchy is inspired by Scheme's numeric tower [#schemetower]_.",
+  "words": 1080,
+  "split": "test"
+ },
+ {
+  "id": "pep-0616",
+  "corpus": "pep",
+  "title": "PEP 616: String methods to remove prefixes and suffixes",
+  "abstract": "This is a proposal to add two new methods, ``removeprefix()`` and ``removesuffix()``, to the APIs of Python's various string objects. These methods would remove a prefix or suffix (respectively) from a string, if present, and would be added to Unicode ``str`` objects, binary ``bytes`` and ``bytearray`` objects, and ``collections.UserString``.",
+  "words": 1135,
+  "split": "train"
+ },
+ {
+  "id": "2113-dyn-trait-syntax",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2113: dyn-trait-syntax",
+  "abstract": "Introduce a new `dyn Trait` syntax for trait objects using a contextual `dyn` keyword, and deprecate \"bare trait\" syntax for trait objects. In a future edition, `dyn` will become a proper keyword and a lint against bare trait syntax will become deny-by-default.",
+  "words": 1598,
+  "split": "train"
+ },
+ {
+  "id": "2115-argument-lifetimes",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2115: argument_lifetimes",
+  "abstract": "Eliminate the need for separately binding lifetime parameters in `fn` definitions and `impl` headers, so that instead of writing: you can write: Lint against leaving off lifetime parameters in structs (like `Ref` or `Iter`), instead nudging people to use explicit lifetimes in this case (but leveraging the other improvements to make it ergonomic to do so). The changes, in summary, are: - A signature is taken to bind any lifetimes it mentions that are not already bound. - A style lint checks that lifetimes bound in `impl` headers are multiple characters long, to reduce potential confusion with lifetimes bound within functions. (There are some additional, less important lints proposed as well.) - You can write `'_` to explicitly elide a lifetime, and it is deprecated to entirely leave off lifetime ...",
+  "words": 2396,
+  "split": "test"
+ },
+ {
+  "id": "1598-generic_associated_types",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1598: generic_associated_types",
+  "abstract": "Allow type constructors to be associated with traits. This is an incremental step toward a more general feature commonly called \"higher-kinded types,\" which is often ranked highly as a requested feature by Rust users. This specific feature (associated type constructors) resolves one of the most common use cases for higher-kindedness, is a relatively simple extension to the type system compared to other forms of higher-kinded polymorphism, and is forward compatible with more complex forms of higher-kinded polymorphism that may be introduced in the future.",
+  "words": 2408,
+  "split": "train"
+ },
+ {
+  "id": "2005-match-ergonomics",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2005: pattern-binding-modes",
+  "abstract": "Better ergonomics for pattern-matching on references. Currently, matching on references requires a bit of a dance using `ref` and `&` patterns: After this RFC, the above form still works, but now we also allow a simpler form: This is accomplished through automatic dereferencing and the introduction of default binding modes.",
+  "words": 1298,
+  "split": "train"
+ },
+ {
+  "id": "pep-0223",
+  "corpus": "pep",
+  "title": "PEP 223: Change the Meaning of ``\\x`` Escapes",
+  "abstract": "Change ``\\x`` escapes, in both 8-bit and Unicode strings, to consume exactly the two hex digits following. The proposal views this as correcting an original design flaw, leading to clearer expression in all flavors of string, a cleaner Unicode story, better compatibility with Perl regular expressions, and with minimal risk to existing code.",
+  "words": 1022,
+  "split": "test"
+ },
+ {
+  "id": "2195-really-tagged-unions",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2195: really_tagged_unions",
+  "abstract": "Formally define the enum `#[repr(u32, i8, etc..)]` and `#[repr(C)]` attributes to force a non-C-like enum to have a defined layouts. This serves two purposes: allowing low-level Rust code to independently initialize the tag and payload, and allowing C(++) to safely manipulate these types.",
+  "words": 1789,
+  "split": "train"
+ },
+ {
+  "id": "2091-inline-semantic",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2091: track_caller",
+  "abstract": "Enable accurate caller location reporting during panic in `{Option, Result}::{unwrap, expect}` with the following changes: 1. Support the `#[track_caller]` function attribute, which guarantees a function has access to the caller information. 2. Add an intrinsic function `caller_location()` (safe wrapper: `Location::caller()`) to retrieve the caller's source location. Example: <!-- TOC updateOnSave:false --> - Summary - Motivation - Guide-level explanation - Let's reimplement `unwrap()` - Track the caller - Location type - Propagation of tracker - Why do we use implicit caller location - Reference-level explanation - Survey of panicking standard functions - Procedural attribute macro - Redirection (MIR inlining) - Standard libraries - \u201cMy fault\u201d vs \u201cYour fault\u201d - Location detail control - Drawbacks - Code bloat - Narrow solution scope - Confusing scoping rule - Rationale and alternatives - Rationale ...",
+  "words": 3020,
+  "split": "train"
+ },
+ {
+  "id": "1445-restrict-constants-in-patterns",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1445: structural_match",
+  "abstract": "The current compiler implements a more expansive semantics for pattern matching than was originally intended. This RFC introduces several mechanisms to reign in these semantics without actually breaking (much, if any) extant code: - Introduce a feature-gated attribute `#[structural_match]` which can be applied to a struct or enum `T` to indicate that constants of type `T` can be used within patterns. - Have `#[derive(Eq)]` automatically apply this attribute to the struct or enum that it decorates. **Automatically inserted attributes do not require use of feature-gate.** - When expanding constants of struct or enum type into equivalent patterns, require that the struct or enum type is decorated with `#[structural_match]`. Constants of builtin types are always expanded. The practical effect of these changes will be to prevent the use of constants in ...",
+  "words": 2715,
+  "split": "test"
+ },
+ {
+  "id": "1574-more-api-documentation-conventions",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1574: More API Documentation Conventions",
+  "abstract": "[RFC 505] introduced certain conventions around documenting Rust projects. This RFC augments that one, and a full text of the older one combined with these modifications is provided below.",
+  "words": 1082,
+  "split": "train"
+ },
+ {
+  "id": "pep-0261",
+  "corpus": "pep",
+  "title": "PEP 261: Support for \"wide\" Unicode characters",
+  "abstract": "Python 2.1 unicode characters can have ordinals only up to ``2**16 - 1``. This range corresponds to a range in Unicode known as the Basic Multilingual Plane. There are now characters in Unicode that live on other \"planes\". The largest addressable character in Unicode has the ordinal ``17 * 2**16 - 1`` (``0x10ffff``). For readability, we will call this TOPCHAR and call characters in this range \"wide characters\".",
+  "words": 1364,
+  "split": "train"
+ },
+ {
+  "id": "pep-0520",
+  "corpus": "pep",
+  "title": "PEP 520: Preserving Class Attribute Definition Order",
+  "abstract": "The class definition syntax is ordered by its very nature. Class attributes defined there are thus ordered. Aside from helping with readability, that ordering is sometimes significant. If it were automatically available outside the class definition then the attribute order could be used without the need for extra boilerplate (such as metaclasses or manually enumerating the attribute order). Given that this information already exists, access to the definition order of attributes is a reasonable expectation. However, currently Python does not preserve the attribute order from the class definition. This PEP changes that by preserving the order in which attributes are introduced in the class definition body. That order will now be preserved in the ``__definition_order__`` attribute of the class. This allows introspection of the original definition order, e.g. by class ...",
+  "words": 2038,
+  "split": "test"
+ },
+ {
+  "id": "3127-trim-paths",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 3127: trim-paths",
+  "abstract": "Cargo should have a profile setting named `trim-paths` to sanitise absolute paths introduced during compilation that may be embedded in the compiled binary executable or library. `cargo build` with the default `release` profile should not produce any host filesystem dependent paths into binary executable or library. But it will retain the paths inside separate debug symbols file, if one exists, to help debuggers and profilers locate the source files. To facilitate this, a new flag named `--remap-path-scope` should be added to `rustc` controlling the behaviour of `--remap-path-prefix`, allowing us to fine tune the scope of remapping, specifying paths under which context (in macro expansion, in debuginfo or in diagnostics) should or shouldn't be remapped.",
+  "words": 2857,
+  "split": "train"
+ },
+ {
+  "id": "pep-0510",
+  "corpus": "pep",
+  "title": "PEP 510: Specialize functions with guards",
+  "abstract": "Add functions to the Python C API to specialize pure Python functions: add specialized codes with guards. It allows to implement static optimizers respecting the Python semantics.",
+  "words": 1473,
+  "split": "train"
+ },
+ {
+  "id": "2008-non-exhaustive",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2008: non_exhaustive",
+  "abstract": "This RFC introduces the `#[non_exhaustive]` attribute for enums and structs, which indicates that more variants/fields may be added to an enum/struct in the future. Adding this hint to enums will force downstream crates to add a wildcard arm to `match` statements, ensuring that adding new variants is not a breaking change. Adding this hint to structs or enum variants will prevent downstream crates from constructing or exhaustively matching, to ensure that adding new fields is not a breaking change. This is a post-1.0 version of [RFC 757], with some additions.",
+  "words": 1907,
+  "split": "test"
+ },
+ {
+  "id": "2333-prior-art",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2333: prior_art",
+  "abstract": "Adds a *Prior art* section to the RFC template where RFC authors may discuss the experience of other programming languages and their communities with respect to what is being proposed. This section may also discuss theoretical work such as papers.",
+  "words": 1537,
+  "split": "train"
+ },
+ {
+  "id": "2229-capture-disjoint-fields",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2229: capture_disjoint_fields",
+  "abstract": "This RFC proposes that closure capturing should be minimal rather than maximal. Conceptually, existing rules regarding borrowing and moving disjoint fields should be applied to capturing. If implemented, the following code examples would become valid: Note that some discussion of this has already taken place: - rust-lang/rust#19004 - Rust internals forum",
+  "words": 1126,
+  "split": "train"
+ },
+ {
+  "id": "pep-0590",
+  "corpus": "pep",
+  "title": "PEP 590: Vectorcall: a fast calling protocol for CPython",
+  "abstract": "This PEP introduces a new C API to optimize calls of objects. It introduces a new \"vectorcall\" protocol and calling convention. This is based on the \"fastcall\" convention, which is already used internally by CPython. The new features can be used by any user-defined extension class. Most of the new API is private in CPython 3.8. The plan is to finalize semantics and make it public in Python 3.9. **NOTE**: This PEP deals only with the Python/C API, it does not affect the Python language or standard library.",
+  "words": 1715,
+  "split": "test"
+ },
+ {
+  "id": "pep-0359",
+  "corpus": "pep",
+  "title": "PEP 359: The \"make\" Statement",
+  "abstract": "This PEP proposes a generalization of the class-declaration syntax, the ``make`` statement. The proposed syntax and semantics parallel the syntax for class definition, and so:: make <callable> <name> <tuple>: <block> is translated into the assignment:: <name> = <callable>(\"<name>\", <tuple>, <namespace>) where ``<namespace>`` is the dict created by executing ``<block>``. This is mostly syntactic sugar for:: class <name> <tuple>: __metaclass__ = <callable> <block> and is intended to help more clearly express the intent of the statement when something other than a class is being created. Of course, other syntax for such a statement is possible, but it is hoped that by keeping a strong parallel to the class statement, an understanding of how classes and metaclasses work will translate into an understanding of how the make-statement works as well. The PEP ...",
+  "words": 1573,
+  "split": "train"
+ },
+ {
+  "id": "2325-stable-simd",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2325: vendor_intrinsics",
+  "abstract": "The purpose of this RFC is to provide a framework for SIMD to be used on stable Rust. It proposes stabilizing x86-specific vendor intrinsics, but includes the scaffolding for other platforms as well as a future portable SIMD design (to be fleshed out in another RFC).",
+  "words": 4211,
+  "split": "train"
+ },
+ {
+  "id": "2845-supertrait-item-shadowing",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2845: supertrait_item_shadowing",
+  "abstract": "Change item resolution for generics and trait objects so that a trait bound does not bring its supertraits' items into scope if the subtrait defines an item with this name itself.",
+  "words": 2283,
+  "split": "test"
+ },
+ {
+  "id": "pep-0639",
+  "corpus": "pep",
+  "title": "PEP 639: Improving License Clarity with Better Package Metadata",
+  "abstract": "This PEP defines a specification how licenses are documented in the Python projects. To achieve that, it: - Adopts the `SPDX license expression syntax <639-spdx_>`__ as a means of expressing the license for a Python project. - Defines how to include license files within the projects, source and built distributions. - Specifies the necessary changes to :term:`Core Metadata` and the corresponding :term:`Pyproject Metadata key`\\s - Describes the necessary changes to the `source distribution (sdist) <sdistspec_>`__, `built distribution (wheel) <wheelspec_>`__ and `installed project <installedspec_>`__ standards. This will make license declaration simpler and less ambiguous for package authors to create, end users to understand, and tools to programmatically process. The changes will update the `Core Metadata specification <coremetadataspec_>`__ to version 2.4. .. _639-goals:",
+  "words": 3323,
+  "split": "train"
+ },
+ {
+  "id": "1733-trait-alias",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1733: Trait alias",
+  "abstract": "Traits can be aliased with the `trait TraitAlias = \u2026;` construct. Currently, the right hand side is a bound \u2013 a single trait, a combination with `+` traits and lifetimes. Type parameters and lifetimes can be added to the *trait alias* if needed.",
+  "words": 1493,
+  "split": "train"
+ },
+ {
+  "id": "pep-0651",
+  "corpus": "pep",
+  "title": "PEP 651: Robust Stack Overflow Handling",
+  "abstract": "This PEP proposes that Python should treat machine stack overflow differently from runaway recursion. This would allow programs to set the maximum recursion depth to fit their needs and provide additional safety guarantees. If this PEP is accepted, then the following program will run safely to completion:: sys.setrecursionlimit(1_000_000) def f(n): if n: f(n-1) f(500_000) and the following program will raise a ``StackOverflow``, without causing a VM crash:: sys.setrecursionlimit(1_000_000) class X: def __add__(self, other): return self + other X() + 1",
+  "words": 1170,
+  "split": "test"
+ },
+ {
+  "id": "pep-0521",
+  "corpus": "pep",
+  "title": "PEP 521: Managing global context via 'with' blocks in generators and coroutines",
+  "abstract": "While we generally try to avoid global state when possible, there nonetheless exist a number of situations where it is agreed to be the best approach. In Python, a standard pattern for handling such cases is to store the global state in global or thread-local storage, and then use ``with`` blocks to limit modifications of this global state to a single dynamic scope. Examples where this pattern is used include the standard library's ``warnings.catch_warnings`` and ``decimal.localcontext``, NumPy's ``numpy.errstate`` (which exposes the error-handling settings provided by the IEEE 754 floating point standard), and the handling of logging context or HTTP request context in many server application frameworks. However, there is currently no ergonomic way to manage such local changes to global state when writing a generator or coroutine. For example, this ...",
+  "words": 1584,
+  "split": "train"
+ },
+ {
+  "id": "pep-0610",
+  "corpus": "pep",
+  "title": "PEP 610: Recording the Direct URL Origin of installed distributions",
+  "abstract": "Following :pep:`440`, a distribution can be identified by a name and either a version, or a direct URL reference (see :pep:`PEP440 Direct References <440#direct-references>`). After installation, the name and version are captured in the project metadata, but currently there is no way to obtain details of the URL used when the distribution was identified by a direct URL reference. This proposal defines additional metadata, to be added to the installed distribution by the installation front end, which records the Direct URL Origin for use by consumers which introspect the database of installed packages (see :pep:`376`).",
+  "words": 2401,
+  "split": "train"
+ },
+ {
+  "id": "pep-0532",
+  "corpus": "pep",
+  "title": "PEP 532: A circuit breaking protocol and binary operators",
+  "abstract": "Inspired by :pep:`335`, :pep:`505`, :pep:`531`, and the related discussions, this PEP proposes the definition of a new circuit breaking protocol (using the method names ``__then__`` and ``__else__``) that provides a common underlying semantic foundation for: * conditional expressions: ``LHS if COND else RHS`` * logical conjunction: ``LHS and RHS`` * logical disjunction: ``LHS or RHS`` * the None-aware operators proposed in :pep:`505` * the rich comparison chaining model proposed in :pep:`535` Taking advantage of the new protocol, it further proposes that the definition of conditional expressions be revised to also permit the use of ``if`` and ``else`` respectively as right-associative and left-associative general purpose short-circuiting operators: * Right-associative short-circuiting: ``LHS if RHS`` * Left-associative short-circuiting: ``LHS else RHS`` In order to make logical inversion (``not EXPR``) consistent with the above ...",
+  "words": 3968,
+  "split": "test"
+ },
+ {
+  "id": "pep-0309",
+  "corpus": "pep",
+  "title": "PEP 309: Partial Function Application",
+  "abstract": "This proposal is for a function or callable class that allows a new callable to be constructed from a callable and a partial argument list (including positional and keyword arguments). I propose a standard library module called \"functional\", to hold useful higher-order functions, including the implementation of partial(). An implementation has been submitted to SourceForge [2]_.",
+  "words": 1199,
+  "split": "train"
+ },
+ {
+  "id": "pep-0450",
+  "corpus": "pep",
+  "title": "PEP 450: Adding A Statistics Module To The Standard Library",
+  "abstract": "This PEP proposes the addition of a module for common statistics functions such as mean, median, variance and standard deviation to the Python standard library. See also http://bugs.python.org/issue18606",
+  "words": 2530,
+  "split": "train"
+ },
+ {
+  "id": "pep-0504",
+  "corpus": "pep",
+  "title": "PEP 504: Using the System RNG by default",
+  "abstract": "Python currently defaults to using the deterministic Mersenne Twister random number generator for the module level APIs in the ``random`` module, requiring users to know that when they're performing \"security sensitive\" work, they should instead switch to using the cryptographically secure ``os.urandom`` or ``random.SystemRandom`` interfaces or a third party library like ``cryptography``. Unfortunately, this approach has resulted in a situation where developers that aren't aware that they're doing security sensitive work use the default module level APIs, and thus expose their users to unnecessary risks. This isn't an acute problem, but it is a chronic one, and the often long delays between the introduction of security flaws and their exploitation means that it is difficult for developers to naturally learn from experience. In order to provide an eventually pervasive solution ...",
+  "words": 2153,
+  "split": "test"
+ },
+ {
+  "id": "pep-0511",
+  "corpus": "pep",
+  "title": "PEP 511: API for code transformers",
+  "abstract": "Propose an API to register bytecode and AST transformers. Add also ``-o OPTIM_TAG`` command line option to change ``.pyc`` filenames, ``-o noopt`` disables the peephole optimizer. Raise an ``ImportError`` exception on import if the ``.pyc`` file is missing and the code transformers required to transform the code are missing. code transformers are not needed code transformed ahead of time (loaded from ``.pyc`` files).",
+  "words": 2137,
+  "split": "train"
+ },
+ {
+  "id": "pep-0499",
+  "corpus": "pep",
+  "title": "PEP 499: ``python -m foo`` should also bind ``'foo'`` in ``sys.modules``",
+  "abstract": "When a module is used as a main program on the Python command line, such as by: python -m module.name ... it is easy to accidentally end up with two independent instances of the module if that module is again imported within the program. This PEP proposes a way to fix this problem. When a module is invoked via Python's -m option the module is bound to ``sys.modules['__main__']`` and its ``.__name__`` attribute is set to ``'__main__'``. This enables the standard \"main program\" boilerplate code at the bottom of many modules, such as:: if __name__ == '__main__': sys.exit(main(sys.argv)) However, when the above command line invocation is used it is a natural inference to presume that the module is actually imported under its official name ``module.name``, and therefore that if the program ...",
+  "words": 1088,
+  "split": "train"
+ },
+ {
+  "id": "pep-0367",
+  "corpus": "pep",
+  "title": "PEP 367: New Super",
+  "abstract": "This PEP proposes syntactic sugar for use of the ``super`` type to automatically construct instances of the super type binding to the class that a method was defined in, and the instance (or class object for classmethods) that the method is currently acting upon. The premise of the new super usage suggested is as follows:: super.foo(1, 2) to replace the old:: super(Foo, self).foo(1, 2) and the current ``__builtin__.super`` be aliased to ``__builtin__.__super__`` (with ``__builtin__.super`` to be removed in Python 3.0). It is further proposed that assignment to ``super`` become a ``SyntaxError``, similar to the behaviour of ``None``.",
+  "words": 1401,
+  "split": "test"
+ },
+ {
+  "id": "1946-intra-rustdoc-links",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1946: intra_rustdoc_links",
+  "abstract": "Add a notation how to create relative links in documentation comments (based on Rust item paths) and extend Rustdoc to automatically turn this into working links.",
+  "words": 2155,
+  "split": "train"
+ },
+ {
+  "id": "pep-0620",
+  "corpus": "pep",
+  "title": "PEP 620: Hide implementation details from the C API",
+  "abstract": "Introduce C API incompatible changes to hide implementation details. Once most implementation details will be hidden, evolution of CPython internals would be less limited by C API backward compatibility issues. It will be way easier to add new features. It becomes possible to experiment with more advanced optimizations in CPython than just micro-optimizations, like tagged pointers. Define a process to reduce the number of broken C extensions. The implementation of this PEP is expected to be done carefully over multiple Python versions. It already started in Python 3.7 and most changes are already completed. The `Process to reduce the number of broken C extensions`_ dictates the rhythm.",
+  "words": 2825,
+  "split": "train"
+ },
+ {
+  "id": "2316-safe-unsafe-trait-methods",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2316: safe_unsafe_trait_methods",
+  "abstract": "This RFC allows safe implementations of `unsafe` trait methods. An `impl` may implement a trait with methods marked as `unsafe` without marking the methods in the `impl` as `unsafe`. This is referred to as *overconstraining* the method in the `impl`. When the trait's `unsafe` method is called on a specific type where the method is known to be safe, that call does not require an `unsafe` block.",
+  "words": 1123,
+  "split": "test"
+ },
+ {
+  "id": "2480-liballoc",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2480: liballoc",
+  "abstract": "Stabilize the `alloc` crate. This crate provides the subset of the standard library\u2019s functionality that requires a global allocator (unlike the `core` crate) and an allocation error handler, but not other operating system capabilities (unlike the `std` crate).",
+  "words": 1697,
+  "split": "train"
+ },
+ {
+  "id": "pep-3153",
+  "corpus": "pep",
+  "title": "PEP 3153: Asynchronous IO support",
+  "abstract": "This PEP describes an abstraction of asynchronous IO for the Python standard library. The goal is to reach an abstraction that can be implemented by many different asynchronous IO backends and provides a target for library developers to write code portable between those different backends.",
+  "words": 1686,
+  "split": "train"
+ },
+ {
+  "id": "pep-0383",
+  "corpus": "pep",
+  "title": "PEP 383: Non-decodable Bytes in System Character Interfaces",
+  "abstract": "File names, environment variables, and command line arguments are defined as being character data in POSIX; the C APIs however allow passing arbitrary bytes - whether these conform to a certain encoding or not. This PEP proposes a means of dealing with such irregularities by embedding the bytes in character strings in such a way that allows recreation of the original byte string.",
+  "words": 1125,
+  "split": "test"
+ },
+ {
+  "id": "pep-0618",
+  "corpus": "pep",
+  "title": "PEP 618: Add Optional Length-Checking To zip",
+  "abstract": "This PEP proposes adding an optional ``strict`` boolean keyword parameter to the built-in ``zip``. When enabled, a ``ValueError`` is raised if one of the arguments is exhausted before the others.",
+  "words": 1507,
+  "split": "train"
+ },
+ {
+  "id": "pep-0316",
+  "corpus": "pep",
+  "title": "PEP 316: Programming by Contract for Python",
+  "abstract": "This submission describes programming by contract for Python. Eiffel's Design By Contract(tm) is perhaps the most popular use of programming contracts [#dbc]_. Programming contracts extends the language to include invariant expressions for classes and modules, and pre- and post-condition expressions for functions and methods. These expressions (contracts) are similar to assertions: they must be true or the program is stopped, and run-time checking of the contracts is typically only enabled while debugging. Contracts are higher-level than straight assertions and are typically included in documentation.",
+  "words": 1342,
+  "split": "train"
+ },
+ {
+  "id": "pep-0346",
+  "corpus": "pep",
+  "title": "PEP 346: User Defined (\"``with``\") Statements",
+  "abstract": "This PEP is a combination of :pep:`310`'s \"Reliable Acquisition/Release Pairs\" with the \"Anonymous Block Statements\" of Guido's :pep:`340`. This PEP aims to take the good parts of :pep:`340`, blend them with parts of :pep:`310` and rearrange the lot into an elegant whole. It borrows from various other PEPs in order to paint a complete picture, and is intended to stand on its own.",
+  "words": 4214,
+  "split": "test"
+ },
+ {
+  "id": "1444-union",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1444: union",
+  "abstract": "Provide native support for C-compatible unions, defined via a new \"contextual keyword\" `union`, without breaking any existing code that uses `union` as an identifier. **Note:** This RFC has been partially superseded by `unions-and-drop`.",
+  "words": 2176,
+  "split": "train"
+ },
+ {
+  "id": "pep-0242",
+  "corpus": "pep",
+  "title": "PEP 242: Numeric Kinds",
+  "abstract": "This proposal gives the user optional control over the precision and range of numeric computations so that a computation can be written once and run anywhere with at least the desired precision and range. It is backward compatible with existing code. The meaning of decimal literals is clarified.",
+  "words": 1082,
+  "split": "train"
+ },
+ {
+  "id": "pep-0234",
+  "corpus": "pep",
+  "title": "PEP 234: Iterators",
+  "abstract": "This document proposes an iteration interface that objects can provide to control the behaviour of ``for`` loops. Looping is customized by providing a method that produces an iterator object. The iterator provides a *get next value* operation that produces the next item in the sequence each time it is called, raising an exception when no more items are available. In addition, specific iterators over the keys of a dictionary and over the lines of a file are proposed, and a proposal is made to allow spelling ``dict.has_key(key)`` as ``key in dict``. Note: this is an almost complete rewrite of this PEP by the second author, describing the actual implementation checked into the trunk of the Python 2.2 CVS tree. It is still open for discussion. Some of the more esoteric ...",
+  "words": 2479,
+  "split": "test"
+ },
+ {
+  "id": "2528-type-changing-struct-update-syntax",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2528: type_changing_struct_update_syntax",
+  "abstract": "Extend struct update syntax (a.k.a. functional record update (FRU)) to support instances of the *same* struct that have different types due to generic type or lifetime parameters. Fields of different types must be explicitly listed in the struct constructor, but fields of the same name and same type can be moved with struct update syntax. This will make the following possible. In this example, `base` and `updated` are both instances of `Foo` but have different types because the generic parameter `T` is different. Struct update syntax is supported for `field2` because it has the same type `i32` in both `base` and `updated`:",
+  "words": 1112,
+  "split": "train"
+ },
+ {
+  "id": "0320-nonzeroing-dynamic-drop",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 320: (none for the bulk of RFC); unsafe_no_drop_flag",
+  "abstract": "Remove drop flags from values implementing `Drop`, and remove automatic memory zeroing associated with dropping values. Keep dynamic drop semantics, by having each function maintain a (potentially empty) set of auto-injected boolean flags for the drop obligations for the function that need to be tracked dynamically (which we will call \"dynamic drop obligations\").",
+  "words": 2174,
+  "split": "train"
+ },
+ {
+  "id": "pep-0327",
+  "corpus": "pep",
+  "title": "PEP 327: Decimal Data Type",
+  "abstract": "The idea is to have a Decimal data type, for every use where decimals are needed but binary floating point is too inexact. The Decimal data type will support the Python standard functions and operations, and must comply with the decimal arithmetic ANSI standard X3.274-1996 [1]_. Decimal will be floating point (as opposed to fixed point) and will have bounded precision (the precision is the upper limit on the number of significant digits in a result). However, precision is user-settable, and a notion of significant trailing zeroes is supported so that fixed-point usage is also possible. This work is based on code and test functions written by Eric Price, Aahz and Tim Peters. Just before Python 2.4a1, the decimal.py `reference implementation`_ was moved into the standard library; along with the ...",
+  "words": 4770,
+  "split": "test"
+ },
+ {
+  "id": "1560-name-resolution",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1560: item_like_imports",
+  "abstract": "Some internal and language-level changes to name resolution. Internally, name resolution will be split into two parts - import resolution and name lookup. Import resolution is moved forward in time to happen in the same phase as parsing and macro expansion. Name lookup remains where name resolution currently takes place (that may change in the future, but is outside the scope of this RFC). However, name lookup can be done earlier if required (importantly it can be done during macro expansion to allow using the module system for macros, also outside the scope of this RFC). Import resolution will use a new algorithm. The observable effects of this RFC (i.e., language changes) are some increased flexibility in the name resolution rules, especially around globs and shadowing. There is an implementation ...",
+  "words": 3052,
+  "split": "train"
+ },
+ {
+  "id": "3139-cargo-alternative-registry-auth",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 3139: cargo_alternative_registry_auth",
+  "abstract": "Enables Cargo to include the authorization token for all API requests, crate downloads and index updates (when using HTTP) by adding a configuration option to `config.json` in the registry index.",
+  "words": 1347,
+  "split": "train"
+ },
+ {
+  "id": "pep-0650",
+  "corpus": "pep",
+  "title": "PEP 650: Specifying Installer Requirements for Python Projects",
+  "abstract": "Python package installers are not completely interoperable with each other. While pip is the most widely used installer and a de facto standard, other installers such as Poetry_ or Pipenv_ are popular as well due to offering unique features which are optimal for certain workflows and not directly in line with how pip operates. While the abundance of installer options is good for end-users with specific needs, the lack of interoperability between them makes it hard to support all potential installers. Specifically, the lack of a standard requirements file for declaring dependencies means that each tool must be explicitly used in order to install dependencies specified with their respective format. Otherwise tools must emit a requirements file which leads to potential information loss for the installer as well as an ...",
+  "words": 3214,
+  "split": "test"
+ },
+ {
+  "id": "pep-0485",
+  "corpus": "pep",
+  "title": "PEP 485: A Function for testing approximate equality",
+  "abstract": "This PEP proposes the addition of an isclose() function to the standard library math module that determines whether one value is approximately equal or \"close\" to another value.",
+  "words": 3438,
+  "split": "train"
+ },
+ {
+  "id": "pep-0516",
+  "corpus": "pep",
+  "title": "PEP 516: Build system abstraction for pip/conda etc",
+  "abstract": "This PEP specifies a programmatic interface for pip [#pip]_ and other distribution or installation tools to use when working with Python source trees (both the developer tree - e.g. the git tree - and source distributions). The programmatic interface allows decoupling of pip from its current hard dependency on setuptools [#setuptools]_ able for two key reasons: 1. It enables new build systems that may be much easier to use without requiring them to even appear to be setuptools. 2. It facilitates setuptools itself changing its user interface without breaking pip, giving looser coupling. The interface needed to permit pip to install build systems also enables pip to install build time requirements for packages which is an important step in getting pip to full feature parity with the installation components of ...",
+  "words": 2638,
+  "split": "train"
+ },
+ {
+  "id": "1774-roadmap-2017",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1774: N/A",
+  "abstract": "This RFC proposes the *2017 Rust Roadmap*, in accordance with RFC 1728. The goal of the roadmap is to lay out a vision for where the Rust project should be in a year's time. **This year's focus is improving Rust's *productivity*, while retaining its emphasis on fast, reliable code**. At a high level, by the end of 2017: * Rust should have a lower learning curve * Rust should have a pleasant edit-compile-debug cycle * Rust should provide a solid, but basic IDE experience * Rust should provide easy access to high quality crates * Rust should be well-equipped for writing robust, high-scale servers * Rust should have 1.0-level crates for essential tasks * Rust should integrate easily into large build systems * Rust's community should provide mentoring at all ...",
+  "words": 4481,
+  "split": "test"
+ },
+ {
+  "id": "1728-north-star",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1728: north_star",
+  "abstract": "A refinement of the Rust planning and reporting process, to establish a shared vision of the project among contributors, to make clear the roadmap toward that vision, and to celebrate our achievements. Rust's roadmap will be established in year-long cycles, where we identify up front - together, as a project - the most critical problems facing the language and its ecosystem, along with the story we want to be able to tell the world about Rust. Work toward solving those problems, our short-term goals, will be decided by the individual teams, as they see fit, and regularly re-triaged. For the purposes of reporting the project roadmap, goals will be assigned to release cycle milestones. At the end of the year we will deliver a public facing retrospective, describing the goals ...",
+  "words": 3769,
+  "split": "train"
+ },
+ {
+  "id": "1105-api-evolution",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1105: not applicable",
+  "abstract": "This RFC proposes a comprehensive set of guidelines for which changes to *stable* APIs are considered breaking from a semver perspective, and which are not. These guidelines are intended for both the standard library and for the crates.io ecosystem. This does *not* mean that the standard library should be completely free to make non-semver-breaking changes; there are sometimes still risks of ecosystem pain that need to be taken into account. Rather, this RFC makes explicit an initial set of changes that absolutely *cannot* be made without a semver bump. Along the way, it also discusses some interactions with potential language features that can help mitigate pain for non-breaking changes. The RFC covers only API issues; other issues related to language features, lints, type inference, command line arguments, Cargo, and so ...",
+  "words": 4435,
+  "split": "train"
+ },
+ {
+  "id": "3173-float-next-up-down",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 3173: float_next_up_down",
+  "abstract": "This RFC adds two argumentless methods to `f32`/`f64`, `next_up` and `next_down`. These functions are specified in the IEEE 754 standard, and provide the capability to enumerate floating point values in order.",
+  "words": 1375,
+  "split": "test"
+ },
+ {
+  "id": "pep-0437",
+  "corpus": "pep",
+  "title": "PEP 437: A DSL for specifying signatures, annotations and argument converters",
+  "abstract": "The Python C-API currently has no mechanism for specifying and auto-generating function signatures, annotations or custom argument converters. There are several possible approaches to the problem. Cython uses *cdef* definitions in *.pyx* files to generate the required information. However, CPython's C-API functions often require additional initialization and cleanup snippets that would be hard to specify in a *cdef*. :pep:`436` proposes a domain specific language (DSL) enclosed in C comments that largely resembles a per-parameter configuration file. A preprocessor reads the comment and emits an argument parsing function, docstrings and a header for the function that utilizes the results of the parsing step. The latter function is subsequently referred to as the *implementation function*.",
+  "words": 1567,
+  "split": "train"
+ },
+ {
+  "id": "1183-swap-out-jemalloc",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1183: allocator",
+  "abstract": "Add support to the compiler to override the default allocator, allowing a different allocator to be used by default in Rust programs. Additionally, also switch the default allocator for dynamic libraries and static libraries to using the system malloc instead of jemalloc. *Note:* this RFC has been superseded by [RFC 1974][].",
+  "words": 1541,
+  "split": "train"
+ },
+ {
+  "id": "2834-cargo-report-future-incompat",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2834: N/A",
+  "abstract": "Cargo should alert developers to upstream dependencies that trigger future-incompatibility warnings. Cargo should list such dependencies even when these warnings have been suppressed (e.g. via cap-lints or `#[allow(..)]` attributes.) Cargo could additionally provide feedback for tactics a maintainer of the downstream crate could use to address the problem (the details of such tactics is not specified nor mandated by this RFC).",
+  "words": 3182,
+  "split": "test"
+ },
+ {
+  "id": "pep-0445",
+  "corpus": "pep",
+  "title": "PEP 445: Add new APIs to customize Python memory allocators",
+  "abstract": "This PEP proposes new Application Programming Interfaces (API) to customize Python memory allocators. The only implementation required to conform to this PEP is CPython, but other implementations may choose to be compatible, or to re-use a similar scheme.",
+  "words": 2563,
+  "split": "train"
+ },
+ {
+  "id": "pep-0362",
+  "corpus": "pep",
+  "title": "PEP 362: Function Signature Object",
+  "abstract": "Python has always supported powerful introspection capabilities, including introspecting functions and methods (for the rest of this PEP, \"function\" refers to both functions and methods). By examining a function object you can fully reconstruct the function's signature. Unfortunately this information is stored in an inconvenient manner, and is spread across a half-dozen deeply nested attributes. This PEP proposes a new representation for function signatures. The new representation contains all necessary information about a function and its parameters, and makes introspection easy and straightforward. However, this object does not replace the existing function metadata, which is used by Python itself to execute those functions. The new metadata object is intended solely to make function introspection easier for Python programmers.",
+  "words": 1435,
+  "split": "train"
+ },
+ {
+  "id": "pep-0352",
+  "corpus": "pep",
+  "title": "PEP 352: Required Superclass for Exceptions",
+  "abstract": "In Python 2.4 and before, any (classic) class can be raised as an exception. The plan for 2.5 was to allow new-style classes, but this makes the problem worse -- it would mean *any* class (or instance) can be raised! This is a problem as it prevents any guarantees from being made about the interface of exceptions. This PEP proposes introducing a new superclass that all raised objects must inherit from. Imposing the restriction will allow a standard interface for exceptions to exist that can be relied upon. It also leads to a known hierarchy for all exceptions to adhere to. One might counter that requiring a specific base class for a particular interface is unPythonic. However, in the specific case of exceptions there's a good reason (which has generally ...",
+  "words": 1193,
+  "split": "test"
+ },
+ {
+  "id": "1789-as-cell",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1789: as_cell",
+  "abstract": "- Change `Cell<T>` to allow `T: ?Sized`. - Guarantee that `T` and `Cell<T>` have the same memory layout. - Enable the following conversions through the std lib: - `&mut T -> &Cell<T> where T: ?Sized` - `&Cell<[T]> -> &[Cell<T>]` > Note: https://github.com/rust-lang/rfcs/pull/1651 has been accepted recently, > so no `T: Copy` bound is needed anymore.",
+  "words": 1507,
+  "split": "train"
+ },
+ {
+  "id": "2867-isa-attribute",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2867: isa_attribute",
+  "abstract": "This RFC proposes a new function attribute, `#[instruction_set(set)]` which allows you to declare the instruction set to be used when compiling the function. It also proposes two initial allowed values for the ARM arch (`arm::a32` and `arm::t32`). Other allowed values could be added to the language later.",
+  "words": 2033,
+  "split": "train"
+ },
+ {
+  "id": "2603-rust-symbol-name-mangling-v0",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2603: N/A",
+  "abstract": "This RFC proposes a new mangling scheme that describes what the symbol names generated by the Rust compiler look like. This new scheme has a number of advantages over the existing one which has grown over time without a clear direction. The new scheme is consistent, depends less on compiler internals, and the information it stores in symbol names can be decoded again which provides an improved experience for users of external tools that work with Rust symbol names. Note that, at this point, the new mangling scheme would not be part of the language specification or the specification of a stable Rust ABI. In the future it _could_ be part of both and it is designed to be stable and extensible; but for the time being it would still ...",
+  "words": 5106,
+  "split": "test"
+ },
+ {
+  "id": "2532-associated-type-defaults",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2532: associated_type_defaults",
+  "abstract": "[Resolve][changes] the design of associated type defaults, first introduced in [RFC 192], such that provided methods and other items may not assume type defaults. This applies equally to `default` with respect to specialization. Finally, `dyn Trait` will assume provided defaults and allow those to be elided.",
+  "words": 4672,
+  "split": "train"
+ },
+ {
+  "id": "2451-re-rebalancing-coherence",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2451: re_rebalancing_coherence",
+  "abstract": "This RFC seeks to clarify some ambiguity from [RFC #1023], and expands it to allow type parameters to appear in the type for which the trait is being implemented, regardless of whether a local type appears before them. More concretely, it allows `impl<T> ForeignTrait<LocalType> for ForeignType<T>` to be written.",
+  "words": 2327,
+  "split": "train"
+ },
+ {
+  "id": "2514-union-initialization-and-drop",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2514: union_initialization_and_drop",
+  "abstract": "Unions do not allow fields of types that require drop glue (the code that is automatically run when a variables goes out of scope: recursively dropping the variable and all its fields), but they may still `impl Drop` themselves. We specify when one may move out of a union field and when the union's `drop` is called. To avoid undesired implicit calls of drop, we also restrict the use of `DerefMut` when unions are involved.",
+  "words": 2000,
+  "split": "test"
+ },
+ {
+  "id": "pep-0435",
+  "corpus": "pep",
+  "title": "PEP 435: Adding an Enum type to the Python standard library",
+  "abstract": "This PEP proposes adding an enumeration type to the Python standard library. An enumeration is a set of symbolic names bound to unique, constant values. Within an enumeration, the values can be compared by identity, and the enumeration itself can be iterated over.",
+  "words": 1922,
+  "split": "train"
+ },
+ {
+  "id": "pep-0573",
+  "corpus": "pep",
+  "title": "PEP 573: Module State Access from C Extension Methods",
+  "abstract": "This PEP proposes to add a way for CPython extension methods to access context, such as the state of the modules they are defined in. This will allow extension methods to use direct pointer dereferences rather than PyState_FindModule for looking up module state, reducing or eliminating the performance cost of using module-scoped state over process global state. This fixes one of the remaining roadblocks for adoption of :pep:`3121` (Extension module initialization and finalization) and :pep:`489` (Multi-phase extension module initialization). While this PEP takes an additional step towards fully solving the problems that :pep:`3121` and :pep:`489` started tackling, it does not attempt to resolve *all* remaining concerns. In particular, access to the module state from slot methods (``nb_add``, etc) is not solved.",
+  "words": 2080,
+  "split": "train"
+ },
+ {
+  "id": "2093-infer-outlives",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2093: infer_outlives",
+  "abstract": "Remove the need for explicit `T: 'x` annotations on structs. We will infer their presence based on the fields of the struct. In short, if the struct contains a reference, directly or indirectly, to `T` with lifetime `'x`, then we will infer that `T: 'x` is a requirement: Explicit annotations remain as an option used to control trait object lifetime defaults, and simply for backwards compatibility.",
+  "words": 2886,
+  "split": "test"
+ },
+ {
+  "id": "2388-try-expr",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2388: try_expr",
+  "abstract": "[RFC 243] left the choice of keyword for `catch { .. }` expressions unresolved. This RFC settles the choice of keyword. Namely, it: 1. reserves `try` as a keyword in edition 2018. 2. replaces `do catch { .. }` with `try { .. }` 3. does **not** reserve `catch` as a keyword.",
+  "words": 3525,
+  "split": "train"
+ },
+ {
+  "id": "pep-0372",
+  "corpus": "pep",
+  "title": "PEP 372: Adding an ordered dictionary to collections",
+  "abstract": "This PEP proposes an ordered dictionary as a new data structure for the ``collections`` module, called \"OrderedDict\" in this PEP. The proposed API incorporates the experiences gained from working with similar implementations that exist in various real-world applications and other programming languages.",
+  "words": 1274,
+  "split": "train"
+ },
+ {
+  "id": "1869-eprintln",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1869: eprintln",
+  "abstract": "This RFC proposes the addition of two macros to the global prelude, `eprint!` and `eprintln!`. These are exactly the same as `print!` and `println!`, respectively, except that they write to standard error instead of standard output. An [implementation][] already exists.",
+  "words": 1059,
+  "split": "test"
+ },
+ {
+  "id": "2500-needle",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2500: needle",
+  "abstract": "Generalize the needle (n\u00e9e pattern) API to support `&str`, `&mut str`, `&[T]`, `&mut [T]`, `Vec<T>` and `&OsStr`. <!-- TOC depthTo:2 --> - Summary - Motivation - Stabilize the Pattern API - Implement OMG-WTF-8 - Guide-level explanation - Reference-level explanation - API - Standard library changes - Performance - Drawbacks - Rationale and alternatives - Principles - Design rationales - Miscellaneous decisions - Alternatives - Prior art - Previous attempts - Haskell - Unresolved questions <!-- /TOC -->",
+  "words": 3744,
+  "split": "train"
+ },
+ {
+  "id": "pep-0246",
+  "corpus": "pep",
+  "title": "PEP 246: Object Adaptation",
+  "abstract": "This proposal puts forth an extensible cooperative mechanism for the adaptation of an incoming object to a context which expects an object supporting a specific protocol (say a specific type, class, or interface). This proposal provides a built-in \"adapt\" function that, for any object X and any protocol Y, can be used to ask the Python environment for a version of X compliant with Y. Behind the scenes, the mechanism asks object X: \"Are you now, or do you know how to wrap yourself to provide, a supporter of protocol Y?\". And, if this request fails, the function then asks protocol Y: \"Does object X support you, or do you know how to wrap it to obtain such a supporter?\" This duality is important, because protocols can be developed after ...",
+  "words": 3792,
+  "split": "train"
+ },
+ {
+  "id": "pep-0227",
+  "corpus": "pep",
+  "title": "PEP 227: Statically Nested Scopes",
+  "abstract": "This PEP describes the addition of statically nested scoping (lexical scoping) for Python 2.2, and as a source level option for python 2.1. In addition, Python 2.1 will issue warnings about constructs whose meaning may change when this feature is enabled. The old language definition (2.0 and before) defines exactly three namespaces that are used to resolve names -- the local, global, and built-in namespaces. The addition of nested scopes allows resolution of unbound local names in enclosing functions' namespaces. The most visible consequence of this change is that lambdas (and other nested functions) can reference variables defined in the surrounding namespace. Currently, lambdas must often use default arguments to explicitly creating bindings in the lambda's namespace.",
+  "words": 2791,
+  "split": "test"
+ },
+ {
+  "id": "2582-raw-reference-mir-operator",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2582: raw_ref_op",
+  "abstract": "Introduce new variants of the `&` operator: `&raw mut <place>` to create a `*mut <T>`, and `&raw const <place>` to create a `*const <T>`. This creates a raw pointer directly, as opposed to the already existing `&mut <place> as *mut _`/`&<place> as *const _`, which create a temporary reference and then cast that to a raw pointer. As a consequence, the existing expressions `<term> as *mut <T>` and `<term> as *const <T>` where `<term>` has reference type are equivalent to `&raw mut *<term>` and `&raw const *<term>`, respectively. Moreover, emit a lint for existing code that could use the new operator.",
+  "words": 1823,
+  "split": "train"
+ },
+ {
+  "id": "pep-0633",
+  "corpus": "pep",
+  "title": "PEP 633: Dependency specification in pyproject.toml using an exploded TOML table",
+  "abstract": "This PEP specifies how to write a project's dependencies in a ``pyproject.toml`` file for packaging-related tools to consume using the fields defined in :pep:`621`, as an alternative to the :pep:`508`-based approach defined in :pep:`631`.",
+  "words": 1261,
+  "split": "train"
+ },
+ {
+  "id": "3037-roadmap-2021",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 3037: n/a",
+  "abstract": "The focus of this year is on project health, specifically as it relates to Rust's governance structure. * Establishing charters for teams in the Rust project * Provide for unified process and vocabulary across the project * Creating a single place for tracking a list of ongoing projects The core team will drive these efforts in coordination with all Rust teams and working groups. As the Rust teams have grown over the years, there is increasingly less cross-chatter that naturally happens due to shared membership of teams, and this RFC aims to improve our written documentation to provide for a smoother onboarding process for new team members, as well as improving the ability of current team members to evaluate who to consult on new ideas or projects.",
+  "words": 2388,
+  "split": "test"
+ },
+ {
+  "id": "2996-async-iterator",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2996: async_iterator",
+  "abstract": "Introduce the `AsyncIterator` trait into the standard library, using the design from `futures`. Redirect the `Stream` trait definition in the `futures-core` crate (which is \"pub-used\" by the `futures` crate) to the `AsyncIterator` trait in the standard library.",
+  "words": 3463,
+  "split": "train"
+ },
+ {
+  "id": "2585-unsafe-block-in-unsafe-fn",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2585: unsafe_block_in_unsafe_fn",
+  "abstract": "No longer treat the body of an `unsafe fn` as being an `unsafe` block. To avoid a breaking change, this is a warning now and may become an error in a future edition.",
+  "words": 1295,
+  "split": "train"
+ },
+ {
+  "id": "pep-3127",
+  "corpus": "pep",
+  "title": "PEP 3127: Integer Literal Support and Syntax",
+  "abstract": "This PEP proposes changes to the Python core to rationalize the treatment of string literal representations of integers in different radices (bases). These changes are targeted at Python 3.0, but the backward-compatible parts of the changes should be added to Python 2.6, so that all valid 3.0 integer literals will also be valid in 2.6. The proposal is that: a) octal literals must now be specified with a leading \"0o\" or \"0O\" instead of \"0\"; b) binary literals are now supported via a leading \"0b\" or \"0B\"; and c) provision will be made for binary numbers in string formatting.",
+  "words": 2961,
+  "split": "test"
+ },
+ {
+  "id": "pep-0323",
+  "corpus": "pep",
+  "title": "PEP 323: Copyable Iterators",
+  "abstract": "This PEP suggests that some iterator types should support shallow copies of their instances by exposing a ``__copy__`` method which meets some specific requirements, and indicates how code using an iterator might exploit such a ``__copy__`` method when present.",
+  "words": 2133,
+  "split": "train"
+ },
+ {
+  "id": "pep-0525",
+  "corpus": "pep",
+  "title": "PEP 525: Asynchronous Generators",
+  "abstract": ":pep:`492` introduced support for native coroutines and ``async``/``await`` syntax to Python 3.5. It is proposed here to extend Python's asynchronous capabilities by adding support for *asynchronous generators*.",
+  "words": 1802,
+  "split": "train"
+ },
+ {
+  "id": "1040-duration-reform",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1040: duration",
+  "abstract": "This RFC suggests stabilizing a reduced-scope `Duration` type that is appropriate for interoperating with various system calls that require timeouts. It does not stabilize a large number of conversion methods in `Duration` that have subtle caveats, with the intent of revisiting those conversions more holistically in the future.",
+  "words": 1306,
+  "split": "test"
+ },
+ {
+  "id": "1985-tiered-browser-support",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1985: tiered_browser_support",
+  "abstract": "Official web content produced by the Rust teams for consumption by Rust users should work in the majority of browsers that Rust users are visiting these sites in. The Rust compiler only supports [a finite number of targets][forge], with varying degrees of support, due to the limits on time, expertise, and testing resources. Similarly, we don't have enough time, expertise and testing resources to be sure that our web content works in every version of every browser. We should have a list of browsers and versions in various tiers of support.",
+  "words": 1521,
+  "split": "train"
+ },
+ {
+  "id": "1682-field-init-shorthand",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1682: field-init-shorthand",
+  "abstract": "When initializing a data structure (struct, enum, union) with named fields, allow writing `fieldname` as a shorthand for `fieldname: fieldname`. This allows a compact syntax for initialization, with less duplication. Example usage: struct SomeStruct { field1: ComplexType, field2: AnotherType } impl SomeStruct { fn new() -> Self { let field1 = { // Various initialization code }; let field2 = { // More initialization code }; SomeStruct { field1, field2 } } }",
+  "words": 1039,
+  "split": "train"
+ },
+ {
+  "id": "2930-read-buf",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2930: read_buf",
+  "abstract": "The current design of the `Read` trait is nonoptimal as it requires that the buffer passed to its various methods be pre-initialized even though the contents will be immediately overwritten. This RFC proposes an interface to allow implementors and consumers of `Read` types to robustly and soundly work with uninitialized buffers.",
+  "words": 1561,
+  "split": "test"
+ },
+ {
+  "id": "1969-cargo-prepublish",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1969: prepublish",
+  "abstract": "This RFC proposes the concept of *patching sources* for Cargo. Sources can be have their existing versions of crates replaced with different copies, and sources can also have \"prepublished\" crates by adding versions of a crate which do not currently exist in the source. Dependency resolution will work *as if* these additional or replacement crates actually existed in the original source. One primary feature enabled by this is the ability to \"prepublish\" a crate to crates.io. Prepublication makes it possible to perform integration testing within a large crate graph before publishing anything to crates.io, and without requiring dependencies to be switched from the crates.io index to git branches. It can, to a degree, simulate an \"atomic\" change across a large number of crates and repositories, which can then actually be ...",
+  "words": 2317,
+  "split": "train"
+ },
+ {
+  "id": "pep-0508",
+  "corpus": "pep",
+  "title": "PEP 508: Dependency specification for Python Software Packages",
+  "abstract": "This PEP specifies the language used to describe dependencies for packages. It draws a border at the edge of describing a single dependency - the different sorts of dependencies and when they should be installed is a higher level problem. The intent is to provide a building block for higher layer specifications. The job of a dependency is to enable tools like pip [#pip]_ to find the right package to install. Sometimes this is very loose - just specifying a name, and sometimes very specific - referring to a specific file to install. Sometimes dependencies are only relevant in one platform, or only some versions are acceptable, so the language permits describing all these cases. The language defined is a compact line based format which is already in widespread use ...",
+  "words": 1510,
+  "split": "train"
+ },
+ {
+  "id": "pep-0400",
+  "corpus": "pep",
+  "title": "PEP 400: Deprecate codecs.StreamReader and codecs.StreamWriter",
+  "abstract": "io.TextIOWrapper and codecs.StreamReaderWriter offer the same API [#f1]_. TextIOWrapper has more features and is faster than StreamReaderWriter. Duplicate code means that bugs should be fixed twice and that we may have subtle differences between the two implementations. The codecs module was introduced in Python 2.0 (see the :pep:`100`). The io module was introduced in Python 2.6 and 3.0 (see the :pep:`3116`), and reimplemented in C in Python 2.7 and 3.1.",
+  "words": 1329,
+  "split": "test"
+ },
+ {
+  "id": "1513-less-unwinding",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1513: panic_runtime",
+  "abstract": "Stabilize implementing panics as aborts. * Stabilize the `-Z no-landing-pads` flag under the name `-C panic=strategy` * Implement a number of unstable features akin to custom allocators to swap out implementations of panic just before a final product is generated. * Add a `[profile.dev]` option to Cargo to configure how panics are implemented.",
+  "words": 1890,
+  "split": "train"
+ },
+ {
+  "id": "2397-do-not-recommend",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2397: do_not_recommend",
+  "abstract": "A new attribute can be placed on trait implementations: `#[do_not_recommend]`. This attribute will cause the compiler to never recommend this impl transitively as a way to implement another trait. For example, this would be placed on `impl<T: Iterator> IntoIterator for T`. The result of this is that when `T: IntoIterator` fails, the error message will only mention `IntoIterator`. It will not say \"perhaps `Iterator` should be implemented?\".",
+  "words": 1337,
+  "split": "train"
+ },
+ {
+  "id": "1937-ques-in-main",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1937: ques_in_main",
+  "abstract": "Allow the `?` operator to be used in `main`, and in `#[test]` functions and doctests. To make this possible, the return type of these functions are generalized from `()` to a new trait, provisionally called `Termination`. libstd implements this trait for a set of types partially TBD (see list below); applications can provide impls themselves if they want. There is no magic added to function signatures in rustc. If you want to use `?` in either `main` or a `#[test]` function you have to write `-> Result<(), ErrorT>` (or whatever) yourself. Initially, it will also be necessary to write a hidden function head for any doctest that wants to use `?`, but eventually (see the deployment plan below) the default doctest template will be adjusted to make this unnecessary most ...",
+  "words": 3279,
+  "split": "test"
+ },
+ {
+  "id": "3016-const-ub",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 3016: const_ub",
+  "abstract": "Define UB during const evaluation to lead to an unspecified result or hard error for the affected CTFE query, but not otherwise infect the compilation process.",
+  "words": 1188,
+  "split": "train"
+ },
+ {
+  "id": "2089-implied-bounds",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2089: implied_bounds",
+  "abstract": "Eliminate the need for \u201credundant\u201d bounds on functions and impls where those bounds can be inferred from the input types and other trait bounds. For example, in this simple program, the impl would no longer require a bound, because it can be inferred from the `Foo<T>` type: Hence, simply writing `impl<T> Foo<T> { ... }` would suffice. We currently support implied bounds for lifetime bounds, super traits and projections. We propose to extend this to all where clauses on traits and types, as was already discussed [here][niko].",
+  "words": 1791,
+  "split": "train"
+ },
+ {
+  "id": "pep-0442",
+  "corpus": "pep",
+  "title": "PEP 442: Safe object finalization",
+  "abstract": "This PEP proposes to deal with the current limitations of object finalization. The goal is to be able to define and run finalizers for any object, regardless of their position in the object graph. This PEP doesn't call for any change in Python code. Objects with existing finalizers will benefit automatically.",
+  "words": 1377,
+  "split": "test"
+ },
+ {
+  "id": "pep-0611",
+  "corpus": "pep",
+  "title": "PEP 611: The one million limit",
+  "abstract": "This PR proposes a soft limit of one million (1 000 000), and a larger hard limit for various aspects of Python code and its implementation. The Python language does not specify limits for many of its features. Not having any limit to these values seems to enhance programmer freedom, at least superficially, but in practice the CPython VM and other Python virtual machines have implicit limits or are forced to assume that the limits are astronomical, which is expensive. This PR lists a number of features which are to have a limit of one million. For CPython the hard limit will be eight million (8 000 000).",
+  "words": 2083,
+  "split": "train"
+ },
+ {
+  "id": "pep-0403",
+  "corpus": "pep",
+  "title": "PEP 403: General purpose decorator clause (aka \"@in\" clause)",
+  "abstract": "This PEP proposes the addition of a new ``@in`` decorator clause that makes it possible to override the name binding step of a function or class definition. The new clause accepts a single simple statement that can make a forward reference to decorated function or class definition. This new clause is designed to be used whenever a \"one-shot\" function or class is needed, and placing the function or class definition before the statement that uses it actually makes the code harder to read. It also avoids any name shadowing concerns by making sure the new name is visible only to the statement in the ``@in`` clause. This PEP is based heavily on many of the ideas in :pep:`3150` (Statement Local Namespaces) so some elements of the rationale will be familiar ...",
+  "words": 2223,
+  "split": "train"
+ },
+ {
+  "id": "pep-0207",
+  "corpus": "pep",
+  "title": "PEP 207: Rich Comparisons",
+  "abstract": "This PEP proposes several new features for comparisons: - Allow separately overloading of <, >, <=, >=, ==, !=, both in classes and in C extensions. - Allow any of those overloaded operators to return something else besides a Boolean result.",
+  "words": 2017,
+  "split": "test"
+ },
+ {
+  "id": "1681-macros-1.1",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1681: rustc_macros",
+  "abstract": "Extract a very small sliver of today's procedural macro system in the compiler, just enough to get basic features like custom derive working, to have an eventually stable API. Ensure that these features will not pose a maintenance burden on the compiler but also don't try to provide enough features for the \"perfect macro system\" at the same time. Overall, this should be considered an incremental step towards an official \"macros 2.0\".",
+  "words": 3378,
+  "split": "train"
+ },
+ {
+  "id": "pep-0268",
+  "corpus": "pep",
+  "title": "PEP 268: Extended HTTP functionality and WebDAV",
+  "abstract": "This PEP discusses new modules and extended functionality for Python's HTTP support. Notably, the addition of authenticated requests, proxy support, authenticated proxy usage, and WebDAV_ capabilities.",
+  "words": 1206,
+  "split": "train"
+ },
+ {
+  "id": "pep-0439",
+  "corpus": "pep",
+  "title": "PEP 439: Inclusion of implicit pip bootstrap in Python installation",
+  "abstract": "This PEP proposes the inclusion of a pip bootstrap executable in the Python installation to simplify the use of 3rd-party modules by Python users. This PEP does not propose to include the pip implementation in the Python standard library. Nor does it propose to implement any package management or installation mechanisms beyond those provided by PEP 427 (\"The Wheel Binary Package Format 1.0\") and TODO distlib PEP.",
+  "words": 1412,
+  "split": "test"
+ },
+ {
+  "id": "pep-3134",
+  "corpus": "pep",
+  "title": "PEP 3134: Exception Chaining and Embedded Tracebacks",
+  "abstract": "This PEP proposes three standard attributes on exception instances: the ``__context__`` attribute for implicitly chained exceptions, the ``__cause__`` attribute for explicitly chained exceptions, and the ``__traceback__`` attribute for the traceback. A new ``raise ... from`` statement sets the ``__cause__`` attribute.",
+  "words": 2156,
+  "split": "train"
+ },
+ {
+  "id": "2052-epochs",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2052: N/A",
+  "abstract": "Rust's ecosystem, tooling, documentation, and compiler are constantly improving. To make it easier to follow development, and to provide a clear, coherent \"rallying point\" for this work, this RFC proposes that we declare a *edition* every two or three years. Editions are designated by the year in which they occur, and represent a release in which several elements come together: - A significant, coherent set of new features and APIs have been stabilized since the previous edition. - Error messages and other important aspects of the user experience around these features are fully polished. - Tooling (IDEs, rustfmt, Clippy, etc) has been updated to work properly with these new features. - There is a guide to the new features, explaining why they're important and how they should influence the way ...",
+  "words": 4395,
+  "split": "train"
+ },
+ {
+  "id": "pep-0425",
+  "corpus": "pep",
+  "title": "PEP 425: Compatibility Tags for Built Distributions",
+  "abstract": "This PEP specifies a tagging system to indicate with which versions of Python a built or binary distribution is compatible. A set of three tags indicate which Python implementation and language version, ABI, and platform a built distribution requires. The tags are terse because they will be included in filenames.",
+  "words": 1487,
+  "split": "test"
+ },
+ {
+  "id": "1857-stabilize-drop-order",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1857: stable_drop_order",
+  "abstract": "I propose we specify and stabilize drop order in Rust, instead of treating it as an implementation detail. The stable drop order should be based on the current implementation. This results in avoiding breakage and still allows alternative, opt-in, drop orders to be introduced in the future.",
+  "words": 1071,
+  "split": "train"
+ },
+ {
+  "id": "1398-kinds-of-allocators",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 1398: allocator_api",
+  "abstract": "Add a standard allocator interface and support for user-defined allocators, with the following goals: 1. Allow libraries (in libstd and elsewhere) to be generic with respect to the particular allocator, to support distinct, stateful, per-container allocators. 2. Require clients to supply metadata (such as block size and alignment) at the allocation and deallocation sites, to ensure hot-paths are as efficient as possible. 3. Provide high-level abstraction over the layout of an object in memory. Regarding GC: We plan to allow future allocators to integrate themselves with a standardized reflective GC interface, but leave specification of such integration for a later RFC. (The design describes a way to add such a feature in the future while ensuring that clients do not accidentally opt-in and risk unsound behavior.)",
+  "words": 5787,
+  "split": "train"
+ },
+ {
+  "id": "pep-0570",
+  "corpus": "pep",
+  "title": "PEP 570: Python Positional-Only Parameters",
+  "abstract": "This PEP proposes to introduce a new syntax, ``/``, for specifying positional-only parameters in Python function definitions. Positional-only parameters have no externally-usable name. When a function accepting positional-only parameters is called, positional arguments are mapped to these parameters based solely on their order. When designing APIs (application programming interfaces), library authors try to ensure correct and intended usage of an API. Without the ability to specify which parameters are positional-only, library authors must be careful when choosing appropriate parameter names. This care must be taken even for required parameters or when the parameters have no external semantic meaning for callers of the API. In this PEP, we discuss: * Python's history and current semantics for positional-only parameters * the problems encountered by not having them * how these problems are ...",
+  "words": 3755,
+  "split": "test"
+ },
+ {
+  "id": "2904-compiler-major-change-process",
+  "corpus": "rust-rfc",
+  "title": "Rust RFC 2904: N/A",
+  "abstract": "Introduce the **major change process** for the compiler team. This process has the following goals: * to advertise major changes and give the team a chance to weigh in; * to help scale the amount of work being done to reviewing bandwidth by choosing a reviewer in advance; * to avoid a lot of process overhead. The intent here is that if you have a plan to make some \"major change\" to the compiler, you will start with this process. It may either simply be approved, but if the change proves more controversial or complex, we may escalate towards design meetings, longer write-ups, or full RFCs before reaching a final decision. This process does not apply to adding new language features, but it can be used for minor features such ...",
+  "words": 1898,
+  "split": "train"
+ },
+ {
+  "id": "pep-0414",
+  "corpus": "pep",
+  "title": "PEP 414: Explicit Unicode Literal for Python 3.3",
+  "abstract": "This document proposes the reintegration of an explicit unicode literal from Python 2.x to the Python 3.x language specification, in order to reduce the volume of changes needed when porting Unicode-aware Python 2 applications to Python 3.",
+  "words": 2851,
+  "split": "train"
+ },
+ {
+  "id": "pep-0597",
+  "corpus": "pep",
+  "title": "PEP 597: Add optional EncodingWarning",
+  "abstract": "Add a new warning category ``EncodingWarning``. It is emitted when the ``encoding`` argument to ``open()`` is omitted and the default locale-specific encoding is used. The warning is disabled by default. A new ``-X warn_default_encoding`` command-line option and a new ``PYTHONWARNDEFAULTENCODING`` environment variable can be used to enable it. A ``\"locale\"`` argument value for ``encoding`` is added too. It explicitly specifies that the locale encoding should be used, silencing the warning.",
+  "words": 1034,
+  "split": "test"
+ }
+]

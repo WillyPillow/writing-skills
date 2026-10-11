@@ -1,0 +1,5184 @@
+{
+ "summary": {
+  "llm_docs": {
+   "opus": 120,
+   "sonnet": 120,
+   "haiku": 120
+  },
+  "llm_train_docs": 240,
+  "llm_test_docs": 120,
+  "human_paired_train": 80,
+  "human_base_docs": 798,
+  "human_test_paired": 40,
+  "human_test_extra": 160,
+  "candidates": 161,
+  "confirmed": 114,
+  "by_n": {
+   "1": 143,
+   "2": 15,
+   "3": 3
+  },
+  "auc": {
+   "tech list (train-derived, all candidates)": {
+    "vs paired originals": 0.954,
+    "vs extra human": 0.954,
+    "opus vs all human": 0.942,
+    "sonnet vs all human": 0.936,
+    "haiku vs all human": 0.985
+   },
+   "tech list, words only": {
+    "vs paired originals": 0.959,
+    "vs extra human": 0.964,
+    "opus vs all human": 0.954,
+    "sonnet vs all human": 0.947,
+    "haiku vs all human": 0.987
+   },
+   "tech list, top 50 by z": {
+    "vs paired originals": 0.936,
+    "vs extra human": 0.958,
+    "opus vs all human": 0.932,
+    "sonnet vs all human": 0.939,
+    "haiku vs all human": 0.99
+   },
+   "EQ-Bench slop-score words+trigrams": {
+    "vs paired originals": 0.413,
+    "vs extra human": 0.477,
+    "opus vs all human": 0.464,
+    "sonnet vs all human": 0.521,
+    "haiku vs all human": 0.407
+   }
+  }
+ },
+ "rows": [
+  {
+   "unit": "every",
+   "n": 1,
+   "z_vs_paired": 11.92,
+   "llm_per1k": 3.296,
+   "paired_per1k": 0.665,
+   "base_per1k": 0.7296,
+   "ratio_vs_base": 4.5,
+   "llm_docfrac": 0.775,
+   "base_docfrac": 0.342,
+   "prompts": 77,
+   "models": {
+    "opus": 68,
+    "sonnet": 59,
+    "haiku": 59
+   },
+   "test_llm_docfrac": 0.817,
+   "test_human_docfrac": 0.355,
+   "test_llm_per1k": 2.903,
+   "test_human_per1k": 0.5907,
+   "test_ratio": 4.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: **Size.** Every `Drop` type grows by a byte, and usually by a full word after alignment.",
+    "opus/1105-api-evolution: They do not give the standard library license to make every change that is technically non-breaking.",
+    "opus/1183-swap-out-jemalloc: Every Rust program built with the standard toolchain today links jemalloc and routes every heap allocation through it: `Box`, `Vec`, `String`, and all the rest."
+   ],
+   "human_examples": [
+    "pep-0006: (Anthony) has been trying for a release approximately every six",
+    "pep-0011: Generally, feature updates (1709, 22H2) occur every 6-12 months"
+   ]
+  },
+  {
+   "unit": "cannot",
+   "n": 1,
+   "z_vs_paired": 8.0,
+   "llm_per1k": 2.541,
+   "paired_per1k": 1.018,
+   "base_per1k": 1.0413,
+   "ratio_vs_base": 2.4,
+   "llm_docfrac": 0.675,
+   "base_docfrac": 0.452,
+   "prompts": 77,
+   "models": {
+    "opus": 51,
+    "sonnet": 62,
+    "haiku": 49
+   },
+   "test_llm_docfrac": 0.625,
+   "test_human_docfrac": 0.45,
+   "test_llm_per1k": 2.02,
+   "test_human_per1k": 0.9814,
+   "test_ratio": 2.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Keep dynamic drop semantics by having each function maintain a set of compiler-inserted boolean flags, one for each drop obligation whose status cannot be determined statically.",
+    "opus/1105-api-evolution: What this RFC does is pin down an initial set of changes that *cannot* be made without a major version bump.",
+    "opus/1183-swap-out-jemalloc: - means memory allocated on one side of the FFI boundary cannot safely be freed on the other side, even when both sides believe they are using `malloc`;"
+   ],
+   "human_examples": [
+    "pep-0008: attribute named  , it cannot be accessed by  .",
+    "pep-0011: cannot provide any promises that Python will work on them."
+   ]
+  },
+  {
+   "unit": "authors",
+   "n": 1,
+   "z_vs_paired": 7.95,
+   "llm_per1k": 1.655,
+   "paired_per1k": 0.429,
+   "base_per1k": 0.4355,
+   "ratio_vs_base": 3.8,
+   "llm_docfrac": 0.383,
+   "base_docfrac": 0.182,
+   "prompts": 57,
+   "models": {
+    "opus": 25,
+    "sonnet": 29,
+    "haiku": 38
+   },
+   "test_llm_docfrac": 0.4,
+   "test_human_docfrac": 0.16,
+   "test_llm_per1k": 1.512,
+   "test_human_per1k": 0.2863,
+   "test_ratio": 5.3,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1105-api-evolution: Library authors should use judgment and treat any change to a documented contract as major.",
+    "opus/1183-swap-out-jemalloc: Library authors can opt back into jemalloc, but only on nightly until the attributes stabilize.",
+    "opus/1681-macros-1.1: **Expose a stable AST.** A stable AST would be more convenient for macro authors but would constrain the evolution of the language and compiler."
+   ],
+   "human_examples": [
+    "pep-0001: any of the PEP's co-authors are core developers.",
+    "pep-0012: ReStructuredText provides PEP authors with useful functionality and"
+   ]
+  },
+  {
+   "unit": "written",
+   "n": 1,
+   "z_vs_paired": 7.92,
+   "llm_per1k": 2.16,
+   "paired_per1k": 0.772,
+   "base_per1k": 0.7598,
+   "ratio_vs_base": 2.8,
+   "llm_docfrac": 0.683,
+   "base_docfrac": 0.356,
+   "prompts": 72,
+   "models": {
+    "opus": 49,
+    "sonnet": 53,
+    "haiku": 62
+   },
+   "test_llm_docfrac": 0.633,
+   "test_human_docfrac": 0.375,
+   "test_llm_per1k": 2.02,
+   "test_human_per1k": 0.836,
+   "test_ratio": 2.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1105-api-evolution: **Clients can protect themselves.** Downstream code can be written defensively so that minor changes never break it, for example by avoiding glob imports of external crates or by using fully qualified paths.",
+    "opus/1398-kinds-of-allocators: This ensures that the allocators written against this RFC cannot accidentally be used in a way that is unsound in the presence of a collector.",
+    "opus/1444-union: - Tagged unions written by hand in C, where a separate field records which variant is active."
+   ],
+   "human_examples": [
+    "pep-0001: The draft must be written in PEP style as described",
+    "pep-0006: Following feedback from the BDFL and others, the draft PEP was written"
+   ]
+  },
+  {
+   "unit": "already",
+   "n": 1,
+   "z_vs_paired": 7.72,
+   "llm_per1k": 2.817,
+   "paired_per1k": 1.265,
+   "base_per1k": 1.367,
+   "ratio_vs_base": 2.1,
+   "llm_docfrac": 0.783,
+   "base_docfrac": 0.579,
+   "prompts": 78,
+   "models": {
+    "opus": 67,
+    "sonnet": 66,
+    "haiku": 55
+   },
+   "test_llm_docfrac": 0.742,
+   "test_human_docfrac": 0.625,
+   "test_llm_per1k": 2.649,
+   "test_human_per1k": 1.5131,
+   "test_ratio": 1.8,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: This is exactly the information the borrow checker's move analysis already computes.",
+    "opus/1105-api-evolution: A downstream crate may already implement `Bar` for a type that also implements `Foo`, and the two impls would then overlap.",
+    "opus/1183-swap-out-jemalloc: **Libraries embedded in other programs.** When Rust code is compiled to a `staticlib` or `dylib` and linked into a C, C++, Python, or Ruby program, the host program already has an allocator."
+   ],
+   "human_examples": [
+    "pep-0008: already indented with tabs.",
+    "pep-0011: please perform a search online to see if someone is already providing"
+   ]
+  },
+  {
+   "unit": "several",
+   "n": 1,
+   "z_vs_paired": 7.7,
+   "llm_per1k": 1.609,
+   "paired_per1k": 0.439,
+   "base_per1k": 0.7131,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.654,
+   "base_docfrac": 0.363,
+   "prompts": 74,
+   "models": {
+    "opus": 44,
+    "sonnet": 56,
+    "haiku": 57
+   },
+   "test_llm_docfrac": 0.6,
+   "test_human_docfrac": 0.4,
+   "test_llm_per1k": 1.552,
+   "test_human_per1k": 0.7043,
+   "test_ratio": 2.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1105-api-evolution: Several possible language features would turn major changes into minor ones:",
+    "opus/1183-swap-out-jemalloc: jemalloc is a fine allocator with good performance for many workloads, but making it mandatory causes several problems.",
+    "opus/1398-kinds-of-allocators: Several design points deserve explanation."
+   ],
+   "human_examples": [
+    "pep-0001: There are several references in this PEP to the \"Steering Council\" or \"Council\".",
+    "pep-0007: * Python 3.6 to 3.10 use C89 with several select C99 features:"
+   ]
+  },
+  {
+   "unit": "interpreter",
+   "n": 1,
+   "z_vs_paired": 7.7,
+   "llm_per1k": 1.379,
+   "paired_per1k": 0.279,
+   "base_per1k": 0.6816,
+   "ratio_vs_base": 2.0,
+   "llm_docfrac": 0.225,
+   "base_docfrac": 0.168,
+   "prompts": 25,
+   "models": {
+    "opus": 16,
+    "sonnet": 19,
+    "haiku": 19
+   },
+   "test_llm_docfrac": 0.342,
+   "test_human_docfrac": 0.21,
+   "test_llm_per1k": 2.06,
+   "test_human_per1k": 0.886,
+   "test_ratio": 2.3,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/pep-0242: The simplest implementation adds new numeric types to the interpreter for each supported kind, sharing code with `int` and `float` via C macros or templates.",
+    "opus/pep-0316: It runs on unmodified Python and needs no interpreter changes.",
+    "opus/pep-0362: It does not change the function object or the interpreter."
+   ],
+   "human_examples": [
+    "pep-0001: reference interpreter and their elected Steering Council, as well as developers",
+    "pep-0008: Thus, the interpreter may swap   with  ,"
+   ]
+  },
+  {
+   "unit": "cost",
+   "n": 1,
+   "z_vs_paired": 7.6,
+   "llm_per1k": 1.287,
+   "paired_per1k": 0.225,
+   "base_per1k": 0.207,
+   "ratio_vs_base": 6.2,
+   "llm_docfrac": 0.492,
+   "base_docfrac": 0.137,
+   "prompts": 62,
+   "models": {
+    "opus": 35,
+    "sonnet": 40,
+    "haiku": 43
+   },
+   "test_llm_docfrac": 0.417,
+   "test_human_docfrac": 0.115,
+   "test_llm_per1k": 1.043,
+   "test_human_per1k": 0.1636,
+   "test_ratio": 6.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: **Keep embedded flags but stop zeroing.** This removes the time cost but keeps the size cost and the layout incompatibility, which are the larger problems.",
+    "opus/1105-api-evolution: The cost is mitigated by requiring every such break to have a mechanical fix and by promising tooling support where we can, such as running crater against the ecosystem before a standard library release.",
+    "opus/1513-less-unwinding: Some applications have policies that forbid catching panics, so unwinding only adds cost."
+   ],
+   "human_examples": [
+    "pep-0203: do without this new opcode at the cost of a fair number of   and",
+    "pep-0261: In order to avoid imposing this cost on every"
+   ]
+  },
+  {
+   "unit": "adds",
+   "n": 1,
+   "z_vs_paired": 7.39,
+   "llm_per1k": 1.359,
+   "paired_per1k": 0.322,
+   "base_per1k": 0.2916,
+   "ratio_vs_base": 4.7,
+   "llm_docfrac": 0.558,
+   "base_docfrac": 0.213,
+   "prompts": 64,
+   "models": {
+    "opus": 38,
+    "sonnet": 43,
+    "haiku": 53
+   },
+   "test_llm_docfrac": 0.592,
+   "test_human_docfrac": 0.255,
+   "test_llm_per1k": 1.512,
+   "test_human_per1k": 0.3181,
+   "test_ratio": 4.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: When a type implements `Drop`, the compiler adds a hidden one-byte *drop flag* to its representation.",
+    "opus/1183-swap-out-jemalloc: - adds a few hundred kilobytes to the binary;",
+    "opus/1444-union: - Adds a new kind of type with unsafe field access to the language, increasing the surface area of `unsafe` code."
+   ],
+   "human_examples": [
+    "pep-0001: before a subsequent PEP adds standard library support in a future",
+    "pep-0203: The proposed patch that adds augmented assignment to Python introduces the"
+   ]
+  },
+  {
+   "unit": "programs",
+   "n": 1,
+   "z_vs_paired": 6.91,
+   "llm_per1k": 1.096,
+   "paired_per1k": 0.214,
+   "base_per1k": 0.2386,
+   "ratio_vs_base": 4.6,
+   "llm_docfrac": 0.35,
+   "base_docfrac": 0.143,
+   "prompts": 50,
+   "models": {
+    "opus": 20,
+    "sonnet": 28,
+    "haiku": 36
+   },
+   "test_llm_docfrac": 0.425,
+   "test_human_docfrac": 0.18,
+   "test_llm_per1k": 1.819,
+   "test_human_per1k": 0.368,
+   "test_ratio": 4.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: This simplifies codegen but changes observable behaviour (destructors run earlier, which matters for locks and guards) and rejects some reasonable programs.",
+    "opus/1183-swap-out-jemalloc: **Libraries embedded in other programs.** When Rust code is compiled to a `staticlib` or `dylib` and linked into a C, C++, Python, or Ruby program, the host program already has an allocator.",
+    "opus/1398-kinds-of-allocators: That is fine for most programs, but there are important use cases it does not serve:"
+   ],
+   "human_examples": [
+    "pep-0005: necessary to make changes that modify the behavior of older programs.",
+    "pep-0100: write your programs as pragma line in one the first few comment"
+   ]
+  },
+  {
+   "unit": "later",
+   "n": 1,
+   "z_vs_paired": 6.69,
+   "llm_per1k": 1.392,
+   "paired_per1k": 0.45,
+   "base_per1k": 0.6361,
+   "ratio_vs_base": 2.2,
+   "llm_docfrac": 0.558,
+   "base_docfrac": 0.335,
+   "prompts": 67,
+   "models": {
+    "opus": 44,
+    "sonnet": 43,
+    "haiku": 47
+   },
+   "test_llm_docfrac": 0.475,
+   "test_human_docfrac": 0.335,
+   "test_llm_per1k": 1.338,
+   "test_human_per1k": 0.6316,
+   "test_ratio": 2.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Optimizers can sometimes remove it, but often cannot prove it dead because the destructor check reads it later.",
+    "opus/1398-kinds-of-allocators: Regarding GC: we plan to allow future allocators to integrate themselves with a standardized reflective GC interface, but leave specification of such integration for a later RFC.",
+    "opus/1444-union: Under that later design, union fields are restricted to `Copy` types and `ManuallyDrop<T>`, which makes the non-dropping behaviour explicit at the type level."
+   ],
+   "human_examples": [
+    "pep-0001: disqualify that person from becoming a co-author or PEP-Delegate later on (but",
+    "pep-0008: doubt, choose non-public; it's easier to make it public later than to"
+   ]
+  },
+  {
+   "unit": "second",
+   "n": 1,
+   "z_vs_paired": 6.64,
+   "llm_per1k": 1.221,
+   "paired_per1k": 0.343,
+   "base_per1k": 0.5301,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.471,
+   "base_docfrac": 0.308,
+   "prompts": 72,
+   "models": {
+    "opus": 17,
+    "sonnet": 32,
+    "haiku": 64
+   },
+   "test_llm_docfrac": 0.5,
+   "test_human_docfrac": 0.355,
+   "test_llm_per1k": 1.177,
+   "test_human_per1k": 0.6225,
+   "test_ratio": 1.9,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Unsafe code that moves a value out with `ptr::read` and later lets the original location go out of scope would, today, run the destructor a second time on a zeroed value, which for most types happens to be harmless.",
+    "opus/1183-swap-out-jemalloc: Bringing a second one in:",
+    "opus/1398-kinds-of-allocators: `extend` returns the combined layout and the offset at which the second component begins."
+   ],
+   "human_examples": [
+    "pep-0012: Your email address may appear second (or it can be omitted) and if",
+    "pep-0042: The second issue was related to the self.lines attribute, which was"
+   ]
+  },
+  {
+   "unit": "layout",
+   "n": 1,
+   "z_vs_paired": 6.45,
+   "llm_per1k": 1.261,
+   "paired_per1k": 0.397,
+   "base_per1k": 0.1969,
+   "ratio_vs_base": 6.4,
+   "llm_docfrac": 0.204,
+   "base_docfrac": 0.071,
+   "prompts": 27,
+   "models": {
+    "opus": 15,
+    "sonnet": 18,
+    "haiku": 16
+   },
+   "test_llm_docfrac": 0.075,
+   "test_human_docfrac": 0.08,
+   "test_llm_per1k": 0.147,
+   "test_human_per1k": 0.1181,
+   "test_ratio": 1.2,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: **Representation.** Types that implement `Drop` cannot have the same layout as the corresponding C struct.",
+    "opus/1105-api-evolution: - How should changes involving `unsafe` contracts and memory layout be classified?",
+    "opus/1398-kinds-of-allocators: Provide a high-level abstraction over the layout of an object in memory."
+   ],
+   "human_examples": [
+    "pep-0253: all Python type objects have the same memory layout.)",
+    "pep-0258: Each Stylist transform implements a different layout or style; thus"
+   ]
+  },
+  {
+   "unit": "keeps",
+   "n": 1,
+   "z_vs_paired": 6.3,
+   "llm_per1k": 0.886,
+   "paired_per1k": 0.064,
+   "base_per1k": 0.048,
+   "ratio_vs_base": 18.5,
+   "llm_docfrac": 0.408,
+   "base_docfrac": 0.043,
+   "prompts": 64,
+   "models": {
+    "opus": 26,
+    "sonnet": 19,
+    "haiku": 53
+   },
+   "test_llm_docfrac": 0.417,
+   "test_human_docfrac": 0.045,
+   "test_llm_per1k": 0.896,
+   "test_human_per1k": 0.05,
+   "test_ratio": 17.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: **Keep embedded flags but stop zeroing.** This removes the time cost but keeps the size cost and the layout incompatibility, which are the larger problems.",
+    "opus/1681-macros-1.1: This restriction keeps the separation between \"code that runs in the compiler\" and \"code that runs in the program\" clear, and simplifies cross-compilation, since the crate always targets the host.",
+    "opus/1728-north-star: This keeps the roadmap RFC from turning into a design discussion and leaves teams free to choose their own approach."
+   ],
+   "human_examples": [
+    "pep-0268: \"batteries included\" role and also keeps Python at the leading edge of",
+    "pep-0269: shows that it keeps track of whether the tree is a suite or an"
+   ]
+  },
+  {
+   "unit": "small",
+   "n": 1,
+   "z_vs_paired": 6.08,
+   "llm_per1k": 1.563,
+   "paired_per1k": 0.654,
+   "base_per1k": 0.4557,
+   "ratio_vs_base": 3.4,
+   "llm_docfrac": 0.55,
+   "base_docfrac": 0.272,
+   "prompts": 69,
+   "models": {
+    "opus": 35,
+    "sonnet": 45,
+    "haiku": 52
+   },
+   "test_llm_docfrac": 0.542,
+   "test_human_docfrac": 0.23,
+   "test_llm_per1k": 1.458,
+   "test_human_per1k": 0.3181,
+   "test_ratio": 4.6,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1105-api-evolution: We need a principled line that separates *major* changes, which require a major version bump, from *minor* changes, which are allowed in a minor release even though they can, in rare cases, require small downstream fixes",
+    "opus/1444-union: Beyond FFI, unions are also useful within Rust for space-efficient data structures where an external tag indicates which field is live, for example in small-string optimizations or in implementations of `Option`-like typ",
+    "opus/1574-more-api-documentation-conventions: We think the consistency is worth the small cost."
+   ],
+   "human_examples": [
+    "pep-0008: - While sometimes it's okay to put an if/for/while with a small body",
+    "pep-0011: the zoo of versions small."
+   ]
+  },
+  {
+   "unit": "nothing",
+   "n": 1,
+   "z_vs_paired": 6.01,
+   "llm_per1k": 1.044,
+   "paired_per1k": 0.311,
+   "base_per1k": 0.2575,
+   "ratio_vs_base": 4.1,
+   "llm_docfrac": 0.467,
+   "base_docfrac": 0.202,
+   "prompts": 63,
+   "models": {
+    "opus": 49,
+    "sonnet": 50,
+    "haiku": 13
+   },
+   "test_llm_docfrac": 0.4,
+   "test_human_docfrac": 0.22,
+   "test_llm_per1k": 1.003,
+   "test_human_per1k": 0.2726,
+   "test_ratio": 3.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: If `consume` took `x`, the source was zeroed and nothing happens at the end of scope.",
+    "opus/1105-api-evolution: - **Adding a private field when at least one private field already exists.** Downstream code cannot build the struct with a literal or match all of its fields anyway, so nothing observable changes.",
+    "opus/1398-kinds-of-allocators: Collections always know the size of what they allocated, so requiring it costs callers nothing."
+   ],
+   "human_examples": [
+    "pep-0205: Nothing.",
+    "pep-0211: Do nothing --- keep Python simple."
+   ]
+  },
+  {
+   "unit": "whose",
+   "n": 1,
+   "z_vs_paired": 6.0,
+   "llm_per1k": 1.09,
+   "paired_per1k": 0.343,
+   "base_per1k": 0.2928,
+   "ratio_vs_base": 3.7,
+   "llm_docfrac": 0.463,
+   "base_docfrac": 0.167,
+   "prompts": 63,
+   "models": {
+    "opus": 38,
+    "sonnet": 38,
+    "haiku": 35
+   },
+   "test_llm_docfrac": 0.45,
+   "test_human_docfrac": 0.135,
+   "test_llm_per1k": 1.084,
+   "test_human_per1k": 0.1999,
+   "test_ratio": 5.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Keep dynamic drop semantics by having each function maintain a set of compiler-inserted boolean flags, one for each drop obligation whose status cannot be determined statically.",
+    "opus/1105-api-evolution: - **Adding a private field to a struct whose fields are currently all public.** Downstream code that constructs the struct with a literal or destructures it fully will break.",
+    "opus/1183-swap-out-jemalloc: **Performance regression for libraries.** Some libraries that are currently fast because of jemalloc will get slower on platforms whose system allocator is weaker, notably older glibc versions and Windows."
+   ],
+   "human_examples": [
+    "pep-0008: tuple whose items traditionally have names like  ,",
+    "pep-0011: whose *extended support* phase has not yet expired."
+   ]
+  },
+  {
+   "unit": "ordinary",
+   "n": 1,
+   "z_vs_paired": 5.85,
+   "llm_per1k": 0.729,
+   "paired_per1k": 0.086,
+   "base_per1k": 0.106,
+   "ratio_vs_base": 6.9,
+   "llm_docfrac": 0.321,
+   "base_docfrac": 0.06,
+   "prompts": 47,
+   "models": {
+    "opus": 23,
+    "sonnet": 22,
+    "haiku": 32
+   },
+   "test_llm_docfrac": 0.208,
+   "test_human_docfrac": 0.08,
+   "test_llm_per1k": 0.615,
+   "test_human_per1k": 0.0954,
+   "test_ratio": 6.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: Collections rely on this for memory safety, so it cannot be left to an ordinary trait.",
+    "opus/1444-union: Everywhere else, including `let union = ...;` and `fn union() {}`, it remains an ordinary identifier.",
+    "opus/1681-macros-1.1: It may export only procedural macro definitions; it may not export ordinary functions, types, or traits for use at runtime."
+   ],
+   "human_examples": [
+    "pep-0012: For ordinary text, use ordinary 'single-quotes' or",
+    "pep-0225: example, in MatLab, the ordinary   is used for objectwise operation while"
+   ]
+  },
+  {
+   "unit": "third",
+   "n": 1,
+   "z_vs_paired": 5.79,
+   "llm_per1k": 1.116,
+   "paired_per1k": 0.386,
+   "base_per1k": 0.4317,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.463,
+   "base_docfrac": 0.198,
+   "prompts": 63,
+   "models": {
+    "opus": 21,
+    "sonnet": 33,
+    "haiku": 57
+   },
+   "test_llm_docfrac": 0.417,
+   "test_human_docfrac": 0.245,
+   "test_llm_per1k": 0.883,
+   "test_human_per1k": 0.4271,
+   "test_ratio": 2.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1574-more-api-documentation-conventions: Write the summary in the third person indicative: \"Returns the length of the string,\" not \"Return the length\" or \"This function returns the length.\"",
+    "opus/1969-cargo-prepublish: This adds a third override mechanism alongside `paths` and `[replace]`.",
+    "opus/1985-tiered-browser-support: **Use a third-party definition** such as a \"last two versions\" query."
+   ],
+   "human_examples": [
+    "pep-0008: Related third party imports.",
+    "pep-0012: and third-level section titles with \"'\" (single quotes or"
+   ]
+  },
+  {
+   "unit": "gives",
+   "n": 1,
+   "z_vs_paired": 5.71,
+   "llm_per1k": 0.755,
+   "paired_per1k": 0.15,
+   "base_per1k": 0.1666,
+   "ratio_vs_base": 4.5,
+   "llm_docfrac": 0.358,
+   "base_docfrac": 0.124,
+   "prompts": 53,
+   "models": {
+    "opus": 25,
+    "sonnet": 26,
+    "haiku": 35
+   },
+   "test_llm_docfrac": 0.317,
+   "test_human_docfrac": 0.2,
+   "test_llm_per1k": 0.615,
+   "test_human_per1k": 0.2363,
+   "test_ratio": 2.6,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1574-more-api-documentation-conventions: Writing these conventions down gives reviewers something to point at, gives newcomers a template, and lets tooling assume more about the shape of documentation.",
+    "opus/1681-macros-1.1: This is slow to compile, gives poor error messages with spans pointing into generated files, and breaks whenever the language grows new syntax that `syntex` has not yet learned.",
+    "opus/1682-field-init-shorthand: This gives a compact initialization syntax with less duplication."
+   ],
+   "human_examples": [
+    "pep-0001: This gives the author a chance to flesh out the draft",
+    "pep-0007: This document gives coding conventions for the C code comprising the C"
+   ]
+  },
+  {
+   "unit": "leaves",
+   "n": 1,
+   "z_vs_paired": 5.61,
+   "llm_per1k": 0.696,
+   "paired_per1k": 0.054,
+   "base_per1k": 0.077,
+   "ratio_vs_base": 9.0,
+   "llm_docfrac": 0.346,
+   "base_docfrac": 0.071,
+   "prompts": 55,
+   "models": {
+    "opus": 19,
+    "sonnet": 29,
+    "haiku": 35
+   },
+   "test_llm_docfrac": 0.333,
+   "test_human_docfrac": 0.08,
+   "test_llm_per1k": 0.629,
+   "test_human_per1k": 0.0818,
+   "test_ratio": 7.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1681-macros-1.1: **Wait for macros 2.0.** This is the cleanest outcome but leaves the ecosystem on nightly for an unknown period.",
+    "opus/1728-north-star: This keeps the roadmap RFC from turning into a design discussion and leaves teams free to choose their own approach.",
+    "opus/1857-stabilize-drop-order: It forces careful authors to write defensive code (often with `ManuallyDrop` or `Option` plus manual `take()`), and leaves careless authors with code that works only by accident."
+   ],
+   "human_examples": [
+    "pep-0335: determines that the second operand is needed, it leaves the first",
+    "pep-0340: finishes, the interpreter leaves the block statement."
+   ]
+  },
+  {
+   "unit": "inside",
+   "n": 1,
+   "z_vs_paired": 5.44,
+   "llm_per1k": 1.254,
+   "paired_per1k": 0.525,
+   "base_per1k": 0.5604,
+   "ratio_vs_base": 2.2,
+   "llm_docfrac": 0.367,
+   "base_docfrac": 0.239,
+   "prompts": 51,
+   "models": {
+    "opus": 36,
+    "sonnet": 26,
+    "haiku": 26
+   },
+   "test_llm_docfrac": 0.375,
+   "test_human_docfrac": 0.25,
+   "test_llm_per1k": 1.07,
+   "test_human_per1k": 0.6043,
+   "test_ratio": 1.8,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Because the flag lives inside the value, it also appears in every enum variant, every `Box`, and every collection.",
+    "opus/1574-more-api-documentation-conventions: - Use `#` as the top-level heading inside a doc comment.",
+    "opus/1682-field-init-shorthand: Inside `macro_rules!`, a field shorthand whose identifier comes from a macro argument resolves with the hygiene context of that identifier, just as the longhand form does."
+   ],
+   "human_examples": [
+    "pep-0007: the following left paren; no spaces inside the paren; braces are",
+    "pep-0008: using Python's implicit line joining inside parentheses, brackets and"
+   ]
+  },
+  {
+   "unit": "runs",
+   "n": 1,
+   "z_vs_paired": 5.41,
+   "llm_per1k": 0.67,
+   "paired_per1k": 0.129,
+   "base_per1k": 0.159,
+   "ratio_vs_base": 4.2,
+   "llm_docfrac": 0.263,
+   "base_docfrac": 0.118,
+   "prompts": 38,
+   "models": {
+    "opus": 24,
+    "sonnet": 19,
+    "haiku": 20
+   },
+   "test_llm_docfrac": 0.192,
+   "test_human_docfrac": 0.135,
+   "test_llm_per1k": 0.589,
+   "test_human_per1k": 0.159,
+   "test_ratio": 3.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: When the value goes out of scope, the destructor runs only if the flag is set.",
+    "opus/1105-api-evolution: - Should there be a formal notion of \"breakage budget\" for the standard library, measured by crater runs?",
+    "opus/1513-less-unwinding: The panic hook still runs first, so the panic message is printed."
+   ],
+   "human_examples": [
+    "pep-0101: The build process runs in multiple stages, with each stage's output being",
+    "pep-0102: For each installation, he runs the full regression suite"
+   ]
+  },
+  {
+   "unit": "per",
+   "n": 1,
+   "z_vs_paired": 5.4,
+   "llm_per1k": 0.965,
+   "paired_per1k": 0.332,
+   "base_per1k": 0.414,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.304,
+   "base_docfrac": 0.207,
+   "prompts": 45,
+   "models": {
+    "opus": 31,
+    "sonnet": 28,
+    "haiku": 14
+   },
+   "test_llm_docfrac": 0.233,
+   "test_human_docfrac": 0.255,
+   "test_llm_per1k": 0.615,
+   "test_human_per1k": 0.4226,
+   "test_ratio": 1.5,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Arrays of droppable structs pay this per element.",
+    "opus/1398-kinds-of-allocators: Allow libraries (in libstd and elsewhere) to be generic with respect to the particular allocator, to support distinct, stateful, per-container allocators.",
+    "opus/1444-union: - Generate per-platform definitions with `bindgen`, which then has to emit the workarounds above."
+   ],
+   "human_examples": [
+    "pep-0008: Use 4 spaces per indentation level.",
+    "pep-0011: which varies per-product, per-version, per-edition and per-channel."
+   ]
+  },
+  {
+   "unit": "lets",
+   "n": 1,
+   "z_vs_paired": 5.36,
+   "llm_per1k": 0.624,
+   "paired_per1k": 0.096,
+   "base_per1k": 0.0656,
+   "ratio_vs_base": 9.5,
+   "llm_docfrac": 0.308,
+   "base_docfrac": 0.049,
+   "prompts": 48,
+   "models": {
+    "opus": 35,
+    "sonnet": 19,
+    "haiku": 20
+   },
+   "test_llm_docfrac": 0.217,
+   "test_human_docfrac": 0.03,
+   "test_llm_per1k": 0.468,
+   "test_human_per1k": 0.0409,
+   "test_ratio": 11.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Unsafe code that moves a value out with `ptr::read` and later lets the original location go out of scope would, today, run the destructor a second time on a zeroed value, which for most types happens to be harmless.",
+    "opus/1398-kinds-of-allocators: Taking `&mut self` lets them do so without interior mutability.",
+    "opus/1513-less-unwinding: It lets a server recover from a bug in one request handler, and it ensures that resources owned by a dying thread are released."
+   ],
+   "human_examples": [
+    "pep-0246: this PEP lets either case be supported non-invasively with regard",
+    "pep-0266: If it does not raise   and instead lets the"
+   ]
+  },
+  {
+   "unit": "place",
+   "n": 1,
+   "z_vs_paired": 5.25,
+   "llm_per1k": 1.234,
+   "paired_per1k": 0.536,
+   "base_per1k": 0.5743,
+   "ratio_vs_base": 2.1,
+   "llm_docfrac": 0.404,
+   "base_docfrac": 0.321,
+   "prompts": 54,
+   "models": {
+    "opus": 34,
+    "sonnet": 28,
+    "haiku": 35
+   },
+   "test_llm_docfrac": 0.367,
+   "test_human_docfrac": 0.34,
+   "test_llm_per1k": 0.99,
+   "test_human_per1k": 0.6043,
+   "test_ratio": 1.6,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1105-api-evolution: If nearly any change can break *some* code, then strict \"no breakage\" rules would freeze libraries in place.",
+    "opus/1398-kinds-of-allocators: **`usable_size` and the in-place methods** let a `Vec` take advantage of slack space the allocator happens to provide, and let it try to grow without copying.",
+    "opus/1444-union: A union declaration uses the same syntax as a struct, with `union` in place of `struct`:"
+   ],
+   "human_examples": [
+    "pep-0001: Now, PEP-Delegate is used in place of BDFL-Delegate.",
+    "pep-0008: control-L as a form feed and will show another glyph in its place."
+   ]
+  },
+  {
+   "unit": "remain",
+   "n": 1,
+   "z_vs_paired": 5.16,
+   "llm_per1k": 0.597,
+   "paired_per1k": 0.107,
+   "base_per1k": 0.2285,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.321,
+   "base_docfrac": 0.157,
+   "prompts": 58,
+   "models": {
+    "opus": 18,
+    "sonnet": 28,
+    "haiku": 31
+   },
+   "test_llm_docfrac": 0.25,
+   "test_human_docfrac": 0.15,
+   "test_llm_per1k": 0.508,
+   "test_human_per1k": 0.1863,
+   "test_ratio": 2.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: - Should `__rust_usable_size` and `__rust_reallocate_inplace` remain mandatory, or should they get default implementations?",
+    "opus/1513-less-unwinding: A call that may unwind cannot be freely reordered past code with side effects, and values that must be dropped on unwind must remain live in a form the landing pad can use.",
+    "opus/1560-name-resolution: When no progress can be made and some imports remain indeterminate, those imports are errors (unresolved or cyclic)."
+   ],
+   "human_examples": [
+    "pep-0008: When the code needs to remain compatible with older versions of",
+    "pep-0011: ended (but continue to remain available in revision control)."
+   ]
+  },
+  {
+   "unit": "level explanation",
+   "n": 2,
+   "z_vs_paired": 5.12,
+   "llm_per1k": 1.3,
+   "paired_per1k": 0.6,
+   "base_per1k": 0.3256,
+   "ratio_vs_base": 4.0,
+   "llm_docfrac": 0.412,
+   "base_docfrac": 0.15,
+   "prompts": 43,
+   "models": {
+    "opus": 31,
+    "sonnet": 25,
+    "haiku": 43
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.15,
+   "test_llm_per1k": 0.963,
+   "test_human_per1k": 0.3271,
+   "test_ratio": 2.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1598-generic_associated_types: # Guide-level explanation",
+    "opus/1733-trait-alias: # Guide-level explanation",
+    "opus/1946-intra-rustdoc-links: # Guide-level explanation"
+   ],
+   "human_examples": [
+    "2071-impl-trait-existential-types: ## Guide-Level Explanation",
+    "2089-implied-bounds: ## Guide-Level Explanation"
+   ]
+  },
+  {
+   "unit": "compiler",
+   "n": 1,
+   "z_vs_paired": 5.07,
+   "llm_per1k": 3.815,
+   "paired_per1k": 2.594,
+   "base_per1k": 1.6648,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.508,
+   "base_docfrac": 0.351,
+   "prompts": 51,
+   "models": {
+    "opus": 39,
+    "sonnet": 42,
+    "haiku": 41
+   },
+   "test_llm_docfrac": 0.458,
+   "test_human_docfrac": 0.355,
+   "test_llm_per1k": 3.505,
+   "test_human_per1k": 1.7902,
+   "test_ratio": 2.0,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Keep dynamic drop semantics by having each function maintain a set of compiler-inserted boolean flags, one for each drop obligation whose status cannot be determined statically.",
+    "opus/1183-swap-out-jemalloc: Add compiler support for overriding the default allocator, so that a Rust program can use a different allocator by default.",
+    "opus/1398-kinds-of-allocators: - **Arenas and bump allocators.** A compiler, parser or game engine often allocates many short-lived objects with a common lifetime."
+   ],
+   "human_examples": [
+    "pep-0007: * Don't use compiler-specific extensions, such as those of GCC or MSVC.",
+    "pep-0011: source tree 3 years after the extended support for the compiler has"
+   ]
+  },
+  {
+   "unit": "programmers",
+   "n": 1,
+   "z_vs_paired": 5.07,
+   "llm_per1k": 0.67,
+   "paired_per1k": 0.172,
+   "base_per1k": 0.2436,
+   "ratio_vs_base": 2.7,
+   "llm_docfrac": 0.246,
+   "base_docfrac": 0.139,
+   "prompts": 36,
+   "models": {
+    "opus": 9,
+    "sonnet": 21,
+    "haiku": 29
+   },
+   "test_llm_docfrac": 0.308,
+   "test_human_docfrac": 0.11,
+   "test_llm_per1k": 0.816,
+   "test_human_per1k": 0.1681,
+   "test_ratio": 4.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/2195-really-tagged-unions: This matches the idiom most C programmers would write by hand:",
+    "opus/2325-stable-simd: - C and C++ programmers moving to Rust find they can't port their hand-written SIMD kernels.",
+    "opus/2388-try-expr: - Programmers from Java, C++, JavaScript, and C# associate `try` with exception handling, where a `try` block is paired with `catch`."
+   ],
+   "human_examples": [
+    "pep-0008: helps programmers familiar with that.)",
+    "pep-0012: Many programmers who are familiar with TeX often write quotation marks"
+   ]
+  },
+  {
+   "unit": "visible",
+   "n": 1,
+   "z_vs_paired": 5.01,
+   "llm_per1k": 0.571,
+   "paired_per1k": 0.107,
+   "base_per1k": 0.1994,
+   "ratio_vs_base": 2.9,
+   "llm_docfrac": 0.258,
+   "base_docfrac": 0.104,
+   "prompts": 45,
+   "models": {
+    "opus": 13,
+    "sonnet": 23,
+    "haiku": 26
+   },
+   "test_llm_docfrac": 0.292,
+   "test_human_docfrac": 0.095,
+   "test_llm_per1k": 0.762,
+   "test_human_per1k": 0.1863,
+   "test_ratio": 4.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1560-name-resolution: - Private imports are not visible to glob imports in child modules, though private items are, because of how privacy and globs interact in the old resolver.",
+    "opus/1728-north-star: It has three aims: give contributors a shared vision of where the project is going, make the path toward that vision visible, and take time to recognize what we have accomplished.",
+    "opus/1969-cargo-prepublish: **A staging registry.** crates.io could offer a staging area where unreleased crates are uploaded but not visible to the public."
+   ],
+   "human_examples": [
+    "pep-0007: * Occasionally an \"internal\" function has to be visible to the loader;",
+    "pep-0008: Names that are visible to the user as public parts of the API should"
+   ]
+  },
+  {
+   "unit": "position",
+   "n": 1,
+   "z_vs_paired": 5.01,
+   "llm_per1k": 0.538,
+   "paired_per1k": 0.075,
+   "base_per1k": 0.2411,
+   "ratio_vs_base": 2.2,
+   "llm_docfrac": 0.179,
+   "base_docfrac": 0.12,
+   "prompts": 27,
+   "models": {
+    "opus": 13,
+    "sonnet": 16,
+    "haiku": 14
+   },
+   "test_llm_docfrac": 0.217,
+   "test_human_docfrac": 0.165,
+   "test_llm_per1k": 0.562,
+   "test_human_per1k": 0.3726,
+   "test_ratio": 1.5,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1682-field-init-shorthand: Context almost always disambiguates, since a struct expression appears in expression position, and the pattern form already means the analogous thing.",
+    "opus/2089-implied-bounds: - How should implied bounds interact with trait objects and `impl Trait` in argument position?",
+    "opus/2091-inline-semantic: Inside an ordinary function, it is the position of the `Location::caller()` call itself."
+   ],
+   "human_examples": [
+    "pep-0008: explicit position on how (or whether) to further visually distinguish such",
+    "pep-0209: detected photon, such as its arrival time, its position on the"
+   ]
+  },
+  {
+   "unit": "explanation",
+   "n": 1,
+   "z_vs_paired": 4.99,
+   "llm_per1k": 1.366,
+   "paired_per1k": 0.665,
+   "base_per1k": 0.4077,
+   "ratio_vs_base": 3.3,
+   "llm_docfrac": 0.433,
+   "base_docfrac": 0.194,
+   "prompts": 44,
+   "models": {
+    "opus": 32,
+    "sonnet": 29,
+    "haiku": 43
+   },
+   "test_llm_docfrac": 0.308,
+   "test_human_docfrac": 0.21,
+   "test_llm_per1k": 0.976,
+   "test_human_per1k": 0.4089,
+   "test_ratio": 2.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: Several design points deserve explanation.",
+    "opus/1598-generic_associated_types: # Guide-level explanation",
+    "opus/1733-trait-alias: # Guide-level explanation"
+   ],
+   "human_examples": [
+    "pep-0100: For an explanation of possible values for errors see the Codec",
+    "pep-0253: Explanation: the   slot of a regular type object (such as"
+   ]
+  },
+  {
+   "unit": "programmer",
+   "n": 1,
+   "z_vs_paired": 4.91,
+   "llm_per1k": 0.755,
+   "paired_per1k": 0.247,
+   "base_per1k": 0.1944,
+   "ratio_vs_base": 3.9,
+   "llm_docfrac": 0.233,
+   "base_docfrac": 0.11,
+   "prompts": 34,
+   "models": {
+    "opus": 10,
+    "sonnet": 19,
+    "haiku": 27
+   },
+   "test_llm_docfrac": 0.2,
+   "test_human_docfrac": 0.12,
+   "test_llm_per1k": 0.749,
+   "test_human_per1k": 0.1727,
+   "test_ratio": 4.3,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1682-field-init-shorthand: Destructuring and construction are meant to be duals of each other, and the asymmetry between them is a small surprise that every Rust programmer runs into eventually.",
+    "opus/2005-match-ergonomics: Today, matching a value behind a reference forces the programmer to write `&` patterns and `ref` bindings so the patterns line up with the type being matched:",
+    "opus/2582-raw-reference-mir-operator: In each case, the programmer never wanted a reference."
+   ],
+   "human_examples": [
+    "pep-0205: much dependence on the programmer calling   before",
+    "pep-0209: The J language allows the programmer to"
+   ]
+  },
+  {
+   "unit": "describes",
+   "n": 1,
+   "z_vs_paired": 4.9,
+   "llm_per1k": 0.611,
+   "paired_per1k": 0.15,
+   "base_per1k": 0.2638,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.283,
+   "base_docfrac": 0.189,
+   "prompts": 46,
+   "models": {
+    "opus": 20,
+    "sonnet": 12,
+    "haiku": 36
+   },
+   "test_llm_docfrac": 0.167,
+   "test_human_docfrac": 0.16,
+   "test_llm_per1k": 0.268,
+   "test_human_per1k": 0.2272,
+   "test_ratio": 1.2,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: The design describes a way to add such a feature in the future while ensuring that clients do not accidentally opt in and risk unsound behavior.",
+    "opus/1728-north-star: Each one describes a concrete obstacle Rust faces, phrased from the point of view of the people it affects.",
+    "opus/1985-tiered-browser-support: This RFC establishes tiers of browser support, modelled on the compiler's platform tiers, and describes what each tier promises."
+   ],
+   "human_examples": [
+    "pep-0001: A **Standards Track** PEP describes a new feature or implementation",
+    "pep-0005: include a section on backwards compatibility that describes in"
+   ]
+  },
+  {
+   "unit": "existing code",
+   "n": 2,
+   "z_vs_paired": 4.89,
+   "llm_per1k": 0.657,
+   "paired_per1k": 0.182,
+   "base_per1k": 0.1426,
+   "ratio_vs_base": 4.6,
+   "llm_docfrac": 0.283,
+   "base_docfrac": 0.104,
+   "prompts": 42,
+   "models": {
+    "opus": 22,
+    "sonnet": 23,
+    "haiku": 23
+   },
+   "test_llm_docfrac": 0.308,
+   "test_human_docfrac": 0.14,
+   "test_llm_per1k": 0.589,
+   "test_human_per1k": 0.1954,
+   "test_ratio": 3.0,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: Because the parameter is defaulted, existing code that names `Vec<T>` continues to compile.",
+    "opus/1444-union: Provide native support for C-compatible unions, defined with a new contextual keyword `union`, without breaking any existing code that uses `union` as an identifier.",
+    "opus/1560-name-resolution: The exception is that globs now import private items from ancestors, which could in principle create ambiguity in existing code."
+   ],
+   "human_examples": [
+    "pep-0212: As no keywords are added and the semantics of existing code",
+    "pep-0237: , it is assumed that this won't break existing code."
+   ]
+  },
+  {
+   "unit": "raises",
+   "n": 1,
+   "z_vs_paired": 4.89,
+   "llm_per1k": 0.565,
+   "paired_per1k": 0.118,
+   "base_per1k": 0.2322,
+   "ratio_vs_base": 2.4,
+   "llm_docfrac": 0.192,
+   "base_docfrac": 0.091,
+   "prompts": 25,
+   "models": {
+    "opus": 20,
+    "sonnet": 13,
+    "haiku": 13
+   },
+   "test_llm_docfrac": 0.25,
+   "test_human_docfrac": 0.135,
+   "test_llm_per1k": 0.749,
+   "test_human_per1k": 0.1817,
+   "test_ratio": 4.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1598-generic_associated_types: That raises hard design questions in Rust: how to handle partial application, how inference should work, what syntax to use, and how it interacts with lifetimes and traits.",
+    "opus/2904-compiler-major-change-process: If nobody raises a concern during that time, the MCP is accepted, the issue is labelled as such, and the author may proceed with implementation.",
+    "opus/pep-0242: Integer overflow in a non-default integer kind raises `OverflowError`; it does not promote automatically to `long`."
+   ],
+   "human_examples": [
+    "pep-0100: (or raises an exception in case the conversion fails).",
+    "pep-0218: present, this method raises a"
+   ]
+  },
+  {
+   "unit": "remains",
+   "n": 1,
+   "z_vs_paired": 4.86,
+   "llm_per1k": 0.558,
+   "paired_per1k": 0.118,
+   "base_per1k": 0.1452,
+   "ratio_vs_base": 3.8,
+   "llm_docfrac": 0.275,
+   "base_docfrac": 0.12,
+   "prompts": 49,
+   "models": {
+    "opus": 15,
+    "sonnet": 30,
+    "haiku": 21
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.13,
+   "test_llm_per1k": 0.602,
+   "test_human_per1k": 0.1272,
+   "test_ratio": 4.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1444-union: Everywhere else, including `let union = ...;` and `fn union() {}`, it remains an ordinary identifier.",
+    "opus/1681-macros-1.1: Everything else \u2014 function-like procedural macros, attribute procedural macros, and the structured token API \u2014 remains unstable.",
+    "opus/1682-field-init-shorthand: Tuple-struct initialization with braces and explicit indices (`Tuple { 0: a, 1: b }`) remains valid in its longhand form."
+   ],
+   "human_examples": [
+    "pep-0101: If what remains are (mostly) green buildbots,",
+    "pep-0212: remains unchanged, all three solutions can be implemented"
+   ]
+  },
+  {
+   "unit": "field",
+   "n": 1,
+   "z_vs_paired": 4.72,
+   "llm_per1k": 2.554,
+   "paired_per1k": 1.629,
+   "base_per1k": 1.0009,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.333,
+   "base_docfrac": 0.185,
+   "prompts": 40,
+   "models": {
+    "opus": 35,
+    "sonnet": 22,
+    "haiku": 23
+   },
+   "test_llm_docfrac": 0.258,
+   "test_human_docfrac": 0.19,
+   "test_llm_per1k": 2.194,
+   "test_human_per1k": 1.0587,
+   "test_ratio": 2.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: At each program point, a local variable (or a field path within one, such as `x.a.b`) is either *initialized*, *uninitialized*, or *maybe initialized*.",
+    "opus/1105-api-evolution: - **Adding a private field to a struct whose fields are currently all public.** Downstream code that constructs the struct with a literal or destructures it fully will break.",
+    "opus/1444-union: - Tagged unions written by hand in C, where a separate field records which variant is active."
+   ],
+   "human_examples": [
+    "pep-0001: The sponsor of a PEP is recorded in the \"Sponsor:\" field of the",
+    "pep-0012: in brackets should either be replaced or have the field removed if"
+   ]
+  },
+  {
+   "unit": "reference",
+   "n": 1,
+   "z_vs_paired": 4.71,
+   "llm_per1k": 3.743,
+   "paired_per1k": 2.615,
+   "base_per1k": 1.7368,
+   "ratio_vs_base": 2.2,
+   "llm_docfrac": 0.821,
+   "base_docfrac": 0.53,
+   "prompts": 77,
+   "models": {
+    "opus": 62,
+    "sonnet": 61,
+    "haiku": 74
+   },
+   "test_llm_docfrac": 0.692,
+   "test_human_docfrac": 0.54,
+   "test_llm_per1k": 2.889,
+   "test_human_per1k": 1.7857,
+   "test_ratio": 1.6,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1105-api-evolution: A short, linkable reference in the API guidelines should help.",
+    "opus/1444-union: Reading a field is `unsafe`, because the compiler cannot know which field was last written, and reinterpreting bytes as another type may produce an invalid value (for example, a `bool` that is neither 0 nor 1, or an inva",
+    "opus/1574-more-api-documentation-conventions: - Use reference-style links, with the definitions collected at the end of the doc comment, so that the prose stays readable in source:"
+   ],
+   "human_examples": [
+    "pep-0001: reference interpreter and their elected Steering Council, as well as developers",
+    "pep-0012: For reference, here are all of the possible header fields (everything"
+   ]
+  },
+  {
+   "unit": "depends",
+   "n": 1,
+   "z_vs_paired": 4.68,
+   "llm_per1k": 0.657,
+   "paired_per1k": 0.204,
+   "base_per1k": 0.1931,
+   "ratio_vs_base": 3.4,
+   "llm_docfrac": 0.308,
+   "base_docfrac": 0.127,
+   "prompts": 50,
+   "models": {
+    "opus": 18,
+    "sonnet": 24,
+    "haiku": 32
+   },
+   "test_llm_docfrac": 0.358,
+   "test_human_docfrac": 0.165,
+   "test_llm_per1k": 0.709,
+   "test_human_per1k": 0.1999,
+   "test_ratio": 3.5,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: - must be `#![no_std]`, or must otherwise avoid depending on `liballoc`, because `liballoc` depends on it and the dependency cannot be circular;",
+    "opus/1513-less-unwinding: **Runtime requirements.** Unwinding depends on platform support: `libunwind` or `libgcc_s` on most Unix systems, SEH on Windows.",
+    "opus/1857-stabilize-drop-order: In practice, a great deal of real Rust code depends on drop order:"
+   ],
+   "human_examples": [
+    "pep-0001: PEP depends on.",
+    "pep-0012: - For Standards Track PEPs, if your feature depends on the acceptance"
+   ]
+  },
+  {
+   "unit": "wants",
+   "n": 1,
+   "z_vs_paired": 4.68,
+   "llm_per1k": 0.657,
+   "paired_per1k": 0.204,
+   "base_per1k": 0.1578,
+   "ratio_vs_base": 4.2,
+   "llm_docfrac": 0.329,
+   "base_docfrac": 0.114,
+   "prompts": 51,
+   "models": {
+    "opus": 23,
+    "sonnet": 28,
+    "haiku": 28
+   },
+   "test_llm_docfrac": 0.35,
+   "test_human_docfrac": 0.12,
+   "test_llm_per1k": 0.682,
+   "test_human_per1k": 0.1772,
+   "test_ratio": 3.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: A user who wants the system allocator in an executable writes:",
+    "opus/1398-kinds-of-allocators: Code that wants to handle allocation failure gracefully can do so.",
+    "opus/1513-less-unwinding: A user who wants the smallest possible binary will eventually want a standard library compiled with `abort`; building one is the subject of separate work on rebuilding `std`."
+   ],
+   "human_examples": [
+    "pep-0008: - For code that wants to make a different use of function annotations",
+    "pep-0203: or may not happen before 2.0) code that wants to use one of the new struct"
+   ]
+  },
+  {
+   "unit": "program",
+   "n": 1,
+   "z_vs_paired": 4.64,
+   "llm_per1k": 1.333,
+   "paired_per1k": 0.686,
+   "base_per1k": 0.52,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.346,
+   "base_docfrac": 0.227,
+   "prompts": 48,
+   "models": {
+    "opus": 20,
+    "sonnet": 28,
+    "haiku": 35
+   },
+   "test_llm_docfrac": 0.383,
+   "test_human_docfrac": 0.185,
+   "test_llm_per1k": 1.418,
+   "test_human_per1k": 0.4498,
+   "test_ratio": 3.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: At each program point, a local variable (or a field path within one, such as `x.a.b`) is either *initialized*, *uninitialized*, or *maybe initialized*.",
+    "opus/1183-swap-out-jemalloc: Add compiler support for overriding the default allocator, so that a Rust program can use a different allocator by default.",
+    "opus/1681-macros-1.1: This restriction keeps the separation between \"code that runs in the compiler\" and \"code that runs in the program\" clear, and simplifies cross-compilation, since the crate always targets the host."
+   ],
+   "human_examples": [
+    "pep-0011: is a paid program available to high-volume enterprise customers",
+    "pep-0203: with the available program memory, such packages cannot blindly use the"
+   ]
+  },
+  {
+   "unit": "reads",
+   "n": 1,
+   "z_vs_paired": 4.63,
+   "llm_per1k": 0.492,
+   "paired_per1k": 0.096,
+   "base_per1k": 0.0985,
+   "ratio_vs_base": 5.0,
+   "llm_docfrac": 0.237,
+   "base_docfrac": 0.061,
+   "prompts": 40,
+   "models": {
+    "opus": 23,
+    "sonnet": 11,
+    "haiku": 23
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.08,
+   "test_llm_per1k": 0.789,
+   "test_human_per1k": 0.1363,
+   "test_ratio": 5.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Optimizers can sometimes remove it, but often cannot prove it dead because the destructor check reads it later.",
+    "opus/1444-union: Each arm simply reads the named field and tests the sub-pattern.",
+    "opus/1574-more-api-documentation-conventions: \"Returns the first element\" reads better than \"This function returns the first element\" and is shorter in listings."
+   ],
+   "human_examples": [
+    "pep-0222: reads it into a second temp file, then into a final destination!",
+    "pep-0258: - Module \"docutils.readers.standalone\" reads independent document"
+   ]
+  },
+  {
+   "unit": "interaction",
+   "n": 1,
+   "z_vs_paired": 4.62,
+   "llm_per1k": 0.506,
+   "paired_per1k": 0.107,
+   "base_per1k": 0.1275,
+   "ratio_vs_base": 4.0,
+   "llm_docfrac": 0.283,
+   "base_docfrac": 0.089,
+   "prompts": 45,
+   "models": {
+    "opus": 13,
+    "sonnet": 27,
+    "haiku": 28
+   },
+   "test_llm_docfrac": 0.192,
+   "test_human_docfrac": 0.065,
+   "test_llm_per1k": 0.334,
+   "test_human_per1k": 0.0682,
+   "test_ratio": 4.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: ## Interaction with `mem::forget`, `ptr::read` and friends",
+    "opus/1560-name-resolution: - The exact interaction with macro name resolution is left to a future RFC.",
+    "opus/1682-field-init-shorthand: ## Interaction with ownership"
+   ],
+   "human_examples": [
+    "pep-0214: the interaction between ABC and Python, I changed the name from",
+    "pep-0248: for higher performance database interaction."
+   ]
+  },
+  {
+   "unit": "exactly",
+   "n": 1,
+   "z_vs_paired": 4.61,
+   "llm_per1k": 0.913,
+   "paired_per1k": 0.386,
+   "base_per1k": 0.3925,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.388,
+   "base_docfrac": 0.232,
+   "prompts": 58,
+   "models": {
+    "opus": 39,
+    "sonnet": 30,
+    "haiku": 24
+   },
+   "test_llm_docfrac": 0.408,
+   "test_human_docfrac": 0.295,
+   "test_llm_per1k": 1.15,
+   "test_human_per1k": 0.418,
+   "test_ratio": 2.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: This is exactly the information the borrow checker's move analysis already computes.",
+    "opus/1183-swap-out-jemalloc: Any crate that transitively depends on a `#![needs_allocator]` crate must, when the final artifact is linked, have exactly one allocator crate linked in.",
+    "opus/1444-union: Unions may be generic and may have where clauses, attributes, and visibility modifiers on the type and its fields, exactly as structs can."
+   ],
+   "human_examples": [
+    "pep-0008: from an optional accelerator module and exactly which definitions",
+    "pep-0200: The final release will be exactly the same unless"
+   ]
+  },
+  {
+   "unit": "unchanged",
+   "n": 1,
+   "z_vs_paired": 4.61,
+   "llm_per1k": 0.519,
+   "paired_per1k": 0.118,
+   "base_per1k": 0.1186,
+   "ratio_vs_base": 4.4,
+   "llm_docfrac": 0.258,
+   "base_docfrac": 0.095,
+   "prompts": 42,
+   "models": {
+    "opus": 17,
+    "sonnet": 22,
+    "haiku": 23
+   },
+   "test_llm_docfrac": 0.325,
+   "test_human_docfrac": 0.125,
+   "test_llm_per1k": 0.669,
+   "test_human_per1k": 0.2045,
+   "test_ratio": 3.3,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1969-cargo-prepublish: The resolver is otherwise unchanged.",
+    "opus/2113-dyn-trait-syntax: Object safety rules, default object lifetime bounds, and coercion rules are unchanged.",
+    "opus/2141-alternative-registries: The index format is unchanged except for one addition."
+   ],
+   "human_examples": [
+    "pep-0212: remains unchanged, all three solutions can be implemented",
+    "pep-0214: unchanged."
+   ]
+  },
+  {
+   "unit": "fixed",
+   "n": 1,
+   "z_vs_paired": 4.6,
+   "llm_per1k": 0.597,
+   "paired_per1k": 0.172,
+   "base_per1k": 0.2651,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.25,
+   "base_docfrac": 0.174,
+   "prompts": 40,
+   "models": {
+    "opus": 18,
+    "sonnet": 17,
+    "haiku": 25
+   },
+   "test_llm_docfrac": 0.275,
+   "test_human_docfrac": 0.195,
+   "test_llm_per1k": 0.869,
+   "test_human_per1k": 0.4317,
+   "test_ratio": 2.0,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1105-api-evolution: **Major changes need a major version bump.** A change is major if it can break a reasonable downstream client in a way that cannot be fixed locally and mechanically.",
+    "opus/1183-swap-out-jemalloc: **Symbol-based interface.** The interface depends on `#[no_mangle]` symbols with fixed names.",
+    "opus/1398-kinds-of-allocators: - **Pools of fixed-size objects.** Network servers commonly allocate many buffers of identical size."
+   ],
+   "human_examples": [
+    "pep-0006: If there's a particular bug you'd particularly like fixed in a bug",
+    "pep-0007: require the fixed width integer types."
+   ]
+  },
+  {
+   "unit": "tool",
+   "n": 1,
+   "z_vs_paired": 4.56,
+   "llm_per1k": 0.86,
+   "paired_per1k": 0.354,
+   "base_per1k": 0.3673,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.233,
+   "base_docfrac": 0.159,
+   "prompts": 33,
+   "models": {
+    "opus": 14,
+    "sonnet": 20,
+    "haiku": 22
+   },
+   "test_llm_docfrac": 0.233,
+   "test_human_docfrac": 0.155,
+   "test_llm_per1k": 0.682,
+   "test_human_per1k": 0.4725,
+   "test_ratio": 1.4,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1105-api-evolution: - Should Cargo or a separate tool check these rules automatically when publishing?",
+    "opus/2113-dyn-trait-syntax: `cargo fix` (or an equivalent tool) can update code automatically.",
+    "opus/2136-build-systems: An external tool can then translate the plan into its own rules."
+   ],
+   "human_examples": [
+    "pep-0008: if the tool places a marker glyph in the final column when wrapping",
+    "pep-0100: A tool to auto-convert Unicode mapping files to mapping modules"
+   ]
+  },
+  {
+   "unit": "depend",
+   "n": 1,
+   "z_vs_paired": 4.53,
+   "llm_per1k": 0.854,
+   "paired_per1k": 0.354,
+   "base_per1k": 0.2171,
+   "ratio_vs_base": 3.9,
+   "llm_docfrac": 0.354,
+   "base_docfrac": 0.134,
+   "prompts": 48,
+   "models": {
+    "opus": 22,
+    "sonnet": 25,
+    "haiku": 38
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.18,
+   "test_llm_per1k": 0.669,
+   "test_human_per1k": 0.2772,
+   "test_ratio": 2.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1105-api-evolution: Both promises depend on a shared understanding of what counts as \"breaking.\" Rust makes that understanding harder to reach than it is in many languages.",
+    "opus/1183-swap-out-jemalloc: - may depend on `libcore` and `liblibc`;",
+    "opus/1598-generic_associated_types: The standard `Iterator` trait has an associated type `Item` that cannot depend on the borrow of the iterator in `next`:"
+   ],
+   "human_examples": [
+    "pep-0001: followed in these cases will depend on the nature and purpose of the PEP",
+    "pep-0102: that can be taken in parallel, or those that depend on other"
+   ]
+  },
+  {
+   "unit": "records",
+   "n": 1,
+   "z_vs_paired": 4.53,
+   "llm_per1k": 0.44,
+   "paired_per1k": 0.043,
+   "base_per1k": 0.0417,
+   "ratio_vs_base": 10.6,
+   "llm_docfrac": 0.2,
+   "base_docfrac": 0.019,
+   "prompts": 34,
+   "models": {
+    "opus": 12,
+    "sonnet": 14,
+    "haiku": 22
+   },
+   "test_llm_docfrac": 0.167,
+   "test_human_docfrac": 0.02,
+   "test_llm_per1k": 0.415,
+   "test_human_per1k": 0.0227,
+   "test_ratio": 18.3,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1444-union: - Tagged unions written by hand in C, where a separate field records which variant is active.",
+    "opus/1682-field-init-shorthand: Haskell's `NamedFieldPuns` extension does the same for records.",
+    "opus/2141-alternative-registries: The lock file records the source of each package, so `Cargo.lock` will contain entries like:"
+   ],
+   "human_examples": [
+    "pep-0001: maintain sufficient public records to allow subsequent Councils, the core",
+    "pep-0201: commonly used when reading data files with records as rows and fields"
+   ]
+  },
+  {
+   "unit": "reports",
+   "n": 1,
+   "z_vs_paired": 4.51,
+   "llm_per1k": 0.519,
+   "paired_per1k": 0.129,
+   "base_per1k": 0.0694,
+   "ratio_vs_base": 7.5,
+   "llm_docfrac": 0.2,
+   "base_docfrac": 0.049,
+   "prompts": 30,
+   "models": {
+    "opus": 13,
+    "sonnet": 14,
+    "haiku": 21
+   },
+   "test_llm_docfrac": 0.2,
+   "test_human_docfrac": 0.01,
+   "test_llm_per1k": 0.441,
+   "test_human_per1k": 0.0227,
+   "test_ratio": 19.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1513-less-unwinding: The compiler reports an error at link time naming the offending crate.",
+    "opus/1560-name-resolution: Lookup reports an error when it reaches an ambiguous binding.",
+    "opus/1681-macros-1.1: If a custom derive panics, the compiler reports an error at the `#[derive]` attribute, including the panic message."
+   ],
+   "human_examples": [
+    "pep-0042: This PEP was created to allow us to close bug reports that are really",
+    "pep-0287: The parser reports problems, indicating their level of severity"
+   ]
+  },
+  {
+   "unit": "produces",
+   "n": 1,
+   "z_vs_paired": 4.41,
+   "llm_per1k": 0.584,
+   "paired_per1k": 0.182,
+   "base_per1k": 0.1098,
+   "ratio_vs_base": 5.3,
+   "llm_docfrac": 0.287,
+   "base_docfrac": 0.084,
+   "prompts": 46,
+   "models": {
+    "opus": 24,
+    "sonnet": 19,
+    "haiku": 26
+   },
+   "test_llm_docfrac": 0.217,
+   "test_human_docfrac": 0.12,
+   "test_llm_per1k": 0.562,
+   "test_human_per1k": 0.1272,
+   "test_ratio": 4.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: When the compiler produces a final artifact (an executable, `dylib`, or `staticlib`), it looks at the dependency graph:",
+    "opus/1398-kinds-of-allocators: Users who need these today must reimplement collections from scratch, which wastes effort and produces code that interoperates poorly with the rest of the ecosystem.",
+    "opus/1513-less-unwinding: When the compiler produces a final artifact (an executable, a `dylib`, a `cdylib`, or a `staticlib`), it chooses exactly one panic runtime:"
+   ],
+   "human_examples": [
+    "pep-0200: The new code produces a minimal call to xrange(),",
+    "pep-0243: Netscape Navigator version 4.76 for Linux produces when presented"
+   ]
+  },
+  {
+   "unit": "leave",
+   "n": 1,
+   "z_vs_paired": 4.35,
+   "llm_per1k": 0.545,
+   "paired_per1k": 0.161,
+   "base_per1k": 0.1679,
+   "ratio_vs_base": 3.2,
+   "llm_docfrac": 0.292,
+   "base_docfrac": 0.13,
+   "prompts": 45,
+   "models": {
+    "opus": 20,
+    "sonnet": 21,
+    "haiku": 29
+   },
+   "test_llm_docfrac": 0.275,
+   "test_human_docfrac": 0.11,
+   "test_llm_per1k": 0.548,
+   "test_human_per1k": 0.1499,
+   "test_ratio": 3.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1105-api-evolution: - RFC PR: (leave this empty)",
+    "opus/1183-swap-out-jemalloc: - RFC PR: (leave this empty)",
+    "opus/1398-kinds-of-allocators: - RFC PR: (leave this empty)"
+   ],
+   "human_examples": [
+    "pep-0012: Leave a space between",
+    "pep-0101: Leave the \"Release page\" field on the form empty."
+   ]
+  },
+  {
+   "unit": "failure",
+   "n": 1,
+   "z_vs_paired": 4.31,
+   "llm_per1k": 0.46,
+   "paired_per1k": 0.107,
+   "base_per1k": 0.2272,
+   "ratio_vs_base": 2.0,
+   "llm_docfrac": 0.171,
+   "base_docfrac": 0.099,
+   "prompts": 27,
+   "models": {
+    "opus": 10,
+    "sonnet": 17,
+    "haiku": 14
+   },
+   "test_llm_docfrac": 0.125,
+   "test_human_docfrac": 0.045,
+   "test_llm_per1k": 0.348,
+   "test_human_per1k": 0.109,
+   "test_ratio": 3.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: Containers that want to abort on failure call `oom`, whose default implementation aborts the process.",
+    "opus/1560-name-resolution: If `c` is *determinately absent*, record failure.",
+    "opus/1728-north-star: A dropped goal is not a failure; it is information."
+   ],
+   "human_examples": [
+    "pep-0200: If a checkin causes a failure, it must be fixed within",
+    "pep-0226: If a checkin causes a failure, it must"
+   ]
+  },
+  {
+   "unit": "documented",
+   "n": 1,
+   "z_vs_paired": 4.3,
+   "llm_per1k": 0.617,
+   "paired_per1k": 0.214,
+   "base_per1k": 0.1868,
+   "ratio_vs_base": 3.3,
+   "llm_docfrac": 0.246,
+   "base_docfrac": 0.108,
+   "prompts": 37,
+   "models": {
+    "opus": 18,
+    "sonnet": 18,
+    "haiku": 23
+   },
+   "test_llm_docfrac": 0.117,
+   "test_human_docfrac": 0.125,
+   "test_llm_per1k": 0.201,
+   "test_human_per1k": 0.1908,
+   "test_ratio": 1.1,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: This was already the documented contract; the change removes the accidental safety net.",
+    "opus/1105-api-evolution: A change in documented behavior, such as different results, new panics, or changed complexity guarantees, may also be breaking.",
+    "opus/1789-as-cell: Making it a documented guarantee is what lets the conversions below be implemented soundly with pointer casts."
+   ],
+   "human_examples": [
+    "pep-0001: include collecting documented support for the PEP from important",
+    "pep-0008: such names; only use them as documented."
+   ]
+  },
+  {
+   "unit": "open issues",
+   "n": 2,
+   "z_vs_paired": 4.25,
+   "llm_per1k": 0.387,
+   "paired_per1k": 0.054,
+   "base_per1k": 0.1098,
+   "ratio_vs_base": 3.5,
+   "llm_docfrac": 0.246,
+   "base_docfrac": 0.079,
+   "prompts": 31,
+   "models": {
+    "opus": 14,
+    "sonnet": 19,
+    "haiku": 26
+   },
+   "test_llm_docfrac": 0.242,
+   "test_human_docfrac": 0.09,
+   "test_llm_per1k": 0.388,
+   "test_human_per1k": 0.0863,
+   "test_ratio": 4.5,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/pep-0246: # Open issues",
+    "opus/pep-0261: Open Issues",
+    "opus/pep-0268: # Open Issues"
+   ],
+   "human_examples": [
+    "pep-0001: Open Issues -- While a PEP is in draft, ideas can come up which",
+    "pep-0101: - Review open issues, as this might find lurking showstopper bugs,"
+   ]
+  },
+  {
+   "unit": "chosen",
+   "n": 1,
+   "z_vs_paired": 4.24,
+   "llm_per1k": 0.545,
+   "paired_per1k": 0.172,
+   "base_per1k": 0.2285,
+   "ratio_vs_base": 2.4,
+   "llm_docfrac": 0.267,
+   "base_docfrac": 0.158,
+   "prompts": 49,
+   "models": {
+    "opus": 12,
+    "sonnet": 16,
+    "haiku": 36
+   },
+   "test_llm_docfrac": 0.25,
+   "test_human_docfrac": 0.19,
+   "test_llm_per1k": 0.455,
+   "test_human_per1k": 0.2454,
+   "test_ratio": 1.9,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: **Global, link-time choice.** The allocator is chosen once for the whole program.",
+    "opus/1969-cargo-prepublish: Because `0.10.4` is newer than any published `0.10.x`, it will be chosen, as long as the lock file allows an update.",
+    "opus/1985-tiered-browser-support: ## How the lists are chosen"
+   ],
+   "human_examples": [
+    "pep-0001: in the chosen venue to solicit additional feedback.",
+    "pep-0008: The limits are chosen to"
+   ]
+  },
+  {
+   "unit": "continues",
+   "n": 1,
+   "z_vs_paired": 4.23,
+   "llm_per1k": 0.433,
+   "paired_per1k": 0.096,
+   "base_per1k": 0.0833,
+   "ratio_vs_base": 5.2,
+   "llm_docfrac": 0.229,
+   "base_docfrac": 0.063,
+   "prompts": 36,
+   "models": {
+    "opus": 14,
+    "sonnet": 18,
+    "haiku": 23
+   },
+   "test_llm_docfrac": 0.292,
+   "test_human_docfrac": 0.08,
+   "test_llm_per1k": 0.655,
+   "test_human_per1k": 0.0772,
+   "test_ratio": 8.5,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: **Do nothing.** Every `Drop` type continues to pay a word of overhead and every move continues to pay for zeroing.",
+    "opus/1398-kinds-of-allocators: Because the parameter is defaulted, existing code that names `Vec<T>` continues to compile.",
+    "opus/1444-union: This means no existing code breaks, and in particular `std::collections::HashSet::union` continues to work."
+   ],
+   "human_examples": [
+    "pep-0012: Indent the text block by 4 spaces; the literal block continues until the end",
+    "pep-0230: to sys.stderr and processing continues with the option."
+   ]
+  },
+  {
+   "unit": "reader",
+   "n": 1,
+   "z_vs_paired": 4.22,
+   "llm_per1k": 0.433,
+   "paired_per1k": 0.021,
+   "base_per1k": 0.1388,
+   "ratio_vs_base": 3.1,
+   "llm_docfrac": 0.183,
+   "base_docfrac": 0.066,
+   "prompts": 25,
+   "models": {
+    "opus": 9,
+    "sonnet": 13,
+    "haiku": 22
+   },
+   "test_llm_docfrac": 0.267,
+   "test_human_docfrac": 0.055,
+   "test_llm_per1k": 0.669,
+   "test_human_per1k": 0.0909,
+   "test_ratio": 7.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1682-field-init-shorthand: A reader unfamiliar with the feature might find `S { a, b }` ambiguous.",
+    "opus/1946-intra-rustdoc-links: A doc comment for `Vec::push` that says \"see also `Vec::extend`\" should let the reader click through to `Vec::extend`.",
+    "opus/2005-match-ergonomics: A reader can no longer see from the pattern alone whether a binding is a value or a reference; they need to know the type of the scrutinee."
+   ],
+   "human_examples": [
+    "pep-0203: the reader that it is   that is being changed, and not   that is",
+    "pep-0253: in the source code, and I am assuming that the reader is"
+   ]
+  },
+  {
+   "unit": "blanket",
+   "n": 1,
+   "z_vs_paired": 4.2,
+   "llm_per1k": 0.414,
+   "paired_per1k": 0.086,
+   "base_per1k": 0.0972,
+   "ratio_vs_base": 4.3,
+   "llm_docfrac": 0.062,
+   "base_docfrac": 0.03,
+   "prompts": 7,
+   "models": {
+    "opus": 5,
+    "sonnet": 7,
+    "haiku": 3
+   },
+   "test_llm_docfrac": 0.008,
+   "test_human_docfrac": 0.035,
+   "test_llm_per1k": 0.013,
+   "test_human_per1k": 0.1181,
+   "test_ratio": 0.1,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1105-api-evolution: - **Adding a blanket impl** such as `impl<T: Foo> Bar for T`.",
+    "opus/1733-trait-alias: The usual workaround is a new trait with a blanket impl:",
+    "opus/2397-do-not-recommend: The canonical use is the blanket impl `impl<T: Iterator> IntoIterator for T`: with the attribute in place, a failed `T: IntoIterator` obligation produces an error about `IntoIterator` alone, instead of suggesting that th"
+   ],
+   "human_examples": [
+    "pep-0438: Installers should provide a blanket option to allow",
+    "pep-3146: the umbrella of Google's blanket Contributor License Agreement with the PSF."
+   ]
+  },
+  {
+   "unit": "body",
+   "n": 1,
+   "z_vs_paired": 4.18,
+   "llm_per1k": 0.893,
+   "paired_per1k": 0.418,
+   "base_per1k": 0.4077,
+   "ratio_vs_base": 2.2,
+   "llm_docfrac": 0.2,
+   "base_docfrac": 0.142,
+   "prompts": 27,
+   "models": {
+    "opus": 17,
+    "sonnet": 16,
+    "haiku": 15
+   },
+   "test_llm_docfrac": 0.25,
+   "test_human_docfrac": 0.13,
+   "test_llm_per1k": 1.405,
+   "test_human_per1k": 0.3271,
+   "test_ratio": 4.3,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1574-more-api-documentation-conventions: This would be a much larger change and would not fit the existing body of documentation.",
+    "opus/1857-stabilize-drop-order: Function arguments are treated as locals declared in order, and are dropped in reverse order after all locals in the function body.",
+    "opus/2229-capture-disjoint-fields: If a closure body refers to `self.b`, the closure captures `self`."
+   ],
+   "human_examples": [
+    "pep-0008: - While sometimes it's okay to put an if/for/while with a small body",
+    "pep-0012: You must use two blank lines between the last line of a section's body"
+   ]
+  },
+  {
+   "unit": "dropped",
+   "n": 1,
+   "z_vs_paired": 4.16,
+   "llm_per1k": 0.597,
+   "paired_per1k": 0.214,
+   "base_per1k": 0.1237,
+   "ratio_vs_base": 4.8,
+   "llm_docfrac": 0.079,
+   "base_docfrac": 0.069,
+   "prompts": 10,
+   "models": {
+    "opus": 6,
+    "sonnet": 7,
+    "haiku": 6
+   },
+   "test_llm_docfrac": 0.033,
+   "test_human_docfrac": 0.07,
+   "test_llm_per1k": 0.107,
+   "test_human_per1k": 0.1454,
+   "test_ratio": 0.7,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Remove drop flags from values that implement `Drop`, and remove the automatic memory zeroing that happens when such values are dropped or moved.",
+    "opus/1513-less-unwinding: A call that may unwind cannot be freely reordered past code with side effects, and values that must be dropped on unwind must remain live in a form the landing pad can use.",
+    "opus/1728-north-star: Goals can be added, dropped, or rescoped."
+   ],
+   "human_examples": [
+    "pep-0100: be dropped.",
+    "pep-0218: * Auto-conversion between mutable and immutable sets was dropped."
+   ]
+  },
+  {
+   "unit": "produce",
+   "n": 1,
+   "z_vs_paired": 4.16,
+   "llm_per1k": 0.814,
+   "paired_per1k": 0.364,
+   "base_per1k": 0.3231,
+   "ratio_vs_base": 2.5,
+   "llm_docfrac": 0.35,
+   "base_docfrac": 0.197,
+   "prompts": 52,
+   "models": {
+    "opus": 28,
+    "sonnet": 26,
+    "haiku": 30
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.2,
+   "test_llm_per1k": 0.629,
+   "test_human_per1k": 0.3771,
+   "test_ratio": 1.7,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: This must be correct; bugs here produce double drops or leaks.",
+    "opus/1444-union: With `#[repr(C)]`, the layout matches what the platform C compiler would produce for the corresponding C union, and the union is passed to and returned from `extern \"C\"` functions following the C ABI rules for unions.",
+    "opus/1574-more-api-documentation-conventions: - `# Errors` \u2014 for functions returning `Result`, the conditions that produce each kind of error."
+   ],
+   "human_examples": [
+    "pep-0008: This can produce a visual",
+    "pep-0011: At the same time, the CPython build must be changed to produce a"
+   ]
+  },
+  {
+   "unit": "helper",
+   "n": 1,
+   "z_vs_paired": 4.15,
+   "llm_per1k": 0.381,
+   "paired_per1k": 0.064,
+   "base_per1k": 0.106,
+   "ratio_vs_base": 3.6,
+   "llm_docfrac": 0.154,
+   "base_docfrac": 0.058,
+   "prompts": 26,
+   "models": {
+    "opus": 12,
+    "sonnet": 14,
+    "haiku": 11
+   },
+   "test_llm_docfrac": 0.117,
+   "test_human_docfrac": 0.085,
+   "test_llm_per1k": 0.241,
+   "test_human_per1k": 0.1409,
+   "test_ratio": 1.7,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1560-name-resolution: fn helper() {}",
+    "opus/1598-generic_associated_types: Workarounds exist, but they involve unsafe code or extra helper traits with higher-ranked bounds that are hard to read and harder to use.",
+    "opus/1681-macros-1.1: This allows the macro to strip helper attributes it uses for configuration, such as `#[serde(rename = \"...\")]`, which would otherwise be rejected by the compiler as unknown."
+   ],
+   "human_examples": [
+    "pep-0042: be defined in a helper module that's imported by both).",
+    "pep-0205: helper class."
+   ]
+  },
+  {
+   "unit": "contract",
+   "n": 1,
+   "z_vs_paired": 4.14,
+   "llm_per1k": 0.532,
+   "paired_per1k": 0.172,
+   "base_per1k": 0.0593,
+   "ratio_vs_base": 9.0,
+   "llm_docfrac": 0.1,
+   "base_docfrac": 0.023,
+   "prompts": 19,
+   "models": {
+    "opus": 8,
+    "sonnet": 9,
+    "haiku": 7
+   },
+   "test_llm_docfrac": 0.058,
+   "test_human_docfrac": 0.02,
+   "test_llm_per1k": 0.107,
+   "test_human_per1k": 0.0182,
+   "test_ratio": 5.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: This was already the documented contract; the change removes the accidental safety net.",
+    "opus/1105-api-evolution: Library authors should use judgment and treat any change to a documented contract as major.",
+    "opus/pep-0246: This step comes after the two hooks so that a subclass that breaks its base class's contract (a \"Liskov violation\") can refuse adaptation through `__conform__` by raising `LiskovViolation`."
+   ],
+   "human_examples": [
+    "pep-0246: by contract\" approach), and often also some pragmatical",
+    "pep-0316: This submission describes programming by contract for Python."
+   ]
+  },
+  {
+   "unit": "rationale alternatives",
+   "n": 2,
+   "z_vs_paired": 4.08,
+   "llm_per1k": 0.696,
+   "paired_per1k": 0.289,
+   "base_per1k": 0.1565,
+   "ratio_vs_base": 4.4,
+   "llm_docfrac": 0.417,
+   "base_docfrac": 0.144,
+   "prompts": 43,
+   "models": {
+    "opus": 31,
+    "sonnet": 26,
+    "haiku": 43
+   },
+   "test_llm_docfrac": 0.342,
+   "test_human_docfrac": 0.15,
+   "test_llm_per1k": 0.548,
+   "test_human_per1k": 0.1409,
+   "test_ratio": 3.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1598-generic_associated_types: # Rationale and alternatives",
+    "opus/1733-trait-alias: # Rationale and alternatives",
+    "opus/1946-intra-rustdoc-links: # Rationale and alternatives"
+   ],
+   "human_examples": [
+    "2089-implied-bounds: ## Rationale and Alternatives",
+    "2091-inline-semantic: - Rationale and alternatives"
+   ]
+  },
+  {
+   "unit": "defines",
+   "n": 1,
+   "z_vs_paired": 4.08,
+   "llm_per1k": 0.604,
+   "paired_per1k": 0.225,
+   "base_per1k": 0.2714,
+   "ratio_vs_base": 2.2,
+   "llm_docfrac": 0.275,
+   "base_docfrac": 0.169,
+   "prompts": 41,
+   "models": {
+    "opus": 16,
+    "sonnet": 22,
+    "haiku": 28
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.19,
+   "test_llm_per1k": 0.869,
+   "test_human_per1k": 0.2726,
+   "test_ratio": 3.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1733-trait-alias: - **An alias defines no methods.** Methods come from the underlying traits, and calling them through a value bounded by the alias works as it would with the expanded bound.",
+    "opus/2451-re-rebalancing-coherence: The reason for the second group is that another crate, perhaps the one that defines `ForeignTrait`, could write `impl<U> ForeignTrait<U> for SomeType` and those impls could overlap with yours for some choice of `T`.",
+    "opus/2500-needle: OMG-WTF-8 is the minimum change that defines it."
+   ],
+   "human_examples": [
+    "pep-0012: Every unique section title implicitly defines an internal hyperlink target.",
+    "pep-0042: * urlparse should be updated to comply with   , which defines"
+   ]
+  },
+  {
+   "unit": "summary rfc",
+   "n": 2,
+   "z_vs_paired": 4.06,
+   "llm_per1k": 0.394,
+   "paired_per1k": 0.086,
+   "base_per1k": 0.0745,
+   "ratio_vs_base": 5.3,
+   "llm_docfrac": 0.246,
+   "base_docfrac": 0.074,
+   "prompts": 38,
+   "models": {
+    "opus": 11,
+    "sonnet": 10,
+    "haiku": 38
+   },
+   "test_llm_docfrac": 0.233,
+   "test_human_docfrac": 0.105,
+   "test_llm_per1k": 0.375,
+   "test_human_per1k": 0.0954,
+   "test_ratio": 3.9,
+   "confirmed": true,
+   "llm_examples": [],
+   "human_examples": []
+  },
+  {
+   "unit": "migration",
+   "n": 1,
+   "z_vs_paired": 4.06,
+   "llm_per1k": 0.381,
+   "paired_per1k": 0.075,
+   "base_per1k": 0.1603,
+   "ratio_vs_base": 2.4,
+   "llm_docfrac": 0.125,
+   "base_docfrac": 0.07,
+   "prompts": 18,
+   "models": {
+    "opus": 10,
+    "sonnet": 8,
+    "haiku": 12
+   },
+   "test_llm_docfrac": 0.075,
+   "test_human_docfrac": 0.08,
+   "test_llm_per1k": 0.174,
+   "test_human_per1k": 0.2272,
+   "test_ratio": 0.8,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1857-stabilize-drop-order: One could imagine a migration path with an attribute such as `#[drop_order(reverse)]` to opt in, followed by a lint encouraging its use, followed by a flip of the default.",
+    "opus/2052-epochs: ## Migration",
+    "opus/2089-implied-bounds: - What is the right migration story for crates that want to remove a type-level bound after this lands?"
+   ],
+   "human_examples": [
+    "pep-0240: The following migration is suggested:",
+    "pep-0290: The migration tips highlight possible areas of incompatibility and"
+   ]
+  },
+  {
+   "unit": "replacement",
+   "n": 1,
+   "z_vs_paired": 4.0,
+   "llm_per1k": 0.387,
+   "paired_per1k": 0.086,
+   "base_per1k": 0.1477,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.092,
+   "base_docfrac": 0.094,
+   "prompts": 16,
+   "models": {
+    "opus": 7,
+    "sonnet": 10,
+    "haiku": 5
+   },
+   "test_llm_docfrac": 0.067,
+   "test_human_docfrac": 0.095,
+   "test_llm_per1k": 0.12,
+   "test_human_per1k": 0.1318,
+   "test_ratio": 0.9,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1681-macros-1.1: - Should the macro return only new items rather than the full replacement?",
+    "opus/1969-cargo-prepublish: Dependency resolution then proceeds *as if* those replacement or additional crates existed in the original source.",
+    "opus/2136-build-systems: Cargo already supports source replacement and vendoring."
+   ],
+   "human_examples": [
+    "pep-0001: replacement can be found).",
+    "pep-0008: should be used to indicate explicit replacement without losing the"
+   ]
+  },
+  {
+   "unit": "behaviour",
+   "n": 1,
+   "z_vs_paired": 3.97,
+   "llm_per1k": 0.906,
+   "paired_per1k": 0.45,
+   "base_per1k": 0.4367,
+   "ratio_vs_base": 2.1,
+   "llm_docfrac": 0.237,
+   "base_docfrac": 0.152,
+   "prompts": 39,
+   "models": {
+    "opus": 26,
+    "sonnet": 23,
+    "haiku": 8
+   },
+   "test_llm_docfrac": 0.267,
+   "test_human_docfrac": 0.215,
+   "test_llm_per1k": 1.284,
+   "test_human_per1k": 0.7043,
+   "test_ratio": 1.8,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: They relied on it only incidentally, through zeroing behaviour in their unsafe code, which must be audited (see below).",
+    "opus/1444-union: Under that later design, union fields are restricted to `Copy` types and `ManuallyDrop<T>`, which makes the non-dropping behaviour explicit at the type level.",
+    "opus/1513-less-unwinding: The behaviour of a panic, once raised, is moved into a *panic runtime* crate."
+   ],
+   "human_examples": [
+    "pep-0100: * Added note about the changed behaviour of \"s#\".",
+    "pep-0215: expected behaviour of this feature."
+   ]
+  },
+  {
+   "unit": "carry",
+   "n": 1,
+   "z_vs_paired": 3.97,
+   "llm_per1k": 0.368,
+   "paired_per1k": 0.075,
+   "base_per1k": 0.0568,
+   "ratio_vs_base": 6.5,
+   "llm_docfrac": 0.192,
+   "base_docfrac": 0.045,
+   "prompts": 34,
+   "models": {
+    "opus": 15,
+    "sonnet": 17,
+    "haiku": 14
+   },
+   "test_llm_docfrac": 0.175,
+   "test_human_docfrac": 0.05,
+   "test_llm_per1k": 0.308,
+   "test_human_per1k": 0.05,
+   "test_ratio": 6.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: - Whether `AllocErr` should carry the failed layout.",
+    "opus/1733-trait-alias: - **Associated-type bounds don't carry over.** If the \"alias\" is `trait IntIter: Iterator<Item = i32> {}`, then in `fn f<I: IntIter>(i: I)`, the compiler doesn't know that `I::Item == i32` when it uses the bound.",
+    "opus/2052-epochs: - The compiler must carry support for every edition indefinitely, which adds some ongoing maintenance cost to the front end."
+   ],
+   "human_examples": [
+    "pep-0222: section therefore carry greater degrees of risk, either in",
+    "pep-0312: carry more weight with additional examples and with real-world"
+   ]
+  },
+  {
+   "unit": "real",
+   "n": 1,
+   "z_vs_paired": 3.95,
+   "llm_per1k": 0.755,
+   "paired_per1k": 0.343,
+   "base_per1k": 0.3193,
+   "ratio_vs_base": 2.4,
+   "llm_docfrac": 0.338,
+   "base_docfrac": 0.204,
+   "prompts": 55,
+   "models": {
+    "opus": 30,
+    "sonnet": 27,
+    "haiku": 24
+   },
+   "test_llm_docfrac": 0.258,
+   "test_human_docfrac": 0.15,
+   "test_llm_per1k": 0.709,
+   "test_human_per1k": 0.2817,
+   "test_ratio": 2.5,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: The drop flag and zeroing have real costs.",
+    "opus/1105-api-evolution: Some changes classified as minor will break real code.",
+    "opus/1728-north-star: We have tried to keep the process light, but the cost is real."
+   ],
+   "human_examples": [
+    "pep-0001: Most PEP authors use their real name, but",
+    "pep-0042: Marked as Open, they distract from the list of real"
+   ]
+  },
+  {
+   "unit": "receives",
+   "n": 1,
+   "z_vs_paired": 3.95,
+   "llm_per1k": 0.335,
+   "paired_per1k": 0.032,
+   "base_per1k": 0.0353,
+   "ratio_vs_base": 9.5,
+   "llm_docfrac": 0.171,
+   "base_docfrac": 0.026,
+   "prompts": 30,
+   "models": {
+    "opus": 10,
+    "sonnet": 12,
+    "haiku": 19
+   },
+   "test_llm_docfrac": 0.125,
+   "test_human_docfrac": 0.03,
+   "test_llm_per1k": 0.227,
+   "test_human_per1k": 0.0409,
+   "test_ratio": 5.6,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1681-macros-1.1: The function receives the item to which `#[derive(Serialize)]` was attached, with that derive attribute removed.",
+    "opus/2091-inline-semantic: A function with this attribute receives, implicitly, the source location of its call site.",
+    "opus/2904-compiler-major-change-process: - A new MCP issue receives the `major-change` label and the bot opens a chat topic."
+   ],
+   "human_examples": [
+    "pep-0011: generally receives new updates for at least 10 years following release.",
+    "pep-0333: request it receives from an HTTP client, that is directed at the"
+   ]
+  },
+  {
+   "unit": "appears",
+   "n": 1,
+   "z_vs_paired": 3.94,
+   "llm_per1k": 0.506,
+   "paired_per1k": 0.172,
+   "base_per1k": 0.1565,
+   "ratio_vs_base": 3.2,
+   "llm_docfrac": 0.196,
+   "base_docfrac": 0.11,
+   "prompts": 34,
+   "models": {
+    "opus": 16,
+    "sonnet": 11,
+    "haiku": 20
+   },
+   "test_llm_docfrac": 0.35,
+   "test_human_docfrac": 0.13,
+   "test_llm_per1k": 0.722,
+   "test_human_per1k": 0.1499,
+   "test_ratio": 4.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Because the flag lives inside the value, it also appears in every enum variant, every `Box`, and every collection.",
+    "opus/1444-union: It is treated as a keyword only when it appears at the start of an item followed by an identifier and then a `{` or generic parameters.",
+    "opus/1682-field-init-shorthand: Context almost always disambiguates, since a struct expression appears in expression position, and the pattern form already means the analogous thing."
+   ],
+   "human_examples": [
+    "pep-0012: it appears, it must appear in angle brackets.",
+    "pep-0205: It appears that the Web pages have not been updated since"
+   ]
+  },
+  {
+   "unit": "avoids",
+   "n": 1,
+   "z_vs_paired": 3.94,
+   "llm_per1k": 0.506,
+   "paired_per1k": 0.172,
+   "base_per1k": 0.1048,
+   "ratio_vs_base": 4.8,
+   "llm_docfrac": 0.292,
+   "base_docfrac": 0.085,
+   "prompts": 46,
+   "models": {
+    "opus": 25,
+    "sonnet": 18,
+    "haiku": 27
+   },
+   "test_llm_docfrac": 0.25,
+   "test_human_docfrac": 0.1,
+   "test_llm_per1k": 0.482,
+   "test_human_per1k": 0.1136,
+   "test_ratio": 4.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Keeping dynamic semantics with local flags avoids both problems.",
+    "opus/1444-union: It avoids a new keyword, but it changes the meaning of field access and construction drastically based on an attribute, which is surprising, and it reads poorly.",
+    "opus/1598-generic_associated_types: Streaming iterators need only lifetimes, but collection and pointer families need type parameters, and implementing both together avoids designing the feature twice."
+   ],
+   "human_examples": [
+    "pep-0001: avoids fragmenting the discussion,",
+    "pep-0008: avoids masking bugs:"
+   ]
+  },
+  {
+   "unit": "gains",
+   "n": 1,
+   "z_vs_paired": 3.92,
+   "llm_per1k": 0.328,
+   "paired_per1k": 0.043,
+   "base_per1k": 0.0278,
+   "ratio_vs_base": 11.8,
+   "llm_docfrac": 0.163,
+   "base_docfrac": 0.025,
+   "prompts": 31,
+   "models": {
+    "opus": 9,
+    "sonnet": 18,
+    "haiku": 12
+   },
+   "test_llm_docfrac": 0.117,
+   "test_human_docfrac": 0.005,
+   "test_llm_per1k": 0.201,
+   "test_human_per1k": 0.0045,
+   "test_ratio": 20.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/2585-unsafe-block-in-unsafe-fn: - Code where nearly every line is unsafe gains little from per-operation blocks, and authors may wrap the whole body anyway.",
+    "opus/3139-cargo-alternative-registry-auth: The registry's `config.json` gains an optional boolean field `auth-required`.",
+    "opus/pep-0268: `httplib` gains an authentication layer that responds to `401 Unauthorized` and `407 Proxy Authentication Required` responses."
+   ],
+   "human_examples": [
+    "pep-0246: If Python gains some standard \"official\" mechanism for interfaces,",
+    "pep-0480: negates any benefit the project gains from signing its own distribution (i.e.,"
+   ]
+  },
+  {
+   "unit": "order",
+   "n": 1,
+   "z_vs_paired": 3.91,
+   "llm_per1k": 2.311,
+   "paired_per1k": 1.576,
+   "base_per1k": 1.1511,
+   "ratio_vs_base": 2.0,
+   "llm_docfrac": 0.358,
+   "base_docfrac": 0.436,
+   "prompts": 43,
+   "models": {
+    "opus": 29,
+    "sonnet": 27,
+    "haiku": 30
+   },
+   "test_llm_docfrac": 0.342,
+   "test_human_docfrac": 0.43,
+   "test_llm_per1k": 2.221,
+   "test_human_per1k": 1.2268,
+   "test_ratio": 1.8,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1560-name-resolution: - An item can be referenced from anywhere in its module regardless of order.",
+    "opus/1574-more-api-documentation-conventions: After the summary and any longer description, use these headings, in this order, where they apply:",
+    "opus/1681-macros-1.1: ## Expansion order"
+   ],
+   "human_examples": [
+    "pep-0001: \"pythonic\" in order to be accepted by the Steering Council.",
+    "pep-0008: avoid noisy Unicode characters like z\u0361\u032f\u032fa\u0327\u034e\u033al\u0321\u0353\u032bg\u0339\u0332o\u0321\u033c\u0318 and byte order"
+   ]
+  },
+  {
+   "unit": "rely",
+   "n": 1,
+   "z_vs_paired": 3.9,
+   "llm_per1k": 0.657,
+   "paired_per1k": 0.279,
+   "base_per1k": 0.2184,
+   "ratio_vs_base": 3.0,
+   "llm_docfrac": 0.312,
+   "base_docfrac": 0.154,
+   "prompts": 45,
+   "models": {
+    "opus": 17,
+    "sonnet": 26,
+    "haiku": 32
+   },
+   "test_llm_docfrac": 0.275,
+   "test_human_docfrac": 0.16,
+   "test_llm_per1k": 0.548,
+   "test_human_per1k": 0.2226,
+   "test_ratio": 2.5,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: Collections rely on this for memory safety, so it cannot be left to an ordinary trait.",
+    "opus/1513-less-unwinding: Libraries that rely on catching panics, such as thread pools that keep running after a worker panics, will behave differently under `abort`.",
+    "opus/1574-more-api-documentation-conventions: - Tools that consume documentation, such as rustdoc's search and IDE hover text, cannot rely on structure."
+   ],
+   "human_examples": [
+    "pep-0001: to avoid the need to rely on the \"Provisional\" status (e.g.",
+    "pep-0008: Other modules must not rely on indirect access to such imported names"
+   ]
+  },
+  {
+   "unit": "token",
+   "n": 1,
+   "z_vs_paired": 3.9,
+   "llm_per1k": 0.749,
+   "paired_per1k": 0.343,
+   "base_per1k": 0.2853,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.075,
+   "base_docfrac": 0.059,
+   "prompts": 11,
+   "models": {
+    "opus": 5,
+    "sonnet": 8,
+    "haiku": 5
+   },
+   "test_llm_docfrac": 0.025,
+   "test_human_docfrac": 0.06,
+   "test_llm_per1k": 0.08,
+   "test_human_per1k": 0.1409,
+   "test_ratio": 0.6,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1681-macros-1.1: It exposes `libsyntax` directly: the AST types, the parser, the token types, the expansion context.",
+    "opus/1682-field-init-shorthand: Because the field name and the variable name are the same token, there is no case in which the field name would be taken from one hygiene context and the variable from another.",
+    "opus/2141-alternative-registries: token = \"...\""
+   ],
+   "human_examples": [
+    "pep-0225: as one token.",
+    "pep-0244: token in a module)."
+   ]
+  },
+  {
+   "unit": "capture",
+   "n": 1,
+   "z_vs_paired": 3.88,
+   "llm_per1k": 0.578,
+   "paired_per1k": 0.225,
+   "base_per1k": 0.207,
+   "ratio_vs_base": 2.8,
+   "llm_docfrac": 0.079,
+   "base_docfrac": 0.055,
+   "prompts": 15,
+   "models": {
+    "opus": 4,
+    "sonnet": 10,
+    "haiku": 5
+   },
+   "test_llm_docfrac": 0.058,
+   "test_human_docfrac": 0.05,
+   "test_llm_per1k": 0.134,
+   "test_human_per1k": 0.1,
+   "test_ratio": 1.3,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1857-stabilize-drop-order: This order is less obvious to users and depends on capture analysis.",
+    "opus/1985-tiered-browser-support: This is easy to automate, and may be a good input for build tooling, but it does not reflect the specific audience of Rust sites and does not capture considerations such as accessibility proxies.",
+    "opus/2229-capture-disjoint-fields: This RFC proposes that closures capture as little as they need rather than as much."
+   ],
+   "human_examples": [
+    "pep-0268: endheaders, we can capture all but the body.",
+    "pep-0301: mechanisms for the capture of package metadata, but did little with"
+   ]
+  },
+  {
+   "unit": "asks",
+   "n": 1,
+   "z_vs_paired": 3.84,
+   "llm_per1k": 0.315,
+   "paired_per1k": 0.043,
+   "base_per1k": 0.0177,
+   "ratio_vs_base": 17.8,
+   "llm_docfrac": 0.15,
+   "base_docfrac": 0.015,
+   "prompts": 24,
+   "models": {
+    "opus": 7,
+    "sonnet": 9,
+    "haiku": 20
+   },
+   "test_llm_docfrac": 0.108,
+   "test_human_docfrac": 0.035,
+   "test_llm_per1k": 0.268,
+   "test_human_per1k": 0.0363,
+   "test_ratio": 7.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1728-north-star: **Call for input (September to October).** The core team asks for public input.",
+    "opus/2325-stable-simd: **Runtime detection.** A new macro, `is_x86_feature_detected!(\"avx2\")`, asks the CPU at runtime:",
+    "opus/2904-compiler-major-change-process: The template asks for:"
+   ],
+   "human_examples": [
+    "pep-0246: scenes, the mechanism asks object X: \"Are you now, or do you know",
+    "pep-0385: at least one core developer asks for the branch to be provided."
+   ]
+  },
+  {
+   "unit": "registry",
+   "n": 1,
+   "z_vs_paired": 3.83,
+   "llm_per1k": 1.733,
+   "paired_per1k": 1.115,
+   "base_per1k": 0.2171,
+   "ratio_vs_base": 8.0,
+   "llm_docfrac": 0.108,
+   "base_docfrac": 0.036,
+   "prompts": 13,
+   "models": {
+    "opus": 7,
+    "sonnet": 8,
+    "haiku": 11
+   },
+   "test_llm_docfrac": 0.092,
+   "test_human_docfrac": 0.035,
+   "test_llm_per1k": 0.161,
+   "test_human_per1k": 0.0409,
+   "test_ratio": 3.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1969-cargo-prepublish: `crates-io` refers to the default registry.",
+    "opus/2141-alternative-registries: Cargo can currently fetch dependencies from exactly one registry: crates.io.",
+    "opus/3127-trim-paths: - Dependencies built from the Cargo registry live under `$CARGO_HOME/registry/src/<index>-<hash>/`, which usually includes the user's home directory, for example `/home/alice/.cargo/registry/src/...`."
+   ],
+   "human_examples": [
+    "pep-0100: A Codec (see Codec Interface Definition) search registry should be",
+    "pep-0246: other, the mechanism may check a registry of adapter factories,"
+   ]
+  },
+  {
+   "unit": "removes",
+   "n": 1,
+   "z_vs_paired": 3.82,
+   "llm_per1k": 0.348,
+   "paired_per1k": 0.075,
+   "base_per1k": 0.0719,
+   "ratio_vs_base": 4.8,
+   "llm_docfrac": 0.188,
+   "base_docfrac": 0.055,
+   "prompts": 33,
+   "models": {
+    "opus": 12,
+    "sonnet": 14,
+    "haiku": 19
+   },
+   "test_llm_docfrac": 0.233,
+   "test_human_docfrac": 0.085,
+   "test_llm_per1k": 0.401,
+   "test_human_per1k": 0.0818,
+   "test_ratio": 4.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: This was already the documented contract; the change removes the accidental safety net.",
+    "opus/1857-stabilize-drop-order: - Specifying the order removes freedom from the compiler.",
+    "opus/2005-match-ergonomics: This removes half the noise but keeps the structural mismatch, which is the more confusing part."
+   ],
+   "human_examples": [
+    "pep-0205: removes keys and referents when a reference is no longer used",
+    "pep-0311: removes ambiguity."
+   ]
+  },
+  {
+   "unit": "closure",
+   "n": 1,
+   "z_vs_paired": 3.81,
+   "llm_per1k": 0.794,
+   "paired_per1k": 0.386,
+   "base_per1k": 0.1893,
+   "ratio_vs_base": 4.2,
+   "llm_docfrac": 0.1,
+   "base_docfrac": 0.06,
+   "prompts": 12,
+   "models": {
+    "opus": 7,
+    "sonnet": 9,
+    "haiku": 8
+   },
+   "test_llm_docfrac": 0.042,
+   "test_human_docfrac": 0.07,
+   "test_llm_per1k": 0.094,
+   "test_human_per1k": 0.4135,
+   "test_ratio": 0.2,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1513-less-unwinding: With `panic_abort`, `std::panic::catch_unwind` still compiles and still returns `Ok` when the closure does not panic.",
+    "opus/1857-stabilize-drop-order: Variables captured by a closure are dropped in an order that is currently determined by the order in which they appear in the closure body.",
+    "opus/2091-inline-semantic: - It is allowed on closures once closure attributes are stable."
+   ],
+   "human_examples": [
+    "pep-0309: * It's really a curry rather than a closure.",
+    "pep-0316: function can access, except closure variables."
+   ]
+  },
+  {
+   "unit": "reference implementation",
+   "n": 2,
+   "z_vs_paired": 3.81,
+   "llm_per1k": 0.735,
+   "paired_per1k": 0.343,
+   "base_per1k": 0.3168,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.292,
+   "base_docfrac": 0.162,
+   "prompts": 33,
+   "models": {
+    "opus": 17,
+    "sonnet": 25,
+    "haiku": 28
+   },
+   "test_llm_docfrac": 0.325,
+   "test_human_docfrac": 0.185,
+   "test_llm_per1k": 0.776,
+   "test_human_per1k": 0.3362,
+   "test_ratio": 2.3,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/pep-0246: # Reference implementation",
+    "opus/pep-0309: ## Reference implementation in Python",
+    "opus/pep-0316: ## Reference Implementation"
+   ],
+   "human_examples": [
+    "pep-0001: reference implementation.",
+    "pep-0201: Here are some examples, based on the reference implementation below:"
+   ]
+  },
+  {
+   "unit": "wide",
+   "n": 1,
+   "z_vs_paired": 3.78,
+   "llm_per1k": 0.565,
+   "paired_per1k": 0.225,
+   "base_per1k": 0.1704,
+   "ratio_vs_base": 3.3,
+   "llm_docfrac": 0.087,
+   "base_docfrac": 0.09,
+   "prompts": 16,
+   "models": {
+    "opus": 3,
+    "sonnet": 10,
+    "haiku": 8
+   },
+   "test_llm_docfrac": 0.058,
+   "test_human_docfrac": 0.075,
+   "test_llm_per1k": 0.094,
+   "test_human_per1k": 0.0954,
+   "test_ratio": 1.0,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1728-north-star: If nobody says that this is a project-wide priority for the year, each team may reasonably decide it belongs to somebody else.",
+    "opus/pep-0261: Title: Support for \"wide\" Unicode characters",
+    "opus/pep-0611: Every time a value might in principle be arbitrarily large, the implementation must choose between two bad options: use a wide representation everywhere, or use a compact one and add overflow checks \u2014 sometimes in hot pa"
+   ],
+   "human_examples": [
+    "pep-0008: the readability of code and make it consistent across the wide",
+    "pep-0261: will call this TOPCHAR and call characters in this range \"wide"
+   ]
+  },
+  {
+   "unit": "writes",
+   "n": 1,
+   "z_vs_paired": 3.77,
+   "llm_per1k": 0.341,
+   "paired_per1k": 0.075,
+   "base_per1k": 0.0921,
+   "ratio_vs_base": 3.7,
+   "llm_docfrac": 0.158,
+   "base_docfrac": 0.058,
+   "prompts": 29,
+   "models": {
+    "opus": 14,
+    "sonnet": 10,
+    "haiku": 14
+   },
+   "test_llm_docfrac": 0.2,
+   "test_human_docfrac": 0.065,
+   "test_llm_per1k": 0.415,
+   "test_human_per1k": 0.1863,
+   "test_ratio": 2.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: **Time.** Every move of a droppable value writes zeroes over the source.",
+    "opus/1183-swap-out-jemalloc: A user who wants the system allocator in an executable writes:",
+    "opus/1728-north-star: At the start of each cycle the project as a whole identifies the most critical problems facing the language and its ecosystem, and writes down the story we want to be able to tell the world about Rust at the end of the y"
+   ],
+   "human_examples": [
+    "pep-0001: Each PEP must have a champion -- someone who writes the PEP using the style",
+    "pep-0042: BDFL will put in if somebody writes the code."
+   ]
+  },
+  {
+   "unit": "says",
+   "n": 1,
+   "z_vs_paired": 3.77,
+   "llm_per1k": 0.315,
+   "paired_per1k": 0.054,
+   "base_per1k": 0.0618,
+   "ratio_vs_base": 5.1,
+   "llm_docfrac": 0.167,
+   "base_docfrac": 0.049,
+   "prompts": 33,
+   "models": {
+    "opus": 18,
+    "sonnet": 15,
+    "haiku": 7
+   },
+   "test_llm_docfrac": 0.175,
+   "test_human_docfrac": 0.06,
+   "test_llm_per1k": 0.401,
+   "test_human_per1k": 0.0682,
+   "test_ratio": 5.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1574-more-api-documentation-conventions: Every public item should have at least one example, unless it is trivial (for instance, a field accessor whose summary already says everything).",
+    "opus/1682-field-init-shorthand: Each line says the same thing twice.",
+    "opus/1728-north-star: If nobody says that this is a project-wide priority for the year, each team may reasonably decide it belongs to somebody else."
+   ],
+   "human_examples": [
+    "pep-0008: As    says, \"Readability counts\".",
+    "pep-0102: string says something like \"X.YaZ+\"."
+   ]
+  },
+  {
+   "unit": "marker",
+   "n": 1,
+   "z_vs_paired": 3.76,
+   "llm_per1k": 0.499,
+   "paired_per1k": 0.182,
+   "base_per1k": 0.2285,
+   "ratio_vs_base": 2.2,
+   "llm_docfrac": 0.133,
+   "base_docfrac": 0.066,
+   "prompts": 20,
+   "models": {
+    "opus": 10,
+    "sonnet": 10,
+    "haiku": 12
+   },
+   "test_llm_docfrac": 0.1,
+   "test_human_docfrac": 0.075,
+   "test_llm_per1k": 0.308,
+   "test_human_per1k": 0.1681,
+   "test_ratio": 1.8,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: Instead, we note that if GC support is added, it will require allocators to opt in by implementing an additional marker trait.",
+    "opus/1682-field-init-shorthand: **Use a different marker**, such as `S { ..a, ..b }` or `S { =a }`.",
+    "opus/1733-trait-alias: Fixing its shortcomings would mean special-case solver rules for \"marker\" traits, which is more complicated than adding a real alias."
+   ],
+   "human_examples": [
+    "pep-0008: if the tool places a marker glyph in the final column when wrapping",
+    "pep-0012: markup start), followed by the footnote marker (no underscores),"
+   ]
+  },
+  {
+   "unit": "reference level explanation",
+   "n": 3,
+   "z_vs_paired": 3.74,
+   "llm_per1k": 0.65,
+   "paired_per1k": 0.289,
+   "base_per1k": 0.159,
+   "ratio_vs_base": 4.1,
+   "llm_docfrac": 0.412,
+   "base_docfrac": 0.143,
+   "prompts": 43,
+   "models": {
+    "opus": 31,
+    "sonnet": 25,
+    "haiku": 43
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.14,
+   "test_llm_per1k": 0.482,
+   "test_human_per1k": 0.1727,
+   "test_ratio": 2.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1598-generic_associated_types: # Reference-level explanation",
+    "opus/1733-trait-alias: # Reference-level explanation",
+    "opus/1946-intra-rustdoc-links: # Reference-level explanation"
+   ],
+   "human_examples": [
+    "2071-impl-trait-existential-types: ## Reference-Level Explanation",
+    "2089-implied-bounds: ## Reference-Level Explanation"
+   ]
+  },
+  {
+   "unit": "mode",
+   "n": 1,
+   "z_vs_paired": 3.74,
+   "llm_per1k": 0.959,
+   "paired_per1k": 0.515,
+   "base_per1k": 0.4493,
+   "ratio_vs_base": 2.1,
+   "llm_docfrac": 0.154,
+   "base_docfrac": 0.13,
+   "prompts": 22,
+   "models": {
+    "opus": 10,
+    "sonnet": 15,
+    "haiku": 12
+   },
+   "test_llm_docfrac": 0.142,
+   "test_human_docfrac": 0.18,
+   "test_llm_per1k": 0.508,
+   "test_human_per1k": 0.8724,
+   "test_ratio": 0.6,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1985-tiered-browser-support: Text-mode browsers such as Lynx and w3m, for reading documentation only.",
+    "opus/2005-match-ergonomics: The compiler dereferences the matched value automatically when a non-reference pattern meets a reference, and it tracks a *default binding mode* that decides whether plain identifier bindings bind by value, by shared ref",
+    "opus/2229-capture-disjoint-fields: ## Mode of capture"
+   ],
+   "human_examples": [
+    "pep-0005: Add an optional warning mode to the parser that will inform users",
+    "pep-0011: New versions of Windows released while CPython is in maintenance mode"
+   ]
+  },
+  {
+   "unit": "applies",
+   "n": 1,
+   "z_vs_paired": 3.73,
+   "llm_per1k": 0.604,
+   "paired_per1k": 0.257,
+   "base_per1k": 0.212,
+   "ratio_vs_base": 2.8,
+   "llm_docfrac": 0.263,
+   "base_docfrac": 0.149,
+   "prompts": 44,
+   "models": {
+    "opus": 24,
+    "sonnet": 16,
+    "haiku": 23
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.175,
+   "test_llm_per1k": 0.615,
+   "test_human_per1k": 0.2136,
+   "test_ratio": 2.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1513-less-unwinding: The setting applies only to the top-level workspace.",
+    "opus/1598-generic_associated_types: The same applies in `impl` blocks, with `= Type` before the where clause.",
+    "opus/1682-field-init-shorthand: ## Where it applies"
+   ],
+   "human_examples": [
+    "pep-0008: applies here.",
+    "pep-0237: This applies to transition phase 1."
+   ]
+  },
+  {
+   "unit": "deliberately",
+   "n": 1,
+   "z_vs_paired": 3.73,
+   "llm_per1k": 0.315,
+   "paired_per1k": 0.021,
+   "base_per1k": 0.0606,
+   "ratio_vs_base": 5.2,
+   "llm_docfrac": 0.183,
+   "base_docfrac": 0.045,
+   "prompts": 30,
+   "models": {
+    "opus": 17,
+    "sonnet": 17,
+    "haiku": 10
+   },
+   "test_llm_docfrac": 0.183,
+   "test_human_docfrac": 0.06,
+   "test_llm_per1k": 0.321,
+   "test_human_per1k": 0.0727,
+   "test_ratio": 4.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/2089-implied-bounds: This is one reason the standard library deliberately avoids bounds on struct definitions, putting them only on impls instead.",
+    "opus/2136-build-systems: Because this is an experimental RFC, it deliberately does not specify formats or flag names in detail.",
+    "opus/2195-really-tagged-unions: Rust's default enum layout is deliberately unspecified."
+   ],
+   "human_examples": [
+    "pep-0008: When deliberately replacing an inner exception (using  raise X from",
+    "pep-0246: wrapper is deliberately vague, and a wrapper is allowed to be a"
+   ]
+  },
+  {
+   "unit": "exact",
+   "n": 1,
+   "z_vs_paired": 3.69,
+   "llm_per1k": 0.63,
+   "paired_per1k": 0.279,
+   "base_per1k": 0.2474,
+   "ratio_vs_base": 2.5,
+   "llm_docfrac": 0.304,
+   "base_docfrac": 0.168,
+   "prompts": 53,
+   "models": {
+    "opus": 20,
+    "sonnet": 15,
+    "haiku": 38
+   },
+   "test_llm_docfrac": 0.25,
+   "test_human_docfrac": 0.225,
+   "test_llm_per1k": 0.696,
+   "test_human_per1k": 0.2953,
+   "test_ratio": 2.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: It must define the following functions with these exact names and signatures, and with no mangling:",
+    "opus/1560-name-resolution: - The exact interaction with macro name resolution is left to a future RFC.",
+    "opus/1969-cargo-prepublish: `[replace]` also requires naming the exact version being replaced, which is awkward when the graph contains several."
+   ],
+   "human_examples": [
+    "pep-0228: One consequence of these two rules is that all exact calculations",
+    "pep-0240: was the default 'exact' arithmetic in ABC and it did not work out as"
+   ]
+  },
+  {
+   "unit": "reviewers",
+   "n": 1,
+   "z_vs_paired": 3.68,
+   "llm_per1k": 0.289,
+   "paired_per1k": 0.032,
+   "base_per1k": 0.0353,
+   "ratio_vs_base": 8.2,
+   "llm_docfrac": 0.071,
+   "base_docfrac": 0.024,
+   "prompts": 10,
+   "models": {
+    "opus": 5,
+    "sonnet": 7,
+    "haiku": 5
+   },
+   "test_llm_docfrac": 0.025,
+   "test_human_docfrac": 0.01,
+   "test_llm_per1k": 0.04,
+   "test_human_per1k": 0.0091,
+   "test_ratio": 4.0,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1574-more-api-documentation-conventions: Writing these conventions down gives reviewers something to point at, gives newcomers a template, and lets tooling assume more about the shape of documentation.",
+    "opus/2333-prior-art: Then reviewers raise it in the comments: \"Swift did this and regretted it\", \"Haskell has had this since 1998\", \"there is a paper on exactly this soundness hole\".",
+    "opus/2585-unsafe-block-in-unsafe-fn: Reviewers have to read the whole function looking for operations that might be unsafe."
+   ],
+   "human_examples": [
+    "pep-0001: and reviewers, not the editors.",
+    "pep-0232: suggested by PEP reviewers: [3]_"
+   ]
+  },
+  {
+   "unit": "callers",
+   "n": 1,
+   "z_vs_paired": 3.64,
+   "llm_per1k": 0.414,
+   "paired_per1k": 0.011,
+   "base_per1k": 0.0391,
+   "ratio_vs_base": 10.6,
+   "llm_docfrac": 0.142,
+   "base_docfrac": 0.033,
+   "prompts": 21,
+   "models": {
+    "opus": 13,
+    "sonnet": 11,
+    "haiku": 10
+   },
+   "test_llm_docfrac": 0.183,
+   "test_human_docfrac": 0.025,
+   "test_llm_per1k": 0.655,
+   "test_human_per1k": 0.0363,
+   "test_ratio": 18.0,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1105-api-evolution: - **Changing a trait item's signature in almost any way.** Implementors and callers can both break.",
+    "opus/1398-kinds-of-allocators: Collections always know the size of what they allocated, so requiring it costs callers nothing.",
+    "opus/2089-implied-bounds: Callers are not relieved of anything."
+   ],
+   "human_examples": [
+    "pep-0008: advanced callers.",
+    "pep-0286: release; most callers don't even know that they have the"
+   ]
+  },
+  {
+   "unit": "plain",
+   "n": 1,
+   "z_vs_paired": 3.64,
+   "llm_per1k": 0.341,
+   "paired_per1k": 0.086,
+   "base_per1k": 0.1073,
+   "ratio_vs_base": 3.2,
+   "llm_docfrac": 0.175,
+   "base_docfrac": 0.08,
+   "prompts": 33,
+   "models": {
+    "opus": 15,
+    "sonnet": 20,
+    "haiku": 7
+   },
+   "test_llm_docfrac": 0.1,
+   "test_human_docfrac": 0.04,
+   "test_llm_per1k": 0.174,
+   "test_human_per1k": 0.0636,
+   "test_ratio": 2.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1598-generic_associated_types: Allow associated types in traits to have their own generic parameters, making them type constructors rather than plain types.",
+    "opus/1682-field-init-shorthand: The shorthand expands to a plain path expression, so it moves or copies the variable exactly as `f: f` would.",
+    "opus/1946-intra-rustdoc-links: For shortcut links with no explicit destination, pulldown-cmark normally treats `[foo]` as plain text if no reference definition exists."
+   ],
+   "human_examples": [
+    "pep-0100: It works on plain 8-bit, UCS-2, and (optionally) UCS-4",
+    "pep-0101: Admin and a plain User (not Power User) account."
+   ]
+  },
+  {
+   "unit": "diagnostics",
+   "n": 1,
+   "z_vs_paired": 3.63,
+   "llm_per1k": 0.387,
+   "paired_per1k": 0.118,
+   "base_per1k": 0.0278,
+   "ratio_vs_base": 14.0,
+   "llm_docfrac": 0.133,
+   "base_docfrac": 0.011,
+   "prompts": 21,
+   "models": {
+    "opus": 7,
+    "sonnet": 12,
+    "haiku": 13
+   },
+   "test_llm_docfrac": 0.092,
+   "test_human_docfrac": 0.035,
+   "test_llm_per1k": 0.294,
+   "test_human_per1k": 0.1045,
+   "test_ratio": 2.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1682-field-init-shorthand: ## Diagnostics",
+    "opus/2052-epochs: Features often land in a state that is technically complete but not yet well supported by tooling, documentation or diagnostics, and the final polish arrives piecemeal over subsequent releases.",
+    "opus/2229-capture-disjoint-fields: - Exactly which diagnostics should the migration lint emit, and how should it handle macro-generated closures?"
+   ],
+   "human_examples": [
+    "0558-require-parentheses-for-chained-comparisons: which would be a vast improvement over the current diagnostics for this mistake.",
+    "1966-unsafe-pointer-reform: When a deprecation occurs, users of the latest compiler will be pressured by diagnostics to update their code to the new APIs."
+   ]
+  },
+  {
+   "unit": "warn",
+   "n": 1,
+   "z_vs_paired": 3.62,
+   "llm_per1k": 0.295,
+   "paired_per1k": 0.054,
+   "base_per1k": 0.1224,
+   "ratio_vs_base": 2.4,
+   "llm_docfrac": 0.142,
+   "base_docfrac": 0.069,
+   "prompts": 23,
+   "models": {
+    "opus": 14,
+    "sonnet": 11,
+    "haiku": 9
+   },
+   "test_llm_docfrac": 0.108,
+   "test_human_docfrac": 0.08,
+   "test_llm_per1k": 0.254,
+   "test_human_per1k": 0.1136,
+   "test_ratio": 2.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: - Should the compiler warn when a function requires dynamic drop flags, to help performance-sensitive code avoid them?",
+    "opus/1513-less-unwinding: Cargo will warn if `panic` is set in those profiles.",
+    "opus/1560-name-resolution: - Whether to warn on unused ambiguous names."
+   ],
+   "human_examples": [
+    "pep-0011: announcement will be made to warn the community of the pending removal",
+    "pep-0230: Response: \"from warnings import warn\" is easy enough."
+   ]
+  },
+  {
+   "unit": "contributors",
+   "n": 1,
+   "z_vs_paired": 3.62,
+   "llm_per1k": 0.355,
+   "paired_per1k": 0.096,
+   "base_per1k": 0.1464,
+   "ratio_vs_base": 2.4,
+   "llm_docfrac": 0.075,
+   "base_docfrac": 0.049,
+   "prompts": 9,
+   "models": {
+    "opus": 6,
+    "sonnet": 5,
+    "haiku": 7
+   },
+   "test_llm_docfrac": 0.1,
+   "test_human_docfrac": 0.045,
+   "test_llm_per1k": 0.348,
+   "test_human_per1k": 0.1318,
+   "test_ratio": 2.6,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1574-more-api-documentation-conventions: - Contributors to `std` get conflicting review feedback about headings, link style and example format.",
+    "opus/1728-north-star: It has three aims: give contributors a shared vision of where the project is going, make the path toward that vision visible, and take time to recognize what we have accomplished.",
+    "opus/1985-tiered-browser-support: Contributors proposing a modern CSS or JavaScript feature have no way to know whether they are allowed to use it."
+   ],
+   "human_examples": [
+    "pep-0001: can be used to recognise contributors to the work who are not co-authors.",
+    "pep-0011: We assume contributors are able to maintain modifications/patches,"
+   ]
+  },
+  {
+   "unit": "reference level",
+   "n": 2,
+   "z_vs_paired": 3.62,
+   "llm_per1k": 0.65,
+   "paired_per1k": 0.3,
+   "base_per1k": 0.1641,
+   "ratio_vs_base": 4.0,
+   "llm_docfrac": 0.412,
+   "base_docfrac": 0.145,
+   "prompts": 43,
+   "models": {
+    "opus": 31,
+    "sonnet": 25,
+    "haiku": 43
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.14,
+   "test_llm_per1k": 0.482,
+   "test_human_per1k": 0.1772,
+   "test_ratio": 2.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1598-generic_associated_types: # Reference-level explanation",
+    "opus/1733-trait-alias: # Reference-level explanation",
+    "opus/1946-intra-rustdoc-links: # Reference-level explanation"
+   ],
+   "human_examples": [
+    "2071-impl-trait-existential-types: ## Reference-Level Explanation",
+    "2089-implied-bounds: ## Reference-Level Explanation"
+   ]
+  },
+  {
+   "unit": "library authors",
+   "n": 2,
+   "z_vs_paired": 3.6,
+   "llm_per1k": 0.276,
+   "paired_per1k": 0.032,
+   "base_per1k": 0.0454,
+   "ratio_vs_base": 6.1,
+   "llm_docfrac": 0.129,
+   "base_docfrac": 0.033,
+   "prompts": 23,
+   "models": {
+    "opus": 12,
+    "sonnet": 10,
+    "haiku": 9
+   },
+   "test_llm_docfrac": 0.1,
+   "test_human_docfrac": 0.01,
+   "test_llm_per1k": 0.254,
+   "test_human_per1k": 0.0545,
+   "test_ratio": 4.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1105-api-evolution: Library authors should use judgment and treat any change to a documented contract as major.",
+    "opus/1183-swap-out-jemalloc: Library authors can opt back into jemalloc, but only on nightly until the attributes stabilize.",
+    "opus/2089-implied-bounds: Library authors will need to think of type-level bounds as part of their public API in both directions."
+   ],
+   "human_examples": [
+    "pep-0414: framework and library authors can easily handle on behalf of their users.",
+    "pep-0422: One of the big issues that makes library authors reluctant to use metaclasses"
+   ]
+  },
+  {
+   "unit": "pointer",
+   "n": 1,
+   "z_vs_paired": 3.59,
+   "llm_per1k": 1.116,
+   "paired_per1k": 0.654,
+   "base_per1k": 0.5326,
+   "ratio_vs_base": 2.1,
+   "llm_docfrac": 0.225,
+   "base_docfrac": 0.142,
+   "prompts": 25,
+   "models": {
+    "opus": 20,
+    "sonnet": 22,
+    "haiku": 12
+   },
+   "test_llm_docfrac": 0.108,
+   "test_human_docfrac": 0.1,
+   "test_llm_per1k": 0.535,
+   "test_human_per1k": 0.3544,
+   "test_ratio": 1.5,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: For alignments larger than the platform guarantees, it over-allocates and adjusts the pointer.",
+    "opus/1398-kinds-of-allocators: **The trait is `unsafe`.** Implementors promise that a pointer returned from `alloc` is valid for the requested layout and does not alias any other live allocation.",
+    "opus/1444-union: - POSIX `sigaction` contains a union of handler function pointers; `epoll_event` contains `epoll_data_t`, a union of a pointer and integers."
+   ],
+   "human_examples": [
+    "pep-0100: will contain a pointer to this PEP.",
+    "pep-0205: basically a C-level Python object with a pointer to the Python"
+   ]
+  },
+  {
+   "unit": "describe",
+   "n": 1,
+   "z_vs_paired": 3.59,
+   "llm_per1k": 0.368,
+   "paired_per1k": 0.107,
+   "base_per1k": 0.1553,
+   "ratio_vs_base": 2.4,
+   "llm_docfrac": 0.183,
+   "base_docfrac": 0.103,
+   "prompts": 32,
+   "models": {
+    "opus": 12,
+    "sonnet": 15,
+    "haiku": 17
+   },
+   "test_llm_docfrac": 0.133,
+   "test_human_docfrac": 0.15,
+   "test_llm_per1k": 0.268,
+   "test_human_per1k": 0.2272,
+   "test_ratio": 1.2,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1513-less-unwinding: It also emits unwind tables that describe the stack layout of every function.",
+    "opus/1728-north-star: They describe what is wrong and why it matters.",
+    "opus/1857-stabilize-drop-order: The following rules describe the current behaviour of rustc."
+   ],
+   "human_examples": [
+    "pep-0001: It may also describe an interoperability standard that will",
+    "pep-0007: * Comments go before the code they describe."
+   ]
+  },
+  {
+   "unit": "offer",
+   "n": 1,
+   "z_vs_paired": 3.58,
+   "llm_per1k": 0.335,
+   "paired_per1k": 0.086,
+   "base_per1k": 0.1452,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.175,
+   "base_docfrac": 0.094,
+   "prompts": 36,
+   "models": {
+    "opus": 11,
+    "sonnet": 13,
+    "haiku": 18
+   },
+   "test_llm_docfrac": 0.125,
+   "test_human_docfrac": 0.125,
+   "test_llm_per1k": 0.241,
+   "test_human_per1k": 0.1772,
+   "test_ratio": 1.4,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1681-macros-1.1: This is a known regression relative to what a full design could offer.",
+    "opus/1682-field-init-shorthand: The compiler should also offer a lint (allowed by default initially) that suggests the shorthand when it sees `f: f`.",
+    "opus/1728-north-star: **A longer cycle.** A multi-year vision would offer more stability but would be harder to get agreement on, and it would rarely produce a satisfying retrospective."
+   ],
+   "human_examples": [
+    "pep-0001: experienced to make the final decision on that PEP may offer to serve as its",
+    "pep-0008: Some web based tools may not offer dynamic line wrapping at all."
+   ]
+  },
+  {
+   "unit": "report",
+   "n": 1,
+   "z_vs_paired": 3.55,
+   "llm_per1k": 0.427,
+   "paired_per1k": 0.15,
+   "base_per1k": 0.1338,
+   "ratio_vs_base": 3.2,
+   "llm_docfrac": 0.192,
+   "base_docfrac": 0.078,
+   "prompts": 32,
+   "models": {
+    "opus": 15,
+    "sonnet": 11,
+    "haiku": 20
+   },
+   "test_llm_docfrac": 0.183,
+   "test_human_docfrac": 0.115,
+   "test_llm_per1k": 0.575,
+   "test_human_per1k": 0.2136,
+   "test_ratio": 2.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: - How should allocator crates report out-of-memory conditions?",
+    "opus/1513-less-unwinding: The `test` and `bench` profiles ignore this setting and always use `unwind`, because the test harness relies on catching panics to report a failing test and continue with the others.",
+    "opus/1682-field-init-shorthand: If the identifier does not resolve, the compiler should report the error in terms the user wrote."
+   ],
+   "human_examples": [
+    "pep-0042: The procedure now is:  if a bug report is",
+    "pep-0100: case mapping algorithm defined in the above technical report as"
+   ]
+  },
+  {
+   "unit": "guard",
+   "n": 1,
+   "z_vs_paired": 3.52,
+   "llm_per1k": 0.407,
+   "paired_per1k": 0.139,
+   "base_per1k": 0.1578,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.046,
+   "base_docfrac": 0.039,
+   "prompts": 8,
+   "models": {
+    "opus": 2,
+    "sonnet": 6,
+    "haiku": 3
+   },
+   "test_llm_docfrac": 0.017,
+   "test_human_docfrac": 0.02,
+   "test_llm_per1k": 0.027,
+   "test_human_per1k": 0.0227,
+   "test_ratio": 1.2,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1857-stabilize-drop-order: A `MutexGuard` stored next to data that must be written while the lock is held depends on the guard being dropped after the write is complete.",
+    "opus/pep-0510: what a guard is, and how the interpreter chooses which code to run.",
+    "sonnet/1513-less-unwinding: For example, a library using a guard type that restores state in `Drop` is unaffected by abort, since the process ends; but a library using `catch_unwind` as a recovery mechanism silently stops being correct."
+   ],
+   "human_examples": [
+    "pep-0308: When the condition serves as a guard for the validity of the",
+    "pep-0339: guard on the 'if' is a basic block which is pointed to by the basic"
+   ]
+  },
+  {
+   "unit": "guide level explanation",
+   "n": 3,
+   "z_vs_paired": 3.51,
+   "llm_per1k": 0.65,
+   "paired_per1k": 0.311,
+   "base_per1k": 0.1666,
+   "ratio_vs_base": 3.9,
+   "llm_docfrac": 0.412,
+   "base_docfrac": 0.148,
+   "prompts": 43,
+   "models": {
+    "opus": 31,
+    "sonnet": 25,
+    "haiku": 43
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.15,
+   "test_llm_per1k": 0.482,
+   "test_human_per1k": 0.1545,
+   "test_ratio": 3.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1598-generic_associated_types: # Guide-level explanation",
+    "opus/1733-trait-alias: # Guide-level explanation",
+    "opus/1946-intra-rustdoc-links: # Guide-level explanation"
+   ],
+   "human_examples": [
+    "2071-impl-trait-existential-types: ## Guide-Level Explanation",
+    "2089-implied-bounds: ## Guide-Level Explanation"
+   ]
+  },
+  {
+   "unit": "guide level",
+   "n": 2,
+   "z_vs_paired": 3.5,
+   "llm_per1k": 0.65,
+   "paired_per1k": 0.311,
+   "base_per1k": 0.1704,
+   "ratio_vs_base": 3.8,
+   "llm_docfrac": 0.412,
+   "base_docfrac": 0.15,
+   "prompts": 43,
+   "models": {
+    "opus": 31,
+    "sonnet": 25,
+    "haiku": 43
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.15,
+   "test_llm_per1k": 0.482,
+   "test_human_per1k": 0.1545,
+   "test_ratio": 3.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1598-generic_associated_types: # Guide-level explanation",
+    "opus/1733-trait-alias: # Guide-level explanation",
+    "opus/1946-intra-rustdoc-links: # Guide-level explanation"
+   ],
+   "human_examples": [
+    "2071-impl-trait-existential-types: ## Guide-Level Explanation",
+    "2089-implied-bounds: ## Guide-Level Explanation"
+   ]
+  },
+  {
+   "unit": "learn",
+   "n": 1,
+   "z_vs_paired": 3.48,
+   "llm_per1k": 0.355,
+   "paired_per1k": 0.107,
+   "base_per1k": 0.1035,
+   "ratio_vs_base": 3.4,
+   "llm_docfrac": 0.2,
+   "base_docfrac": 0.069,
+   "prompts": 34,
+   "models": {
+    "opus": 20,
+    "sonnet": 13,
+    "haiku": 15
+   },
+   "test_llm_docfrac": 0.158,
+   "test_human_docfrac": 0.095,
+   "test_llm_per1k": 0.268,
+   "test_human_per1k": 0.0954,
+   "test_ratio": 2.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: We want to learn from that history.",
+    "opus/1682-field-init-shorthand: Experience in those languages suggests the feature is easy to learn and widely used once available.",
+    "opus/1728-north-star: **There is no single place to learn what Rust is working on.** Someone who wants to know whether incremental compilation will land this year, or whether the IDE story is a priority, has to piece the answer together from "
+   ],
+   "human_examples": [
+    "pep-0012: A number of resources are available to learn more about them:",
+    "pep-0237: general or not) one less thing to learn before they can start using the"
+   ]
+  },
+  {
+   "unit": "share",
+   "n": 1,
+   "z_vs_paired": 3.47,
+   "llm_per1k": 0.322,
+   "paired_per1k": 0.086,
+   "base_per1k": 0.1237,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.175,
+   "base_docfrac": 0.081,
+   "prompts": 33,
+   "models": {
+    "opus": 17,
+    "sonnet": 12,
+    "haiku": 13
+   },
+   "test_llm_docfrac": 0.117,
+   "test_human_docfrac": 0.1,
+   "test_llm_per1k": 0.187,
+   "test_human_per1k": 0.1363,
+   "test_ratio": 1.4,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1105-api-evolution: - **Adding a defaulted item to a trait.** This can cause method-name ambiguity downstream when two traits in scope share the name.",
+    "opus/1398-kinds-of-allocators: - **Instrumentation.** Tracking how much memory a particular subsystem uses is easiest if that subsystem's containers share an allocator that counts.",
+    "opus/1513-less-unwinding: In binaries with many generic functions, landing pads and tables can be a large share of the output."
+   ],
+   "human_examples": [
+    "pep-0100: multiple processes can share the same data.",
+    "pep-0101: tagging the release, and you will use it to share with the other experts"
+   ]
+  },
+  {
+   "unit": "boundary",
+   "n": 1,
+   "z_vs_paired": 3.47,
+   "llm_per1k": 0.256,
+   "paired_per1k": 0.032,
+   "base_per1k": 0.0783,
+   "ratio_vs_base": 3.3,
+   "llm_docfrac": 0.121,
+   "base_docfrac": 0.039,
+   "prompts": 23,
+   "models": {
+    "opus": 10,
+    "sonnet": 10,
+    "haiku": 9
+   },
+   "test_llm_docfrac": 0.092,
+   "test_human_docfrac": 0.02,
+   "test_llm_per1k": 0.147,
+   "test_human_per1k": 0.0363,
+   "test_ratio": 4.0,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: - means memory allocated on one side of the FFI boundary cannot safely be freed on the other side, even when both sides believe they are using `malloc`;",
+    "opus/1444-union: None of these let the compiler know that a type is a union, so none of them work correctly when the union is passed by value across an FFI boundary on ABIs where unions have their own calling convention rules.",
+    "opus/1513-less-unwinding: The panicking thread walks back up its stack, running destructors for every live value, until it reaches the top of the thread or a `catch_unwind` boundary."
+   ],
+   "human_examples": [
+    "pep-0333: a block boundary.)",
+    "pep-0444: beyond the I/O boundary of their application, they will need to do a"
+   ]
+  },
+  {
+   "unit": "natural",
+   "n": 1,
+   "z_vs_paired": 3.45,
+   "llm_per1k": 0.368,
+   "paired_per1k": 0.118,
+   "base_per1k": 0.159,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.221,
+   "base_docfrac": 0.11,
+   "prompts": 37,
+   "models": {
+    "opus": 20,
+    "sonnet": 16,
+    "haiku": 17
+   },
+   "test_llm_docfrac": 0.15,
+   "test_human_docfrac": 0.135,
+   "test_llm_per1k": 0.281,
+   "test_human_per1k": 0.1954,
+   "test_ratio": 1.4,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1513-less-unwinding: Profiles are where other code generation decisions, like optimization level and debug info, already live, and it is natural to want different strategies for debug and release builds.",
+    "opus/1728-north-star: **We do not stop to look back.** The six-week release train is good at shipping, but it does not create natural moments for reflection.",
+    "opus/2113-dyn-trait-syntax: With a leading keyword, `&dyn Trait + Send` can be given the natural parse in a future edition."
+   ],
+   "human_examples": [
+    "pep-0005: In the natural evolution of programming languages it is sometimes",
+    "pep-0008: plus an opening parenthesis creates a natural 4-space indent for the"
+   ]
+  },
+  {
+   "unit": "places",
+   "n": 1,
+   "z_vs_paired": 3.44,
+   "llm_per1k": 0.538,
+   "paired_per1k": 0.236,
+   "base_per1k": 0.1919,
+   "ratio_vs_base": 2.8,
+   "llm_docfrac": 0.237,
+   "base_docfrac": 0.15,
+   "prompts": 44,
+   "models": {
+    "opus": 15,
+    "sonnet": 16,
+    "haiku": 26
+   },
+   "test_llm_docfrac": 0.192,
+   "test_human_docfrac": 0.125,
+   "test_llm_per1k": 0.388,
+   "test_human_per1k": 0.1409,
+   "test_ratio": 2.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1560-name-resolution: - An explicit import and a glob import of the same name conflict in some places and not others.",
+    "opus/1574-more-api-documentation-conventions: Rustdoc places documentation under its own page heading, so a top-level `#` in the comment renders as a section heading.",
+    "opus/1733-trait-alias: Rust code often repeats the same bound in many places."
+   ],
+   "human_examples": [
+    "pep-0008: if the tool places a marker glyph in the final column when wrapping",
+    "pep-0012: If you want to use one link multiple places with different linked text,"
+   ]
+  },
+  {
+   "unit": "silently",
+   "n": 1,
+   "z_vs_paired": 3.42,
+   "llm_per1k": 0.348,
+   "paired_per1k": 0.107,
+   "base_per1k": 0.0593,
+   "ratio_vs_base": 5.9,
+   "llm_docfrac": 0.188,
+   "base_docfrac": 0.043,
+   "prompts": 29,
+   "models": {
+    "opus": 16,
+    "sonnet": 13,
+    "haiku": 16
+   },
+   "test_llm_docfrac": 0.267,
+   "test_human_docfrac": 0.085,
+   "test_llm_per1k": 0.562,
+   "test_human_per1k": 0.109,
+   "test_ratio": 5.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: - Unsafe code that depended on zeroing semantics will break, sometimes silently.",
+    "opus/1513-less-unwinding: It is unsafe in combination with code that does unwind: if a crate compiled with landing pads calls into one compiled without, and a panic occurs, destructors are silently skipped.",
+    "opus/1857-stabilize-drop-order: Whatever the merits of that order, changing it now would break code silently."
+   ],
+   "human_examples": [
+    "pep-0278: default such an editor would silently convert your line endings to",
+    "pep-0324: Note: All functions in this section fail (more or less) silently"
+   ]
+  },
+  {
+   "unit": "behave",
+   "n": 1,
+   "z_vs_paired": 3.42,
+   "llm_per1k": 0.381,
+   "paired_per1k": 0.129,
+   "base_per1k": 0.1653,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.204,
+   "base_docfrac": 0.112,
+   "prompts": 39,
+   "models": {
+    "opus": 18,
+    "sonnet": 12,
+    "haiku": 19
+   },
+   "test_llm_docfrac": 0.292,
+   "test_human_docfrac": 0.14,
+   "test_llm_per1k": 0.548,
+   "test_human_per1k": 0.209,
+   "test_ratio": 2.6,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1513-less-unwinding: Libraries that rely on catching panics, such as thread pools that keep running after a worker panics, will behave differently under `abort`.",
+    "opus/1560-name-resolution: In short: imports behave more like items.",
+    "opus/1733-trait-alias: - **Another kind of item.** Aliases share a namespace with traits but behave differently."
+   ],
+   "human_examples": [
+    "pep-0005: programs that will behave differently in the future must trigger",
+    "pep-0203: They truly behave as augmented assignment, in that they perform all of the"
+   ]
+  },
+  {
+   "unit": "guide",
+   "n": 1,
+   "z_vs_paired": 3.42,
+   "llm_per1k": 0.827,
+   "paired_per1k": 0.45,
+   "base_per1k": 0.2789,
+   "ratio_vs_base": 3.0,
+   "llm_docfrac": 0.45,
+   "base_docfrac": 0.204,
+   "prompts": 47,
+   "models": {
+    "opus": 32,
+    "sonnet": 31,
+    "haiku": 45
+   },
+   "test_llm_docfrac": 0.325,
+   "test_human_docfrac": 0.23,
+   "test_llm_per1k": 0.522,
+   "test_human_per1k": 0.4362,
+   "test_ratio": 1.2,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1598-generic_associated_types: # Guide-level explanation",
+    "opus/1733-trait-alias: # Guide-level explanation",
+    "opus/1946-intra-rustdoc-links: # Guide-level explanation"
+   ],
+   "human_examples": [
+    "pep-0007: (As a reminder to any users reading this: this PEP is a *style guide*; these",
+    "pep-0008: Guido's original Python Style Guide essay, with some additions from"
+   ]
+  },
+  {
+   "unit": "fails",
+   "n": 1,
+   "z_vs_paired": 3.39,
+   "llm_per1k": 0.44,
+   "paired_per1k": 0.172,
+   "base_per1k": 0.1818,
+   "ratio_vs_base": 2.4,
+   "llm_docfrac": 0.208,
+   "base_docfrac": 0.104,
+   "prompts": 32,
+   "models": {
+    "opus": 16,
+    "sonnet": 16,
+    "haiku": 18
+   },
+   "test_llm_docfrac": 0.192,
+   "test_human_docfrac": 0.135,
+   "test_llm_per1k": 0.348,
+   "test_human_per1k": 0.1908,
+   "test_ratio": 1.8,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: If more than one allocator crate is explicitly linked, compilation fails with an error naming the conflicting crates.",
+    "opus/1513-less-unwinding: If more than one panic runtime is linked, compilation fails.",
+    "opus/1681-macros-1.1: If the returned string fails to parse as Rust items, the compiler reports a parse error with a note that it originated in a custom derive."
+   ],
+   "human_examples": [
+    "pep-0100: (or raises an exception in case the conversion fails).",
+    "pep-0200: If it fails, there may be"
+   ]
+  },
+  {
+   "unit": "moves",
+   "n": 1,
+   "z_vs_paired": 3.35,
+   "llm_per1k": 0.309,
+   "paired_per1k": 0.086,
+   "base_per1k": 0.0593,
+   "ratio_vs_base": 5.2,
+   "llm_docfrac": 0.133,
+   "base_docfrac": 0.043,
+   "prompts": 22,
+   "models": {
+    "opus": 9,
+    "sonnet": 10,
+    "haiku": 13
+   },
+   "test_llm_docfrac": 0.1,
+   "test_human_docfrac": 0.05,
+   "test_llm_per1k": 0.268,
+   "test_human_per1k": 0.0636,
+   "test_ratio": 4.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Unsafe code that moves a value out with `ptr::read` and later lets the original location go out of scope would, today, run the destructor a second time on a zeroed value, which for most types happens to be harmless.",
+    "opus/1560-name-resolution: Import resolution moves earlier, into the same phase as parsing and macro expansion.",
+    "opus/1682-field-init-shorthand: The shorthand expands to a plain path expression, so it moves or copies the variable exactly as `f: f` would."
+   ],
+   "human_examples": [
+    "pep-0102: Thomas compiles everything with MSVC 6.0 SP5, and moves the",
+    "pep-0247: that also means that the *string* parameter moves from the first position to"
+   ]
+  },
+  {
+   "unit": "whole",
+   "n": 1,
+   "z_vs_paired": 3.35,
+   "llm_per1k": 0.558,
+   "paired_per1k": 0.257,
+   "base_per1k": 0.2398,
+   "ratio_vs_base": 2.3,
+   "llm_docfrac": 0.246,
+   "base_docfrac": 0.164,
+   "prompts": 42,
+   "models": {
+    "opus": 22,
+    "sonnet": 18,
+    "haiku": 19
+   },
+   "test_llm_docfrac": 0.183,
+   "test_human_docfrac": 0.195,
+   "test_llm_per1k": 0.415,
+   "test_human_per1k": 0.259,
+   "test_ratio": 1.6,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1183-swap-out-jemalloc: **Global, link-time choice.** The allocator is chosen once for the whole program.",
+    "opus/1444-union: Borrowing one field borrows the whole union for the borrow checker, since all fields overlap.",
+    "opus/1598-generic_associated_types: There is no way to express that with `Iterator`, because `Item` is a single type fixed for the whole iterator, with no connection to the `&mut self` borrow."
+   ],
+   "human_examples": [
+    "pep-0100: * added a whole new set of codec APIs;",
+    "pep-0205: back to disk in whole rather than locked & modified for"
+   ]
+  },
+  {
+   "unit": "teams",
+   "n": 1,
+   "z_vs_paired": 3.35,
+   "llm_per1k": 0.42,
+   "paired_per1k": 0.161,
+   "base_per1k": 0.1994,
+   "ratio_vs_base": 2.1,
+   "llm_docfrac": 0.075,
+   "base_docfrac": 0.029,
+   "prompts": 9,
+   "models": {
+    "opus": 6,
+    "sonnet": 5,
+    "haiku": 7
+   },
+   "test_llm_docfrac": 0.058,
+   "test_human_docfrac": 0.055,
+   "test_llm_per1k": 0.883,
+   "test_human_per1k": 0.2863,
+   "test_ratio": 3.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1728-north-star: Individual teams then decide on the short-term goals that address those problems and re-triage them regularly.",
+    "opus/1985-tiered-browser-support: Official web content that the Rust teams produce for Rust users should work in the browsers those users actually use.",
+    "opus/2052-epochs: - **Coordination.** The compiler, Cargo, rustfmt, Clippy, the RLS and the documentation are developed by different teams."
+   ],
+   "human_examples": [
+    "pep-0008: Some teams strongly prefer a longer line length.",
+    "pep-0407: release management teams."
+   ]
+  },
+  {
+   "unit": "kept",
+   "n": 1,
+   "z_vs_paired": 3.35,
+   "llm_per1k": 0.25,
+   "paired_per1k": 0.043,
+   "base_per1k": 0.0947,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.129,
+   "base_docfrac": 0.079,
+   "prompts": 25,
+   "models": {
+    "opus": 9,
+    "sonnet": 9,
+    "haiku": 13
+   },
+   "test_llm_docfrac": 0.175,
+   "test_human_docfrac": 0.115,
+   "test_llm_per1k": 0.348,
+   "test_human_per1k": 0.1454,
+   "test_ratio": 2.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/2480-liballoc: Moving items down from `std` to `alloc` remains possible, as does moving items from `alloc` to `core`, provided re-exports are kept.",
+    "opus/2500-needle: The two-way substring algorithm used by `str::find` today is kept.",
+    "opus/3127-trim-paths: Paths are still kept in a separate debug information file when one exists, so that debuggers and profilers can find source files."
+   ],
+   "human_examples": [
+    "pep-0214: I kept the feature that",
+    "pep-0229: will be kept and settings in it will override"
+   ]
+  },
+  {
+   "unit": "matters",
+   "n": 1,
+   "z_vs_paired": 3.34,
+   "llm_per1k": 0.309,
+   "paired_per1k": 0.011,
+   "base_per1k": 0.0341,
+   "ratio_vs_base": 9.1,
+   "llm_docfrac": 0.179,
+   "base_docfrac": 0.029,
+   "prompts": 34,
+   "models": {
+    "opus": 19,
+    "sonnet": 11,
+    "haiku": 13
+   },
+   "test_llm_docfrac": 0.133,
+   "test_human_docfrac": 0.05,
+   "test_llm_per1k": 0.227,
+   "test_human_per1k": 0.05,
+   "test_ratio": 4.5,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: This simplifies codegen but changes observable behaviour (destructors run earlier, which matters for locks and guards) and rejects some reasonable programs.",
+    "opus/1560-name-resolution: Name lookup stays where name resolution happens today, though it can also be performed earlier when required, which matters for future work on resolving macros through the module system.",
+    "opus/1728-north-star: Each has its own RFCs, its own issue tracker labels, and its own idea of what matters most."
+   ],
+   "human_examples": [
+    "pep-0262: DB file matters.)",
+    "pep-0333: highly server-specific matters."
+   ]
+  },
+  {
+   "unit": "readers",
+   "n": 1,
+   "z_vs_paired": 3.33,
+   "llm_per1k": 0.355,
+   "paired_per1k": 0.118,
+   "base_per1k": 0.1022,
+   "ratio_vs_base": 3.5,
+   "llm_docfrac": 0.142,
+   "base_docfrac": 0.063,
+   "prompts": 23,
+   "models": {
+    "opus": 8,
+    "sonnet": 12,
+    "haiku": 14
+   },
+   "test_llm_docfrac": 0.167,
+   "test_human_docfrac": 0.055,
+   "test_llm_per1k": 0.455,
+   "test_human_per1k": 0.0818,
+   "test_ratio": 5.6,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1444-union: Readers should consult that RFC for the current rules.",
+    "opus/1574-more-api-documentation-conventions: - Readers have to relearn where to find information like panics, errors and safety requirements for each crate.",
+    "opus/1733-trait-alias: Readers have to look up the alias to know which traits a generic function needs."
+   ],
+   "human_examples": [
+    "pep-0008: confusing both readers and many automated tools.",
+    "pep-0012: The processed HTML form makes the functionality accessible to readers:"
+   ]
+  },
+  {
+   "unit": "rust rfc",
+   "n": 2,
+   "z_vs_paired": 3.32,
+   "llm_per1k": 0.236,
+   "paired_per1k": 0.032,
+   "base_per1k": 0.0164,
+   "ratio_vs_base": 14.4,
+   "llm_docfrac": 0.146,
+   "base_docfrac": 0.014,
+   "prompts": 31,
+   "models": {
+    "opus": 1,
+    "sonnet": 4,
+    "haiku": 30
+   },
+   "test_llm_docfrac": 0.1,
+   "test_human_docfrac": 0.01,
+   "test_llm_per1k": 0.161,
+   "test_human_per1k": 0.0091,
+   "test_ratio": 16.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/2451-re-rebalancing-coherence: The Rust API evolution guidelines (RFC 1105) will be updated accordingly.",
+    "sonnet/1598-generic_associated_types: # Rust RFC 1598: Generic Associated Types",
+    "sonnet/2113-dyn-trait-syntax: # Rust RFC 2113: dyn Trait Syntax"
+   ],
+   "human_examples": [
+    "pep-8002: The governance structure is documented in `Rust RFC #1068",
+    "0218-empty-struct-with-braces: [Rust RFC 25])."
+   ]
+  },
+  {
+   "unit": "reviewer",
+   "n": 1,
+   "z_vs_paired": 3.32,
+   "llm_per1k": 0.236,
+   "paired_per1k": 0.032,
+   "base_per1k": 0.024,
+   "ratio_vs_base": 9.9,
+   "llm_docfrac": 0.033,
+   "base_docfrac": 0.016,
+   "prompts": 5,
+   "models": {
+    "opus": 2,
+    "sonnet": 4,
+    "haiku": 2
+   },
+   "test_llm_docfrac": 0.008,
+   "test_human_docfrac": 0.01,
+   "test_llm_per1k": 0.013,
+   "test_human_per1k": 0.0136,
+   "test_ratio": 1.0,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/2333-prior-art: **It helps reviewers.** A reviewer can evaluate a design faster if they can see how it compares to designs they already know.",
+    "opus/2904-compiler-major-change-process: - to help scale the amount of work being done to reviewing bandwidth by choosing a reviewer in advance;",
+    "sonnet/1682-field-init-shorthand: A reviewer scanning a long initializer must verify that each pair really matches, and a swapped pair like `Point { x: y, y: x }` can slip by unnoticed among the many correct ones."
+   ],
+   "human_examples": [
+    "pep-0285: One reviewer has argued to make the name 'truth'.",
+    "pep-0350: *Notes*: Sections where a code reviewer found something that needs"
+   ]
+  },
+  {
+   "unit": "chain",
+   "n": 1,
+   "z_vs_paired": 3.31,
+   "llm_per1k": 0.289,
+   "paired_per1k": 0.075,
+   "base_per1k": 0.1376,
+   "ratio_vs_base": 2.1,
+   "llm_docfrac": 0.1,
+   "base_docfrac": 0.053,
+   "prompts": 14,
+   "models": {
+    "opus": 10,
+    "sonnet": 8,
+    "haiku": 6
+   },
+   "test_llm_docfrac": 0.058,
+   "test_human_docfrac": 0.07,
+   "test_llm_per1k": 0.12,
+   "test_human_per1k": 0.1499,
+   "test_ratio": 0.8,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1969-cargo-prepublish: It also changes the source of every crate in the chain, so the dependency graph no longer looks like the one users will get from crates.io.",
+    "opus/2091-inline-semantic: The chain stops at the first function without the attribute.",
+    "opus/2229-capture-disjoint-fields: - **Methods on `&mut self`.** Building an iterator chain or callback that reads one field while another field is being mutated is a common pattern, and today it needs a temporary binding."
+   ],
+   "human_examples": [
+    "pep-0205: map from an object to a chain of weak references for that object",
+    "pep-0303: Occasionally one wants to perform a chain of   operations,"
+   ]
+  },
+  {
+   "unit": "harder",
+   "n": 1,
+   "z_vs_paired": 3.29,
+   "llm_per1k": 0.506,
+   "paired_per1k": 0.225,
+   "base_per1k": 0.1616,
+   "ratio_vs_base": 3.1,
+   "llm_docfrac": 0.275,
+   "base_docfrac": 0.123,
+   "prompts": 48,
+   "models": {
+    "opus": 17,
+    "sonnet": 17,
+    "haiku": 32
+   },
+   "test_llm_docfrac": 0.15,
+   "test_human_docfrac": 0.135,
+   "test_llm_per1k": 0.268,
+   "test_human_per1k": 0.1409,
+   "test_ratio": 1.9,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: - Debugging moved-from memory becomes harder, because it no longer contains a recognizable pattern.",
+    "opus/1105-api-evolution: Both promises depend on a shared understanding of what counts as \"breaking.\" Rust makes that understanding harder to reach than it is in many languages.",
+    "opus/1398-kinds-of-allocators: - Allocator-generic code is harder to write correctly than code that assumes the global heap."
+   ],
+   "human_examples": [
+    "pep-0259: fixed code is uglier and harder to maintain.",
+    "pep-0310: that it makes it harder to do the \"wrong\" thing (e.g."
+   ]
+  },
+  {
+   "unit": "metaclass",
+   "n": 1,
+   "z_vs_paired": 3.29,
+   "llm_per1k": 0.414,
+   "paired_per1k": 0.161,
+   "base_per1k": 0.2032,
+   "ratio_vs_base": 2.0,
+   "llm_docfrac": 0.042,
+   "base_docfrac": 0.031,
+   "prompts": 5,
+   "models": {
+    "opus": 4,
+    "sonnet": 4,
+    "haiku": 2
+   },
+   "test_llm_docfrac": 0.033,
+   "test_human_docfrac": 0.03,
+   "test_llm_per1k": 0.241,
+   "test_human_per1k": 0.1045,
+   "test_ratio": 2.3,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/pep-0359: It runs a block of code in a fresh namespace, and it passes that namespace, along with a name and a tuple of bases, to a callable (the metaclass).",
+    "opus/pep-0362: If the object is a class, use the signature of its metaclass's `__call__` if user-defined, else its `__new__`, else its `__init__`, dropping the first parameter.",
+    "opus/pep-0435: The implementation uses a metaclass, `EnumMeta`, which collects the class body's attributes, creates one instance per member, and stores them in an ordered mapping."
+   ],
+   "human_examples": [
+    "pep-0246: simple custom metaclass would let us get started, and the results",
+    "pep-0252: defined in a metaclass have more right to the name \"class method\";"
+   ]
+  },
+  {
+   "unit": "rule",
+   "n": 1,
+   "z_vs_paired": 3.28,
+   "llm_per1k": 0.906,
+   "paired_per1k": 0.525,
+   "base_per1k": 0.4153,
+   "ratio_vs_base": 2.2,
+   "llm_docfrac": 0.275,
+   "base_docfrac": 0.164,
+   "prompts": 41,
+   "models": {
+    "opus": 18,
+    "sonnet": 19,
+    "haiku": 29
+   },
+   "test_llm_docfrac": 0.283,
+   "test_human_docfrac": 0.225,
+   "test_llm_per1k": 1.351,
+   "test_human_per1k": 0.6316,
+   "test_ratio": 2.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1789-as-cell: That rule underpins Rust's safety guarantees, but it also rejects programs that are clearly correct, especially in single-threaded code that wants to update several elements of a collection while also reading from it.",
+    "opus/1857-stabilize-drop-order: A useful rule of thumb for users: \"the thing you declared last in a scope goes away first; the fields of a struct go away top to bottom.\" Users who need a particular order between fields should either declare the fields ",
+    "opus/1985-tiered-browser-support: As a rule of thumb, a browser family and version range that accounts for more than about 1% of visits to official sites should be at least Tier 2, and one that accounts for more than about 5% should be Tier 1."
+   ],
+   "human_examples": [
+    "pep-0007: particular rule:",
+    "pep-0008: The 4-space rule is optional for continuation lines."
+   ]
+  },
+  {
+   "unit": "affected",
+   "n": 1,
+   "z_vs_paired": 3.28,
+   "llm_per1k": 0.381,
+   "paired_per1k": 0.139,
+   "base_per1k": 0.1792,
+   "ratio_vs_base": 2.1,
+   "llm_docfrac": 0.179,
+   "base_docfrac": 0.098,
+   "prompts": 31,
+   "models": {
+    "opus": 14,
+    "sonnet": 12,
+    "haiku": 17
+   },
+   "test_llm_docfrac": 0.267,
+   "test_human_docfrac": 0.135,
+   "test_llm_per1k": 0.602,
+   "test_human_per1k": 0.209,
+   "test_ratio": 2.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1857-stabilize-drop-order: Because drop order is not checked by the type system, there is no reliable way for the compiler to warn about code that would be affected.",
+    "opus/1985-tiered-browser-support: Changes go through ordinary pull requests and should be reviewed by at least one member of each team that maintains an affected site.",
+    "opus/2195-really-tagged-unions: `#[repr(transparent)]` is not affected."
+   ],
+   "human_examples": [
+    "pep-0248: number of rows affected is returned (0 or a positive",
+    "pep-0253: class hierarchy looking for methods that would be affected by a"
+   ]
+  },
+  {
+   "unit": "passes",
+   "n": 1,
+   "z_vs_paired": 3.27,
+   "llm_per1k": 0.348,
+   "paired_per1k": 0.118,
+   "base_per1k": 0.0783,
+   "ratio_vs_base": 4.4,
+   "llm_docfrac": 0.179,
+   "base_docfrac": 0.058,
+   "prompts": 29,
+   "models": {
+    "opus": 14,
+    "sonnet": 14,
+    "haiku": 15
+   },
+   "test_llm_docfrac": 0.142,
+   "test_human_docfrac": 0.065,
+   "test_llm_per1k": 0.268,
+   "test_human_per1k": 0.0682,
+   "test_ratio": 3.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1513-less-unwinding: Cargo passes `-C panic=abort` when compiling every crate in the profile.",
+    "opus/2091-inline-semantic: At each direct call site, the compiler passes the location of the call expression.",
+    "opus/2397-do-not-recommend: When a user passes the wrong type to a query builder function, the error mentions `Expression`, a trait that is an implementation detail from the user's point of view, rather than the `AsExpression` bound that actually a"
+   ],
+   "human_examples": [
+    "pep-0101: passes the regression test.",
+    "pep-0102: virgin build passes the regression test."
+   ]
+  },
+  {
+   "unit": "reported",
+   "n": 1,
+   "z_vs_paired": 3.25,
+   "llm_per1k": 0.282,
+   "paired_per1k": 0.075,
+   "base_per1k": 0.1022,
+   "ratio_vs_base": 2.8,
+   "llm_docfrac": 0.138,
+   "base_docfrac": 0.068,
+   "prompts": 24,
+   "models": {
+    "opus": 10,
+    "sonnet": 12,
+    "haiku": 11
+   },
+   "test_llm_docfrac": 0.133,
+   "test_human_docfrac": 0.08,
+   "test_llm_per1k": 0.214,
+   "test_human_per1k": 0.1,
+   "test_ratio": 2.1,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1560-name-resolution: No error is reported.",
+    "opus/1969-cargo-prepublish: A maintainer of the `xml-rs` crate fixes a bug and wants to know whether the fix resolves a problem reported by users of a higher-level crate, say `servo`, that depends on `xml-rs` through two or three intermediate crate",
+    "opus/2091-inline-semantic: fn main() { outer(); } // reported here"
+   ],
+   "human_examples": [
+    "pep-0243: The status of the upload will be reported using HTTP non-standard",
+    "pep-0258: are not reported."
+   ]
+  },
+  {
+   "unit": "url",
+   "n": 1,
+   "z_vs_paired": 3.25,
+   "llm_per1k": 1.037,
+   "paired_per1k": 0.632,
+   "base_per1k": 0.2613,
+   "ratio_vs_base": 4.0,
+   "llm_docfrac": 0.104,
+   "base_docfrac": 0.06,
+   "prompts": 11,
+   "models": {
+    "opus": 10,
+    "sonnet": 8,
+    "haiku": 7
+   },
+   "test_llm_docfrac": 0.017,
+   "test_human_docfrac": 0.085,
+   "test_llm_per1k": 0.027,
+   "test_human_per1k": 0.3044,
+   "test_ratio": 0.1,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1574-more-api-documentation-conventions: - Should rustdoc gain native support for intra-doc links by item path, making the relative-URL convention unnecessary?",
+    "opus/1946-intra-rustdoc-links: Today, the only way to do this is to write the link target by hand, as a relative URL into the generated HTML:",
+    "opus/1969-cargo-prepublish: **Rewrite dependencies to git.** Change each intermediate crate's `Cargo.toml` to depend on `xml-rs` through a git URL, then change the top-level project to depend on each intermediate crate through git too."
+   ],
+   "human_examples": [
+    "pep-0001: It contains a URL that should point to an email message or",
+    "pep-0012: - Add the direct URL of the PEP's canonical discussion thread"
+   ]
+  },
+  {
+   "unit": "motivation rust",
+   "n": 2,
+   "z_vs_paired": 3.24,
+   "llm_per1k": 0.25,
+   "paired_per1k": 0.054,
+   "base_per1k": 0.0265,
+   "ratio_vs_base": 9.4,
+   "llm_docfrac": 0.158,
+   "base_docfrac": 0.026,
+   "prompts": 24,
+   "models": {
+    "opus": 12,
+    "sonnet": 12,
+    "haiku": 14
+   },
+   "test_llm_docfrac": 0.108,
+   "test_human_docfrac": 0.02,
+   "test_llm_per1k": 0.174,
+   "test_human_per1k": 0.0182,
+   "test_ratio": 9.6,
+   "confirmed": true,
+   "llm_examples": [],
+   "human_examples": []
+  },
+  {
+   "unit": "awkward",
+   "n": 1,
+   "z_vs_paired": 3.24,
+   "llm_per1k": 0.236,
+   "paired_per1k": 0.043,
+   "base_per1k": 0.0543,
+   "ratio_vs_base": 4.4,
+   "llm_docfrac": 0.146,
+   "base_docfrac": 0.049,
+   "prompts": 31,
+   "models": {
+    "opus": 15,
+    "sonnet": 12,
+    "haiku": 8
+   },
+   "test_llm_docfrac": 0.15,
+   "test_human_docfrac": 0.02,
+   "test_llm_per1k": 0.254,
+   "test_human_per1k": 0.0227,
+   "test_ratio": 11.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: The original `std::allocator` design was stateless and type-parameterized in a way that made stateful allocators awkward, and later standards spent considerable effort fixing that.",
+    "opus/1733-trait-alias: Letting `impl Alias for T` implement each component trait was considered but turns out awkward: which methods belong to which trait, and what does an alias with associated-type constraints mean in an impl?",
+    "opus/1969-cargo-prepublish: `[replace]` also requires naming the exact version being replaced, which is awkward when the graph contains several."
+   ],
+   "human_examples": [
+    "pep-0267: awkward coding styles that have evolved to speed access to these",
+    "pep-0284: However, the   syntax is more awkward"
+   ]
+  },
+  {
+   "unit": "common case",
+   "n": 2,
+   "z_vs_paired": 3.23,
+   "llm_per1k": 0.276,
+   "paired_per1k": 0.011,
+   "base_per1k": 0.0656,
+   "ratio_vs_base": 4.2,
+   "llm_docfrac": 0.154,
+   "base_docfrac": 0.054,
+   "prompts": 27,
+   "models": {
+    "opus": 9,
+    "sonnet": 12,
+    "haiku": 16
+   },
+   "test_llm_docfrac": 0.15,
+   "test_human_docfrac": 0.04,
+   "test_llm_per1k": 0.281,
+   "test_human_per1k": 0.0409,
+   "test_ratio": 6.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: In the common case, the compiler knows statically whether a value has been moved at each scope exit.",
+    "opus/1789-as-cell: That covers the common case but is less general and does not compose.",
+    "opus/2451-re-rebalancing-coherence: A common case is implementing a standard conversion trait involving a local type and a generic foreign container:"
+   ],
+   "human_examples": [
+    "pep-0229: However, in the common case where   works correctly,",
+    "pep-0230: the (expected to be common) case where the same warning is issued"
+   ]
+  },
+  {
+   "unit": "captured",
+   "n": 1,
+   "z_vs_paired": 3.22,
+   "llm_per1k": 0.263,
+   "paired_per1k": 0.064,
+   "base_per1k": 0.053,
+   "ratio_vs_base": 5.0,
+   "llm_docfrac": 0.046,
+   "base_docfrac": 0.034,
+   "prompts": 6,
+   "models": {
+    "opus": 5,
+    "sonnet": 3,
+    "haiku": 3
+   },
+   "test_llm_docfrac": 0.025,
+   "test_human_docfrac": 0.035,
+   "test_llm_per1k": 0.054,
+   "test_human_per1k": 0.0409,
+   "test_ratio": 1.3,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1857-stabilize-drop-order: Variables captured by a closure are dropped in an order that is currently determined by the order in which they appear in the closure body.",
+    "opus/2229-capture-disjoint-fields: Each captured place keeps the existing capture mode rules.",
+    "opus/2388-try-expr: `try` describes what the block does from the reader's point of view: the operations inside are *tried*, and failure is captured."
+   ],
+   "human_examples": [
+    "pep-0101: is now captured in the merged   file for the new",
+    "pep-0324: applications should be captured into the same file handle as for"
+   ]
+  },
+  {
+   "unit": "unaffected",
+   "n": 1,
+   "z_vs_paired": 3.22,
+   "llm_per1k": 0.276,
+   "paired_per1k": 0.011,
+   "base_per1k": 0.0252,
+   "ratio_vs_base": 10.9,
+   "llm_docfrac": 0.171,
+   "base_docfrac": 0.023,
+   "prompts": 36,
+   "models": {
+    "opus": 9,
+    "sonnet": 15,
+    "haiku": 17
+   },
+   "test_llm_docfrac": 0.3,
+   "test_human_docfrac": 0.035,
+   "test_llm_per1k": 0.535,
+   "test_human_per1k": 0.0363,
+   "test_ratio": 14.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1969-cargo-prepublish: If the local crate has version `0.11.0`, then dependencies on `xml-rs = \"0.10\"` are unaffected, and dependencies on `xml-rs = \"0.11\"`, which might be introduced by a local patch to an intermediate crate, resolve to the l",
+    "opus/2397-do-not-recommend: The impl still applies to every `T: Iterator`, coherence still treats it exactly as before, and method resolution is unaffected.",
+    "opus/2585-unsafe-block-in-unsafe-fn: Nested `fn` items are unaffected; they never inherited the context."
+   ],
+   "human_examples": [
+    "pep-0402: of imports that do not involve virtual packages is unaffected, and",
+    "pep-0413: * new features in language builtins (provided the C ABI remains unaffected)"
+   ]
+  },
+  {
+   "unit": "unsafe",
+   "n": 1,
+   "z_vs_paired": 3.2,
+   "llm_per1k": 1.044,
+   "paired_per1k": 0.643,
+   "base_per1k": 0.4026,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.142,
+   "base_docfrac": 0.107,
+   "prompts": 19,
+   "models": {
+    "opus": 11,
+    "sonnet": 14,
+    "haiku": 9
+   },
+   "test_llm_docfrac": 0.083,
+   "test_human_docfrac": 0.09,
+   "test_llm_per1k": 0.722,
+   "test_human_per1k": 0.2999,
+   "test_ratio": 2.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: Unsafe code that reads moved-from memory sees data that happens to be \"dropped\" rather than undefined.",
+    "opus/1105-api-evolution: - How should changes involving `unsafe` contracts and memory layout be classified?",
+    "opus/1398-kinds-of-allocators: pub unsafe trait Allocator {"
+   ],
+   "human_examples": [
+    "pep-0203: to know how to in-place modify  , which is unsafe to say the least.",
+    "pep-0458: because a user must be helped to understand that the action is unsafe and not"
+   ]
+  },
+  {
+   "unit": "addresses",
+   "n": 1,
+   "z_vs_paired": 3.19,
+   "llm_per1k": 0.217,
+   "paired_per1k": 0.021,
+   "base_per1k": 0.1073,
+   "ratio_vs_base": 2.0,
+   "llm_docfrac": 0.129,
+   "base_docfrac": 0.075,
+   "prompts": 25,
+   "models": {
+    "opus": 6,
+    "sonnet": 13,
+    "haiku": 12
+   },
+   "test_llm_docfrac": 0.092,
+   "test_human_docfrac": 0.055,
+   "test_llm_per1k": 0.161,
+   "test_human_per1k": 0.0545,
+   "test_ratio": 3.0,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1728-north-star: - **Tied to problems.** Every goal should name the problem statement or statements it addresses.",
+    "opus/1969-cargo-prepublish: `[patch]` is strictly more capable than `[replace]` for the cases this RFC addresses.",
+    "opus/2333-prior-art: In it, authors can describe how other programming languages and their communities have handled the problem the RFC addresses."
+   ],
+   "human_examples": [
+    "pep-0001: The Author header lists the names, and optionally the email addresses",
+    "pep-0102: addresses:"
+   ]
+  },
+  {
+   "unit": "closures",
+   "n": 1,
+   "z_vs_paired": 3.19,
+   "llm_per1k": 0.387,
+   "paired_per1k": 0.15,
+   "base_per1k": 0.1477,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.071,
+   "base_docfrac": 0.055,
+   "prompts": 11,
+   "models": {
+    "opus": 5,
+    "sonnet": 5,
+    "haiku": 7
+   },
+   "test_llm_docfrac": 0.067,
+   "test_human_docfrac": 0.055,
+   "test_llm_per1k": 0.187,
+   "test_human_per1k": 0.3271,
+   "test_ratio": 0.6,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1857-stabilize-drop-order: ## Closures",
+    "opus/2091-inline-semantic: - It is allowed on closures once closure attributes are stable.",
+    "opus/2229-capture-disjoint-fields: This RFC proposes that closures capture as little as they need rather than as much."
+   ],
+   "human_examples": [
+    "pep-0339: (variables can be classified as local, free/cell for closures, or",
+    "pep-0384: of closures)."
+   ]
+  },
+  {
+   "unit": "sources",
+   "n": 1,
+   "z_vs_paired": 3.19,
+   "llm_per1k": 0.276,
+   "paired_per1k": 0.075,
+   "base_per1k": 0.0858,
+   "ratio_vs_base": 3.2,
+   "llm_docfrac": 0.096,
+   "base_docfrac": 0.056,
+   "prompts": 16,
+   "models": {
+    "opus": 5,
+    "sonnet": 9,
+    "haiku": 9
+   },
+   "test_llm_docfrac": 0.058,
+   "test_human_docfrac": 0.035,
+   "test_llm_per1k": 0.094,
+   "test_human_per1k": 0.05,
+   "test_ratio": 1.9,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1969-cargo-prepublish: This RFC introduces *patching sources* in Cargo.",
+    "opus/2005-match-ergonomics: The ergonomics initiative identified this as one of the most common sources of friction.",
+    "opus/3127-trim-paths: - The path to the Rust standard library sources becomes `/rustc/<commit-hash>/library/...`, which is already the convention for the precompiled standard library."
+   ],
+   "human_examples": [
+    "pep-0012: Block quotes are used to quote extended passages from other sources.",
+    "pep-0258: Examples of input sources:"
+   ]
+  },
+  {
+   "unit": "recorded",
+   "n": 1,
+   "z_vs_paired": 3.18,
+   "llm_per1k": 0.217,
+   "paired_per1k": 0.021,
+   "base_per1k": 0.0404,
+   "ratio_vs_base": 5.4,
+   "llm_docfrac": 0.1,
+   "base_docfrac": 0.033,
+   "prompts": 17,
+   "models": {
+    "opus": 3,
+    "sonnet": 10,
+    "haiku": 11
+   },
+   "test_llm_docfrac": 0.092,
+   "test_human_docfrac": 0.01,
+   "test_llm_per1k": 0.161,
+   "test_human_per1k": 0.0136,
+   "test_ratio": 11.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1969-cargo-prepublish: Patched crates are recorded in `Cargo.lock` with their patch source, so a subsequent build without changes uses the same crates.",
+    "opus/3127-trim-paths: Cargo also sets the working directory recorded in debug information to a fixed value when trimming, and stops passing absolute paths as the input file to `rustc` for workspace members.",
+    "opus/pep-0610: A relative path given on the command line is recorded as an absolute `file://` URL."
+   ],
+   "human_examples": [
+    "pep-0001: The sponsor of a PEP is recorded in the \"Sponsor:\" field of the",
+    "pep-0333: or where to find the recorded output."
+   ]
+  },
+  {
+   "unit": "implementation reference",
+   "n": 2,
+   "z_vs_paired": 3.17,
+   "llm_per1k": 0.217,
+   "paired_per1k": 0.032,
+   "base_per1k": 0.0467,
+   "ratio_vs_base": 4.6,
+   "llm_docfrac": 0.138,
+   "base_docfrac": 0.045,
+   "prompts": 23,
+   "models": {
+    "opus": 6,
+    "sonnet": 9,
+    "haiku": 18
+   },
+   "test_llm_docfrac": 0.117,
+   "test_human_docfrac": 0.035,
+   "test_llm_per1k": 0.187,
+   "test_human_per1k": 0.0363,
+   "test_ratio": 5.2,
+   "confirmed": true,
+   "llm_examples": [],
+   "human_examples": [
+    "pep-0001: Reference Implementation -- The reference implementation must be",
+    "pep-0219: reference implementation (rather than \"the\" reference"
+   ]
+  },
+  {
+   "unit": "clauses",
+   "n": 1,
+   "z_vs_paired": 3.16,
+   "llm_per1k": 0.506,
+   "paired_per1k": 0.236,
+   "base_per1k": 0.2499,
+   "ratio_vs_base": 2.0,
+   "llm_docfrac": 0.083,
+   "base_docfrac": 0.063,
+   "prompts": 9,
+   "models": {
+    "opus": 7,
+    "sonnet": 7,
+    "haiku": 6
+   },
+   "test_llm_docfrac": 0.042,
+   "test_human_docfrac": 0.085,
+   "test_llm_per1k": 0.12,
+   "test_human_per1k": 0.2772,
+   "test_ratio": 0.4,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1444-union: Unions may be generic and may have where clauses, attributes, and visibility modifiers on the type and its fields, exactly as structs can.",
+    "opus/1598-generic_associated_types: An associated type may declare generic parameters, both lifetimes and types, and where clauses:",
+    "opus/1733-trait-alias: ## Where-clauses on the alias"
+   ],
+   "human_examples": [
+    "pep-0008: - Additionally, for all try/except clauses, limit the   clause",
+    "pep-0214: legitimate try/except or try/finally clauses."
+   ]
+  },
+  {
+   "unit": "compiles",
+   "n": 1,
+   "z_vs_paired": 3.15,
+   "llm_per1k": 0.256,
+   "paired_per1k": 0.064,
+   "base_per1k": 0.0442,
+   "ratio_vs_base": 5.8,
+   "llm_docfrac": 0.133,
+   "base_docfrac": 0.041,
+   "prompts": 20,
+   "models": {
+    "opus": 11,
+    "sonnet": 12,
+    "haiku": 9
+   },
+   "test_llm_docfrac": 0.05,
+   "test_human_docfrac": 0.065,
+   "test_llm_per1k": 0.094,
+   "test_human_per1k": 0.0818,
+   "test_ratio": 1.1,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1105-api-evolution: With Rust 1.0 the standard library made a stability promise: code that compiles on 1.x should keep compiling on 1.y for y > x.",
+    "opus/1513-less-unwinding: With `panic_abort`, `std::panic::catch_unwind` still compiles and still returns `Ok` when the closure does not panic.",
+    "opus/2052-epochs: - **No silent changes in meaning.** If code compiles on two editions, it must mean the same thing on both, or the compiler must warn about the difference on the earlier edition before migration."
+   ],
+   "human_examples": [
+    "pep-0102: Thomas compiles everything with MSVC 6.0 SP5, and moves the",
+    "pep-0229: libraries installed on the system and compiles as many modules"
+   ]
+  },
+  {
+   "unit": "treats",
+   "n": 1,
+   "z_vs_paired": 3.14,
+   "llm_per1k": 0.21,
+   "paired_per1k": 0.021,
+   "base_per1k": 0.0202,
+   "ratio_vs_base": 10.4,
+   "llm_docfrac": 0.125,
+   "base_docfrac": 0.018,
+   "prompts": 28,
+   "models": {
+    "opus": 9,
+    "sonnet": 7,
+    "haiku": 14
+   },
+   "test_llm_docfrac": 0.117,
+   "test_human_docfrac": 0.02,
+   "test_llm_per1k": 0.227,
+   "test_human_per1k": 0.0227,
+   "test_ratio": 10.0,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1946-intra-rustdoc-links: For shortcut links with no explicit destination, pulldown-cmark normally treats `[foo]` as plain text if no reference definition exists.",
+    "opus/2229-capture-disjoint-fields: That is simple to describe, but it doesn't match how Rust treats borrows elsewhere.",
+    "opus/2397-do-not-recommend: The impl still applies to every `T: Iterator`, coherence still treats it exactly as before, and method resolution is unaffected."
+   ],
+   "human_examples": [
+    "pep-0287: have no problem with reStructuredText markup, since it treats all",
+    "pep-0465: previous (i.e., treats the 1d vector as a matrix containing a"
+   ]
+  },
+  {
+   "unit": "wrong",
+   "n": 1,
+   "z_vs_paired": 3.13,
+   "llm_per1k": 0.427,
+   "paired_per1k": 0.182,
+   "base_per1k": 0.1489,
+   "ratio_vs_base": 2.9,
+   "llm_docfrac": 0.208,
+   "base_docfrac": 0.122,
+   "prompts": 39,
+   "models": {
+    "opus": 21,
+    "sonnet": 17,
+    "haiku": 12
+   },
+   "test_llm_docfrac": 0.225,
+   "test_human_docfrac": 0.13,
+   "test_llm_per1k": 0.482,
+   "test_human_per1k": 0.1772,
+   "test_ratio": 2.7,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1444-union: This gets the size right but not necessarily the alignment, and it is easy to get wrong when the \"largest\" member differs between platforms.",
+    "opus/1728-north-star: They describe what is wrong and why it matters.",
+    "opus/1969-cargo-prepublish: If the fix is wrong, the broken version is now public and permanent."
+   ],
+   "human_examples": [
+    "pep-0008: where catching them is almost always the wrong thing to do.",
+    "pep-0100: The swapped order is taken to be an indicator for a \"wrong\""
+   ]
+  },
+  {
+   "unit": "trait object",
+   "n": 2,
+   "z_vs_paired": 3.13,
+   "llm_per1k": 0.381,
+   "paired_per1k": 0.15,
+   "base_per1k": 0.0858,
+   "ratio_vs_base": 4.4,
+   "llm_docfrac": 0.067,
+   "base_docfrac": 0.028,
+   "prompts": 7,
+   "models": {
+    "opus": 5,
+    "sonnet": 5,
+    "haiku": 6
+   },
+   "test_llm_docfrac": 0.092,
+   "test_human_docfrac": 0.025,
+   "test_llm_per1k": 0.294,
+   "test_human_per1k": 0.1318,
+   "test_ratio": 2.2,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1598-generic_associated_types: A trait with a generic associated type is not object safe in this RFC, since a trait object would need to specify the associated type for every possible argument.",
+    "opus/1733-trait-alias: The trait-object rules still forbid `dyn Read + Write` because both are non-auto traits.",
+    "opus/2091-inline-semantic: When such a function is coerced to a function pointer, or called through a trait object, the compiler generates a shim with the declared signature that passes the shim's own location (the definition site)."
+   ],
+   "human_examples": [
+    "0019-opt-in-builtin-traits: - *Trait objects* (including procs and closures): A trait object type",
+    "0192-bounds-on-object-and-generic-types: When referencing a trait object, it is almost *always* the case that one follows"
+   ]
+  },
+  {
+   "unit": "bounds",
+   "n": 1,
+   "z_vs_paired": 3.11,
+   "llm_per1k": 1.215,
+   "paired_per1k": 0.793,
+   "base_per1k": 0.4342,
+   "ratio_vs_base": 2.8,
+   "llm_docfrac": 0.146,
+   "base_docfrac": 0.096,
+   "prompts": 17,
+   "models": {
+    "opus": 14,
+    "sonnet": 12,
+    "haiku": 9
+   },
+   "test_llm_docfrac": 0.15,
+   "test_human_docfrac": 0.09,
+   "test_llm_per1k": 0.923,
+   "test_human_per1k": 0.3317,
+   "test_ratio": 2.8,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1105-api-evolution: - **Tightening generic bounds,** for example going from `fn f<T>(t: T)` to `fn f<T: Clone>(t: T)`.",
+    "opus/1598-generic_associated_types: Workarounds exist, but they involve unsafe code or extra helper traits with higher-ranked bounds that are hard to read and harder to use.",
+    "opus/1733-trait-alias: - **Associated-type bounds don't carry over.** If the \"alias\" is `trait IntIter: Iterator<Item = i32> {}`, then in `fn f<I: IntIter>(i: I)`, the compiler doesn't know that `I::Item == i32` when it uses the bound."
+   ],
+   "human_examples": [
+    "pep-0284: sides of the for-loop syntax as the bounds of the loop, and the",
+    "pep-0293: If newpos is out of bounds the encoder will raise"
+   ]
+  },
+  {
+   "unit": "sound",
+   "n": 1,
+   "z_vs_paired": 3.11,
+   "llm_per1k": 0.21,
+   "paired_per1k": 0.032,
+   "base_per1k": 0.0606,
+   "ratio_vs_base": 3.5,
+   "llm_docfrac": 0.083,
+   "base_docfrac": 0.038,
+   "prompts": 15,
+   "models": {
+    "opus": 6,
+    "sonnet": 8,
+    "haiku": 6
+   },
+   "test_llm_docfrac": 0.033,
+   "test_human_docfrac": 0.04,
+   "test_llm_per1k": 0.067,
+   "test_human_per1k": 0.1136,
+   "test_ratio": 0.6,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1789-as-cell: If you have a `&mut [i32]` you got from somewhere else, there is no way to temporarily view it as `&[Cell<i32>]`, even though that would be completely sound.",
+    "opus/2451-re-rebalancing-coherence: These are sound and useful, and people run into the restriction often enough that it shows up repeatedly in issue trackers and forums.",
+    "opus/2582-raw-reference-mir-operator: That makes some common patterns unsound, with no sound way to write them."
+   ],
+   "human_examples": [
+    "pep-0001: * It is sound and complete.",
+    "pep-0279: The new built-ins sound okay."
+   ]
+  },
+  {
+   "unit": "would make",
+   "n": 2,
+   "z_vs_paired": 3.06,
+   "llm_per1k": 0.479,
+   "paired_per1k": 0.225,
+   "base_per1k": 0.1742,
+   "ratio_vs_base": 2.8,
+   "llm_docfrac": 0.263,
+   "base_docfrac": 0.124,
+   "prompts": 47,
+   "models": {
+    "opus": 18,
+    "sonnet": 9,
+    "haiku": 36
+   },
+   "test_llm_docfrac": 0.217,
+   "test_human_docfrac": 0.135,
+   "test_llm_per1k": 0.375,
+   "test_human_per1k": 0.159,
+   "test_ratio": 2.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1444-union: Tuple-style unions (`union U(u32, f32);`) are not supported, since unnamed fields would make accesses unreadable.",
+    "opus/1728-north-star: That would make coordination easier, but it goes against the way Rust governance works and would waste the domain knowledge each team has.",
+    "opus/1857-stabilize-drop-order: This would make fields consistent with locals, and would match C++, where members are destroyed in reverse order of construction."
+   ],
+   "human_examples": [
+    "pep-0007: When applying the rule would make the code less readable, even for",
+    "pep-0008: When applying the guideline would make the code less readable, even"
+   ]
+  },
+  {
+   "unit": "implementation reference implementation",
+   "n": 3,
+   "z_vs_paired": 3.06,
+   "llm_per1k": 0.204,
+   "paired_per1k": 0.032,
+   "base_per1k": 0.0454,
+   "ratio_vs_base": 4.5,
+   "llm_docfrac": 0.129,
+   "base_docfrac": 0.044,
+   "prompts": 22,
+   "models": {
+    "opus": 5,
+    "sonnet": 9,
+    "haiku": 17
+   },
+   "test_llm_docfrac": 0.117,
+   "test_human_docfrac": 0.025,
+   "test_llm_per1k": 0.187,
+   "test_human_per1k": 0.0273,
+   "test_ratio": 6.8,
+   "confirmed": true,
+   "llm_examples": [],
+   "human_examples": [
+    "pep-0001: Reference Implementation -- The reference implementation must be",
+    "pep-0648: checked in in the reference implementation [#reference-implementation]_."
+   ]
+  },
+  {
+   "unit": "supply",
+   "n": 1,
+   "z_vs_paired": 3.05,
+   "llm_per1k": 0.23,
+   "paired_per1k": 0.054,
+   "base_per1k": 0.0719,
+   "ratio_vs_base": 3.2,
+   "llm_docfrac": 0.129,
+   "base_docfrac": 0.035,
+   "prompts": 22,
+   "models": {
+    "opus": 8,
+    "sonnet": 9,
+    "haiku": 14
+   },
+   "test_llm_docfrac": 0.05,
+   "test_human_docfrac": 0.07,
+   "test_llm_per1k": 0.08,
+   "test_human_per1k": 0.0818,
+   "test_ratio": 1.0,
+   "confirmed": false,
+   "llm_examples": [
+    "opus/1398-kinds-of-allocators: Require clients to supply metadata (such as block size and alignment) at the allocation and deallocation sites, to ensure hot paths are as efficient as possible.",
+    "opus/1598-generic_associated_types: Uses of the associated type supply arguments: `Self::Loan<'a>`, `<V as Lender>::Loan<'x>`, `T::Mapped<String>`.",
+    "opus/2480-liballoc: - `#[global_allocator]` and the `GlobalAlloc` trait are stable (Rust 1.28), so a `no_std` program can supply its own allocator."
+   ],
+   "human_examples": [
+    "pep-0246: supply adapters to allow interoperation of frameworks which",
+    "pep-0252: inheritance graph supply attribute descriptors for the regular"
+   ]
+  },
+  {
+   "unit": "behaves",
+   "n": 1,
+   "z_vs_paired": 3.05,
+   "llm_per1k": 0.23,
+   "paired_per1k": 0.054,
+   "base_per1k": 0.0846,
+   "ratio_vs_base": 2.7,
+   "llm_docfrac": 0.133,
+   "base_docfrac": 0.061,
+   "prompts": 25,
+   "models": {
+    "opus": 14,
+    "sonnet": 9,
+    "haiku": 9
+   },
+   "test_llm_docfrac": 0.092,
+   "test_human_docfrac": 0.065,
+   "test_llm_per1k": 0.147,
+   "test_human_per1k": 0.0727,
+   "test_ratio": 2.0,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/2091-inline-semantic: A function annotated `#[track_caller]` behaves as if it had an extra hidden parameter of type `&'static Location<'static>`.",
+    "opus/2195-really-tagged-unions: But the current implementation already behaves almost exactly as described, and code in the wild already depends on it.",
+    "opus/2585-unsafe-block-in-unsafe-fn: The body behaves as if it were wrapped in `unsafe { }`."
+   ],
+   "human_examples": [
+    "pep-0203: bytecodes are *utility* bytecodes:   behaves like",
+    "pep-0205: will create a proxy object that behaves somewhat like the original"
+   ]
+  },
+  {
+   "unit": "shows",
+   "n": 1,
+   "z_vs_paired": 3.03,
+   "llm_per1k": 0.276,
+   "paired_per1k": 0.086,
+   "base_per1k": 0.1351,
+   "ratio_vs_base": 2.0,
+   "llm_docfrac": 0.163,
+   "base_docfrac": 0.098,
+   "prompts": 29,
+   "models": {
+    "opus": 13,
+    "sonnet": 15,
+    "haiku": 11
+   },
+   "test_llm_docfrac": 0.125,
+   "test_human_docfrac": 0.085,
+   "test_llm_per1k": 0.201,
+   "test_human_per1k": 0.1,
+   "test_ratio": 2.0,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/1574-more-api-documentation-conventions: This shows readers the idiomatic way to handle errors.",
+    "opus/2052-epochs: Experience elsewhere shows that this risks fracturing the ecosystem for years.",
+    "opus/2136-build-systems: The needs of Bazel users, distribution packagers, and Firefox overlap but are not the same, and a design that looks right on paper could easily miss a constraint that only shows up in use."
+   ],
+   "human_examples": [
+    "pep-0230: to  , and shows the source line of the filename.",
+    "pep-0252: in addition to the regular methods, it also shows the methods that"
+   ]
+  },
+  {
+   "unit": "intent",
+   "n": 1,
+   "z_vs_paired": 3.03,
+   "llm_per1k": 0.276,
+   "paired_per1k": 0.086,
+   "base_per1k": 0.1073,
+   "ratio_vs_base": 2.6,
+   "llm_docfrac": 0.15,
+   "base_docfrac": 0.081,
+   "prompts": 28,
+   "models": {
+    "opus": 8,
+    "sonnet": 11,
+    "haiku": 17
+   },
+   "test_llm_docfrac": 0.15,
+   "test_human_docfrac": 0.11,
+   "test_llm_per1k": 0.268,
+   "test_human_per1k": 0.1136,
+   "test_ratio": 2.4,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/2136-build-systems: Essentially everything about the concrete designs is unresolved, by intent.",
+    "opus/2904-compiler-major-change-process: The intent here is that if you have a plan to make some \"major change\" to the compiler, you will start with this process.",
+    "opus/3016-const-ub: This RFC allows such cases to be lints in the meantime, but the long-term intent is that UB detected in a const that is actually used is a hard error."
+   ],
+   "human_examples": [
+    "pep-0001: of their intent.",
+    "pep-0011: as the intent of those is to avoid feature updates."
+   ]
+  },
+  {
+   "unit": "costs",
+   "n": 1,
+   "z_vs_paired": 3.01,
+   "llm_per1k": 0.322,
+   "paired_per1k": 0.118,
+   "base_per1k": 0.0656,
+   "ratio_vs_base": 4.9,
+   "llm_docfrac": 0.163,
+   "base_docfrac": 0.045,
+   "prompts": 25,
+   "models": {
+    "opus": 13,
+    "sonnet": 16,
+    "haiku": 10
+   },
+   "test_llm_docfrac": 0.125,
+   "test_human_docfrac": 0.03,
+   "test_llm_per1k": 0.214,
+   "test_human_per1k": 0.0363,
+   "test_ratio": 5.9,
+   "confirmed": true,
+   "llm_examples": [
+    "opus/0320-nonzeroing-dynamic-drop: ## What it costs",
+    "opus/1398-kinds-of-allocators: Collections always know the size of what they allocated, so requiring it costs callers nothing.",
+    "opus/1513-less-unwinding: Unwinding also has costs."
+   ],
+   "human_examples": [
+    "pep-0282: Logger is still careful to minimize costs before passing the",
+    "pep-0308: implementation costs of introducing a new keyword."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "universal claims": {
+  "opus": 7.369,
+  "sonnet": 5.833,
+  "haiku": 4.368,
+  "human, same topics": 2.936,
+  "human, 2018-2021": 2.964,
+  "human, all": 2.948
+ },
+ "compatibility reassurance": {
+  "opus": 0.778,
+  "sonnet": 0.766,
+  "haiku": 1.045,
+  "human, same topics": 0.158,
+  "human, 2018-2021": 0.136,
+  "human, all": 0.137
+ },
+ "cost assertions": {
+  "opus": 0.363,
+  "sonnet": 0.5,
+  "haiku": 0.695,
+  "human, same topics": 0.079,
+  "human, 2018-2021": 0.066,
+  "human, all": 0.073
+ },
+ "silent/deliberate": {
+  "opus": 0.514,
+  "sonnet": 0.402,
+  "haiku": 0.38,
+  "human, same topics": 0.105,
+  "human, 2018-2021": 0.135,
+  "human, all": 0.112
+ }
+}

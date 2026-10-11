@@ -51,6 +51,10 @@ When you mark a passage as bad, the agent names the specific fault and offers to
 
 The rules draw on Knuth's *Mathematical Writing*, Williams's *Style*, Gopen and Swan's "The Science of Scientific Writing", Ubl's "Design Docs at Google", Nygard's architecture decision records and other sources. The full list is in a comment at the end of `SKILL.md`.
 
+## Research
+
+The `research/` directory holds the evidence behind individual rules. It is not part of any skill, and installing a skill does not need it. [`research/rfc-slop-forensics`](research/rfc-slop-forensics/README.md) compares PEPs and Rust RFCs written by Claude models with human-written ones on the same topics. It is the source of the `technical-writing` rule that universal, compatibility and cost claims need support.
+
 ## License
 
 The skills are released into the public domain under the Unlicense. See [LICENSE](LICENSE).
