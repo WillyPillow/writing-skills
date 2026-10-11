@@ -1,6 +1,6 @@
 # Claude-written and human-written PEPs and Rust RFCs
 
-This directory holds the comparison behind three rules in the `technical-writing` skill: universal, compatibility and cost claims need support; notes to the author stay out of the document's prose; and the decision-record terms are a checklist, not vocabulary for the document. The skill does not depend on anything here.
+This directory holds the comparison behind three rules in the `technical-writing` skill: universal, compatibility and cost claims need support; gaps in the author's material go to the author, not into the prose; and the decision-record terms are a checklist, not vocabulary for the document. The skill does not depend on anything here.
 
 The question was whether the "slop" lists used by EQ-Bench, or a list built the same way for technical writing, can separate LLM-written design documents from human-written ones. EQ-Bench's lists cannot. A list built for this genre can, and the terms on it point to a kind of claim rather than to a vocabulary.
 

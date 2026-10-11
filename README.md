@@ -55,7 +55,7 @@ The rules draw on Knuth's *Mathematical Writing*, Williams's *Style*, Gopen and 
 
 ## Research
 
-The `research/` directory holds the evidence behind individual rules. It is not part of any skill, and installing a skill does not need it. [`research/rfc-slop-forensics`](research/rfc-slop-forensics/README.md) compares PEPs and Rust RFCs written by Claude models with human-written ones on the same topics. It is the source of three `technical-writing` rules: universal, compatibility and cost claims need support; notes to the author stay out of the document's prose; and the decision-record terms are not vocabulary for the document.
+The `research/` directory holds the evidence behind individual rules. It is not part of any skill, and installing a skill does not need it. [`research/rfc-slop-forensics`](research/rfc-slop-forensics/README.md) compares PEPs and Rust RFCs written by Claude models with human-written ones on the same topics. It is the source of three `technical-writing` rules: universal, compatibility and cost claims need support; gaps in the author's material go to the author, not into the prose; and the decision-record terms are not vocabulary for the document.
 
 ## License
 
