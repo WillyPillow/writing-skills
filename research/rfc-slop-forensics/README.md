@@ -78,6 +78,21 @@ The skill's scan-list items were already rare without the skill, at or below the
 
 The setup contributed to the second pattern: the models had only a title and an abstract, and no author to ask, whereas the skill expects the author to correct a plan before any drafting.
 
+### After rules against the two patterns
+
+Skill commit `8c1b061` added a rule that notes to the author stay out of the prose, a paragraph saying the decision-record parts are a checklist rather than document vocabulary, and matching review checks. It also replaced the prose label for self-proposed alternatives with a `[TODO]` marker. The 40 test topics were generated again with that version into `data/llm_corpus_skill_8c1b061/`. Each column is a single generation run.
+
+| Per 1,000 words | Opus, `6294586` | Opus, `8c1b061` | Sonnet, `6294586` | Sonnet, `8c1b061` | Haiku, `6294586` | Haiku, `8c1b061` | Human originals |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Skill vocabulary in the prose | 0.92 | 0.03 | 2.19 | 0.06 | 2.07 | 1.64 | 0 |
+| Review notes in the prose | 0.29 | 0.03 | 3.98 | 1.52 | 9.84 | 2.78 | 0.02 |
+| Suggestion labels | 0.82 | 0.11 | 2.06 | 0.03 | 1.04 | 0 | 0.47 |
+| `[TODO]` markers per document | 11.9 | 14.1 | 17.6 | 14.5 | 16.6 | 13.2 | |
+| Compatibility claims | 0.90 | 0.74 | 0.49 | 0.58 | 0.69 | 0.57 | 0.26 |
+| Headings | 14.5 | 15.4 | 19.4 | 16.9 | 24.0 | 21.5 | 8.5 |
+
+Opus and Sonnet stopped using the checklist terms as prose, and Opus stopped writing notes to the author. Haiku kept the checklist terms, sometimes as headings such as "Cost accepted". Sonnet and Haiku still wrote some notes about their source into the prose ("The abstract says ...", "The material gives no precedence rule ..."), at 25 to 40 percent of the earlier rate. The remaining measures moved little, and with one run per column, changes of that size may be noise.
+
 ## Limitations
 
 - All generated documents come from Claude models, run as Claude Code subagents rather than through the plain API, so the results describe Claude in that setting.

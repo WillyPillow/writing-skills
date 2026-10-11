@@ -1,7 +1,7 @@
 {
  "register_terms": 129,
  "human_register_hits_median": 27.9,
- "opus, without skill": {
+ "opus, no skill": {
   "docs": 40,
   "median_words": 1067,
   "todo_markers_per_doc": 0.0,
@@ -20,7 +20,7 @@
    "suggestion labels": 0.092
   }
  },
- "opus, with skill": {
+ "opus, skill 6294586": {
   "docs": 40,
   "median_words": 976,
   "todo_markers_per_doc": 11.9,
@@ -39,7 +39,26 @@
    "suggestion labels": 0.819
   }
  },
- "sonnet, without skill": {
+ "opus, skill 8c1b061": {
+  "docs": 40,
+  "median_words": 888,
+  "todo_markers_per_doc": 14.1,
+  "register_hits_median": 83.3,
+  "auc_vs_human": 0.976,
+  "claims_per_1k_words": {
+   "universal claims": 7.783,
+   "compatibility reassurance": 0.743,
+   "cost assertions": 0.495,
+   "silent/deliberate": 0.303
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.165,
+   "numeric quantities": 0.028,
+   "trade-off statements": 0.853,
+   "suggestion labels": 0.11
+  }
+ },
+ "sonnet, no skill": {
   "docs": 40,
   "median_words": 1274,
   "todo_markers_per_doc": 0.0,
@@ -58,7 +77,7 @@
    "suggestion labels": 0.157
   }
  },
- "sonnet, with skill": {
+ "sonnet, skill 6294586": {
   "docs": 40,
   "median_words": 769,
   "todo_markers_per_doc": 17.6,
@@ -77,7 +96,26 @@
    "suggestion labels": 2.058
   }
  },
- "haiku, without skill": {
+ "sonnet, skill 8c1b061": {
+  "docs": 40,
+  "median_words": 801,
+  "todo_markers_per_doc": 14.5,
+  "register_hits_median": 92.8,
+  "auc_vs_human": 0.976,
+  "claims_per_1k_words": {
+   "universal claims": 6.929,
+   "compatibility reassurance": 0.577,
+   "cost assertions": 0.912,
+   "silent/deliberate": 0.182
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.365,
+   "numeric quantities": 0.03,
+   "trade-off statements": 0.881,
+   "suggestion labels": 0.03
+  }
+ },
+ "haiku, no skill": {
   "docs": 40,
   "median_words": 1150,
   "todo_markers_per_doc": 0.0,
@@ -96,7 +134,7 @@
    "suggestion labels": 0.238
   }
  },
- "haiku, with skill": {
+ "haiku, skill 6294586": {
   "docs": 40,
   "median_words": 370,
   "todo_markers_per_doc": 16.6,
@@ -113,6 +151,25 @@
    "numeric quantities": 0.0,
    "trade-off statements": 0.749,
    "suggestion labels": 1.037
+  }
+ },
+ "haiku, skill 8c1b061": {
+  "docs": 40,
+  "median_words": 403,
+  "todo_markers_per_doc": 13.2,
+  "register_hits_median": 87.3,
+  "auc_vs_human": 0.98,
+  "claims_per_1k_words": {
+   "universal claims": 5.874,
+   "compatibility reassurance": 0.568,
+   "cost assertions": 1.516,
+   "silent/deliberate": 0.126
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.126,
+   "numeric quantities": 0.0,
+   "trade-off statements": 1.263,
+   "suggestion labels": 0.0
   }
  },
  "human (40 test originals), claims_per_1k_words": {
