@@ -1,11 +1,29 @@
 ---
 name: technical-writing
-description: Use when drafting, revising, or reviewing design docs, RFCs, architecture decision records, research papers, technical reports, mathematical exposition, or technical blog posts. Covers grounding, argument, design rationale, motivation, notation, and sentences, plus a separate review pass.
+description: Drafts, revises and reviews technical documents such as design docs, RFCs, architecture decision records, research papers, technical reports, mathematical exposition and technical blog posts. Keeps every claim grounded in the author's material, orders the argument so each claim follows its context, records design trade-offs as decisions, and reviews in a separate pass from substance down to sentences. Use when asked to write, outline, edit, tighten, critique or review any of these documents or a part of one, such as an abstract, a related-work section, a proof or an alternatives section, even if the request does not name the document type.
+license: Unlicense
 ---
 
 # Technical writing
 
-Apply sections by content, not by document type. A design doc with a derivation uses section 4, and a paper that justifies a system design uses section 3.
+## How to use this skill
+
+Identify the task, then follow its path:
+
+- **Drafting** a document or section: plan, draft one section at a time, then review (see "Process").
+- **Revising** an author's draft: review it first, then make the smallest edit that fixes each finding.
+- **Reviewing** a document: go straight to the review pass in "Process", and report findings rather than rewriting.
+
+Apply sections by content, not by document type. A design doc with a derivation uses "Mathematical exposition", and a paper that justifies a system design uses "Design docs, RFCs and decision records".
+
+For anything longer than a few paragraphs, track this checklist in your working notes. It is for you, not for the document:
+
+```
+- [ ] Write the planning notes and get the author's corrections
+- [ ] Draft one section at a time
+- [ ] Review in a separate pass: substance, argument, design, math, sentences
+- [ ] Report each finding with its location and a minimal fix
+```
 
 ## What goes wrong, in order of importance
 
@@ -17,18 +35,20 @@ Technical prose fails at three levels:
 
 Work top-down. Polishing sentences while the first two levels are broken produces fluent emptiness. Removing stock phrases without fixing the underlying problem only hides it.
 
-Design docs are where missing motivation does the most damage, because the reasons are the content (section 3).
+Design docs are where missing motivation does the most damage, because the reasons are the content (see "Design docs, RFCs and decision records").
 
-## 0. Rules that are never broken
+## Rules that are never broken
+
+The author answers for the document, and a reader cannot tell invented support from real support. So:
 
 - Work only from the author's material: results, logs, notes, drafts, data, benchmarks, incident reports, and the references they supply. Never invent numbers, experiments, examples, citations, or the story of how an idea or design was arrived at.
 - In particular, never invent decision history: which alternatives were considered, why they lost, or what constraint drove a choice. Readers later rely on a design doc as the record of why the system is the way it is. Ask the author.
 - If support is missing, ask, mark `[TODO: ...]`, or narrow the claim to what the evidence shows.
-- A gap in what the author gave you goes to the author, not to the reader. Mark it with `[TODO: ...]` or raise it in the report to the author. Don't explain it in the prose ("the abstract does not say why", "the material does not record which alternatives were weighed"). A question that is open in the design itself is different: the document lists it (section 3). A question about what the author meant or decided goes to the author.
+- A gap in what the author gave you goes to the author, not to the reader. Mark it with `[TODO: ...]` or raise it in the report to the author. Don't explain it in the prose ("the abstract does not say why", "the material does not record which alternatives were weighed"). A question that is open in the design itself is different: the document lists it (see "Open questions are listed" under "Design docs, RFCs and decision records"). A question about what the author meant or decided goes to the author.
 - Do not add references the author did not supply. Do not change reported numbers.
 - When revising, make the smallest edit that fixes the problem. Never paraphrase just to disguise a pattern, and never add text whose only job is to satisfy a checklist item.
 
-## 1. Plan before drafting
+## Plan before drafting
 
 Prose drafted before the argument is settled fills its gaps with filler. For anything longer than a few paragraphs, write these notes and get the author's corrections before drafting any prose:
 
@@ -40,13 +60,15 @@ Prose drafted before the argument is settled fills its gaps with filler. For any
 6. **Instances.** The concrete examples, cases, failures, benchmarks or incidents available in the material.
 7. **Questions for the author.** Above all, why each nonobvious design choice or proof step is the way it is, and what else was considered. Motivation the author has not supplied must be asked for, not made up.
 
-## 2. Argument
+If the author cannot answer before you draft, for example because no one is in the loop, draft anyway and mark each unanswered gap with `[TODO: ...]` rather than filling it. Give the planning notes and open questions to the author in a separate note outside the document, or leave them out if the output is only the document. Never write them into the document text.
+
+## Argument
 
 - **Context before claim.** Set out the limitation, observation or constraint first, then state the claim or decision it supports. The reader can only judge a claim once they have its context, so a document that announces its conclusion first has declared the claim, not argued it. An abstract or a contributions list may still give the result first, because the argument follows it.
 - **Concrete motivation.** Motivation is a goal ("we need to bound X by Y", "writes must stay under 50 ms at p99") or an obstacle ("bounding each term separately loses a factor of n, because ...", "a single leader saturates at 12k writes/s"). A sentence that only announces the next step ("Naturally, one asks ...", "We now turn to ...") is not motivation.
 - **Example before generalization** (Peyton Jones). A specific instance gives the reader something to test the general statement against.
-- **Results, not history** (Widom). In a paper, tell the story of the results, not of how you arrived at them. Keep the story linear, and move significant interruptions to an appendix. This does not apply to design docs, where the alternatives considered are part of the content (section 3).
-- **The text stands without the conversation.** The reader sees only the finished document, not the chat or the drafts that produced it. The usual leak: the agent suggests A, the author rejects it and asks for B, and the text then says "B rather than A" or "we do not use A" with no reason. To a first-time reader, A comes from nowhere and its rejection looks arbitrary. Other leaks are corrections of claims the reader never saw ("unlike a cache, ..."), words that point at an earlier version ("now", "instead", "no longer", "the revised approach"), and extra emphasis on a point only because the author stressed it in the chat. Mention a rejected option only if a reader would plausibly think of it, and then give the reason it loses (section 3). If the author rejected it without a reason, ask for one or leave the option out. Test each contrast and emphasis by asking whether a reader who has only this document would know why it is there.
+- **Results, not history** (Widom). In a paper, tell the story of the results, not of how you arrived at them. Keep the story linear, and move significant interruptions to an appendix. This does not apply to design docs, where the alternatives considered are part of the content (see "Design docs, RFCs and decision records").
+- **The text stands without the conversation.** The reader sees only the finished document, not the conversation or the drafts that produced it. The usual leak: you suggest A, the author rejects it and asks for B, and the text then says "B rather than A" or "we do not use A" with no reason. To a first-time reader, A comes from nowhere and its rejection looks arbitrary. Other leaks are corrections of claims the reader never saw ("unlike a cache, ..."), words that point at an earlier version ("now", "instead", "no longer", "the revised approach"), and extra emphasis on a point only because the author stressed it in the conversation. Mention a rejected option only if a reader would plausibly think of it, and then give the reason it loses (see "Design docs, RFCs and decision records"). If the author rejected it without a reason, ask for one or leave the option out. Test each contrast and emphasis by asking whether a reader who has only this document would know why it is there.
 - **Comparisons say which wins, on what, and why.** A list of A's strengths beside a list of B's ("A is simple and fast; B is flexible and widely used") is not a comparison. It never says how A and B differ on any one criterion, or which criterion matters here. Compare them on the same criteria: what A does, what B does, and how large the difference is. Then name the criterion that decides, tie it to a stated goal or force, and say which option wins and what the winner costs. Each difference needs evidence from the material, such as a measurement, a documented limit, an incident or a prototype result. If the material has none, mark `[TODO: ...]` instead of asserting a difference. "SQLite is simpler; Postgres scales better" compares nothing. "We expect 200 concurrent writers. SQLite allows one writer at a time, and our prototype's throughput stopped growing at 30 writers, while Postgres sustained 200. So Postgres, at the cost of running a database server" does.
 - **Why before significance.** Readers want to know why a result holds before being told it matters (Knuth).
 - **Explicit epistemic status.** Distinguish what is known, what this work shows, and what is conjecture. In a design doc, distinguish what is decided, what is proposed, and what is open. Hedge once, where the uncertainty is, and only as much as the evidence warrants. Use no superlatives about your own work (Knuth).
@@ -64,14 +86,14 @@ Prose drafted before the argument is settled fills its gaps with filler. For any
 
 The rules on used objects, recycled text, positioned citations, displayed instances and diagrams, along with context before claim, adapt the six scientific-slop patterns of Oh et al. (2026).
 
-## 3. Design docs, RFCs and decision records
+## Design docs, RFCs and decision records
 
 Ubl ("Design Docs at Google") puts it directly: the design doc is the place to write down trade-offs. A doc that says "this is how we will build it" without trade-offs, alternatives and the reasoning behind decisions is an implementation manual. If there truly were no trade-offs, the doc probably should not exist.
 
 The default failure is a confident tour of the chosen design. It lists components, presents every property as a benefit, and appends an alternatives section of strawmen afterward. Prevent it by treating each significant choice as a decision record (Nygard's architecture decision records: context, decision, consequences). For each decision, state:
 
 1. **The force.** The requirement, constraint or failure that makes a decision necessary, with numbers where they exist: load, latency budget, data size, cost, team size, deadline, compatibility. "Must be scalable" is not a force; "must sustain 40k writes/s with p99 under 50 ms" is.
-2. **The options actually considered,** each in its strongest form, including keeping the status quo if the author considered it. Each rejected option gets the reason it lost, tied to a specific goal or constraint, and compared with the chosen option on that criterion (section 2).
+2. **The options actually considered,** each in its strongest form, including keeping the status quo if the author considered it. Each rejected option gets the reason it lost, tied to a specific goal or constraint, and compared with the chosen option on that criterion (see "Comparisons say which wins" under "Argument").
 3. **The deciding reason.** Usually one or two factors decide. Say which, and why they outweigh the others. Naming a goal is not a reason: "this matches the self-hosted goal" says which goal the choice serves, not why it serves that goal better than the alternatives.
 4. **The cost accepted.** What the chosen design gives up or makes harder. Rust's RFC template has a "Drawbacks" section. A decision with no stated cost either had no real alternative (state it in one sentence and move on) or hides its trade-off.
 5. **Reversibility.** Say which decisions are expensive to undo: data formats, public APIs, storage engines, anything clients depend on. These get the most justification; cheap, reversible choices get the least.
@@ -94,7 +116,7 @@ Further rules:
 
 **The disagreement test.** A reviewer who disagrees should be able to point to the specific decision, the reason given for it, and the number or assumption they dispute. If they cannot, the doc has hidden its reasoning.
 
-## 4. Mathematical exposition
+## Mathematical exposition
 
 For each derivation or proof:
 
@@ -120,7 +142,7 @@ Knuth's rules for formulas (*Mathematical Writing*, 1989):
 
 **The blah test** (Knuth). Many readers skip formulas on a first reading, so the text must still read smoothly with every nontrivial formula replaced by "blah." A stronger version: the prose between displayed equations must tell the whole story on its own (the goal, the obstacle, the idea, the payoff). If it reads as "We have ... Then ... Thus ... Hence ...", rewrite it.
 
-## 5. Sentences
+## Sentences
 
 - **Characters as subjects, actions as verbs** (Joseph Williams, *Style*). Turn nominalizations back into verbs: "we performed an optimization of" becomes "we optimized". Journal editors who measured AI-assisted submissions found them harder to read, with more nominalizations, longer words and more jargon (Organization Science AI Task Force 2026). A corpus study of NLP papers found the same shift toward longer words and formal substitutes such as "utilize" and "enhance" (Miletić and Falk 2026). Expert readers in its small pilot, however, rated LLM-edited paragraphs slightly clearer. Apply the rule because a nominalization hides the actor and the action, not because it signals machine writing.
 - **Reader expectations** (Gopen and Swan, "The Science of Scientific Writing"). Readers take the end of a sentence as its emphasis. Put familiar information that links backward at the start, and new or important information at the end. Keep the subject close to its verb. Give context before asking the reader to take in something new.
@@ -149,7 +171,7 @@ ASD-STE100 is the controlled-language standard used in aerospace maintenance doc
 - **Sentence length as a review trigger.** STE caps descriptive sentences at 25 words and procedural ones at 20. Treat a sentence over about 25 words as a candidate for splitting, not a violation. Theorem statements and carefully qualified claims may need more.
 - **Noun clusters of at most three words.** Break longer chains with prepositions: "inlet valve of the high-pressure fuel pump", not "high-pressure fuel pump inlet valve". Knuth's example of a long chain is "packet switched data communication network protocol problem".
 - **Simple tenses, and name the actor** when it matters: which service, which team, which user. This is where Orwell's active-voice rule matters most: procedures, method descriptions and the description of a design.
-- **Topic first.** The first sentence of a paragraph says what the paragraph is about, which is not necessarily its claim (section 2). Keep paragraphs short.
+- **Topic first.** The first sentence of a paragraph says what the paragraph is about, which is not necessarily its claim (see "Context before claim"). Keep paragraphs short.
 - **Procedures are imperative, one instruction per sentence.** Use a numbered list for three or more steps or conditions instead of chaining them in one sentence. This applies to reproduction steps, algorithms written in prose, rollout and rollback plans, and setup sections of blog posts.
 - **Never shorten by dropping grammar or facts.** Keep articles, subjects and verbs explicit, and never drop a fact, number, condition or scope qualifier to meet a length target. Split the sentence instead.
 
@@ -168,11 +190,11 @@ Scan last for leftover LLM habits. This list is for scanning, not a target. Many
   - Closing sentences that restate the paragraph, and formulaic closing sections ("Despite these challenges, ...", "Future outlook").
   - Trailing clauses that assert vague importance.
 - **Typography:** bold or italics for emphasis (italics are for definitions and quotes; Widom), headers on everything, title-case headings, bullets where prose belongs (often each opening with a bold label and a colon), frequent em dashes.
-- **Chat residue:** "I hope this helps", "let me know if", "as discussed", placeholders such as `[Describe ...]` or `2025-XX-XX`, citation markup left by a chat tool, and contrasts with options or drafts the reader never saw (section 2).
+- **Chat residue:** "I hope this helps", "let me know if", "as discussed", placeholders such as `[Describe ...]` or `2025-XX-XX`, citation markup left by a chat tool, and contrasts with options or drafts the reader never saw (see "The text stands without the conversation").
 
-## 6. Form
+## Form
 
-Write prose paragraphs. Use lists only for genuinely parallel items, such as a contributions list, hyperparameters, goals and non-goals, or procedure steps. Use headers only at the depth the venue uses. A table is good for comparing alternatives against the same criteria, but the prose must still say which criterion decided and why. A table with a separate column of pros for each option is two lists, not a comparison (section 2).
+Write prose paragraphs. Use lists only for genuinely parallel items, such as a contributions list, hyperparameters, goals and non-goals, or procedure steps. Use headers only at the depth the venue uses. A table is good for comparing alternatives against the same criteria, but the prose must still say which criterion decided and why. A table with a separate column of pros for each option is two lists, not a comparison (see "Argument").
 
 Papers:
 
@@ -191,7 +213,7 @@ Design docs (adapt to the team's template; drop sections with nothing to say):
 
 - **Context and scope:** the background facts, briefly, and what is being built.
 - **Goals and non-goals.**
-- **Design:** an overview, then each significant decision with its force, options, deciding reason and cost (section 3).
+- **Design:** an overview, then each significant decision with its force, options, deciding reason and cost (see "Design docs, RFCs and decision records").
 - **Alternatives considered:** whole-design alternatives, if any, in their strongest form. This section is not a restatement of the non-goals.
 - **Cross-cutting concerns:** only those the design actually affects.
 - **Rollout, migration and rollback.**
@@ -201,21 +223,27 @@ An architecture decision record is a single decision: status, context, decision,
 
 Blog posts can use the first person and more voice. Open with the concrete problem, result or surprising observation. All the argument and precision rules still apply.
 
-## 7. Process
+## Process
 
-1. Write the plan (section 1) and get the author's corrections.
+1. Write the plan (see "Plan before drafting") and get the author's corrections.
 2. Draft one section at a time, because a whole document drafted in one pass comes out uniform and thin. Revise earlier sections when later ones change them (Halmos: write in spirals).
-3. Review in a separate pass, ideally by a fresh agent that did not see the drafting, so the draft is not judged by the context that wrote it. Work top-down:
+3. Review in a separate pass, so the draft is not judged by the context that wrote it. If you can hand the review to a fresh agent or session that did not see the drafting, do so. Otherwise, review as a separate step after drafting, rereading the document from the start as a reader who has only the document. Work top-down:
    - **Substance.** Check every number against the material. Confirm nothing is invented, including decision history, and locate each claim's evidence. Check that no gap in the author's material is explained in the prose instead of marked with `[TODO: ...]`. Check that each universal, compatibility and cost claim has support in the material. Check that each restated finding keeps its source's scope and adds no concept the results lack. Check that each cited work exists, says what it is cited for, and is the most fitting support available in the material. Check that every bibliography entry is complete and consistent with the others.
    - **Argument.** For each sentence, ask what it claims, whether it is true, and whether it follows from what came before. Check that the skeptic's objections are answered. Compare the dependency map against the text, looking for unused objects, undefined terms, claims before their context, isolated citations, unevaluated qualities, and missing instances. Check that each comparison says how the options differ on a shared criterion, with evidence, and which criterion decides. Read as a first-time reader: flag each rejection, contrast or emphasis that only makes sense to someone who saw the drafting conversation or an earlier draft.
    - **Design.** Check that the hardest problem gets the most space. For each significant decision, check that the force, the options, the deciding reason and the cost are all present, and that the most expensive-to-reverse decisions are the best justified. Check that non-goals are real, that failure behavior is concrete, and that no section is template filler. Check that the decision-record terms (force, deciding reason, cost accepted) do not appear as prose. Apply the disagreement test.
    - **Math.** Apply the blah test. Check that each derivation states its goal first, that the crux is marked, and that each assumption is linked to its use.
-   - **Sentences.** Apply section 5, including the STE triggers: sentences over about 25 words, noun clusters over three words, terms used in two senses or two terms for one concept, and two new facts in one sentence. Flag every sentence whose removal loses nothing.
+   - **Sentences.** Apply "Sentences", including the STE triggers: sentences over about 25 words, noun clusters over three words, terms used in two senses or two terms for one concept, and two new facts in one sentence. Flag every sentence whose removal loses nothing.
 
-   Report each finding with its location and a proposed minimal fix, rather than silently rewriting. A finding names a specific passage and judges what the document does against its own goals and method, not what a different document could have done (Buschek 2025). This holds for the author's draft and for someone else's paper alike.
+   Report each finding with its location and a proposed minimal fix, rather than silently rewriting. A finding names a specific passage and judges what the document does against its own goals and method, not what a different document could have done (Buschek 2025). This holds for the author's draft and for someone else's paper alike. For example:
 
-   Concerns that fit any document are findings only when tied to this one. Examples are scalability, generalization, sample size, study duration, "more objective metrics" and "the analysis could go deeper". Name the stated goal the concern threatens or the claim it undercuts. In a design doc, an alternative is a finding when a stated force favors it (section 3), not merely because the design could have been different. Drop untied concerns rather than listing them. A long list of generic concerns is not a review, and an author who acts on it can make the document worse.
-4. When the author marks a passage as bad, name the specific fault and offer to add it to this file as a rule.
+   ```
+   Substance, section 3.2, "the cache adds negligible overhead": a cost claim
+   with no measurement in the material. Fix: give the measured overhead, or
+   write "[TODO: measure cache overhead]".
+   ```
+
+   Concerns that fit any document are findings only when tied to this one. Examples are scalability, generalization, sample size, study duration, "more objective metrics" and "the analysis could go deeper". Name the stated goal the concern threatens or the claim it undercuts. In a design doc, an alternative is a finding when a stated force favors it (see "Design docs, RFCs and decision records"), not merely because the design could have been different. Drop untied concerns rather than listing them. A long list of generic concerns is not a review, and an author who acts on it can make the document worse.
+4. When the author marks a passage as bad, name the specific fault and offer to add it to this skill as a rule.
 
 <!--
 Sources

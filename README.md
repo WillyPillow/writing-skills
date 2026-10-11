@@ -28,7 +28,7 @@ To change a skill's rules, edit its `SKILL.md`.
 
 The `technical-writing` skill sorts the ways technical prose fails into three levels. In order of importance, they are substance, argument and structure, and sentences. Substance fails through a missing sharp claim, a missing concrete instance or invented support. Argument fails through claims stated before their context or steps without motivation. Sentences fail through nominalizations, jargon and padding. Polished sentences hide missing substance or a missing argument, so the agent fixes the levels from the top down.
 
-Section 0 of the skill lists rules that are never broken. The first is that the agent works only from your material. It does not invent numbers, examples or citations. It also does not invent the history of a design, such as which alternatives were considered and why they lost. When support is missing, the agent asks you, narrows the claim, or leaves a `[TODO: ...]` marker.
+The skill opens with rules that are never broken. The first is that the agent works only from your material. It does not invent numbers, examples or citations. It also does not invent the history of a design, such as which alternatives were considered and why they lost. When support is missing, the agent asks you, narrows the claim, or leaves a `[TODO: ...]` marker.
 
 For anything longer than a few paragraphs, the agent first writes planning notes and waits for your corrections. The notes include the reader, the main point, the objections a skeptic will raise, one claim per planned paragraph, and questions for you.
 
@@ -36,20 +36,24 @@ In a design doc, the agent treats each significant choice as a decision record. 
 
 Two rules address habits of drafting with an agent. First, the text must make sense to a reader who never saw the conversation. If you reject the agent's suggestion A and ask for B, the document does not say "B rather than A" unless a reader would think of A and the document gives the reason it loses. Second, a comparison compares. A list of A's strengths beside a list of B's is not enough. The text compares A and B on the same criteria, with evidence, and says which criterion decides.
 
-When you mark a passage as bad, the agent names the specific fault and offers to add it to `SKILL.md` as a new rule (section 7).
+When you mark a passage as bad, the agent names the specific fault and offers to add it to the skill as a new rule.
 
 ### Contents
 
-`technical-writing/SKILL.md` opens with the three levels, followed by eight numbered sections. The agent applies them by content rather than by document type, so a design doc that contains a derivation also gets the rules for mathematical exposition.
+`technical-writing/SKILL.md` is a single file, so the skill can be copied or shared as one document. It opens with how to route a drafting, revising or reviewing task and the three levels, followed by these sections:
 
-0. Rules that are never broken.
-1. Planning before drafting.
-2. Argument.
-3. Design docs, RFCs and decision records.
-4. Mathematical exposition.
-5. Sentences, including a loose adaptation of Simplified Technical English (ASD-STE100) and a list of leftover LLM habits to scan for.
-6. Form, with section outlines for papers and design docs.
-7. Process, including a review pass separate from drafting.
+- Rules that are never broken.
+- Plan before drafting.
+- Argument.
+- Design docs, RFCs and decision records.
+- Mathematical exposition.
+- Sentences, including a loose adaptation of Simplified Technical English (ASD-STE100) and a list of leftover LLM habits to scan for.
+- Form, with section outlines for papers and design docs.
+- Process, including a review pass separate from drafting.
+
+The agent applies the sections by content rather than by document type, so a design doc that contains a derivation also gets the rules for mathematical exposition.
+
+The skill names no particular model or agent. Where a step depends on what the agent can do, it gives a fallback. With no author available to answer the planning questions, the agent drafts anyway, marks the gaps with `[TODO: ...]`, and keeps its notes for the author out of the document. Without a way to start a fresh agent for the review, it reviews as a separate step after drafting.
 
 The rules draw on Knuth's *Mathematical Writing*, Williams's *Style*, Gopen and Swan's "The Science of Scientific Writing", Ubl's "Design Docs at Google", Nygard's architecture decision records and other sources. The full list is in a comment at the end of `SKILL.md`.
 
