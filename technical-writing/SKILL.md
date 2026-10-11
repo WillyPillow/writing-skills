@@ -136,10 +136,10 @@ For each definition, say what problem it solves and why the simpler alternative 
 Knuth's rules for formulas (*Mathematical Writing*, 1989):
 
 - Separate adjacent formulas with words: "Consider S_q, where q < p", not "Consider S_q, q < p". Otherwise they read as one formula.
-- Do not start a sentence with a symbol. The reader cannot see where the sentence begins, and the symbol cannot be capitalized.
+- Start each sentence with a word, not a symbol. Otherwise the reader cannot see where the sentence begins, and the symbol cannot be capitalized.
 - In running text, write words instead of ∴, ⇒, ∀ and ∃.
 - The sentence before a theorem is complete and, ideally, motivating. The theorem statement is self-contained, because readers jump straight to theorems.
-- Do not list formulas homework-style. Tie them together with running commentary.
+- Tie formulas together with running commentary rather than listing them homework-style.
 - Define every variable when it is introduced. Never use one notation for two things, or two notations for one thing.
 - Minimize subscripts, and don't name elements you never need to name. Halmos: the best notation is no notation.
 - Display important formulas, and number only the ones you refer to. Punctuate displayed equations as parts of sentences. Never display a false equation, because skimming readers take displays as true.
@@ -161,23 +161,23 @@ Knuth's rules for formulas (*Mathematical Writing*, 1989):
   In technical writing, rule 5 needs a qualification: a precise technical term beats a vague everyday one, but don't use jargon where a plain word is equally precise.
 - **The curse of knowledge** (Pinker). Define what the reader doesn't know, and never define what they do.
 - **Specific over general.** Give numbers with conditions and baselines, not "significantly improves" or "highly scalable".
-- **Name the reasons and the items** (Widom). Never write "for various reasons"; give the reasons. Use "etc." only when the remaining items are obvious ("phases 1, 3, 5, 7, etc."), never to stand for items you have not named ("volatility, scalability, etc.").
+- **Name the reasons and the items** (Widom). Give the reasons instead of writing "for various reasons". Use "etc." only when the remaining items are obvious ("phases 1, 3, 5, 7, etc."), never to stand for items you have not named ("volatility, scalability, etc.").
 - **Every "this" has a referent** (Widom, after Ullman). When "this", "that", "these" or "it" could point to more than one thing, add the noun: "this gap", not "this".
 - **Say who "we" is.** In papers and mathematical exposition, "we" means the author and the reader together. In a design doc it usually means the team; say so if it could be ambiguous.
 - **The opening sentence is the best sentence.** Don't open with a sentence of the form "An X is Y" (Knuth).
 
 ### Simplified Technical English (ASD-STE100), applied loosely
 
-ASD-STE100 is the controlled-language standard used in aerospace maintenance documentation. Its idea is that a reader should not be able to misread a sentence. Do not follow it literally here: its approved dictionary and ban on most "-ing" forms are too restrictive for papers and design docs. Use its rules as defaults and as review triggers.
+ASD-STE100 is the controlled-language standard used in aerospace maintenance documentation. Its idea is that a reader should not be able to misread a sentence. Use its rules as defaults and as review triggers, not literally: its approved dictionary and ban on most "-ing" forms are too restrictive for papers and design docs.
 
-- **One word, one meaning; one meaning, one word.** In the standard, each approved word has a single meaning and part of speech. Here, pick one term per concept and never use it for anything else. Never vary terms for elegance, because in technical writing a new word signals a new thing. Don't use the same word as both a noun and a verb with different meanings. In a design doc, a component keeps the same name everywhere, including in diagrams.
+- **One word, one meaning; one meaning, one word.** In the standard, each approved word has a single meaning and part of speech. Here, use one term per concept throughout, and keep each term for that concept alone, even where a synonym would read better, because in technical writing a new word signals a new thing. Don't use the same word as both a noun and a verb with different meanings. In a design doc, a component keeps the same name everywhere, including in diagrams.
 - **One new fact per sentence.** Give information gradually, because readers take in one new thing at a time. A sentence that introduces two new things should usually become two sentences.
 - **Sentence length as a review trigger.** STE caps descriptive sentences at 25 words and procedural ones at 20. Treat a sentence over about 25 words as a candidate for splitting, not a violation. Theorem statements and carefully qualified claims may need more.
 - **Noun clusters of at most three words.** Break longer chains with prepositions: "inlet valve of the high-pressure fuel pump", not "high-pressure fuel pump inlet valve". Knuth's example of a long chain is "packet switched data communication network protocol problem".
 - **Simple tenses, and name the actor** when it matters: which service, which team, which user. This is where Orwell's active-voice rule matters most: procedures, method descriptions and the description of a design.
 - **Topic first.** The first sentence of a paragraph says what the paragraph is about, which is not necessarily its claim (see "Context before claim"). Keep paragraphs short.
 - **Procedures are imperative, one instruction per sentence.** Use a numbered list for three or more steps or conditions instead of chaining them in one sentence. This applies to reproduction steps, algorithms written in prose, rollout and rollback plans, and setup sections of blog posts.
-- **Never shorten by dropping grammar or facts.** Keep articles, subjects and verbs explicit, and never drop a fact, number, condition or scope qualifier to meet a length target. Split the sentence instead.
+- **Shorten by splitting sentences, not by dropping grammar or facts.** Keep articles, subjects and verbs explicit, and keep every fact, number, condition and scope qualifier when meeting a length target.
 
 Scan last for leftover LLM habits. This list is for scanning, not a target. Many items come from Wikipedia's "Signs of AI writing" guide. No item proves a text was machine-written, and people use all of them; each is listed because it weakens the sentence it appears in. When an item turns up, rewrite the sentence rather than swapping in a synonym, since a synonym keeps the empty sentence.
 
@@ -210,7 +210,7 @@ Papers:
 - **Preliminaries:** the notation, terminology and background the paper needs but did not originate, kept short. This marks off what is new from what came before. Define global terms here and other terms just before their first use.
 - **Running example:** where possible, one example introduced early and reused throughout.
 - **Method:** enough detail to reimplement it, with the reason for each design choice. A clear new contribution should appear by about a quarter of the way through the paper (Widom). Describe it top-down, so the reader can see where it is going and can skip ahead.
-- **Experiments:** a reproducible setup, with each table's and figure's takeaway stated in the text. Compare against a naive baseline, against prior work, and among this work's own variants where there are several. Measure sensitivity to the important parameters and scaling, not only a headline number. Don't choose experiments or settings that show the work only at its best.
+- **Experiments:** a reproducible setup, with each table's and figure's takeaway stated in the text. Compare against a naive baseline, against prior work, and among this work's own variants where there are several. Measure sensitivity to the important parameters and scaling, not only a headline number. Choose experiments and settings that show where the work is weak as well as where it is strong.
 - **Limitations:** specific enough that a reviewer would recognize them.
 - **Conclusions:** a short paragraph that does not repeat the abstract or introduction. Where possible, it makes the introduction's claims concrete with the measured numbers.
 - **Appendices:** detailed proofs and algorithms that most readers will skip. Nothing needed to understand the contributions goes there.
