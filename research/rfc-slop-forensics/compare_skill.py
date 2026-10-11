@@ -14,6 +14,14 @@ from prep_human import md_prose
 HERE = pathlib.Path(__file__).resolve().parent
 MODELS = ('opus', 'sonnet', 'haiku')
 TODO = re.compile(r'\[TODO:[^\]]*\]', re.I)
+# The claim-family patterns from claim_families.py are too coarse here: the skill requires a stated cost for each
+# decision, so "cost" sentences rise for a good reason. These patterns separate the kinds of statement.
+STATEMENTS = {
+    'performance claims': r"\b(overhead|faster|slower|speed-?ups?|cheaper|negligible)\b",
+    'numeric quantities': r"\b\d+(\.\d+)?\s?(%|x\b|\u00d7|ms\b|\u00b5s|us\b|ns\b|seconds?\b|minutes?\b|hours?\b|[KMG]i?B\b|bytes\b|times\b|lines\b|crates\b|packages\b|projects\b|users\b)",
+    'trade-off statements': r"\b(the cost is|at the cost of|costs? accepted|drawbacks?|gives up|trade-?off)\b",
+    'suggestion labels': r"\b(for the author to (evaluate|confirm)|suggest(ed|ion)s?)\b",
+}
 
 
 def rate(texts, rx):
@@ -56,8 +64,11 @@ def main():
                 'register_hits_median': round(st.median(sc), 1),
                 'auc_vs_human': round(auc(sc, h_scores), 3),
                 'claims_per_1k_words': {f: rate([d['text'] for d in docs], rx) for f, rx in FAMILIES.items()},
+                'statements_per_1k_words': {f: rate([d['text'] for d in docs], rx) for f, rx in STATEMENTS.items()},
             }
-    report['human (40 test originals), claims_per_1k_words'] = {f: rate([human_all[i]['text'] for i in test_ids], rx) for f, rx in FAMILIES.items()}
+    originals = [human_all[i]['text'] for i in test_ids]
+    report['human (40 test originals), claims_per_1k_words'] = {f: rate(originals, rx) for f, rx in FAMILIES.items()}
+    report['human (40 test originals), statements_per_1k_words'] = {f: rate(originals, rx) for f, rx in STATEMENTS.items()}
     (HERE / 'results').mkdir(exist_ok=True)
     json.dump(report, open(HERE / 'results/skill_comparison.json', 'w'), indent=1)
     print(json.dumps(report, indent=1))

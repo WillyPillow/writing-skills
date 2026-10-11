@@ -37,6 +37,27 @@ Those remaining terms are plain words: "every", "cannot", "already", "keeps", "l
 
 The models had only a title and an abstract, with no benchmarks or compatibility data. Any compatibility or cost claim beyond what an abstract stated had no support in their material.
 
+## With the skill
+
+`generate_skill.workflow.js` had each model write the 40 test topics again while following `technical-writing/SKILL.md` as of commit `6294586`. That version includes the rule this comparison produced. The title and abstract were the whole of the author's material. No author could answer questions, so wherever the skill says to ask, the models marked `[TODO: ...]` instead. They also ran the skill's review pass themselves. `compare_skill.py` compares the 120 documents with the no-skill documents on the same topics and with the 40 human originals. `[TODO]` text is removed before counting. Results are in `results/skill_comparison.json`.
+
+| Per 1,000 words | Opus | Opus, skill | Sonnet | Sonnet, skill | Haiku | Haiku, skill | Human originals |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Median length (words) | 1,067 | 976 | 1,274 | 769 | 1,150 | 370 | |
+| `[TODO]` markers per document | 0 | 11.9 | 0 | 17.6 | 0 | 16.6 | |
+| Compatibility claims | 0.99 | 0.90 | 1.00 | 0.49 | 1.30 | 0.69 | 0.26 |
+| Performance claims (overhead, faster, ...) | 0.53 | 0.26 | 0.33 | 0.36 | 0.28 | 0.12 | 0.14 |
+| Numeric quantities (ms, %, MB, ...) | 0.07 | 0.13 | 0.04 | 0.00 | 0.09 | 0.00 | 0.23 |
+| Trade-off statements (the cost is, drawback, ...) | 0.46 | 1.22 | 0.63 | 1.44 | 0.48 | 0.75 | 0.32 |
+| Suggestion labels (for the author to evaluate, ...) | 0.09 | 0.82 | 0.16 | 2.06 | 0.24 | 1.04 | 0.47 |
+| Register-list AUC against human documents | 0.955 | 0.968 | 0.949 | 0.985 | 0.978 | 0.975 | |
+
+With the skill, the models left gaps open instead of filling them: 12 to 18 `[TODO]` markers per document. Haiku's documents shrank to a median of 370 words. Compatibility claims fell for Sonnet and Haiku but barely for Opus. Performance claims halved for Opus and Haiku, but not for Sonnet. The few numbers left in the Opus documents are worked examples, such as 1.9999 ms rounding to 1 ms. Trade-off statements and suggestion labels rose, which is what the skill's decision-record and labelling rules ask for.
+
+The register list separated the skill documents from human documents at least as well as before. Its terms are plain verbs, named actors and stated obstacles ("keeps", "callers", "cannot"), which the skill's sentence rules encourage. The list therefore identifies Claude's writing; it does not measure quality, and lowering a document's score is not a goal.
+
+The cost-claim family in `claim_families.py` rose with the skill, from two- to seven-fold. Its pattern counts any "the cost" or "costs", and the added sentences are the trade-off statements the skill requires. The narrower patterns above separate trade-offs from performance claims. The compatibility pattern also counts negations such as "existing code is affected", so its rates are approximate.
+
 ## Limitations
 
 - All generated documents come from Claude models, run as Claude Code subagents rather than through the plain API, so the results describe Claude in that setting.
@@ -55,6 +76,7 @@ python3 prep_human.py       # extract prose into build/human_docs.json
 python3 select_prompts.py   # rewrite data/prompts.json and data/batches/ (byte-identical to the committed ones)
 python3 analyze.py          # write results/forensics.json and results/checks.json
 python3 claim_families.py   # write results/claim_families.json
+python3 compare_skill.py    # write results/skill_comparison.json
 ```
 
 To regenerate the LLM corpus instead of using the committed one, run `generate.workflow.js` with the Workflow tool in Claude Code, passing `{"dir": "<absolute path of this directory>"}`. Generation is not deterministic, so a new corpus will give somewhat different numbers.
