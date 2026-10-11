@@ -14,6 +14,8 @@ Identify the task, then follow its path:
 - **Revising** an author's draft: review it first, then make the smallest edit that fixes each finding.
 - **Reviewing** a document: go straight to the review pass in "Process", and report findings rather than rewriting.
 
+The author's instructions take precedence over this skill: a venue template, a required section or a house style wins. The rules under "Rules that are never broken" still hold. When you set a rule aside because the author asked, say which one in your note to the author.
+
 Apply sections by content, not by document type. A design doc with a derivation uses "Mathematical exposition", and a paper that justifies a system design uses "Design docs, RFCs and decision records".
 
 For anything longer than a few paragraphs, track this checklist in your working notes. It is for you, not for the document:
@@ -45,8 +47,8 @@ The author answers for the document, and a reader cannot tell invented support f
 - In particular, never invent decision history: which alternatives were considered, why they lost, or what constraint drove a choice. Readers later rely on a design doc as the record of why the system is the way it is. Ask the author.
 - If support is missing, ask, mark `[TODO: ...]`, or narrow the claim to what the evidence shows.
 - A gap in what the author gave you goes to the author, not to the reader. Mark it with `[TODO: ...]` or raise it in the report to the author. Don't explain it in the prose ("the abstract does not say why", "the material does not record which alternatives were weighed"). A question that is open in the design itself is different: the document lists it (see "Open questions are listed" under "Design docs, RFCs and decision records"). A question about what the author meant or decided goes to the author.
-- Do not add references the author did not supply. Do not change reported numbers.
-- When revising, make the smallest edit that fixes the problem. Never paraphrase just to disguise a pattern, and never add text whose only job is to satisfy a checklist item.
+- Add no references the author did not supply. If the author asks you to find sources, give them to the author as candidates to check, each with the claim it would support. Cite them in the document only after the author confirms them. Do not change reported numbers.
+- When revising, make the smallest edit that fixes the problem. Never paraphrase just to disguise a pattern, and never add text whose only job is to satisfy a checklist item. List improvements beyond what the author asked for after the text, not in it.
 
 ## Plan before drafting
 
@@ -59,6 +61,8 @@ Prose drafted before the argument is settled fills its gaps with filler. For any
 5. **Dependency map.** For a paper: every definition, assumption, lemma, equation, figure and table, with what it is used for and where. For a design doc: every requirement and constraint, with the decisions it drives. Anything nothing depends on is cut or moved to an appendix. A decision that no constraint drives, or a constraint that drives no decision, is a sign something is missing.
 6. **Instances.** The concrete examples, cases, failures, benchmarks or incidents available in the material.
 7. **Questions for the author.** Above all, why each nonobvious design choice or proof step is the way it is, and what else was considered. Motivation the author has not supplied must be asked for, not made up.
+
+Write the notes in your reply, not only in your reasoning, so the author can correct them. Ask all your questions for the author at once, then end your turn. Once the author has answered, draft the whole document without stopping to ask again, and mark anything still open with `[TODO: ...]`.
 
 If the author cannot answer before you draft, for example because no one is in the loop, draft anyway and mark each unanswered gap with `[TODO: ...]` rather than filling it. Give the planning notes and open questions to the author in a separate note outside the document, or leave them out if the output is only the document. Never write them into the document text.
 
@@ -76,8 +80,8 @@ If the author cannot answer before you draft, for example because no one is in t
 - **Universal, compatibility and cost claims need support.** Three kinds of claim read as plain facts, so a missing source is easy to overlook. A universal claim says something holds in every case ("every tool already parses them", "this cannot fail"). A compatibility claim says existing code or users are unaffected. A cost claim says what a change costs ("the overhead is a single branch"). Keep each one only if the author's material supports it. Otherwise narrow it to what the material shows, or mark `[TODO: ...]`. In a comparison made for this skill, three Claude models each wrote 120 PEPs and Rust RFCs from the titles and abstracts of human-written ones from before 2022. The models had no benchmarks or compatibility data. Even so, compatibility claims appeared 5.6 to 7.6 times as often as in about 1,100 human-written PEPs and RFCs.
 - **Restated findings keep their scope.** When you summarize a result, whether this work's or a cited work's, keep its conditions: the population or dataset, the setting, the sample size, and the tense. "Improved accuracy on two benchmarks" does not become "improves accuracy". Peters and Chin-Yee (2025) found LLM summaries of scientific papers nearly five times as likely as human summaries to generalize beyond the source, even when prompted for accuracy. A summary also adds no concept the results lack. If no reported quote or question concerns unobtrusiveness, the summary does not call the feature an "unobtrusive guardrail" (Buschek 2026). Mark any metaphor as the authors' interpretation, not as something participants said.
 - **Attributions name their sources.** "Studies show", "experts argue" and "prior work has found" need the specific citations, as many as the plural claims. Each cited work must say what the sentence attributes to it. If the author has not supplied the citation, mark `[TODO: citation]`.
-- **Cited work is described from its text.** Describe what a cited work shows only from its text or the author's notes on it, never from memory or a generated summary. Otherwise ask the author to confirm the description, or mark `[TODO: check]`. Buschek's (2026) example: a submission credited a study with showing that doing X causes effect E, but X was part of the task in every condition, so the study never compared it.
-- **Cite the most fitting work.** A citation supports its claim directly and comes from a context close to this work's. Flag a citation that makes the point only in passing, or that comes from a distant domain, such as a smart-home finding cited for touchscreen keyboards (Buschek 2026). Reviewers in the field spot such citations as filler. Ask the author whether closer work exists; don't search for it yourself.
+- **Cited work is described from its text.** Describe what a cited work shows only from its text or the author's notes on it, never from memory or a generated summary. Otherwise ask the author to confirm the description, or mark `[TODO: check]`. Buschek's (2026) example: a submission credited a study with showing that doing X causes effect E, but X was part of the task in every condition, so the study never compared it. Restate what a cited work found in your own words, and put any wording you take from it in quotation marks.
+- **Cite the most fitting work.** A citation supports its claim directly and comes from a context close to this work's. Flag a citation that makes the point only in passing, or that comes from a distant domain, such as a smart-home finding cited for touchscreen keyboards (Buschek 2026). Reviewers in the field spot such citations as filler. Ask the author whether closer work exists; don't search for it yourself unless the author asks.
 - **Every object is used.** Refer to each figure, table, diagram and important equation from a sentence that reads something off it or draws a conclusion from it. Put that sentence where the reader needs the object.
 - **No recycled text.** A sentence that repeats an earlier section either adds what its own section needs (a detail, a consequence, a qualification) or is deleted.
 - **Positioned citations.** When you discuss a prior work, say how it relates to this work or to another cited work. The relation can be a shared limitation, a different assumption, or what this work takes from it or does differently. The failure is a run of sentences that each describe one prior work in isolation ("X proposed A. Y extended A to B. Z applied B to C."). That lists the literature but never shows where this work fits in it. Citing one work per sentence is fine when the sentence states such a relation. The same holds for prior systems in a design doc.
@@ -147,7 +151,7 @@ Knuth's rules for formulas (*Mathematical Writing*, 1989):
 - **Characters as subjects, actions as verbs** (Joseph Williams, *Style*). Turn nominalizations back into verbs: "we performed an optimization of" becomes "we optimized". Journal editors who measured AI-assisted submissions found them harder to read, with more nominalizations, longer words and more jargon (Organization Science AI Task Force 2026). A corpus study of NLP papers found the same shift toward longer words and formal substitutes such as "utilize" and "enhance" (Miletić and Falk 2026). Expert readers in its small pilot, however, rated LLM-edited paragraphs slightly clearer. Apply the rule because a nominalization hides the actor and the action, not because it signals machine writing.
 - **Reader expectations** (Gopen and Swan, "The Science of Scientific Writing"). Readers take the end of a sentence as its emphasis. Put familiar information that links backward at the start, and new or important information at the end. Keep the subject close to its verb. Give context before asking the reader to take in something new.
 - **Orwell's six rules** ("Politics and the English Language", paraphrased):
-  1. Don't use figures of speech you are used to seeing in print. Readers no longer see them, and they stand in for a precise statement.
+  1. Don't use figures of speech you are used to seeing in print. Readers no longer see them, and they stand in for a precise statement. The same holds for fresh figures that perform rather than inform: "a parameter worth varying", not "a dial worth turning" (Anthropic's prompting guide for Claude Fable 5.1 calls this mannered prose).
   2. Prefer the short word.
   3. Cut any word that can go. Strunk and White say the same ("omit needless words"), but keep the words that help parsing. Knuth: write "Assume that A is a group", not "Assume A is a group".
   4. Prefer the active voice.
@@ -193,6 +197,8 @@ Scan last for leftover LLM habits. This list is for scanning, not a target. Many
 - **Chat residue:** "I hope this helps", "let me know if", "as discussed", placeholders such as `[Describe ...]` or `2025-XX-XX`, citation markup left by a chat tool, and contrasts with options or drafts the reader never saw (see "The text stands without the conversation").
 
 ## Form
+
+Keep the author's source format: LaTeX, Markdown, reStructuredText, or the team's wiki or template. Return a draft as the document text only, and keep any note to the author separate.
 
 Write prose paragraphs. Use lists only for genuinely parallel items, such as a contributions list, hyperparameters, goals and non-goals, or procedure steps. Use headers only at the depth the venue uses. A table is good for comparing alternatives against the same criteria, but the prose must still say which criterion decided and why. A table with a separate column of pros for each option is two lists, not a comparison (see "Argument").
 
@@ -242,7 +248,7 @@ Blog posts can use the first person and more voice. Open with the concrete probl
    write "[TODO: measure cache overhead]".
    ```
 
-   Concerns that fit any document are findings only when tied to this one. Examples are scalability, generalization, sample size, study duration, "more objective metrics" and "the analysis could go deeper". Name the stated goal the concern threatens or the claim it undercuts. In a design doc, an alternative is a finding when a stated force favors it (see "Design docs, RFCs and decision records"), not merely because the design could have been different. Drop untied concerns rather than listing them. A long list of generic concerns is not a review, and an author who acts on it can make the document worse.
+   Concerns that fit any document are findings only when tied to this one. Examples are scalability, generalization, sample size, study duration, "more objective metrics" and "the analysis could go deeper". Name the stated goal the concern threatens or the claim it undercuts. In a design doc, an alternative is a finding when a stated force favors it (see "Design docs, RFCs and decision records"), not merely because the design could have been different. Drop untied concerns rather than listing them. A long list of generic concerns is not a review, and an author who acts on it can make the document worse. If a level has no findings, say so in one line. A short review of a sound document is a correct result.
 4. When the author marks a passage as bad, name the specific fault and offer to add it to this skill as a rule.
 
 <!--
@@ -269,5 +275,6 @@ Sources
 - Buschek, "Don't Review with an LLM (Laundry List Method)" (Medium, 2025), on generic generated review concerns
 - Lynch, "Which Design Doc Did a Human Write?" (refactoringenglish.com, 2026)
 - Comparison of Claude-written and human-written PEPs and Rust RFCs (research/rfc-slop-forensics in github.com/WillyPillow/writing-skills, 2026), for the rules on universal, compatibility and cost claims, on gaps in the author's material, and on decision-record terms in prose
+- Anthropic, "Prompting Claude Fable 5.1" (platform.claude.com, 2026), for the mannered-prose example
 - WikiProject AI Cleanup, "Wikipedia:Signs of AI writing" (accessed October 2026)
 -->
