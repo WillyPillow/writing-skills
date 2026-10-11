@@ -24,7 +24,7 @@ Design docs are where missing motivation does the most damage, because the reaso
 - Work only from the author's material: results, logs, notes, drafts, data, benchmarks, incident reports, and the references they supply. Never invent numbers, experiments, examples, citations, or the story of how an idea or design was arrived at.
 - In particular, never invent decision history: which alternatives were considered, why they lost, or what constraint drove a choice. Readers later rely on a design doc as the record of why the system is the way it is. Ask the author.
 - If support is missing, ask, mark `[TODO: ...]`, or narrow the claim to what the evidence shows.
-- Notes to the author stay out of the document's prose. A gap goes in a `[TODO: ...]` marker or in the report to the author. The document never discusses its own sources ("the abstract says", "the material does not record") or what the author must do.
+- Notes to the author stay out of the document's prose. A gap goes in a `[TODO: ...]` marker or in the report to the author. The document cites and discusses sources as any document does, for what they show. It does not comment on the author's material as drafting input, such as what the notes or abstract say or leave out ("the abstract says", "the material does not record") or what the author still has to supply.
 - Do not add references the author did not supply. Do not change reported numbers.
 - When revising, make the smallest edit that fixes the problem. Never paraphrase just to disguise a pattern, and never add text whose only job is to satisfy a checklist item.
 
