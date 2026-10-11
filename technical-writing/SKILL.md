@@ -151,7 +151,7 @@ Knuth's rules for formulas (*Mathematical Writing*, 1989):
 - **Characters as subjects, actions as verbs** (Joseph Williams, *Style*). Turn nominalizations back into verbs: "we performed an optimization of" becomes "we optimized". Journal editors who measured AI-assisted submissions found them harder to read, with more nominalizations, longer words and more jargon (Organization Science AI Task Force 2026). A corpus study of NLP papers found the same shift toward longer words and formal substitutes such as "utilize" and "enhance" (Miletić and Falk 2026). Expert readers in its small pilot, however, rated LLM-edited paragraphs slightly clearer. Apply the rule because a nominalization hides the actor and the action, not because it signals machine writing.
 - **Reader expectations** (Gopen and Swan, "The Science of Scientific Writing"). Readers take the end of a sentence as its emphasis. Put familiar information that links backward at the start, and new or important information at the end. Keep the subject close to its verb. Give context before asking the reader to take in something new.
 - **Orwell's six rules** ("Politics and the English Language", paraphrased):
-  1. Don't use figures of speech you are used to seeing in print. Readers no longer see them, and they stand in for a precise statement. The same holds for fresh figures that perform rather than inform: "a parameter worth varying", not "a dial worth turning" (Anthropic's prompting guide for Claude Fable 5.1 calls this mannered prose).
+  1. Don't use figures of speech you are used to seeing in print. Readers no longer see them, and they stand in for a precise statement. The same holds for fresh figures that perform rather than inform: "most of the latency is spent waiting in the scheduler queue", not "the scheduler is where latency goes to hide" (Anthropic's prompting guide for Claude Fable 5.1 calls this mannered prose).
   2. Prefer the short word.
   3. Cut any word that can go. Strunk and White say the same ("omit needless words"), but keep the words that help parsing. Knuth: write "Assume that A is a group", not "Assume A is a group".
   4. Prefer the active voice.
@@ -275,6 +275,6 @@ Sources
 - Buschek, "Don't Review with an LLM (Laundry List Method)" (Medium, 2025), on generic generated review concerns
 - Lynch, "Which Design Doc Did a Human Write?" (refactoringenglish.com, 2026)
 - Comparison of Claude-written and human-written PEPs and Rust RFCs (research/rfc-slop-forensics in github.com/WillyPillow/writing-skills, 2026), for the rules on universal, compatibility and cost claims, on gaps in the author's material, and on decision-record terms in prose
-- Anthropic, "Prompting Claude Fable 5.1" (platform.claude.com, 2026), for the mannered-prose example
+- Anthropic, "Prompting Claude Fable 5.1" (platform.claude.com, 2026), for the term mannered prose
 - WikiProject AI Cleanup, "Wikipedia:Signs of AI writing" (accessed October 2026)
 -->
