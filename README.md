@@ -34,6 +34,8 @@ For anything longer than a few paragraphs, the agent first writes planning notes
 
 In a design doc, the agent treats each significant choice as a decision record. The record states the force behind the decision (the requirement, constraint or failure that makes it necessary), the options considered, the deciding reason, the cost accepted, and how hard the decision is to reverse. A force states numbers where they exist. The skill's example contrasts "must be scalable", which is not a force, with "must sustain 40k writes/s with p99 under 50 ms", which is.
 
+Two rules address habits of drafting with an agent. First, the text must make sense to a reader who never saw the conversation. If you reject the agent's suggestion A and ask for B, the document does not say "B rather than A" unless a reader would think of A and the document gives the reason it loses. Second, a comparison compares. A list of A's strengths beside a list of B's is not enough. The text compares A and B on the same criteria, with evidence, and says which criterion decides.
+
 When you mark a passage as bad, the agent names the specific fault and offers to add it to `SKILL.md` as a new rule (section 7).
 
 ### Contents
