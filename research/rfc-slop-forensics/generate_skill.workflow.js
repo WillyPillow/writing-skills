@@ -1,6 +1,7 @@
 // Claude Code workflow that generated data/llm_corpus_skill/: the 40 test topics, written by each model
 // while following the technical-writing skill. Run it with the Workflow tool, passing
-// args {"dir": "<absolute path of this directory>", "skill": "<absolute path of technical-writing/SKILL.md>"}.
+// args {"dir": "<absolute path of this directory>", "skill": "<absolute path of technical-writing/SKILL.md>",
+// "out": "<corpus directory under data/, default llm_corpus_skill>"}.
 export const meta = {
   name: 'rfc-slop-corpus-skill',
   description: 'Generate 120 PEP/RFC-style docs on the 40 held-out topics with the technical-writing skill (Opus, Sonnet, Haiku)',
@@ -8,6 +9,7 @@ export const meta = {
 }
 const DIR = args.dir
 const SKILL = args.skill
+const OUT = args.out || 'llm_corpus_skill'
 const MODELS = ['opus', 'sonnet', 'haiku']
 const SCHEMA = { type: 'object', properties: { written: { type: 'array', items: { type: 'string' } } }, required: ['written'] }
 const jobs = []
@@ -22,7 +24,7 @@ For each item, write the full document (approximately 1200-1500 words) based on 
 Rules:
 - The skill file and the batch file are the ONLY files you may read. Do not read any other file, repository, or web page, do not run searches, and do not invoke any skills through the Skill tool.
 - If you recognize the real document, do not try to reproduce it; write your own version.
-- Save each document with the Write tool to ${DIR}/data/llm_corpus_skill/${m}/<id>.md (use the item's id exactly as the filename stem). The file contains only the document, in Markdown.
+- Save each document with the Write tool to ${DIR}/data/${OUT}/${m}/<id>.md (use the item's id exactly as the filename stem). The file contains only the document, in Markdown.
 
 Return the list of ids you wrote.`
   return agent(prompt, { label: `${m} batch ${b} (skill)`, phase: 'Generate', model: m, schema: SCHEMA })

@@ -13,6 +13,8 @@ from prep_human import md_prose
 
 HERE = pathlib.Path(__file__).resolve().parent
 MODELS = ('opus', 'sonnet', 'haiku')
+# Corpora on the 40 test topics; each skill corpus is labeled with the skill commit it followed.
+CORPORA = [('llm_corpus', 'no skill'), ('llm_corpus_skill', 'skill 6294586'), ('llm_corpus_skill_8c1b061', 'skill 8c1b061')]
 TODO = re.compile(r'\[TODO:[^\]]*\]', re.I)
 # The claim-family patterns from claim_families.py are too coarse here: the skill requires a stated cost for each
 # decision, so "cost" sentences rise for a good reason. These patterns separate the kinds of statement.
@@ -52,7 +54,7 @@ def main():
     report = {'register_terms': len(register),
               'human_register_hits_median': round(st.median(h_scores), 1)}
     for m in MODELS:
-        for corpus, label in (('llm_corpus', 'without skill'), ('llm_corpus_skill', 'with skill')):
+        for corpus, label in CORPORA:
             docs = load(corpus, m)
             if not docs:
                 continue

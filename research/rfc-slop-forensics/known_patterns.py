@@ -5,6 +5,7 @@ Text inside [TODO: ...] markers is removed first. Rates are per 1,000 words, exc
 """
 import json, pathlib, re, subprocess, tempfile
 
+from compare_skill import CORPORA
 from prep_human import md_prose
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -38,7 +39,9 @@ def load_sets():
         raw_orig[i] = p.read_text(errors='replace') if p.exists() else (HERE / 'sources/rfcs/text' / f'{i}.md').read_text(errors='replace')
     sets = {}
     for m in MODELS:
-        for corpus, label in (('llm_corpus', 'no skill'), ('llm_corpus_skill', 'skill')):
+        for corpus, label in CORPORA:
+            if not all((HERE / 'data' / corpus / m / f'{i}.md').exists() for i in test_ids):
+                continue
             raws = [TODO.sub(' ', (HERE / 'data' / corpus / m / f'{i}.md').read_text(errors='replace')) for i in test_ids]
             sets[f'{m}, {label}'] = (raws, [md_prose(r) for r in raws])
     sets['human originals'] = ([raw_orig[i] for i in test_ids], [human[i] for i in test_ids])
@@ -66,9 +69,9 @@ def main():
     (HERE / 'results').mkdir(exist_ok=True)
     json.dump(out, open(HERE / 'results/known_patterns.json', 'w'), indent=1)
     names = list(out)
-    print(f"{'':42s}" + ''.join(f'{n[:15]:>16s}' for n in names))
+    print(f"{'':42s}" + ''.join(f'{n[:19]:>20s}' for n in names))
     for k in PATTERNS:
-        print(f'{k[:42]:42s}' + ''.join(f'{out[n][k]:16.3f}' for n in names))
+        print(f'{k[:42]:42s}' + ''.join(f'{out[n][k]:20.3f}' for n in names))
 
 
 if __name__ == '__main__':
