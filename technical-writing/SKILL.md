@@ -47,6 +47,11 @@ Prose drafted before the argument is settled fills its gaps with filler. For any
 - **Results, not history** (Widom). In a paper, tell the story of the results, not of how you arrived at them. Keep the story linear, and move significant interruptions to an appendix. This does not apply to design docs, where the alternatives considered are part of the content (section 3).
 - **Why before significance.** Readers want to know why a result holds before being told it matters (Knuth).
 - **Explicit epistemic status.** Distinguish what is known, what this work shows, and what is conjecture. In a design doc, distinguish what is decided, what is proposed, and what is open. Hedge once, where the uncertainty is, and only as much as the evidence warrants. Use no superlatives about your own work (Knuth).
+- **Claim only qualities you evaluated.** Adjectives and adverbs such as "seamless", "elegant" and "dramatically" assign the work qualities nobody measured, and each one invites a reviewer to ask for the evidence (Buschek). Delete them, or replace them with the measured result. A result that is better at A but not at B is a fine finding when the text says why.
+- **Restated findings keep their scope.** When you summarize a result, whether this work's or a cited work's, keep its conditions: the population or dataset, the setting, the sample size, and the tense. "Improved accuracy on two benchmarks" does not become "improves accuracy". Peters and Chin-Yee (2025) found LLM summaries of scientific papers nearly five times as likely as human summaries to generalize beyond the source, even when prompted for accuracy. A summary also adds no concept the results lack. If no reported quote or question concerns unobtrusiveness, the summary does not call the feature an "unobtrusive guardrail" (Buschek). Mark any metaphor as the authors' interpretation, not as something participants said.
+- **Attributions name their sources.** "Studies show", "experts argue" and "prior work has found" need the specific citations, as many as the plural claims. Each cited work must say what the sentence attributes to it. If the author has not supplied the citation, mark `[TODO: citation]`.
+- **Cited work is described from its text.** Describe what a cited work shows only from its text or the author's notes on it, never from memory or a generated summary. Otherwise ask the author to confirm the description, or mark `[TODO: check]`. Buschek's example: a submission credited a study with showing that doing X causes effect E, but X was part of the task in every condition, so the study never compared it.
+- **Cite the most fitting work.** A citation supports its claim directly and comes from a context close to this work's. Flag a citation that makes the point only in passing, or that comes from a distant domain, such as a smart-home finding cited for touchscreen keyboards (Buschek). Reviewers in the field spot such citations as filler. Ask the author whether closer work exists; don't search for it yourself.
 - **Every object is used.** Refer to each figure, table, diagram and important equation from a sentence that reads something off it or draws a conclusion from it, placed where the reader needs it.
 - **No recycled text.** A sentence that repeats an earlier section either adds what its own section needs (a detail, a consequence, a qualification) or is deleted.
 - **Positioned citations.** When you discuss a prior work, say how it relates to this work or to another cited work. The relation can be a shared limitation, a different assumption, or what this work takes from it or does differently. The failure is a run of sentences that each describe one prior work in isolation ("X proposed A. Y extended A to B. Z applied B to C."). That lists the literature but never shows where this work fits in it. Citing one work per sentence is fine when the sentence states such a relation. The same holds for prior systems in a design doc.
@@ -63,7 +68,7 @@ The default failure is a confident tour of the chosen design. It lists component
 
 1. **The force.** The requirement, constraint or failure that makes a decision necessary, with numbers where they exist: load, latency budget, data size, cost, team size, deadline, compatibility. "Must be scalable" is not a force; "must sustain 40k writes/s with p99 under 50 ms" is.
 2. **The options actually considered,** each in its strongest form, including keeping the status quo. Each rejected option gets the reason it lost, tied to a specific goal or constraint.
-3. **The deciding reason.** Usually one or two factors decide. Say which, and why they outweigh the others.
+3. **The deciding reason.** Usually one or two factors decide. Say which, and why they outweigh the others. Naming a goal is not a reason: "this matches the self-hosted goal" says which goal the choice serves, not why it serves that goal better than the alternatives.
 4. **The cost accepted.** What the chosen design gives up or makes harder. Rust's RFC template has a "Drawbacks" section. A decision with no stated cost either had no real alternative (state it in one sentence and move on) or hides its trade-off.
 5. **Reversibility.** Say which decisions are expensive to undo: data formats, public APIs, storage engines, anything clients depend on. These get the most justification; cheap, reversible choices get the least.
 
@@ -71,6 +76,7 @@ Label alternatives you think of yourself as suggestions for the author to evalua
 
 Further rules:
 
+- **The hardest problem gets the most space.** Name the design's central tension and spend the most words on it. In Lynch's blind comparison of a hand-written design doc with two AI-drafted ones, the human doc centered on security against usability for a self-hosted photo app. Both AI docs missed that tension and offered generic lists of web-app best practices instead.
 - **Context is facts.** The context section gives objective background briefly and links to details (Ubl). Arguments for the design belong elsewhere.
 - **Goals are checkable, and non-goals are real.** A goal says how you would know it was met. A non-goal is something a reader could reasonably expect the system to do that is deliberately excluded, such as Ubl's example of ACID compliance for a database. A negated goal like "the system should not crash" is not a non-goal.
 - **Present the design through its decisions.** Start with an overview, then go into the parts where decisions live. Sketch only the parts of APIs and schemas that bear on a trade-off, and don't paste full definitions, which bury the trade-offs and go stale (Ubl). A system-context diagram shows where the system sits among things the reader already knows.
@@ -78,7 +84,7 @@ Further rules:
 - **Rollout and rollback.** Give the migration steps, how to turn the feature off, and what becomes irreversible once shipped.
 - **No template filling.** Omit a section that has nothing real to say, or state in one line why it does not apply. A cross-cutting section (security, privacy, observability) explains how this design affects that concern, not general best practice.
 - **Open questions are listed.** Say where the design is unresolved and what input is needed, rather than smoothing it over.
-- **Evidence where it exists.** Use benchmarks, prototypes and incidents from the material. Ubl: "I tried it out and it works" is one of the best arguments for a design. Back-of-envelope estimates show their inputs.
+- **Evidence where it exists.** Use benchmarks, prototypes and incidents from the material. Ubl: "I tried it out and it works" is one of the best arguments for a design. Back-of-envelope estimates show their inputs, and no estimate is more precise than its inputs. A timeline in exact hours with no measured basis is false precision.
 
 **The disagreement test.** A reviewer who disagrees should be able to point to the specific decision, the reason given for it, and the number or assumption they dispute. If they cannot, the doc has hidden its reasoning.
 
@@ -111,7 +117,7 @@ Knuth's rules for formulas (*Mathematical Writing*, 1989):
 
 ## 5. Sentences
 
-- **Characters as subjects, actions as verbs** (Joseph Williams, *Style*). Turn nominalizations back into verbs: "we performed an optimization of" becomes "we optimized". Journal editors who measured AI-assisted submissions found them harder to read, with more nominalizations, longer words and more jargon.
+- **Characters as subjects, actions as verbs** (Joseph Williams, *Style*). Turn nominalizations back into verbs: "we performed an optimization of" becomes "we optimized". Journal editors who measured AI-assisted submissions found them harder to read, with more nominalizations, longer words and more jargon. A corpus study of NLP papers found the same shift toward longer words and formal substitutes such as "utilize" and "enhance" (Miletić and Falk 2026), though expert readers in its small pilot rated LLM-edited paragraphs slightly clearer. Apply the rule because a nominalization hides the actor and the action, not because it signals machine writing.
 - **Reader expectations** (Gopen and Swan, "The Science of Scientific Writing"). Readers take the end of a sentence as its emphasis. Put familiar information that links backward at the start, and new or important information at the end. Keep the subject close to its verb. Give context before asking the reader to take in something new.
 - **Orwell's six rules** ("Politics and the English Language", paraphrased):
   1. Don't use figures of speech you are used to seeing in print. Readers no longer see them, and they stand in for a precise statement.
@@ -141,18 +147,22 @@ ASD-STE100 is the controlled-language standard used in aerospace maintenance doc
 - **Procedures are imperative, one instruction per sentence.** Use a numbered list for three or more steps or conditions instead of chaining them in one sentence. This applies to reproduction steps, algorithms written in prose, rollout and rollback plans, and setup sections of blog posts.
 - **Never shorten by deleting.** Keep articles, subjects and verbs explicit, and never drop a fact, number, condition or scope qualifier to meet a length target. Split the sentence instead.
 
-Scan last for leftover LLM habits. This list is for scanning, not a target. When an item turns up, rewrite the sentence rather than swapping in a synonym, since a synonym keeps the empty sentence.
+Scan last for leftover LLM habits. This list is for scanning, not a target. Many items come from Wikipedia's "Signs of AI writing" guide. No item proves a text was machine-written, and people use all of them; each is listed because it weakens the sentence it appears in. When an item turns up, rewrite the sentence rather than swapping in a synonym, since a synonym keeps the empty sentence.
 
 - **Stock significance:** pivotal, crucial, plays a key role, underscores, landscape, realm, testament.
-- **Stock vocabulary:** delve, leverage, utilize, robust, seamless, harness, unlock, showcase, nuanced, intricate. In design docs also: scalable, flexible, extensible, maintainable, future-proof, best practices, when used without a number or a concrete scenario.
+- **Stock vocabulary:** delve, leverage, utilize, enhance, subsequently, robust, seamless, harness, unlock, showcase, nuanced, intricate. In design docs also: scalable, flexible, extensible, maintainable, future-proof, best practices, when used without a number or a concrete scenario.
+- **Avoided "is" and "has":** "serves as", "stands as", "boasts", "features", where the plain verb would do.
+- **Vague relations:** "associated with", "in connection with", "linked to", where the text should say which relation holds, such as causes, correlates with, is part of, or depends on.
 - **Stock moves:**
   - "It's not X, it's Y" and "not just X, but Y".
   - Rhetorical questions used as transitions, and colon reveals.
   - Lists of three used for rhythm.
+  - Several bullets that restate one idea with different nouns.
   - "It is worth noting", "importantly", "notably", "interestingly".
-  - Closing sentences that restate the paragraph.
+  - Closing sentences that restate the paragraph, and formulaic closing sections ("Despite these challenges, ...", "Future outlook").
   - Trailing clauses that assert vague importance.
-- **Typography:** bold or italics for emphasis (italics are for definitions and quotes; Widom), headers on everything, bullets where prose belongs, frequent em dashes.
+- **Typography:** bold or italics for emphasis (italics are for definitions and quotes; Widom), headers on everything, title-case headings, bullets where prose belongs (often each opening with a bold label and a colon), frequent em dashes.
+- **Chat residue:** "I hope this helps", "let me know if", placeholders such as `[Describe ...]` or `2025-XX-XX`, and citation markup left by a chat tool.
 
 ## 6. Form
 
@@ -176,7 +186,7 @@ Design docs (adapt to the team's template; drop sections with nothing to say):
 - **Context and scope:** the background facts, briefly, and what is being built.
 - **Goals and non-goals.**
 - **Design:** an overview, then each significant decision with its force, options, deciding reason and cost (section 3).
-- **Alternatives considered:** whole-design alternatives, if any, in their strongest form.
+- **Alternatives considered:** whole-design alternatives, if any, in their strongest form. This section is not a restatement of the non-goals.
 - **Cross-cutting concerns:** only those the design actually affects.
 - **Rollout, migration and rollback.**
 - **Open questions.**
@@ -190,13 +200,15 @@ Blog posts can use the first person and more voice. Open with the concrete probl
 1. Write the plan (section 1) and get the author's corrections.
 2. Draft one section at a time, because a whole document drafted in one pass comes out uniform and thin. Revise earlier sections when later ones change them (Halmos: write in spirals).
 3. Review in a separate pass, ideally by a fresh agent that did not see the drafting, so the draft is not judged by the context that wrote it. Work top-down:
-   - **Substance.** Check every number against the material. Confirm nothing is invented, including decision history, and locate each claim's evidence. Check that every bibliography entry is complete and consistent with the others.
-   - **Argument.** For each sentence, ask what it claims, whether it is true, and whether it follows from what came before. Check that the skeptic's objections are answered. Compare the dependency map against the text, looking for unused objects, undefined terms, claims before their context, isolated citations, and missing instances.
-   - **Design.** For each significant decision, check that the force, the options, the deciding reason and the cost are all present, and that the most expensive-to-reverse decisions are the best justified. Check that non-goals are real, that failure behavior is concrete, and that no section is template filler. Apply the disagreement test.
+   - **Substance.** Check every number against the material. Confirm nothing is invented, including decision history, and locate each claim's evidence. Check that each restated finding keeps its source's scope and adds no concept the results lack. Check that each cited work exists, says what it is cited for, and is the most fitting support available in the material. Check that every bibliography entry is complete and consistent with the others.
+   - **Argument.** For each sentence, ask what it claims, whether it is true, and whether it follows from what came before. Check that the skeptic's objections are answered. Compare the dependency map against the text, looking for unused objects, undefined terms, claims before their context, isolated citations, unevaluated qualities, and missing instances.
+   - **Design.** Check that the hardest problem gets the most space. For each significant decision, check that the force, the options, the deciding reason and the cost are all present, and that the most expensive-to-reverse decisions are the best justified. Check that non-goals are real, that failure behavior is concrete, and that no section is template filler. Apply the disagreement test.
    - **Math.** Apply the blah test. Check that each derivation states its goal first, that the crux is marked, and that each assumption is linked to its use.
    - **Sentences.** Apply section 5, including the STE triggers: sentences over about 25 words, noun clusters over three words, terms used in two senses, and two new facts in one sentence. Delete every sentence whose removal loses nothing.
 
-   Report each finding with its location and a proposed minimal fix, rather than silently rewriting.
+   Report each finding with its location and a proposed minimal fix, rather than silently rewriting. A finding names a specific passage and judges what the document does against its own goals and method, not what a different document could have done (Buschek 2025). This holds for the author's draft and for someone else's paper alike.
+
+   Concerns that fit any document are findings only when tied to this one. Examples are scalability, generalization, sample size, study duration, "more objective metrics" and "the analysis could go deeper". Name the stated goal the concern threatens or the claim it undercuts. In a design doc, an alternative is a finding when a stated force favors it (section 3), not merely because the design could have been different. Drop untied concerns rather than listing them. A long list of generic concerns is not a review, and an author who acts on it can make the document worse.
 4. When the author marks a passage as bad, name the specific fault and offer to add it to this file as a rule.
 
 <!--
@@ -217,4 +229,10 @@ Sources
 - ASD-STE100, Simplified Technical English (ASD, Issue 9, 2025)
 - Oh et al., "Science or Slop?", arXiv 2610.00531 (2026)
 - Organization Science AI Task Force, "More versus Better" (2026), on readability of AI-assisted submissions
+- Miletić and Falk, "What Are LLMs Doing to Scientific Communication?", arXiv 2605.19936 (2026)
+- Peters and Chin-Yee, "Generalization Bias in Large Language Model Summarization of Scientific Research", *Royal Society Open Science* 12(4) (2025)
+- Buschek, "When LLMs Write Our Papers" (Medium, 2026), on LLM writing smells seen while reviewing for CHI
+- Buschek, "Don't Review with an LLM (Laundry List Method)" (Medium, 2025), on generic generated review concerns
+- Lynch, "Which Design Doc Did a Human Write?" (refactoringenglish.com, 2026)
+- WikiProject AI Cleanup, "Wikipedia:Signs of AI writing" (accessed October 2026)
 -->
