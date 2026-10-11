@@ -190,7 +190,16 @@ Blog posts can use the first person and more voice. Open with the concrete probl
    - **Sentences.** Apply section 5, including the STE triggers: sentences over about 25 words, noun clusters over three words, terms used in two senses, and two new facts in one sentence. Delete every sentence whose removal loses nothing.
 
    Report each finding with its location and a proposed minimal fix, rather than silently rewriting.
-4. When the author marks a passage as bad, name the specific fault and offer to add it to this file as a rule.
+4. After your own review, run `scripts/check.py` from this skill's directory on the draft, and pass the author's material with `--source`. The script reads raw text, so it works on any format. Its default `strict` profile reports checks with few false positives: numbers that do not appear in the material, unresolved TODO markers, undefined acronyms, and a few stock phrases. `--profile reference` adds noisier checks, such as long sentences, passive voice, the section 5 vocabulary and noun clusters. Their hits are places to look, not errors. Run `--list-checks` for the full list.
+
+   Pass the acronyms the reader already knows with `--known` or `--known-file`, based on the reader in your plan (section 1). A design doc's reviewers usually know the team's systems and the standard terms of its field. Defining those terms for them is itself a fault (section 5, the curse of knowledge).
+
+   Use the output under these rules:
+   - Run it only after your own top-down review, so that it does not decide what you look for. Do not run it while drafting.
+   - Trace each flagged number to the material or to a stated calculation. Never change a number because the script flagged it.
+   - Never rewrite a sentence only to clear a hit, and never swap in a synonym.
+   - A clean run says nothing about substance, argument or design.
+5. When the author marks a passage as bad, name the specific fault and offer to add it to this file as a rule.
 
 <!--
 Sources

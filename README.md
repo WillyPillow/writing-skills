@@ -47,7 +47,23 @@ When you mark a passage as bad, the agent names the specific fault and offers to
 4. Mathematical exposition.
 5. Sentences, including a loose adaptation of Simplified Technical English (ASD-STE100) and a list of leftover LLM habits to scan for.
 6. Form, with section outlines for papers and design docs.
-7. Process, including a review pass separate from drafting.
+7. Process, including a review pass separate from drafting and when to run the checker script.
+
+### Checker script
+
+`technical-writing/scripts/check.py` flags the parts of a draft that a script can find mechanically. It needs only the Python 3 standard library and reads raw text, so Markdown, LaTeX, reStructuredText and text extracted from a PDF all work. It only reports, and it never edits the draft.
+
+The default `strict` profile runs the checks whose hits are almost always worth reading: numbers that do not appear in the author's material, unresolved TODO markers, undefined acronyms and a few stock phrases. On about 85,000 words of published PEPs and Rust RFCs, nearly all of its hits were undefined acronyms. The `reference` profile adds noisier checks, such as long sentences, passive voice and noun clusters, and labels their hits as reference only. For example:
+
+```sh
+python3 technical-writing/scripts/check.py draft.md --source notes/ --known SLO,QPS
+python3 technical-writing/scripts/check.py draft.md --profile reference
+python3 technical-writing/scripts/check.py --list-checks
+```
+
+Acronyms passed with `--known` or `--known-file` count as known to the reader and are not flagged. Use them for the terms a design doc's readers already know, such as the team's own systems.
+
+The script cannot check substance or argument, so a clean run does not mean a good draft. Section 7 of `SKILL.md` says when the agent runs it and how it treats the output. To run the script's tests, run `python3 -m unittest discover tests` from the repository root.
 
 The rules draw on Knuth's *Mathematical Writing*, Williams's *Style*, Gopen and Swan's "The Science of Scientific Writing", Ubl's "Design Docs at Google", Nygard's architecture decision records and other sources. The full list is in a comment at the end of `SKILL.md`.
 
