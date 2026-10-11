@@ -1,6 +1,6 @@
 # Claude-written and human-written PEPs and Rust RFCs
 
-This directory holds the comparison behind one rule in the `technical-writing` skill: universal, compatibility and cost claims need support. The skill does not depend on anything here.
+This directory holds the comparison behind three rules in the `technical-writing` skill: universal, compatibility and cost claims need support; notes to the author stay out of the document's prose; and the decision-record terms are a checklist, not vocabulary for the document. The skill does not depend on anything here.
 
 The question was whether the "slop" lists used by EQ-Bench, or a list built the same way for technical writing, can separate LLM-written design documents from human-written ones. EQ-Bench's lists cannot. A list built for this genre can, and the terms on it point to a kind of claim rather than to a vocabulary.
 
@@ -36,6 +36,8 @@ Those remaining terms are plain words: "every", "cannot", "already", "keeps", "l
 | silently, deliberately, intentionally | 0.51 | 0.40 | 0.38 | 0.11 | 0.14 | 0.11 |
 
 The models had only a title and an abstract, with no benchmarks or compatibility data. Any compatibility or cost claim beyond what an abstract stated had no support in their material.
+
+The cost pattern is broad: it also counts trade-off statements such as "the cost is that downstream crates lose struct literal construction", which the skill asks for. The narrower patterns in `compare_skill.py` give performance claims (overhead, faster, slower, ...) at 1.1 to 1.7 times the human rate across the full corpus, and trade-off statements at 1.4 to 1.7 times. The skill therefore cites only the compatibility figure. The compatibility pattern also counts a few negations, such as "existing code is affected".
 
 ## With the skill
 
