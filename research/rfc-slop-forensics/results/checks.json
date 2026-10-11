@@ -1,0 +1,24 @@
+{
+ "register-only (train-derived)": {
+  "n_terms": 129,
+  "vs all human test": 0.961,
+  "vs human 2018-2021 (n=51)": 0.951,
+  "vs human pre-2010 (n=50)": 0.985,
+  "opus": 0.955,
+  "sonnet": 0.949,
+  "haiku": 0.978
+ },
+ "template+topic only": {
+  "n_terms": 32,
+  "vs all human test": 0.78,
+  "vs human 2018-2021 (n=51)": 0.663,
+  "vs human pre-2010 (n=50)": 0.849,
+  "opus": 0.736,
+  "sonnet": 0.741,
+  "haiku": 0.863
+ },
+ "register hits per 1k content tokens, median LLM vs human": [
+  74.5,
+  27.9
+ ]
+}
