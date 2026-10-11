@@ -58,6 +58,24 @@ The register list separated the skill documents from human documents at least as
 
 The cost-claim family in `claim_families.py` rose with the skill, from two- to seven-fold. Its pattern counts any "the cost" or "costs", and the added sentences are the trade-off statements the skill requires. The narrower patterns above separate trade-offs from performance claims. The compatibility pattern also counts negations such as "existing code is affected", so its rates are approximate.
 
+### Bad patterns in the skill documents
+
+`surface_patterns.py` runs the same over-use analysis on the skill documents, against the human originals and against the no-skill documents on the same topics (`results/skill_surface_terms.json`). `known_patterns.py` counts the patterns found that way, together with the skill's own scan list, EQ-Bench's not-x-but-y detector and typography (`results/known_patterns.json`). Text inside `[TODO]` markers is removed first.
+
+| Per 1,000 words | Opus | Opus, skill | Sonnet | Sonnet, skill | Haiku | Haiku, skill | Human originals |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Skill vocabulary in the prose ("the force behind this decision", "deciding reason", "expensive to reverse", "central tension") | 0 | 0.92 | 0 | 2.19 | 0 | 2.07 | 0 |
+| Review notes in the prose ("the abstract says", "the material does not record", "this is a compatibility claim, and it needs evidence") | 0.05 | 0.29 | 0.02 | 3.98 | 0.09 | 9.84 | 0.02 |
+| Headings | 13.9 | 14.5 | 12.0 | 19.4 | 7.6 | 24.0 | 8.5 |
+| Bold-label bullets, per 100 lines | 2.47 | 0 | 2.18 | 0.34 | 0.35 | 0.27 | 0.05 |
+| Em dashes | 0.57 | 0 | 0.06 | 0 | 0 | 0 | 0.56 |
+| Stock vocabulary and stock significance (scan list) | 0.35 | 0.32 | 0.41 | 0.23 | 0.30 | 0.12 | 0.42 |
+| EQ-Bench not-x-but-y, per 1,000 characters | 0.030 | 0.027 | 0.039 | 0.005 | 0.046 | 0.019 | 0.033 |
+
+The skill's scan-list items were already rare without the skill, at or below the human rates. The skill removed the bold-label bullets and em dashes that Opus and Sonnet otherwise used. It also introduced two patterns that no other corpus has. First, the decision-record terms the skill uses as a checklist appear as prose: "The force behind this decision is ...", "This is the decision that is most expensive to reverse, so it needs the most justification." Second, notes meant for the author appear in the body outside any `[TODO]` marker: "The supplied material states the security side of the argument in detail and says nothing about the reproducibility side." With most of the material missing, Sonnet and Haiku produced short documents with many headings and little prose under them.
+
+The setup contributed to the second pattern: the models had only a title and an abstract, and no author to ask, whereas the skill expects the author to correct a plan before any drafting.
+
 ## Limitations
 
 - All generated documents come from Claude models, run as Claude Code subagents rather than through the plain API, so the results describe Claude in that setting.
@@ -68,7 +86,7 @@ The cost-claim family in `claim_families.py` rose with the skill, from two- to s
 
 ## Reproducing
 
-Python 3.10 or later with no extra packages is enough for the analysis. `fetch_sources.sh` uses git.
+Python 3.10 or later with no extra packages is enough for the analysis. `fetch_sources.sh` uses git, and `known_patterns.py` uses Node.js 18 or later for EQ-Bench's detector.
 
 ```sh
 ./fetch_sources.sh          # clone the corpora and slop tooling at pinned commits into sources/
@@ -77,6 +95,8 @@ python3 select_prompts.py   # rewrite data/prompts.json and data/batches/ (byte-
 python3 analyze.py          # write results/forensics.json and results/checks.json
 python3 claim_families.py   # write results/claim_families.json
 python3 compare_skill.py    # write results/skill_comparison.json
+python3 surface_patterns.py # write results/skill_surface_terms.json
+python3 known_patterns.py   # write results/known_patterns.json (needs node)
 ```
 
 To regenerate the LLM corpus instead of using the committed one, run `generate.workflow.js` with the Workflow tool in Claude Code, passing `{"dir": "<absolute path of this directory>"}`. Generation is not deterministic, so a new corpus will give somewhat different numbers.
