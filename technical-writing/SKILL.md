@@ -44,6 +44,7 @@ Prose drafted before the argument is settled fills its gaps with filler. For any
 - **Context before claim.** Set out the limitation, observation or constraint first, then state the claim or decision it supports. The reader can only judge a claim once they have its context, so a document that announces its conclusion first has declared the claim, not argued it.
 - **Concrete motivation.** Motivation is a goal ("we need to bound X by Y", "writes must stay under 50 ms at p99") or an obstacle ("bounding each term separately loses a factor of n, because ...", "a single leader saturates at 12k writes/s"). A sentence that only announces the next step ("Naturally, one asks ...", "We now turn to ...") is not motivation.
 - **Example before generalization** (Peyton Jones). A specific instance gives the reader something to test the general statement against.
+- **Results, not history** (Widom). In a paper, tell the story of the results, not of how you arrived at them. Keep the story linear, and move significant interruptions to an appendix. This does not apply to design docs, where the alternatives considered are part of the content (section 3).
 - **Why before significance.** Readers want to know why a result holds before being told it matters (Knuth).
 - **Explicit epistemic status.** Distinguish what is known, what this work shows, and what is conjecture. In a design doc, distinguish what is decided, what is proposed, and what is open. Hedge once, where the uncertainty is, and only as much as the evidence warrants. Use no superlatives about your own work (Knuth).
 - **Restated findings keep their scope.** When you summarize a result, whether this work's or a cited work's, keep its conditions: the population or dataset, the setting, the sample size, and the tense. "Improved accuracy on two benchmarks" does not become "improves accuracy". Peters and Chin-Yee (2025) found LLM summaries of scientific papers nearly five times as likely as human summaries to generalize beyond the source, even when prompted for accuracy.
@@ -126,6 +127,8 @@ Knuth's rules for formulas (*Mathematical Writing*, 1989):
   In technical writing, rule 5 needs a qualification: a precise technical term beats a vague everyday one, but don't use jargon where a plain word is equally precise. Avoid long stacks of nouns used as adjectives; Knuth's example is "packet switched data communication network protocol problem".
 - **The curse of knowledge** (Pinker). Define what the reader doesn't know, and never define what they do.
 - **Specific over general.** Give numbers with conditions and baselines, not "significantly improves" or "highly scalable".
+- **Name the reasons and the items** (Widom). Never write "for various reasons"; give the reasons. Use "etc." only when the remaining items are obvious ("phases 1, 3, 5, 7, etc."), never to stand for items you have not named ("volatility, scalability, etc.").
+- **Every "this" has a referent** (Widom, after Ullman). When "this", "that", "these" or "it" could point to more than one thing, add the noun: "this gap", not "this".
 - **The opening sentence is the best sentence.** Don't open with a sentence of the form "An X is Y" (Knuth).
 
 ### Simplified Technical English (ASD-STE100), applied loosely
@@ -155,7 +158,7 @@ Scan last for leftover LLM habits. This list is for scanning, not a target. Many
   - "It is worth noting", "importantly", "notably", "interestingly".
   - Closing sentences that restate the paragraph, and formulaic closing sections ("Despite these challenges, ...", "Future outlook").
   - Trailing clauses that assert vague importance.
-- **Typography:** bold for emphasis, headers on everything, title-case headings, bullets where prose belongs (often each opening with a bold label and a colon), frequent em dashes.
+- **Typography:** bold or italics for emphasis (italics are for definitions and quotes; Widom), headers on everything, title-case headings, bullets where prose belongs (often each opening with a bold label and a colon), frequent em dashes.
 - **Chat residue:** "I hope this helps", "let me know if", placeholders such as `[Describe ...]` or `2025-XX-XX`, and citation markup left by a chat tool.
 
 ## 6. Form
@@ -165,11 +168,15 @@ Write prose paragraphs. Use lists only for genuinely parallel items, such as a c
 Papers:
 
 - **Abstract:** problem, gap, approach, main quantitative result, implication.
-- **Introduction:** the concrete problem, why existing approaches fall short, the idea, the evidence, and contributions that can be refuted.
+- **Introduction:** Widom's five questions, roughly a paragraph each: what the concrete problem is, why it matters, why it is hard (why naive approaches fail), why existing approaches fall short, and what the key idea and results are, with their limitations. End with the contributions, stated so they can be refuted, as a list that names the section supporting each. The list doubles as the outline, so no separate "the rest of this paper is organized as follows" paragraph is needed.
 - **Related work:** organized by idea and contrasted with this work.
-- **Method:** enough detail to reimplement it, with the reason for each design choice.
-- **Experiments:** a reproducible setup, with each table's and figure's takeaway stated in the text.
+- **Preliminaries:** the notation, terminology and background the paper needs but did not originate, kept short. This marks off what is new from what came before. Define global terms here and other terms just before their first use.
+- **Running example:** where possible, one example introduced early and reused throughout.
+- **Method:** enough detail to reimplement it, with the reason for each design choice. A clear new contribution should appear by about a quarter of the way through the paper (Widom). Describe it top-down, so the reader can see where it is going and can skip ahead.
+- **Experiments:** a reproducible setup, with each table's and figure's takeaway stated in the text. Compare against a naive baseline, against prior work, and among this work's own variants where there are several. Measure sensitivity to the important parameters and scaling, not only a headline number. Don't choose experiments or settings that show the work only at its best.
 - **Limitations:** specific enough that a reviewer would recognize them.
+- **Conclusions:** a short paragraph that does not repeat the abstract or introduction. Where possible, it makes the introduction's claims concrete with the measured numbers.
+- **Appendices:** detailed proofs and algorithms that most readers will skip. Nothing needed to understand the contributions goes there.
 
 Design docs (adapt to the team's template; drop sections with nothing to say):
 
@@ -190,7 +197,7 @@ Blog posts can use the first person and more voice. Open with the concrete probl
 1. Write the plan (section 1) and get the author's corrections.
 2. Draft one section at a time, because a whole document drafted in one pass comes out uniform and thin. Revise earlier sections when later ones change them (Halmos: write in spirals).
 3. Review in a separate pass, ideally by a fresh agent that did not see the drafting, so the draft is not judged by the context that wrote it. Work top-down:
-   - **Substance.** Check every number against the material. Confirm nothing is invented, including decision history, and locate each claim's evidence. Check that each restated finding keeps its source's scope, and that each cited work exists and says what it is cited for.
+   - **Substance.** Check every number against the material. Confirm nothing is invented, including decision history, and locate each claim's evidence. Check that each restated finding keeps its source's scope, and that each cited work exists and says what it is cited for. Check that every bibliography entry is complete and consistent with the others.
    - **Argument.** For each sentence, ask what it claims, whether it is true, and whether it follows from what came before. Check that the skeptic's objections are answered. Compare the dependency map against the text, looking for unused objects, undefined terms, claims before their context, isolated citations, and missing instances.
    - **Design.** Check that the hardest problem gets the most space. For each significant decision, check that the force, the options, the deciding reason and the cost are all present, and that the most expensive-to-reverse decisions are the best justified. Check that non-goals are real, that failure behavior is concrete, and that no section is template filler. Apply the disagreement test.
    - **Math.** Apply the blah test. Check that each derivation states its goal first, that the crux is marked, and that each assumption is linked to its use.
@@ -209,6 +216,7 @@ Sources
 - Williams, *Style: Lessons in Clarity and Grace*
 - Gopen and Swan, "The Science of Scientific Writing", *American Scientist* (1990)
 - Pinker, *The Sense of Style* (2014)
+- Widom, "Tips for Writing Technical Papers" (Stanford InfoLab, 2006)
 - Peyton Jones, "How to Write a Great Research Paper" (talk)
 - Ubl, "Design Docs at Google" (industrialempathy.com, 2020)
 - Nygard, "Documenting Architecture Decisions" (2011)
