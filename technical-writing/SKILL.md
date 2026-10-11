@@ -206,7 +206,9 @@ Blog posts can use the first person and more voice. Open with the concrete probl
    - **Math.** Apply the blah test. Check that each derivation states its goal first, that the crux is marked, and that each assumption is linked to its use.
    - **Sentences.** Apply section 5, including the STE triggers: sentences over about 25 words, noun clusters over three words, terms used in two senses, and two new facts in one sentence. Delete every sentence whose removal loses nothing.
 
-   Report each finding with its location and a proposed minimal fix, rather than silently rewriting. A finding names a specific passage; a generic list of concerns that would fit any document is not a review.
+   Report each finding with its location and a proposed minimal fix, rather than silently rewriting. A finding names a specific passage and judges what the document does against its own goals and method, not what a different document could have done (Buschek 2025). This holds for the author's draft and for someone else's paper alike.
+
+   Concerns that fit any document are findings only when tied to this one. Examples are scalability, generalization, sample size, study duration, "more objective metrics" and "the analysis could go deeper". Name the stated goal the concern threatens or the claim it undercuts. In a design doc, an alternative is a finding when a stated force favors it (section 3), not merely because the design could have been different. Drop untied concerns rather than listing them. A long list of generic concerns is not a review, and an author who acts on it can make the document worse.
 4. When the author marks a passage as bad, name the specific fault and offer to add it to this file as a rule.
 
 <!--
@@ -230,6 +232,7 @@ Sources
 - Miletić and Falk, "What Are LLMs Doing to Scientific Communication?", arXiv 2605.19936 (2026)
 - Peters and Chin-Yee, "Generalization Bias in Large Language Model Summarization of Scientific Research", *Royal Society Open Science* 12(4) (2025)
 - Buschek, "When LLMs Write Our Papers" (Medium, 2026), on LLM writing smells seen while reviewing for CHI
+- Buschek, "Don't Review with an LLM (Laundry List Method)" (Medium, 2025), on generic generated review concerns
 - Lynch, "Which Design Doc Did a Human Write?" (refactoringenglish.com, 2026)
 - WikiProject AI Cleanup, "Wikipedia:Signs of AI writing" (accessed October 2026)
 -->
