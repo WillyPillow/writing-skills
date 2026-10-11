@@ -1,0 +1,4230 @@
+[
+ {
+  "unit": "abstract",
+  "z_vs_human": 14.5,
+  "z_vs_noskill": 17.5,
+  "skill_per1k": 9.223,
+  "noskill_per1k": 1.257,
+  "human_orig_per1k": 0.702,
+  "human_base_per1k": 0.8041,
+  "skill_docs": 98,
+  "topics": 40,
+  "models": {
+   "opus": 28,
+   "sonnet": 38,
+   "haiku": 32
+  },
+  "examples": [
+   "opus/pep-0296: ## Abstract",
+   "opus/pep-3141: ## Abstract",
+   "opus/pep-0223: ## Abstract",
+   "opus/1445-restrict-constants-in-patterns: The abstract says that this behavior is more expansive than originally intended."
+  ]
+ },
+ {
+  "unit": "pep",
+  "z_vs_human": 9.7,
+  "z_vs_noskill": 10.7,
+  "skill_per1k": 9.796,
+  "noskill_per1k": 4.535,
+  "human_orig_per1k": 4.357,
+  "human_base_per1k": 4.4558,
+  "skill_docs": 72,
+  "topics": 24,
+  "models": {
+   "opus": 24,
+   "sonnet": 24,
+   "haiku": 24
+  },
+  "examples": [
+   "opus/pep-0296: # PEP 296: Adding a bytes Object Type",
+   "opus/pep-3141: # PEP 3141: A Type Hierarchy for Numbers",
+   "opus/pep-0223: # PEP 223: Change the Meaning of ``\\x`` Escapes",
+   "opus/pep-0520: # PEP 520: Preserving Class Attribute Definition Order"
+  ]
+ },
+ {
+  "unit": "program",
+  "z_vs_human": 10.1,
+  "z_vs_noskill": 9.3,
+  "skill_per1k": 4.369,
+  "noskill_per1k": 1.418,
+  "human_orig_per1k": 0.496,
+  "human_base_per1k": 0.5186,
+  "skill_docs": 57,
+  "topics": 30,
+  "models": {
+   "opus": 22,
+   "sonnet": 23,
+   "haiku": 12
+  },
+  "examples": [
+   "opus/pep-0296: If they are mutable, a program can fill one in place from a file or socket, which avoids allocating a new object for each read.",
+   "opus/2115-argument-lifetimes: The program usually still fails to compile, but with a borrow error that points at the use of the lifetime rather than at the typo.",
+   "opus/1445-restrict-constants-in-patterns: If it does not, the program is rejected.",
+   "opus/pep-0651: If this PEP is accepted, the following program will run safely to completion:"
+  ]
+ },
+ {
+  "unit": "needs",
+  "z_vs_human": 8.8,
+  "z_vs_noskill": 10.0,
+  "skill_per1k": 3.994,
+  "noskill_per1k": 1.017,
+  "human_orig_per1k": 0.929,
+  "human_base_per1k": 0.7375,
+  "skill_docs": 86,
+  "topics": 39,
+  "models": {
+   "opus": 30,
+   "sonnet": 36,
+   "haiku": 20
+  },
+  "examples": [
+   "opus/pep-0296: For each implementation on that list, the PEP needs the specific property that disqualifies it as the general container, and one short piece of code that is awkward, slow or wrong with it today.",
+   "opus/pep-3141: `clamp` needs ordering, so `Real` is the weakest ABC it can require.",
+   "opus/pep-0223: The writer no longer needs to split a literal to put a hex digit after an escape.",
+   "opus/1445-restrict-constants-in-patterns: That is a compatibility claim, and it needs evidence."
+  ]
+ },
+ {
+  "unit": "author",
+  "z_vs_human": 9.5,
+  "z_vs_noskill": 8.5,
+  "skill_per1k": 3.971,
+  "noskill_per1k": 1.405,
+  "human_orig_per1k": 0.599,
+  "human_base_per1k": 0.5484,
+  "skill_docs": 83,
+  "topics": 39,
+  "models": {
+   "opus": 19,
+   "sonnet": 37,
+   "haiku": 27
+  },
+  "examples": [
+   "opus/pep-0296: Author:         [TODO]",
+   "opus/pep-3141: Author:         [TODO]",
+   "opus/pep-0223: Author:         [TODO]",
+   "opus/pep-0520: Author:         [TODO]"
+  ]
+ },
+ {
+  "unit": "rule",
+  "z_vs_human": 9.1,
+  "z_vs_noskill": 7.7,
+  "skill_per1k": 3.596,
+  "noskill_per1k": 1.351,
+  "human_orig_per1k": 0.351,
+  "human_base_per1k": 0.4116,
+  "skill_docs": 54,
+  "topics": 29,
+  "models": {
+   "opus": 21,
+   "sonnet": 17,
+   "haiku": 16
+  },
+  "examples": [
+   "opus/pep-3141: A suggested rule for the author to evaluate is the following:",
+   "opus/2115-argument-lifetimes: ### Binding rule",
+   "opus/pep-0223: ## The current rule",
+   "opus/1445-restrict-constants-in-patterns: The rule ties a pattern-matching feature to a trait derive."
+  ]
+ },
+ {
+  "unit": "cost",
+  "z_vs_human": 7.4,
+  "z_vs_noskill": 8.5,
+  "skill_per1k": 3.398,
+  "noskill_per1k": 1.043,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.1998,
+  "skill_docs": 93,
+  "topics": 39,
+  "models": {
+   "opus": 29,
+   "sonnet": 32,
+   "haiku": 32
+  },
+  "examples": [
+   "opus/pep-3141: Under this rule, two independent third-party `Rational` types can still be added, at the cost of falling back to `float` and losing exactness.",
+   "opus/2115-argument-lifetimes: This RFC removes the declaration cost, so that requiring the annotation on structs no longer costs a `<'a>` list.",
+   "opus/pep-0520: ## Cost",
+   "opus/pep-0590: The cost is that every caller that sets the flag must reserve that slot.]"
+  ]
+ },
+ {
+  "unit": "reader",
+  "z_vs_human": 7.7,
+  "z_vs_noskill": 8.0,
+  "skill_per1k": 2.604,
+  "noskill_per1k": 0.669,
+  "human_orig_per1k": 0.227,
+  "human_base_per1k": 0.1439,
+  "skill_docs": 57,
+  "topics": 34,
+  "models": {
+   "opus": 19,
+   "sonnet": 18,
+   "haiku": 20
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: Nothing in the return type tells the reader that the result borrows from `v`.",
+   "opus/pep-0223: A reader may expect `\"A\"` followed by `\"BC\"`, three characters.",
+   "opus/1445-restrict-constants-in-patterns: Two ways of asking \"is this value `HELLO`?\" give different answers, and nothing in the source of `check` warns the reader.",
+   "opus/2008-non-exhaustive: A reader sees a strange variant or field, not a promise about future versions."
+  ]
+ },
+ {
+  "unit": "open",
+  "z_vs_human": 7.8,
+  "z_vs_noskill": 7.8,
+  "skill_per1k": 3.31,
+  "noskill_per1k": 1.15,
+  "human_orig_per1k": 0.826,
+  "human_base_per1k": 0.6459,
+  "skill_docs": 91,
+  "topics": 38,
+  "models": {
+   "opus": 26,
+   "sonnet": 27,
+   "haiku": 38
+  },
+  "examples": [
+   "opus/pep-0296: Everything else in the specification is open, and is laid out in the next section as a set of decisions.",
+   "opus/pep-3141: Registering `float` as `Real` is the decision most open to dispute.",
+   "opus/pep-0223: ## Open questions",
+   "opus/pep-0520: ## Open questions"
+  ]
+ },
+ {
+  "unit": "goals",
+  "z_vs_human": 6.5,
+  "z_vs_noskill": 8.9,
+  "skill_per1k": 2.581,
+  "noskill_per1k": 0.468,
+  "human_orig_per1k": 0.764,
+  "human_base_per1k": 0.3319,
+  "skill_docs": 31,
+  "topics": 22,
+  "models": {
+   "opus": 7,
+   "sonnet": 16,
+   "haiku": 8
+  },
+  "examples": [
+   "opus/pep-0504: ## Goals and non-goals",
+   "opus/pep-0650: ## Goals and non-goals",
+   "opus/1774-roadmap-2017: A proposal that improves the learning curve by, for example, adding runtime checks to safe code would conflict with the roadmap even though it serves one of its goals.",
+   "opus/2834-cargo-report-future-incompat: ## Goals and non-goals"
+  ]
+ },
+ {
+  "unit": "every",
+  "z_vs_human": 10.4,
+  "z_vs_noskill": 4.9,
+  "skill_per1k": 4.655,
+  "noskill_per1k": 2.903,
+  "human_orig_per1k": 0.454,
+  "human_base_per1k": 0.7137,
+  "skill_docs": 86,
+  "topics": 40,
+  "models": {
+   "opus": 34,
+   "sonnet": 34,
+   "haiku": 18
+  },
+  "examples": [
+   "opus/pep-0296: The choice also fixes what iteration yields, and so it affects every loop over a `bytes` object.",
+   "opus/pep-0223: Today a `\\x` escape in a string literal consumes every hex digit that follows it, however many there are.",
+   "opus/pep-0520: Every class created by a class statement carries one extra tuple.",
+   "opus/2008-non-exhaustive: A downstream crate can build a value with a struct literal, `Options { verbose: true, depth: 3 }`, or destructure it with a pattern that names every field."
+  ]
+ },
+ {
+  "unit": "says",
+  "z_vs_human": 7.0,
+  "z_vs_noskill": 7.9,
+  "skill_per1k": 2.118,
+  "noskill_per1k": 0.401,
+  "human_orig_per1k": 0.186,
+  "human_base_per1k": 0.069,
+  "skill_docs": 56,
+  "topics": 34,
+  "models": {
+   "opus": 5,
+   "sonnet": 23,
+   "haiku": 28
+  },
+  "examples": [
+   "opus/pep-0296: Where a line's behavior is undecided, the comment says so.",
+   "opus/1445-restrict-constants-in-patterns: The abstract says that this behavior is more expansive than originally intended.",
+   "opus/2316-safe-unsafe-trait-methods: Yet the signature says `unsafe fn`, and every caller who holds a `Checked` must write",
+   "opus/2514-union-initialization-and-drop: Nothing in the source says \"drop\" here."
+  ]
+ },
+ {
+  "unit": "say",
+  "z_vs_human": 6.8,
+  "z_vs_noskill": 8.1,
+  "skill_per1k": 2.162,
+  "noskill_per1k": 0.388,
+  "human_orig_per1k": 0.392,
+  "human_base_per1k": 0.2902,
+  "skill_docs": 55,
+  "topics": 33,
+  "models": {
+   "opus": 10,
+   "sonnet": 21,
+   "haiku": 24
+  },
+  "examples": [
+   "opus/pep-0296: For each accepted argument, the PEP should say whether the constructor copies the data or refers to it.",
+   "opus/pep-3141: The ABCs say what each type supports, but not who is responsible for the result when the two types differ.",
+   "opus/2115-argument-lifetimes: To say \"this struct borrows something, and the compiler should infer the lifetime\", write `'_`:",
+   "opus/pep-0532: Each one hard-codes its decision as a call to `bool()` and gives the operand's type no further say in the result."
+  ]
+ },
+ {
+  "unit": "alternatives",
+  "z_vs_human": 7.7,
+  "z_vs_noskill": 6.9,
+  "skill_per1k": 2.934,
+  "noskill_per1k": 1.124,
+  "human_orig_per1k": 0.619,
+  "human_base_per1k": 0.8445,
+  "skill_docs": 93,
+  "topics": 40,
+  "models": {
+   "opus": 27,
+   "sonnet": 32,
+   "haiku": 34
+  },
+  "examples": [
+   "opus/pep-3141: ## Rejected alternatives",
+   "opus/2115-argument-lifetimes: ## Rationale and alternatives",
+   "opus/pep-0223: ## Alternatives",
+   "opus/1445-restrict-constants-in-patterns: ## Alternatives"
+  ]
+ },
+ {
+  "unit": "cannot",
+  "z_vs_human": 8.4,
+  "z_vs_noskill": 5.8,
+  "skill_per1k": 3.861,
+  "noskill_per1k": 2.02,
+  "human_orig_per1k": 0.97,
+  "human_base_per1k": 1.0372,
+  "skill_docs": 77,
+  "topics": 36,
+  "models": {
+   "opus": 32,
+   "sonnet": 28,
+   "haiku": 17
+  },
+  "examples": [
+   "opus/pep-0296: Whichever option ships, later releases cannot change it without breaking code that depends on hashing or on in-place writes.",
+   "opus/1445-restrict-constants-in-patterns: The attribute is behind a feature gate, so stable code cannot write it directly.",
+   "opus/pep-0520: A metaclass can conflict with a metaclass the class or its bases already use, unless one derives from the other, and it cannot be added to a class without changing that class's type.",
+   "opus/2008-non-exhaustive: Other crates can read the public fields, but they cannot write `Options { verbose: true, depth: 3 }`."
+  ]
+ },
+ {
+  "unit": "whether",
+  "z_vs_human": 8.0,
+  "z_vs_noskill": 5.9,
+  "skill_per1k": 3.817,
+  "noskill_per1k": 1.953,
+  "human_orig_per1k": 1.074,
+  "human_base_per1k": 0.9361,
+  "skill_docs": 76,
+  "topics": 39,
+  "models": {
+   "opus": 33,
+   "sonnet": 22,
+   "haiku": 21
+  },
+  "examples": [
+   "opus/pep-0296: For each accepted argument, the PEP should say whether the constructor copies the data or refers to it.",
+   "opus/pep-3141: It can test `isinstance(x, (int, float))`, which rejects numeric types defined outside the core, or it can try an operation and catch the failure, which does not tell it whether, for example, `x` has an exact numerator a",
+   "opus/2115-argument-lifetimes: Reading `'a` in a method signature, you must check the header to know whether `'a` is new.",
+   "opus/pep-0223: Whether `\"\\x41\"` is followed by `\"BC\"` or by `\"GH\"` changes how many characters the escape consumes."
+  ]
+ },
+ {
+  "unit": "two",
+  "z_vs_human": 7.7,
+  "z_vs_noskill": 5.9,
+  "skill_per1k": 5.869,
+  "noskill_per1k": 3.518,
+  "human_orig_per1k": 2.54,
+  "human_base_per1k": 2.379,
+  "skill_docs": 83,
+  "topics": 37,
+  "models": {
+   "opus": 30,
+   "sonnet": 32,
+   "haiku": 21
+  },
+  "examples": [
+   "opus/pep-0296: The proposal rests on two claims: none of those objects is the right general-purpose container for binary data, and a dedicated builtin type fixes that.",
+   "opus/pep-3141: Given these, a default `float()` can be defined as the quotient of the two.",
+   "opus/2115-argument-lifetimes: These two problems pull in different directions.",
+   "opus/pep-0223: Change `\\x` escapes, in both 8-bit and Unicode strings, to consume exactly the two hex digits that follow."
+  ]
+ },
+ {
+  "unit": "one",
+  "z_vs_human": 7.3,
+  "z_vs_noskill": 6.1,
+  "skill_per1k": 8.075,
+  "noskill_per1k": 5.177,
+  "human_orig_per1k": 4.295,
+  "human_base_per1k": 4.4665,
+  "skill_docs": 99,
+  "topics": 39,
+  "models": {
+   "opus": 37,
+   "sonnet": 35,
+   "haiku": 27
+  },
+  "examples": [
+   "opus/pep-0296: Python can already hold such a sequence in more than one kind of object.",
+   "opus/2115-argument-lifetimes: A style lint checks that lifetimes bound in `impl` headers are more than one character long, to reduce confusion with lifetimes bound within functions.",
+   "opus/pep-0223: The current rule reads `41BC` as one hex number, so `s` holds a single character.",
+   "opus/1445-restrict-constants-in-patterns: The match then compares the fields one by one."
+  ]
+ },
+ {
+  "unit": "gives",
+  "z_vs_human": 6.8,
+  "z_vs_noskill": 6.5,
+  "skill_per1k": 2.008,
+  "noskill_per1k": 0.615,
+  "human_orig_per1k": 0.227,
+  "human_base_per1k": 0.1701,
+  "skill_docs": 55,
+  "topics": 35,
+  "models": {
+   "opus": 12,
+   "sonnet": 26,
+   "haiku": 17
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: This RFC gives up the explicit declaration for `fn` and `impl` signatures, and recovers some of its value with naming conventions enforced by lint.",
+   "opus/1445-restrict-constants-in-patterns: It asserts that, for this type, comparing two values field by field gives the same result as `==`.",
+   "opus/pep-0532: Each one hard-codes its decision as a call to `bool()` and gives the operand's type no further say in the result.",
+   "opus/pep-0367: The proposal gives one name two meanings: a type at module level during the transition, and a bound object inside a method body."
+  ]
+ },
+ {
+  "unit": "rfc",
+  "z_vs_human": 5.3,
+  "z_vs_noskill": 7.3,
+  "skill_per1k": 5.317,
+  "noskill_per1k": 2.649,
+  "human_orig_per1k": 3.056,
+  "human_base_per1k": 3.1866,
+  "skill_docs": 48,
+  "topics": 16,
+  "models": {
+   "opus": 16,
+   "sonnet": 16,
+   "haiku": 16
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: # Rust RFC 2115: argument_lifetimes",
+   "opus/1445-restrict-constants-in-patterns: # Rust RFC 1445: structural_match",
+   "opus/2008-non-exhaustive: # Rust RFC 2008: non_exhaustive",
+   "opus/2845-supertrait-item-shadowing: # Rust RFC 2845: supertrait_item_shadowing"
+  ]
+ },
+ {
+  "unit": "questions",
+  "z_vs_human": 6.7,
+  "z_vs_noskill": 5.7,
+  "skill_per1k": 2.383,
+  "noskill_per1k": 1.017,
+  "human_orig_per1k": 0.557,
+  "human_base_per1k": 0.6566,
+  "skill_docs": 93,
+  "topics": 40,
+  "models": {
+   "opus": 35,
+   "sonnet": 31,
+   "haiku": 27
+  },
+  "examples": [
+   "opus/pep-0296: Three questions follow:",
+   "opus/pep-3141: PEP 3119 provides the mechanism for answering such questions with ABCs and `isinstance`.",
+   "opus/2115-argument-lifetimes: ## Unresolved questions",
+   "opus/pep-0223: ## Open questions"
+  ]
+ },
+ {
+  "unit": "motivation",
+  "z_vs_human": 6.8,
+  "z_vs_noskill": 5.6,
+  "skill_per1k": 2.934,
+  "noskill_per1k": 1.418,
+  "human_orig_per1k": 0.888,
+  "human_base_per1k": 0.9528,
+  "skill_docs": 98,
+  "topics": 40,
+  "models": {
+   "opus": 36,
+   "sonnet": 23,
+   "haiku": 39
+  },
+  "examples": [
+   "opus/pep-0296: ## Motivation",
+   "opus/pep-3141: ## Motivation",
+   "opus/2115-argument-lifetimes: ## Motivation",
+   "opus/1445-restrict-constants-in-patterns: ## Motivation"
+  ]
+ },
+ {
+  "unit": "material",
+  "z_vs_human": 5.8,
+  "z_vs_noskill": 6.6,
+  "skill_per1k": 1.875,
+  "noskill_per1k": 0.04,
+  "human_orig_per1k": 0.062,
+  "human_base_per1k": 0.0737,
+  "skill_docs": 54,
+  "topics": 34,
+  "models": {
+   "opus": 0,
+   "sonnet": 26,
+   "haiku": 28
+  },
+  "examples": [
+   "sonnet/pep-0296: The honest answer depends on the decision history, which the author's material does not contain.",
+   "sonnet/pep-3141: The author's material points to Scheme's numeric tower as the model.",
+   "sonnet/2115-argument-lifetimes: The material does not record which alternatives the author weighed.",
+   "sonnet/pep-0223: This is a compatibility claim, and the material the PEP is drafted from contains no data to support it."
+  ]
+ },
+ {
+  "unit": "options",
+  "z_vs_human": 5.5,
+  "z_vs_noskill": 6.8,
+  "skill_per1k": 1.456,
+  "noskill_per1k": 0.227,
+  "human_orig_per1k": 0.289,
+  "human_base_per1k": 0.4472,
+  "skill_docs": 42,
+  "topics": 26,
+  "models": {
+   "opus": 7,
+   "sonnet": 25,
+   "haiku": 10
+  },
+  "examples": [
+   "opus/pep-0296: Each subsection names the force that makes a decision necessary and the options visible from the abstract.",
+   "opus/pep-0520: Code that needs the order has two options today.",
+   "opus/2008-non-exhaustive: Many enums exist to grow: error kinds, protocol message types, configuration options.",
+   "opus/2316-safe-unsafe-trait-methods: They are not options that were recorded as considered."
+  ]
+ },
+ {
+  "unit": "decision",
+  "z_vs_human": 5.7,
+  "z_vs_noskill": 6.2,
+  "skill_per1k": 1.434,
+  "noskill_per1k": 0.334,
+  "human_orig_per1k": 0.227,
+  "human_base_per1k": 0.3533,
+  "skill_docs": 38,
+  "topics": 26,
+  "models": {
+   "opus": 16,
+   "sonnet": 15,
+   "haiku": 7
+  },
+  "examples": [
+   "opus/pep-0296: Each subsection names the force that makes a decision necessary and the options visible from the abstract.",
+   "opus/pep-3141: Registering `float` as `Real` is the decision most open to dispute.",
+   "opus/pep-0590: The C API is the decision in this PEP that is most expensive to reverse.",
+   "opus/pep-0532: Each one hard-codes its decision as a call to `bool()` and gives the operand's type no further say in the result."
+  ]
+ },
+ {
+  "unit": "evaluate",
+  "z_vs_human": 5.4,
+  "z_vs_noskill": 6.5,
+  "skill_per1k": 1.258,
+  "noskill_per1k": 0.12,
+  "human_orig_per1k": 0.124,
+  "human_base_per1k": 0.1499,
+  "skill_docs": 51,
+  "topics": 34,
+  "models": {
+   "opus": 13,
+   "sonnet": 30,
+   "haiku": 8
+  },
+  "examples": [
+   "opus/pep-0296: They are suggestions for the author to evaluate, not options that were considered and rejected.",
+   "opus/pep-3141: A suggested rule for the author to evaluate is the following:",
+   "opus/pep-0520: Each one comes with a suggested answer for the author to evaluate.",
+   "opus/pep-0532: Python has three expression forms that decide whether to evaluate an operand at all: the conditional expression `LHS if COND else RHS`, logical conjunction `LHS and RHS`, and logical disjunction `LHS or RHS`."
+  ]
+ },
+ {
+  "unit": "today",
+  "z_vs_human": 6.4,
+  "z_vs_noskill": 5.4,
+  "skill_per1k": 2.471,
+  "noskill_per1k": 1.124,
+  "human_orig_per1k": 0.702,
+  "human_base_per1k": 0.703,
+  "skill_docs": 66,
+  "topics": 37,
+  "models": {
+   "opus": 33,
+   "sonnet": 25,
+   "haiku": 8
+  },
+  "examples": [
+   "opus/pep-0296: For each implementation on that list, the PEP needs the specific property that disqualifies it as the general container, and one short piece of code that is awkward, slow or wrong with it today.",
+   "opus/pep-3141: A function that accepts numbers today has no standard way to ask what kind of number it was given.",
+   "opus/2115-argument-lifetimes: A lifetime that appears once in a signature must today also appear once in the `<...>` list before it.",
+   "opus/pep-0223: Today a `\\x` escape in a string literal consumes every hex digit that follows it, however many there are."
+  ]
+ },
+ {
+  "unit": "calls",
+  "z_vs_human": 7.5,
+  "z_vs_noskill": 4.2,
+  "skill_per1k": 3.111,
+  "noskill_per1k": 1.886,
+  "human_orig_per1k": 0.805,
+  "human_base_per1k": 0.722,
+  "skill_docs": 55,
+  "topics": 29,
+  "models": {
+   "opus": 22,
+   "sonnet": 18,
+   "haiku": 15
+  },
+  "examples": [
+   "opus/pep-3141: When `a + b` involves two different implementations of the same ABC, for example a user-defined `Rational` and the built-in `int`, Python calls `a.__add__(b)` and then, if that returns `NotImplemented`, `b.__radd__(a)`.",
+   "opus/pep-0223: The abstract calls the current rule a design flaw.",
+   "opus/1445-restrict-constants-in-patterns: It never calls `PartialEq::eq`.",
+   "opus/pep-0590: This PEP introduces a new C API to optimize calls of objects."
+  ]
+ },
+ {
+  "unit": "force",
+  "z_vs_human": 5.2,
+  "z_vs_noskill": 6.4,
+  "skill_per1k": 1.214,
+  "noskill_per1k": 0.107,
+  "human_orig_per1k": 0.206,
+  "human_base_per1k": 0.1142,
+  "skill_docs": 41,
+  "topics": 28,
+  "models": {
+   "opus": 6,
+   "sonnet": 19,
+   "haiku": 16
+  },
+  "examples": [
+   "opus/pep-0296: Each subsection names the force that makes a decision necessary and the options visible from the abstract.",
+   "opus/pep-0504: The force behind this decision is the one described in the motivation: the developers at risk are those who do not know their work is security-sensitive, and a warning in documentation does not reach them.",
+   "opus/pep-0327: The force behind this decision is that the type must serve both calculations that need a fixed number of decimal places, such as currency, and calculations that do not, such as a rate compounded over many periods.",
+   "opus/2603-rust-symbol-name-mangling-v0: [TODO] The force is the distinguishability goal."
+  ]
+ },
+ {
+  "unit": "behavior",
+  "z_vs_human": 6.8,
+  "z_vs_noskill": 4.5,
+  "skill_per1k": 3.045,
+  "noskill_per1k": 1.766,
+  "human_orig_per1k": 0.95,
+  "human_base_per1k": 1.023,
+  "skill_docs": 64,
+  "topics": 31,
+  "models": {
+   "opus": 25,
+   "sonnet": 23,
+   "haiku": 16
+  },
+  "examples": [
+   "opus/pep-0296: Where a line's behavior is undecided, the comment says so.",
+   "opus/1445-restrict-constants-in-patterns: The abstract says that this behavior is more expansive than originally intended.",
+   "opus/2008-non-exhaustive: For an enum used to dispatch behavior, silent fallthrough may be worse than a compile error.",
+   "opus/pep-0590: A type that supports vectorcall must still implement `tp_call`, with the same behavior."
+  ]
+ },
+ {
+  "unit": "reason",
+  "z_vs_human": 5.3,
+  "z_vs_noskill": 6.0,
+  "skill_per1k": 1.633,
+  "noskill_per1k": 0.482,
+  "human_orig_per1k": 0.454,
+  "human_base_per1k": 0.4889,
+  "skill_docs": 52,
+  "topics": 32,
+  "models": {
+   "opus": 15,
+   "sonnet": 19,
+   "haiku": 18
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: In a position where elision is not allowed today, `'_` is an error for the same reason.",
+   "opus/1445-restrict-constants-in-patterns: The reason for tying the attribute to `Eq` rather than `PartialEq` is not stated in the abstract.",
+   "opus/pep-0504: The reason for switching on `seed()` is that a program which calls `seed()` has declared that it wants a repeatable sequence.",
+   "opus/pep-0367: The reason for this rule is that the compiler must recognize the name `super` reliably."
+  ]
+ },
+ {
+  "unit": "goal",
+  "z_vs_human": 4.0,
+  "z_vs_noskill": 7.2,
+  "skill_per1k": 1.655,
+  "noskill_per1k": 0.268,
+  "human_orig_per1k": 0.723,
+  "human_base_per1k": 0.3057,
+  "skill_docs": 28,
+  "topics": 22,
+  "models": {
+   "opus": 14,
+   "sonnet": 7,
+   "haiku": 7
+  },
+  "examples": [
+   "opus/pep-0504: This decision serves the second goal: existing deterministic programs keep working.",
+   "opus/pep-0367: The goal of the PEP is that a cooperative call names only the method and its arguments.",
+   "opus/1774-roadmap-2017: Every goal below must be met without making Rust programs slower or less safe.",
+   "opus/2603-rust-symbol-name-mangling-v0: [TODO] The force is the distinguishability goal."
+  ]
+ },
+ {
+  "unit": "states",
+  "z_vs_human": 4.9,
+  "z_vs_noskill": 6.2,
+  "skill_per1k": 1.147,
+  "noskill_per1k": 0.134,
+  "human_orig_per1k": 0.062,
+  "human_base_per1k": 0.0571,
+  "skill_docs": 44,
+  "topics": 28,
+  "models": {
+   "opus": 8,
+   "sonnet": 22,
+   "haiku": 14
+  },
+  "examples": [
+   "opus/pep-3141: Each ABC below states what an object must support to register as that ABC.",
+   "opus/2008-non-exhaustive: Neither workaround states the intent.",
+   "opus/2316-safe-unsafe-trait-methods: The caller states that it upholds the condition by writing an `unsafe` block.",
+   "opus/1774-roadmap-2017: Each goal below states the problem it addresses, what reaching it would look like, and how the project will know whether it was reached."
+  ]
+ },
+ {
+  "unit": "must",
+  "z_vs_human": 7.7,
+  "z_vs_noskill": 3.2,
+  "skill_per1k": 5.406,
+  "noskill_per1k": 4.12,
+  "human_orig_per1k": 2.209,
+  "human_base_per1k": 3.0427,
+  "skill_docs": 91,
+  "topics": 39,
+  "models": {
+   "opus": 33,
+   "sonnet": 32,
+   "haiku": 26
+  },
+  "examples": [
+   "opus/pep-0296: For `file.write`, `socket.send` and C extensions to accept a `bytes` object without conversion, the type must expose the buffer interface.",
+   "opus/pep-3141: Each ABC below states what an object must support to register as that ABC.",
+   "opus/2115-argument-lifetimes: A lifetime that appears once in a signature must today also appear once in the `<...>` list before it.",
+   "opus/pep-0223: To get the intended string today, the writer must split the literal:"
+  ]
+ },
+ {
+  "unit": "open questions",
+  "z_vs_human": 4.1,
+  "z_vs_noskill": 6.5,
+  "skill_per1k": 1.324,
+  "noskill_per1k": 0.08,
+  "human_orig_per1k": 0.021,
+  "human_base_per1k": 0.0202,
+  "skill_docs": 57,
+  "topics": 38,
+  "models": {
+   "opus": 19,
+   "sonnet": 15,
+   "haiku": 23
+  },
+  "examples": [
+   "opus/pep-0296: ## Open questions",
+   "opus/pep-3141: ## Open questions",
+   "opus/pep-0223: ## Open questions",
+   "opus/pep-0520: ## Open questions"
+  ]
+ },
+ {
+  "unit": "runs",
+  "z_vs_human": 5.5,
+  "z_vs_noskill": 5.1,
+  "skill_per1k": 1.567,
+  "noskill_per1k": 0.589,
+  "human_orig_per1k": 0.062,
+  "human_base_per1k": 0.1534,
+  "skill_docs": 32,
+  "topics": 21,
+  "models": {
+   "opus": 17,
+   "sonnet": 12,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/pep-0520: Since the information already exists while the class body runs, access to the definition order is a reasonable expectation.",
+   "opus/pep-0651: With a recursion limit of one million, the machine stack runs out long before the limit is reached, and the interpreter crashes.",
+   "opus/pep-0504: A program that runs very early in system boot, when the operating system's generator may block or may not yet be initialized.",
+   "opus/pep-0367: If a method body is copied from one class to another and the class name is not changed, the call still runs, but it starts the method lookup from the wrong point in the method resolution order."
+  ]
+ },
+ {
+  "unit": "supplied",
+  "z_vs_human": 4.6,
+  "z_vs_noskill": 5.9,
+  "skill_per1k": 1.015,
+  "noskill_per1k": 0.107,
+  "human_orig_per1k": 0.206,
+  "human_base_per1k": 0.1439,
+  "skill_docs": 28,
+  "topics": 18,
+  "models": {
+   "opus": 2,
+   "sonnet": 16,
+   "haiku": 10
+  },
+  "examples": [
+   "opus/pep-0296: The options listed here were not supplied by the author.",
+   "opus/pep-0520: ### User-supplied values",
+   "sonnet/pep-0532: **Options considered.** The supplied material names the earlier PEPs but not why the author preferred a single protocol to adopting them separately.",
+   "sonnet/pep-0504: The supplied material states the security side of the argument in detail and says nothing about the reproducibility side."
+  ]
+ },
+ {
+  "unit": "second",
+  "z_vs_human": 6.1,
+  "z_vs_noskill": 4.4,
+  "skill_per1k": 2.251,
+  "noskill_per1k": 1.177,
+  "human_orig_per1k": 0.64,
+  "human_base_per1k": 0.5365,
+  "skill_docs": 60,
+  "topics": 35,
+  "models": {
+   "opus": 21,
+   "sonnet": 22,
+   "haiku": 17
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: The second problem is the opposite one.",
+   "opus/pep-0223: Second, in an 8-bit string, consuming more than two hex digits can never produce a value larger than one byte.",
+   "opus/pep-0520: The second is to repeat the names by hand:",
+   "opus/pep-0651: The second resource is the machine stack, which the C code of the interpreter uses."
+  ]
+ },
+ {
+  "unit": "three",
+  "z_vs_human": 5.5,
+  "z_vs_noskill": 4.9,
+  "skill_per1k": 2.074,
+  "noskill_per1k": 0.95,
+  "human_orig_per1k": 0.681,
+  "human_base_per1k": 0.5472,
+  "skill_docs": 49,
+  "topics": 26,
+  "models": {
+   "opus": 14,
+   "sonnet": 21,
+   "haiku": 14
+  },
+  "examples": [
+   "opus/pep-0296: The abstract fixes three things:",
+   "opus/pep-0223: A reader may expect `\"A\"` followed by `\"BC\"`, three characters.",
+   "opus/pep-0532: Python has three expression forms that decide whether to evaluate an operand at all: the conditional expression `LHS if COND else RHS`, logical conjunction `LHS and RHS`, and logical disjunction `LHS or RHS`.",
+   "opus/pep-0383: Python then has three options, none of them acceptable:"
+  ]
+ },
+ {
+  "unit": "change",
+  "z_vs_human": 7.1,
+  "z_vs_noskill": 3.3,
+  "skill_per1k": 5.295,
+  "noskill_per1k": 3.959,
+  "human_orig_per1k": 2.354,
+  "human_base_per1k": 2.2553,
+  "skill_docs": 81,
+  "topics": 36,
+  "models": {
+   "opus": 31,
+   "sonnet": 28,
+   "haiku": 22
+  },
+  "examples": [
+   "opus/pep-0296: Whichever option ships, later releases cannot change it without breaking code that depends on hashing or on in-place writes.",
+   "opus/pep-3141: It does not change how the existing numeric types compute.",
+   "opus/pep-0223: # PEP 223: Change the Meaning of ``\\x`` Escapes",
+   "opus/1445-restrict-constants-in-patterns: If constants in patterns are defined by structural expansion, then changing a type's private fields can change which values match a public constant."
+  ]
+ },
+ {
+  "unit": "claim",
+  "z_vs_human": 4.1,
+  "z_vs_noskill": 6.3,
+  "skill_per1k": 1.258,
+  "noskill_per1k": 0.067,
+  "human_orig_per1k": 0.021,
+  "human_base_per1k": 0.0333,
+  "skill_docs": 31,
+  "topics": 24,
+  "models": {
+   "opus": 4,
+   "sonnet": 13,
+   "haiku": 14
+  },
+  "examples": [
+   "opus/pep-0296: That answer bears directly on the \"efficiently stored\" claim.",
+   "opus/pep-0223: This is a compatibility claim, and it needs evidence.",
+   "opus/1445-restrict-constants-in-patterns: That is a compatibility claim, and it needs evidence.",
+   "opus/pep-0400: Two classes that claim the same API but are written separately will not behave identically in edge cases."
+  ]
+ },
+ {
+  "unit": "design",
+  "z_vs_human": 6.1,
+  "z_vs_noskill": 4.1,
+  "skill_per1k": 2.339,
+  "noskill_per1k": 1.311,
+  "human_orig_per1k": 0.702,
+  "human_base_per1k": 1.3334,
+  "skill_docs": 59,
+  "topics": 28,
+  "models": {
+   "opus": 14,
+   "sonnet": 20,
+   "haiku": 25
+  },
+  "examples": [
+   "opus/pep-3141: The hardest problem in this design is mixed-type arithmetic.",
+   "opus/pep-0223: This PEP treats the change as the correction of a flaw in the original design.",
+   "opus/1445-restrict-constants-in-patterns: ## Detailed design",
+   "opus/pep-0504: ## Design decisions"
+  ]
+ },
+ {
+  "unit": "caller",
+  "z_vs_human": 5.9,
+  "z_vs_noskill": 4.2,
+  "skill_per1k": 1.5,
+  "noskill_per1k": 0.682,
+  "human_orig_per1k": 0.206,
+  "human_base_per1k": 0.2545,
+  "skill_docs": 22,
+  "topics": 12,
+  "models": {
+   "opus": 10,
+   "sonnet": 7,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/pep-0590: A caller that holds its arguments in local variables or on the interpreter's value stack must therefore build a tuple, and often a dict, for every call.",
+   "opus/2845-supertrait-item-shadowing: The caller can resolve the ambiguity by naming the trait, `Sub::describe(x)`.",
+   "opus/2316-safe-unsafe-trait-methods: A trait method is marked `unsafe` when some implementations require the caller to uphold a condition that the compiler cannot check.",
+   "opus/pep-0383: Every caller must then handle a list that mixes `str` and `bytes`, and most callers will not."
+  ]
+ },
+ {
+  "unit": "adds",
+  "z_vs_human": 7.2,
+  "z_vs_noskill": 2.8,
+  "skill_per1k": 2.228,
+  "noskill_per1k": 1.512,
+  "human_orig_per1k": 0.289,
+  "human_base_per1k": 0.2914,
+  "skill_docs": 56,
+  "topics": 31,
+  "models": {
+   "opus": 23,
+   "sonnet": 24,
+   "haiku": 9
+  },
+  "examples": [
+   "opus/pep-0296: This PEP adds a builtin name and a type.",
+   "opus/pep-3141: `Real` adds what holds for real numbers and not for complex ones: the ordering comparisons `<`, `<=`, `>` and `>=`; conversion with `float()`; `math.floor`, `math.ceil` and `round`; and `//`, `%` and `divmod`.",
+   "opus/2115-argument-lifetimes: For `longest` above, `<'a>` adds no information: the parameter types already show that `'a` is a lifetime and where it is used.",
+   "opus/pep-0520: The manual list repeats each name and can drift from the class body when someone adds or reorders a field."
+  ]
+ },
+ {
+  "unit": "non goals",
+  "z_vs_human": 4.7,
+  "z_vs_noskill": 5.1,
+  "skill_per1k": 1.037,
+  "noskill_per1k": 0.027,
+  "human_orig_per1k": 0.062,
+  "human_base_per1k": 0.025,
+  "skill_docs": 28,
+  "topics": 20,
+  "models": {
+   "opus": 7,
+   "sonnet": 14,
+   "haiku": 7
+  },
+  "examples": [
+   "opus/pep-0504: ## Goals and non-goals",
+   "opus/pep-0650: ## Goals and non-goals",
+   "opus/1774-roadmap-2017: # Non-goals",
+   "opus/2834-cargo-report-future-incompat: ## Goals and non-goals"
+  ]
+ },
+ {
+  "unit": "call",
+  "z_vs_human": 7.9,
+  "z_vs_noskill": 1.8,
+  "skill_per1k": 4.126,
+  "noskill_per1k": 3.451,
+  "human_orig_per1k": 1.301,
+  "human_base_per1k": 1.4488,
+  "skill_docs": 55,
+  "topics": 27,
+  "models": {
+   "opus": 22,
+   "sonnet": 20,
+   "haiku": 13
+  },
+  "examples": [
+   "opus/pep-0590: To call an object from C, code uses the `tp_call` slot of the object's type.",
+   "opus/2845-supertrait-item-shadowing: When both traits define a method with the same name, a call is ambiguous:",
+   "opus/pep-0651: Each nested call that goes through C code takes some amount of machine stack.",
+   "opus/pep-0532: Each one hard-codes its decision as a call to `bool()` and gives the operand's type no further say in the result."
+  ]
+ },
+ {
+  "unit": "type",
+  "z_vs_human": 6.8,
+  "z_vs_noskill": 2.9,
+  "skill_per1k": 8.428,
+  "noskill_per1k": 6.956,
+  "human_orig_per1k": 4.77,
+  "human_base_per1k": 7.7221,
+  "skill_docs": 73,
+  "topics": 37,
+  "models": {
+   "opus": 26,
+   "sonnet": 19,
+   "haiku": 28
+  },
+  "examples": [
+   "opus/pep-0296: # PEP 296: Adding a bytes Object Type",
+   "opus/pep-3141: # PEP 3141: A Type Hierarchy for Numbers",
+   "opus/2115-argument-lifetimes: A type like `Ref<T>` or `Iter<T>` has a lifetime parameter, but a signature can omit it:",
+   "opus/pep-0223: Type:           Standards Track"
+  ]
+ },
+ {
+  "unit": "developer",
+  "z_vs_human": 5.0,
+  "z_vs_noskill": 4.7,
+  "skill_per1k": 1.169,
+  "noskill_per1k": 0.401,
+  "human_orig_per1k": 0.206,
+  "human_base_per1k": 0.3164,
+  "skill_docs": 9,
+  "topics": 4,
+  "models": {
+   "opus": 4,
+   "sonnet": 3,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/pep-0504: A developer doing security-sensitive work is expected to know this and switch to `os.urandom`, `random.SystemRandom`, or a third-party library such as `cryptography`.",
+   "opus/2834-cargo-report-future-incompat: When a build compiles a dependency whose code triggers a future-incompatibility warning, Cargo tells the developer which dependency it is.",
+   "opus/1937-ques-in-main: They replace `?` with `.unwrap()`, which panics with a message aimed at the developer.",
+   "opus/pep-0597: A developer on Linux writes and reads a file containing non-ASCII text, and everything works."
+  ]
+ },
+ {
+  "unit": "first",
+  "z_vs_human": 5.9,
+  "z_vs_noskill": 3.7,
+  "skill_per1k": 3.398,
+  "noskill_per1k": 2.247,
+  "human_orig_per1k": 1.445,
+  "human_base_per1k": 1.7747,
+  "skill_docs": 68,
+  "topics": 35,
+  "models": {
+   "opus": 28,
+   "sonnet": 24,
+   "haiku": 16
+  },
+  "examples": [
+   "opus/pep-0296: Without these, the first objection a reviewer will raise (\"why not use or extend the existing type?\") has no answer in the text.",
+   "opus/2115-argument-lifetimes: fn first(v: &Vec<u8>) -> Iter<u8> { ...",
+   "opus/pep-0223: First, the meaning of an escape depends on characters that are not part of it.",
+   "opus/pep-0520: The first is a metaclass whose `__prepare__` returns an ordered mapping, which then records the order somewhere on the class:"
+  ]
+ },
+ {
+  "unit": "machine",
+  "z_vs_human": 4.6,
+  "z_vs_noskill": 5.0,
+  "skill_per1k": 1.059,
+  "noskill_per1k": 0.294,
+  "human_orig_per1k": 0.227,
+  "human_base_per1k": 0.1939,
+  "skill_docs": 10,
+  "topics": 5,
+  "models": {
+   "opus": 4,
+   "sonnet": 4,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/pep-0651: This PEP proposes that Python treat machine stack overflow differently from runaway recursion.",
+   "opus/pep-0650: A project that depends on other packages records those dependencies somewhere so that the project can be set up on a new machine.",
+   "opus/2834-cargo-report-future-incompat: When Cargo asks for it through a flag, rustc emits the recorded diagnostics as a machine-readable message, separate from the normal diagnostic output.",
+   "opus/pep-0597: This value exists for code that really wants the locale encoding, for example a program that reads a file the user wrote in a text editor on the same machine."
+  ]
+ },
+ {
+  "unit": "suggestions",
+  "z_vs_human": 4.6,
+  "z_vs_noskill": 4.9,
+  "skill_per1k": 0.927,
+  "noskill_per1k": 0.027,
+  "human_orig_per1k": 0.124,
+  "human_base_per1k": 0.0773,
+  "skill_docs": 39,
+  "topics": 30,
+  "models": {
+   "opus": 4,
+   "sonnet": 27,
+   "haiku": 8
+  },
+  "examples": [
+   "opus/pep-0296: They are suggestions for the author to evaluate, not options that were considered and rejected.",
+   "opus/3173-float-next-up-down: The following alternatives are suggestions for the author to evaluate.",
+   "opus/2834-cargo-report-future-incompat: Cargo may add to the full report suggestions for the downstream maintainer.",
+   "opus/1869-eprintln: The following alternatives are suggestions for the author to evaluate, not alternatives this RFC records as considered:"
+  ]
+ },
+ {
+  "unit": "keep",
+  "z_vs_human": 5.7,
+  "z_vs_noskill": 3.1,
+  "skill_per1k": 1.677,
+  "noskill_per1k": 1.003,
+  "human_orig_per1k": 0.392,
+  "human_base_per1k": 0.496,
+  "skill_docs": 51,
+  "topics": 29,
+  "models": {
+   "opus": 20,
+   "sonnet": 23,
+   "haiku": 8
+  },
+  "examples": [
+   "opus/pep-0532: Ordinary objects therefore keep their current behavior.",
+   "opus/pep-0504: - `random.Random` instances keep their current behavior.",
+   "opus/pep-0367: It must keep working through Python 2.x; the mechanism is the open question noted under \"Renaming the built-in\".",
+   "opus/2316-safe-unsafe-trait-methods: - Keep the status quo, with a forwarding inherent method."
+  ]
+ },
+ {
+  "unit": "keeps",
+  "z_vs_human": 5.8,
+  "z_vs_noskill": 2.9,
+  "skill_per1k": 1.478,
+  "noskill_per1k": 0.896,
+  "human_orig_per1k": 0.124,
+  "human_base_per1k": 0.0523,
+  "skill_docs": 43,
+  "topics": 27,
+  "models": {
+   "opus": 19,
+   "sonnet": 17,
+   "haiku": 7
+  },
+  "examples": [
+   "opus/pep-0296: Returning a length-1 `bytes` keeps the behavior of `str` for code ported from it.",
+   "opus/pep-0590: Code that calls through `tp_call` keeps working.",
+   "opus/pep-0532: The ternary form therefore keeps its own rule.",
+   "opus/pep-0346: This PEP keeps the method protocol as the underlying mechanism and adds the generator form on top of it."
+  ]
+ },
+ {
+  "unit": "stated",
+  "z_vs_human": 4.0,
+  "z_vs_noskill": 4.7,
+  "skill_per1k": 0.684,
+  "noskill_per1k": 0.094,
+  "human_orig_per1k": 0.062,
+  "human_base_per1k": 0.0654,
+  "skill_docs": 26,
+  "topics": 20,
+  "models": {
+   "opus": 6,
+   "sonnet": 10,
+   "haiku": 10
+  },
+  "examples": [
+   "opus/pep-0296: Suggested candidates are an integer size (with a stated fill value), an iterable of integers in `range(256)`, a `str`, and any object that exposes the buffer interface.",
+   "opus/pep-3141: The following are deliberate exclusions, stated so that readers do not expect them:",
+   "opus/pep-0223: Each is stated here with what supports it and what is still missing.",
+   "opus/1445-restrict-constants-in-patterns: The reason for tying the attribute to `Eq` rather than `PartialEq` is not stated in the abstract."
+  ]
+ },
+ {
+  "unit": "compatibility",
+  "z_vs_human": 4.9,
+  "z_vs_noskill": 3.8,
+  "skill_per1k": 2.692,
+  "noskill_per1k": 1.645,
+  "human_orig_per1k": 1.239,
+  "human_base_per1k": 1.0789,
+  "skill_docs": 82,
+  "topics": 35,
+  "models": {
+   "opus": 26,
+   "sonnet": 30,
+   "haiku": 26
+  },
+  "examples": [
+   "opus/pep-0296: Once pickles containing `bytes` objects are written to disk, the pickle format cannot change without a compatibility path.",
+   "opus/pep-3141: ## Backwards compatibility",
+   "opus/pep-0223: It argues that the change leads to clearer expression in all kinds of string, a cleaner story for Unicode, better compatibility with Perl regular expressions, and minimal risk to existing code.",
+   "opus/1445-restrict-constants-in-patterns: That is a compatibility claim, and it needs evidence."
+  ]
+ },
+ {
+  "unit": "ask",
+  "z_vs_human": 4.1,
+  "z_vs_noskill": 4.6,
+  "skill_per1k": 0.728,
+  "noskill_per1k": 0.147,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.1178,
+  "skill_docs": 23,
+  "topics": 17,
+  "models": {
+   "opus": 5,
+   "sonnet": 8,
+   "haiku": 10
+  },
+  "examples": [
+   "opus/pep-3141: A function that accepts numbers today has no standard way to ask what kind of number it was given.",
+   "opus/pep-0234: In all three cases, what the loop needs is a way to ask for the next item, not a way to ask for item `i`.",
+   "opus/pep-0650: This PEP proposes a way for a project to declare which installer handles its dependencies, and a small interface through which any tool can ask that installer to install them.",
+   "opus/2514-union-initialization-and-drop: To prevent the compiler from inserting a drop that the programmer did not ask for, it also restricts implicit uses of `DerefMut` on union fields."
+  ]
+ },
+ {
+  "unit": "pep pep",
+  "z_vs_human": 4.0,
+  "z_vs_noskill": 4.7,
+  "skill_per1k": 0.728,
+  "noskill_per1k": 0.134,
+  "human_orig_per1k": 0.124,
+  "human_base_per1k": 0.0511,
+  "skill_docs": 9,
+  "topics": 5,
+  "models": {
+   "opus": 2,
+   "sonnet": 4,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/pep-0532: This PEP draws on PEP 335, PEP 505, PEP 531 and the discussions around them.",
+   "opus/pep-0346: It takes the parts of PEP 340 that this PEP's author considers sound, combines them with parts of PEP 310, and arranges the result into one proposal for a statement that runs setup code before a block and cleanup code af",
+   "sonnet/pep-0532: The PEP builds on PEP 335, PEP 505, PEP 531 and the discussions around them.",
+   "sonnet/pep-0346: **Options considered.** The supplied material names two options, PEP 310 and PEP 340."
+  ]
+ },
+ {
+  "unit": "format",
+  "z_vs_human": 4.9,
+  "z_vs_noskill": 3.7,
+  "skill_per1k": 1.456,
+  "noskill_per1k": 0.736,
+  "human_orig_per1k": 0.413,
+  "human_base_per1k": 0.9813,
+  "skill_docs": 18,
+  "topics": 11,
+  "models": {
+   "opus": 8,
+   "sonnet": 8,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/pep-0296: The `repr` of a `bytes` object and its pickle format are both formats that other code will depend on.",
+   "opus/pep-0650: There is no standard file for declaring a project's dependencies, so dependencies written in one tool's format can be installed only by that tool, or by exporting them to a requirements file, which can lose information.",
+   "opus/2834-cargo-report-future-incompat: - The flag name and the message format between rustc and Cargo.",
+   "opus/1869-eprintln: Both macros take the same format strings and arguments as `print!` and `println!`."
+  ]
+ },
+ {
+  "unit": "warning",
+  "z_vs_human": 6.0,
+  "z_vs_noskill": 2.6,
+  "skill_per1k": 2.471,
+  "noskill_per1k": 1.766,
+  "human_orig_per1k": 0.805,
+  "human_base_per1k": 0.4496,
+  "skill_docs": 28,
+  "topics": 16,
+  "models": {
+   "opus": 12,
+   "sonnet": 10,
+   "haiku": 6
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: A path to a struct or enum with lifetime parameters, written without them and without `'_`, triggers a warning in a function signature.",
+   "opus/pep-0223: Whether a transition warning precedes the change (Minimal risk to existing code).",
+   "opus/1445-restrict-constants-in-patterns: How much existing code breaks, and whether there is a warning period (Impact on existing code).",
+   "opus/2008-non-exhaustive: The wildcard arm removes a warning that downstream crates may want."
+  ]
+ },
+ {
+  "unit": "whose",
+  "z_vs_human": 6.1,
+  "z_vs_noskill": 2.5,
+  "skill_per1k": 1.633,
+  "noskill_per1k": 1.084,
+  "human_orig_per1k": 0.145,
+  "human_base_per1k": 0.2843,
+  "skill_docs": 46,
+  "topics": 27,
+  "models": {
+   "opus": 21,
+   "sonnet": 15,
+   "haiku": 10
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: A lifetime bound in an `impl` header whose name is one character long triggers a style warning.",
+   "opus/1445-restrict-constants-in-patterns: Code breaks if it uses, in a pattern, a constant whose type does not derive `Eq`, directly or through one of its fields.",
+   "opus/pep-0520: The first is a metaclass whose `__prepare__` returns an ordered mapping, which then records the order somewhere on the class:",
+   "opus/pep-0532: A circuit breaker is any object whose type defines `__bool__` together with `__then__`, `__else__` or both."
+  ]
+ },
+ {
+  "unit": "writes",
+  "z_vs_human": 4.8,
+  "z_vs_noskill": 3.6,
+  "skill_per1k": 0.971,
+  "noskill_per1k": 0.415,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.0928,
+  "skill_docs": 27,
+  "topics": 18,
+  "models": {
+   "opus": 12,
+   "sonnet": 10,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/pep-0296: Whichever option ships, later releases cannot change it without breaking code that depends on hashing or on in-place writes.",
+   "opus/2115-argument-lifetimes: Existing code that writes `Iter<u8>` in a signature gets warnings, and the fix is to add `'_` in each place.",
+   "opus/pep-0367: A programmer who writes them by hand can get them wrong in ways that do not fail immediately.",
+   "opus/pep-0383: A program that writes a file name to a text file or a terminal will get an error rather than silently write bytes that the reader may not interpret correctly."
+  ]
+ },
+ {
+  "unit": "without",
+  "z_vs_human": 6.3,
+  "z_vs_noskill": 1.9,
+  "skill_per1k": 4.325,
+  "noskill_per1k": 3.612,
+  "human_orig_per1k": 1.982,
+  "human_base_per1k": 1.8627,
+  "skill_docs": 86,
+  "topics": 38,
+  "models": {
+   "opus": 36,
+   "sonnet": 32,
+   "haiku": 18
+  },
+  "examples": [
+   "opus/pep-0296: The abstract refers to \"several implementations that are similar\" without naming them.",
+   "opus/pep-3141: Its role is to let code ask \"is this a number at all?\" without committing to any particular structure.",
+   "opus/2115-argument-lifetimes: When you write a function signature or an `impl` header, you can use a lifetime name without declaring it.",
+   "opus/1445-restrict-constants-in-patterns: This RFC introduces mechanisms that rein in those semantics without breaking much, if any, existing code:"
+  ]
+ },
+ {
+  "unit": "depends",
+  "z_vs_human": 5.3,
+  "z_vs_noskill": 2.8,
+  "skill_per1k": 1.214,
+  "noskill_per1k": 0.709,
+  "human_orig_per1k": 0.145,
+  "human_base_per1k": 0.1903,
+  "skill_docs": 41,
+  "topics": 29,
+  "models": {
+   "opus": 12,
+   "sonnet": 18,
+   "haiku": 11
+  },
+  "examples": [
+   "opus/pep-0296: Whichever option ships, later releases cannot change it without breaking code that depends on hashing or on in-place writes.",
+   "opus/pep-0223: First, the meaning of an escape depends on characters that are not part of it.",
+   "opus/2845-supertrait-item-shadowing: Suppose `Super` is defined in crate A and `Sub` in crate B, which depends on A.",
+   "opus/pep-0504: A fix that depends on each developer learning the distinction therefore cannot become pervasive."
+  ]
+ },
+ {
+  "unit": "shows",
+  "z_vs_human": 4.0,
+  "z_vs_noskill": 4.0,
+  "skill_per1k": 0.706,
+  "noskill_per1k": 0.201,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.1332,
+  "skill_docs": 24,
+  "topics": 19,
+  "models": {
+   "opus": 11,
+   "sonnet": 7,
+   "haiku": 6
+  },
+  "examples": [
+   "opus/pep-0296: The code below shows the intended spelling only.",
+   "opus/pep-3141: The following example shows the intended use:",
+   "opus/pep-0651: The first example in the Abstract shows this case.",
+   "opus/2316-safe-unsafe-trait-methods: - How rustdoc shows an overconstrained method."
+  ]
+ },
+ {
+  "unit": "show",
+  "z_vs_human": 4.1,
+  "z_vs_noskill": 3.9,
+  "skill_per1k": 0.75,
+  "noskill_per1k": 0.241,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.1891,
+  "skill_docs": 29,
+  "topics": 21,
+  "models": {
+   "opus": 8,
+   "sonnet": 12,
+   "haiku": 9
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: For `longest` above, `<'a>` adds no information: the parameter types already show that `'a` is a lifetime and where it is used.",
+   "opus/2845-supertrait-item-shadowing: fn show<T: Sub>(x: &T) -> String {",
+   "opus/pep-0383: The program must then choose a handler, such as `surrogateescape` to reproduce the original bytes or `replace` to show a placeholder.",
+   "opus/pep-0346: The following examples show managers that the statement makes reusable."
+  ]
+ },
+ {
+  "unit": "considered",
+  "z_vs_human": 3.9,
+  "z_vs_noskill": 4.0,
+  "skill_per1k": 1.655,
+  "noskill_per1k": 0.829,
+  "human_orig_per1k": 0.743,
+  "human_base_per1k": 0.8981,
+  "skill_docs": 59,
+  "topics": 37,
+  "models": {
+   "opus": 7,
+   "sonnet": 20,
+   "haiku": 32
+  },
+  "examples": [
+   "opus/pep-0296: They are suggestions for the author to evaluate, not options that were considered and rejected.",
+   "opus/pep-0367: - Which alternative spellings were considered.",
+   "opus/2316-safe-unsafe-trait-methods: They are not options that were recorded as considered.",
+   "opus/pep-0383: They are not options recorded as considered and rejected."
+  ]
+ },
+ {
+  "unit": "fixed",
+  "z_vs_human": 4.9,
+  "z_vs_noskill": 3.0,
+  "skill_per1k": 1.478,
+  "noskill_per1k": 0.869,
+  "human_orig_per1k": 0.434,
+  "human_base_per1k": 0.2748,
+  "skill_docs": 35,
+  "topics": 23,
+  "models": {
+   "opus": 17,
+   "sonnet": 11,
+   "haiku": 7
+  },
+  "examples": [
+   "opus/pep-0296: Mutable contents with a fixed length, so that the object can serve as a reusable buffer but never reallocates.",
+   "opus/pep-3141: A third-party decimal or fixed-point type that registers as `Real` passes the check without `clamp` naming it.",
+   "opus/pep-0223: With a fixed length, an escape ends at a known position.",
+   "opus/1445-restrict-constants-in-patterns: Code broken by this change can be fixed in one of two ways:"
+  ]
+ },
+ {
+  "unit": "later",
+  "z_vs_human": 6.0,
+  "z_vs_noskill": 1.8,
+  "skill_per1k": 1.765,
+  "noskill_per1k": 1.338,
+  "human_orig_per1k": 0.372,
+  "human_base_per1k": 0.6209,
+  "skill_docs": 54,
+  "topics": 31,
+  "models": {
+   "opus": 25,
+   "sonnet": 22,
+   "haiku": 7
+  },
+  "examples": [
+   "opus/pep-0296: Whichever option ships, later releases cannot change it without breaking code that depends on hashing or on in-place writes.",
+   "opus/1445-restrict-constants-in-patterns: If the language later wanted to define constant patterns in terms of `PartialEq` instead, existing matches could change meaning silently.",
+   "opus/2008-non-exhaustive: If the library later adds a variant, `ConfigError::Io(io::Error)`, that downstream `match` stops compiling.",
+   "opus/2845-supertrait-item-shadowing: The same call `x.describe()` can be ambiguous when `x: S` and unambiguous when `x: T` with `T: Sub`, even if `S` is the type later substituted for `T`."
+  ]
+ },
+ {
+  "unit": "sees",
+  "z_vs_human": 4.0,
+  "z_vs_noskill": 3.6,
+  "skill_per1k": 0.684,
+  "noskill_per1k": 0.227,
+  "human_orig_per1k": 0.062,
+  "human_base_per1k": 0.0428,
+  "skill_docs": 21,
+  "topics": 16,
+  "models": {
+   "opus": 12,
+   "sonnet": 7,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/pep-3141: Code that does not import the new module sees new superclasses on the built-in types, through `isinstance` and `issubclass`, and nothing else.",
+   "opus/2008-non-exhaustive: A reader sees a strange variant or field, not a promise about future versions.",
+   "opus/pep-0532: A reader who sees `x else y` must know that it is not part of a ternary expression, and `x if y` reads in English as a condition rather than as an operator whose value may be `y`.",
+   "opus/pep-0504: The difficulty is that the delay between introducing the flaw and someone exploiting it is often long, so the developer who made the choice rarely sees its consequence and cannot learn from it."
+  ]
+ },
+ {
+  "unit": "names",
+  "z_vs_human": 4.4,
+  "z_vs_noskill": 3.1,
+  "skill_per1k": 4.236,
+  "noskill_per1k": 3.117,
+  "human_orig_per1k": 2.56,
+  "human_base_per1k": 1.3846,
+  "skill_docs": 69,
+  "topics": 34,
+  "models": {
+   "opus": 23,
+   "sonnet": 23,
+   "haiku": 23
+  },
+  "examples": [
+   "opus/pep-0296: Each subsection names the force that makes a decision necessary and the options visible from the abstract.",
+   "opus/pep-0223: With the proposed rule, `\\x` always names a value from 0 to 255 in both kinds of string, and `\\u` names larger code points.",
+   "opus/pep-0520: If it were available outside the class definition, code could use the attribute order without extra boilerplate, such as a metaclass or a manual list of attribute names.",
+   "opus/2008-non-exhaustive: A downstream crate can build a value with a struct literal, `Options { verbose: true, depth: 3 }`, or destructure it with a pattern that names every field."
+  ]
+ },
+ {
+  "unit": "expensive",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 4.1,
+  "skill_per1k": 0.507,
+  "noskill_per1k": 0.067,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.0737,
+  "skill_docs": 23,
+  "topics": 17,
+  "models": {
+   "opus": 8,
+   "sonnet": 12,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/pep-0296: This is the decision that is most expensive to reverse, so it needs the most justification.",
+   "opus/pep-0590: The C API is the decision in this PEP that is most expensive to reverse.",
+   "opus/pep-0504: The decision is moderately expensive to reverse.",
+   "opus/pep-0327: This decision is expensive to reverse."
+  ]
+ },
+ {
+  "unit": "proposes",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 4.2,
+  "skill_per1k": 2.008,
+  "noskill_per1k": 1.057,
+  "human_orig_per1k": 1.156,
+  "human_base_per1k": 0.973,
+  "skill_docs": 62,
+  "topics": 29,
+  "models": {
+   "opus": 20,
+   "sonnet": 22,
+   "haiku": 20
+  },
+  "examples": [
+   "opus/pep-0296: This PEP proposes a new standard type, `bytes`, together with a builtin constructor of the same name.",
+   "opus/pep-3141: The PEP proposes to register the built-in types as follows: `complex` as `Complex`, `float` as `Real`, and `int` as `Integral`.",
+   "opus/pep-0651: This PEP proposes that Python treat machine stack overflow differently from runaway recursion.",
+   "opus/pep-0532: This PEP proposes a circuit breaking protocol, made of two new special methods named `__then__` and `__else__`, that lets the type of the deciding operand choose the value an expression produces when evaluation stops ear"
+  ]
+ },
+ {
+  "unit": "decisions",
+  "z_vs_human": 3.6,
+  "z_vs_noskill": 3.8,
+  "skill_per1k": 0.662,
+  "noskill_per1k": 0.201,
+  "human_orig_per1k": 0.145,
+  "human_base_per1k": 0.2415,
+  "skill_docs": 22,
+  "topics": 15,
+  "models": {
+   "opus": 9,
+   "sonnet": 9,
+   "haiku": 4
+  },
+  "examples": [
+   "opus/pep-0296: Everything else in the specification is open, and is laid out in the next section as a set of decisions.",
+   "opus/pep-0520: The following decisions need to be stated and justified.",
+   "opus/pep-0504: ## Design decisions",
+   "opus/pep-0346: ## Design decisions"
+  ]
+ },
+ {
+  "unit": "code",
+  "z_vs_human": 6.6,
+  "z_vs_noskill": 0.7,
+  "skill_per1k": 8.517,
+  "noskill_per1k": 8.146,
+  "human_orig_per1k": 4.935,
+  "human_base_per1k": 5.5323,
+  "skill_docs": 103,
+  "topics": 40,
+  "models": {
+   "opus": 36,
+   "sonnet": 36,
+   "haiku": 31
+  },
+  "examples": [
+   "opus/pep-0296: For each implementation on that list, the PEP needs the specific property that disqualifies it as the general container, and one short piece of code that is awkward, slow or wrong with it today.",
+   "opus/pep-3141: The ABCs are useful only if they mirror distinctions that already matter to code.",
+   "opus/2115-argument-lifetimes: It does not remove it, because the lint is a style lint and code may allow it.",
+   "opus/pep-0223: It argues that the change leads to clearer expression in all kinds of string, a cleaner story for Unicode, better compatibility with Perl regular expressions, and minimal risk to existing code."
+  ]
+ },
+ {
+  "unit": "reverse",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 3.8,
+  "skill_per1k": 0.53,
+  "noskill_per1k": 0.12,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.0761,
+  "skill_docs": 22,
+  "topics": 17,
+  "models": {
+   "opus": 9,
+   "sonnet": 11,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/pep-0296: This is the decision that is most expensive to reverse, so it needs the most justification.",
+   "opus/pep-0590: The C API is the decision in this PEP that is most expensive to reverse.",
+   "opus/pep-0504: The decision is moderately expensive to reverse.",
+   "opus/2316-safe-unsafe-trait-methods: The reverse is not allowed: if the trait declares a safe `fn`, an `impl` may not declare it `unsafe fn`, because generic callers rely on being able to call it without an `unsafe` block."
+  ]
+ },
+ {
+  "unit": "costs",
+  "z_vs_human": 3.8,
+  "z_vs_noskill": 3.5,
+  "skill_per1k": 0.64,
+  "noskill_per1k": 0.214,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.0642,
+  "skill_docs": 23,
+  "topics": 20,
+  "models": {
+   "opus": 9,
+   "sonnet": 9,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: This RFC removes the declaration cost, so that requiring the annotation on structs no longer costs a `<'a>` list.",
+   "opus/pep-0520: Both options have costs.",
+   "opus/2008-non-exhaustive: Both workarounds have costs that the attribute removes:",
+   "opus/2316-safe-unsafe-trait-methods: That `unsafe` block has two costs."
+  ]
+ },
+ {
+  "unit": "evidence",
+  "z_vs_human": 3.3,
+  "z_vs_noskill": 4.0,
+  "skill_per1k": 0.463,
+  "noskill_per1k": 0.04,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.044,
+  "skill_docs": 18,
+  "topics": 15,
+  "models": {
+   "opus": 3,
+   "sonnet": 12,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/pep-0223: This is a compatibility claim, and it needs evidence.",
+   "opus/1445-restrict-constants-in-patterns: That is a compatibility claim, and it needs evidence.",
+   "opus/1774-roadmap-2017: The reason for choosing productivity over other themes, such as new language features or new platforms, must come from evidence about where users struggle.",
+   "sonnet/pep-0651: The abstract's phrase \"additional safety guarantees\" suggests the protection is retained or strengthened, but the material has no evidence on whether any existing program changes behavior."
+  ]
+ },
+ {
+  "unit": "describes",
+  "z_vs_human": 4.0,
+  "z_vs_noskill": 3.3,
+  "skill_per1k": 0.684,
+  "noskill_per1k": 0.268,
+  "human_orig_per1k": 0.062,
+  "human_base_per1k": 0.2522,
+  "skill_docs": 26,
+  "topics": 20,
+  "models": {
+   "opus": 6,
+   "sonnet": 11,
+   "haiku": 9
+  },
+  "examples": [
+   "opus/pep-0520: A tuple is suggested, because it is immutable, which signals that the order describes the class body and is not a mutable registry.",
+   "opus/2008-non-exhaustive: The abstract describes this RFC as a post-1.0 version of RFC 757, with some additions.",
+   "opus/pep-0234: This version of the PEP describes the implementation checked into the trunk of the Python 2.2 CVS tree.",
+   "opus/pep-0327: [TODO] describes a context; the author should say whether `Decimal` uses a context object, whether that context is per thread, and how a program changes it for one block of code.]"
+  ]
+ },
+ {
+  "unit": "nothing",
+  "z_vs_human": 5.4,
+  "z_vs_noskill": 1.8,
+  "skill_per1k": 1.368,
+  "noskill_per1k": 1.003,
+  "human_orig_per1k": 0.248,
+  "human_base_per1k": 0.2569,
+  "skill_docs": 42,
+  "topics": 31,
+  "models": {
+   "opus": 20,
+   "sonnet": 19,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/pep-3141: Code that does not import the new module sees new superclasses on the built-in types, through `isinstance` and `issubclass`, and nothing else.",
+   "opus/2115-argument-lifetimes: Nothing in the return type tells the reader that the result borrows from `v`.",
+   "opus/1445-restrict-constants-in-patterns: Two ways of asking \"is this value `HELLO`?\" give different answers, and nothing in the source of `check` warns the reader.",
+   "opus/2008-non-exhaustive: Every `match` needs a wildcard, even when the downstream author handles all current variants and has nothing sensible to do for an unknown one."
+  ]
+ },
+ {
+  "unit": "holds",
+  "z_vs_human": 3.9,
+  "z_vs_noskill": 3.3,
+  "skill_per1k": 0.816,
+  "noskill_per1k": 0.348,
+  "human_orig_per1k": 0.206,
+  "human_base_per1k": 0.1011,
+  "skill_docs": 30,
+  "topics": 21,
+  "models": {
+   "opus": 14,
+   "sonnet": 8,
+   "haiku": 8
+  },
+  "examples": [
+   "opus/pep-0296: In current Python, `str` already holds 8-bit data, so `bytes` and `str` overlap.",
+   "opus/pep-3141: `Real` adds what holds for real numbers and not for complex ones: the ordering comparisons `<`, `<=`, `>` and `>=`; conversion with `float()`; `math.floor`, `math.ceil` and `round`; and `//`, `%` and `divmod`.",
+   "opus/pep-0223: The current rule reads `41BC` as one hex number, so `s` holds a single character.",
+   "opus/pep-0590: A caller that holds its arguments in local variables or on the interpreter's value stack must therefore build a tuple, and often a dict, for every call."
+  ]
+ },
+ {
+  "unit": "deciding",
+  "z_vs_human": 3.3,
+  "z_vs_noskill": 3.9,
+  "skill_per1k": 0.485,
+  "noskill_per1k": 0.027,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.05,
+  "skill_docs": 21,
+  "topics": 16,
+  "models": {
+   "opus": 7,
+   "sonnet": 9,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/pep-0532: This PEP proposes a circuit breaking protocol, made of two new special methods named `__then__` and `__else__`, that lets the type of the deciding operand choose the value an expression produces when evaluation stops ear",
+   "opus/2316-safe-unsafe-trait-methods: The deciding reason for this design is that the information needed already exists in the `impl`: the implementor knows whether their body needs the precondition.",
+   "opus/pep-0327: [TODO] was the deciding reason for floating point, or give the actual reason.",
+   "opus/1040-duration-reform: The goal of this RFC is narrow: make it possible to stabilize timeout-taking APIs without deciding the conversion questions."
+  ]
+ },
+ {
+  "unit": "listed",
+  "z_vs_human": 3.6,
+  "z_vs_noskill": 3.5,
+  "skill_per1k": 0.596,
+  "noskill_per1k": 0.187,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.2783,
+  "skill_docs": 23,
+  "topics": 18,
+  "models": {
+   "opus": 10,
+   "sonnet": 5,
+   "haiku": 8
+  },
+  "examples": [
+   "opus/pep-0296: The options listed here were not supplied by the author.",
+   "opus/2115-argument-lifetimes: There are some additional, less important lints, listed under the reference-level explanation.",
+   "opus/pep-0532: The central question is whether one protocol should carry all the cases listed in the abstract, or whether PEP 505 and PEP 535 should keep separate, narrower mechanisms.",
+   "opus/pep-0383: - Whether the handler should be the default for any interfaces beyond the system interfaces listed here, for example for standard streams."
+  ]
+ },
+ {
+  "unit": "interface",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 3.9,
+  "skill_per1k": 1.809,
+  "noskill_per1k": 0.963,
+  "human_orig_per1k": 1.012,
+  "human_base_per1k": 0.7981,
+  "skill_docs": 23,
+  "topics": 13,
+  "models": {
+   "opus": 8,
+   "sonnet": 10,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/pep-0296: Suggested candidates are an integer size (with a stated fill value), an iterable of integers in `range(256)`, a `str`, and any object that exposes the buffer interface.",
+   "opus/pep-0504: - This PEP does not make the `random` module the recommended interface for cryptography.",
+   "opus/pep-0383: Every interface that passes a `str` to the operating system as a file name, argument or environment value encodes it with the file system encoding and the same handler.",
+   "opus/pep-0234: This document proposes an iteration interface that objects can provide to control the behavior of `for` loops."
+  ]
+ },
+ {
+  "unit": "fails",
+  "z_vs_human": 3.9,
+  "z_vs_noskill": 3.2,
+  "skill_per1k": 0.794,
+  "noskill_per1k": 0.348,
+  "human_orig_per1k": 0.186,
+  "human_base_per1k": 0.182,
+  "skill_docs": 29,
+  "topics": 22,
+  "models": {
+   "opus": 12,
+   "sonnet": 13,
+   "haiku": 4
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: The program usually still fails to compile, but with a borrow error that points at the use of the lifetime rather than at the typo.",
+   "opus/2845-supertrait-item-shadowing: The problem is that the ambiguity can appear without any change to the code that now fails.",
+   "opus/pep-0383: A program that lists a directory then fails because of one file it may not even care about.",
+   "opus/pep-0650: If installing `requires` fails, or the backend cannot be imported, the universal installer reports the failure and makes no changes to the target environment."
+  ]
+ },
+ {
+  "unit": "central",
+  "z_vs_human": 3.7,
+  "z_vs_noskill": 3.4,
+  "skill_per1k": 0.618,
+  "noskill_per1k": 0.214,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.05,
+  "skill_docs": 25,
+  "topics": 21,
+  "models": {
+   "opus": 7,
+   "sonnet": 8,
+   "haiku": 10
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: The central trade-off is between less ceremony and an explicit point of declaration.",
+   "opus/pep-0532: Whether this unification is worth its cost is the central question of this PEP, and the section \"Open questions\" returns to it.",
+   "opus/pep-0650: The central tension in this proposal is between interoperability and installer diversity.",
+   "opus/2834-cargo-report-future-incompat: ## The central tension: visibility against noise"
+  ]
+ },
+ {
+  "unit": "list",
+  "z_vs_human": 4.9,
+  "z_vs_noskill": 2.1,
+  "skill_per1k": 2.03,
+  "noskill_per1k": 1.498,
+  "human_orig_per1k": 0.785,
+  "human_base_per1k": 1.4714,
+  "skill_docs": 45,
+  "topics": 24,
+  "models": {
+   "opus": 14,
+   "sonnet": 16,
+   "haiku": 15
+  },
+  "examples": [
+   "opus/pep-0296: For each implementation on that list, the PEP needs the specific property that disqualifies it as the general container, and one short piece of code that is awkward, slow or wrong with it today.",
+   "opus/2115-argument-lifetimes: A lifetime that appears once in a signature must today also appear once in the `<...>` list before it.",
+   "opus/pep-0520: If it were available outside the class definition, code could use the attribute order without extra boilerplate, such as a metaclass or a manual list of attribute names.",
+   "opus/pep-0590: The full list of new functions (Calling an object)."
+  ]
+ },
+ {
+  "unit": "accepts",
+  "z_vs_human": 3.8,
+  "z_vs_noskill": 3.2,
+  "skill_per1k": 0.905,
+  "noskill_per1k": 0.428,
+  "human_orig_per1k": 0.268,
+  "human_base_per1k": 0.1523,
+  "skill_docs": 24,
+  "topics": 16,
+  "models": {
+   "opus": 10,
+   "sonnet": 10,
+   "haiku": 4
+  },
+  "examples": [
+   "opus/pep-0296: Which arguments the constructor accepts, and when it copies (Constructor arguments).",
+   "opus/pep-3141: A function that accepts numbers today has no standard way to ask what kind of number it was given.",
+   "opus/pep-0352: In Python 2.4 and earlier, the `raise` statement accepts an instance of any classic class, or the class itself.",
+   "opus/pep-3127: The grammar for integer literals in 3.0 accepts these forms:"
+  ]
+ },
+ {
+  "unit": "defines",
+  "z_vs_human": 4.6,
+  "z_vs_noskill": 2.4,
+  "skill_per1k": 1.346,
+  "noskill_per1k": 0.869,
+  "human_orig_per1k": 0.413,
+  "human_base_per1k": 0.2795,
+  "skill_docs": 43,
+  "topics": 25,
+  "models": {
+   "opus": 17,
+   "sonnet": 16,
+   "haiku": 10
+  },
+  "examples": [
+   "opus/pep-3141: This proposal defines a hierarchy of Abstract Base Classes (ABCs), as introduced by PEP 3119, to represent number-like classes.",
+   "opus/1445-restrict-constants-in-patterns: They disagree as soon as a type defines its own `PartialEq`:",
+   "opus/pep-0520: Code that already defines `__definition_order__` for its own purposes would be affected; the rule for user-supplied values above decides how.",
+   "opus/2845-supertrait-item-shadowing: Change item resolution for generics and trait objects so that a trait bound does not bring its supertraits' items into scope if the subtrait defines an item with the same name itself."
+  ]
+ },
+ {
+  "unit": "exists",
+  "z_vs_human": 4.4,
+  "z_vs_noskill": 2.6,
+  "skill_per1k": 0.971,
+  "noskill_per1k": 0.548,
+  "human_orig_per1k": 0.206,
+  "human_base_per1k": 0.3235,
+  "skill_docs": 34,
+  "topics": 22,
+  "models": {
+   "opus": 16,
+   "sonnet": 14,
+   "haiku": 4
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: The declaration exists only to bind the name.",
+   "opus/pep-0520: Since the information already exists while the class body runs, access to the definition order is a reasonable expectation.",
+   "opus/2008-non-exhaustive: The compiler cannot tell the downstream author that a new case exists and might need its own arm.",
+   "opus/pep-0532: Consider a circuit breaker type, here called `exists`, that wraps a value:"
+  ]
+ },
+ {
+  "unit": "reads",
+  "z_vs_human": 5.1,
+  "z_vs_noskill": 1.9,
+  "skill_per1k": 1.147,
+  "noskill_per1k": 0.789,
+  "human_orig_per1k": 0.165,
+  "human_base_per1k": 0.1023,
+  "skill_docs": 28,
+  "topics": 21,
+  "models": {
+   "opus": 15,
+   "sonnet": 8,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: Within a method, a short name such as `'a` then reads as the method's own lifetime, and a long name such as `'input` reads as the `impl`'s.",
+   "opus/pep-0223: The current rule reads `41BC` as one hex number, so `s` holds a single character.",
+   "opus/pep-0532: A reader who sees `x else y` must know that it is not part of a ternary expression, and `x if y` reads in English as a condition rather than as an operator whose value may be `y`.",
+   "opus/pep-0383: A Python 3 program reads a directory listing with `os.listdir()`, a command line with `sys.argv`, and the environment with `os.environ`."
+  ]
+ },
+ {
+  "unit": "name",
+  "z_vs_human": 3.9,
+  "z_vs_noskill": 3.0,
+  "skill_per1k": 5.715,
+  "noskill_per1k": 4.454,
+  "human_orig_per1k": 3.944,
+  "human_base_per1k": 2.6823,
+  "skill_docs": 57,
+  "topics": 29,
+  "models": {
+   "opus": 23,
+   "sonnet": 19,
+   "haiku": 15
+  },
+  "examples": [
+   "opus/pep-0296: This PEP proposes a new standard type, `bytes`, together with a builtin constructor of the same name.",
+   "opus/2115-argument-lifetimes: - Feature Name: `argument_lifetimes`",
+   "opus/pep-0223: A Unicode string can still name any code point.",
+   "opus/1445-restrict-constants-in-patterns: - Feature Name: `structural_match`"
+  ]
+ },
+ {
+  "unit": "existing",
+  "z_vs_human": 5.0,
+  "z_vs_noskill": 1.9,
+  "skill_per1k": 3.817,
+  "noskill_per1k": 3.144,
+  "human_orig_per1k": 2.023,
+  "human_base_per1k": 1.8009,
+  "skill_docs": 74,
+  "topics": 35,
+  "models": {
+   "opus": 28,
+   "sonnet": 25,
+   "haiku": 21
+  },
+  "examples": [
+   "opus/pep-0296: Without these, the first objection a reviewer will raise (\"why not use or extend the existing type?\") has no answer in the text.",
+   "opus/pep-3141: The PEP adds a module of ABCs and registers existing types with them.",
+   "opus/2115-argument-lifetimes: Existing code that writes `Iter<u8>` in a signature gets warnings, and the fix is to add `'_` in each place.",
+   "opus/pep-0223: It argues that the change leads to clearer expression in all kinds of string, a cleaner story for Unicode, better compatibility with Perl regular expressions, and minimal risk to existing code."
+  ]
+ },
+ {
+  "unit": "text",
+  "z_vs_human": 5.2,
+  "z_vs_noskill": 1.7,
+  "skill_per1k": 1.611,
+  "noskill_per1k": 1.231,
+  "human_orig_per1k": 0.454,
+  "human_base_per1k": 0.5947,
+  "skill_docs": 35,
+  "topics": 20,
+  "models": {
+   "opus": 8,
+   "sonnet": 14,
+   "haiku": 13
+  },
+  "examples": [
+   "opus/pep-0296: Without these, the first objection a reviewer will raise (\"why not use or extend the existing type?\") has no answer in the text.",
+   "opus/pep-0367: Moving a function from a class body to module level changes what `super` means, even though the source text of the function is unchanged.",
+   "opus/pep-0383: In valid Unicode text they appear only after a high surrogate, as the second half of a UTF-16 pair.",
+   "opus/2834-cargo-report-future-incompat: - The full warning text for each affected dependency can be retrieved after the build without rebuilding."
+  ]
+ },
+ {
+  "unit": "failure",
+  "z_vs_human": 4.0,
+  "z_vs_noskill": 2.9,
+  "skill_per1k": 0.75,
+  "noskill_per1k": 0.348,
+  "human_orig_per1k": 0.145,
+  "human_base_per1k": 0.2224,
+  "skill_docs": 24,
+  "topics": 19,
+  "models": {
+   "opus": 8,
+   "sonnet": 16,
+   "haiku": 0
+  },
+  "examples": [
+   "opus/pep-3141: It can test `isinstance(x, (int, float))`, which rejects numeric types defined outside the core, or it can try an operation and catch the failure, which does not tell it whether, for example, `x` has an exact numerator a",
+   "opus/pep-0650: Each install and uninstall function returns zero on success and nonzero on failure.",
+   "opus/1869-eprintln: The `print!` family has a second advantage beyond length: its behavior on failure is already decided.",
+   "opus/pep-3127: If 3.0 read it as decimal, the program would keep running with the wrong value, which is the same silent failure the motivation describes, now in the opposite direction."
+  ]
+ },
+ {
+  "unit": "compiles",
+  "z_vs_human": 3.1,
+  "z_vs_noskill": 3.8,
+  "skill_per1k": 0.485,
+  "noskill_per1k": 0.094,
+  "human_orig_per1k": 0.021,
+  "human_base_per1k": 0.0428,
+  "skill_docs": 11,
+  "topics": 8,
+  "models": {
+   "opus": 6,
+   "sonnet": 3,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/2008-non-exhaustive: When a library adds a variant to a non-exhaustive enum, downstream code still compiles, and the new variant goes to the wildcard arm.",
+   "opus/2845-supertrait-item-shadowing: With this RFC, the example above compiles, and `x.describe()` calls `Sub::describe`:",
+   "opus/2316-safe-unsafe-trait-methods: A reader who looks up `ReadAt::read_at` sees `unsafe fn`, but the call `c.read_at(1)` compiles without an `unsafe` block.",
+   "opus/2834-cargo-report-future-incompat: When a build compiles a dependency whose code triggers a future-incompatibility warning, Cargo tells the developer which dependency it is."
+  ]
+ },
+ {
+  "unit": "therefore",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 3.4,
+  "skill_per1k": 1.258,
+  "noskill_per1k": 0.642,
+  "human_orig_per1k": 0.557,
+  "human_base_per1k": 0.5507,
+  "skill_docs": 44,
+  "topics": 29,
+  "models": {
+   "opus": 22,
+   "sonnet": 14,
+   "haiku": 8
+  },
+  "examples": [
+   "opus/2008-non-exhaustive: Library authors therefore need to decide when they first publish a type.",
+   "opus/pep-0590: A caller that holds its arguments in local variables or on the interpreter's value stack must therefore build a tuple, and often a dict, for every call.",
+   "opus/pep-0651: The PEP therefore requires that the interpreter execute such calls without a nested call to the C evaluation function.",
+   "opus/pep-0532: Ordinary objects therefore keep their current behavior."
+  ]
+ },
+ {
+  "unit": "binds",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 3.6,
+  "skill_per1k": 0.53,
+  "noskill_per1k": 0.134,
+  "human_orig_per1k": 0.021,
+  "human_base_per1k": 0.0607,
+  "skill_docs": 12,
+  "topics": 8,
+  "models": {
+   "opus": 8,
+   "sonnet": 3,
+   "haiku": 1
+  },
+  "examples": [
+   "opus/pep-0296: Code that already binds the name `bytes`, for example as a local variable, a function parameter or a module-level global, takes precedence over the builtin under Python's normal name lookup.",
+   "opus/2115-argument-lifetimes: A signature binds any lifetime it mentions that is not already bound.",
+   "opus/pep-0520: The class body implicitly binds names such as `__module__` and `__qualname__`.",
+   "opus/pep-0504: At import time, the `random` module binds its module-level functions to an instance of `random.SystemRandom` instead of an instance of `random.Random`."
+  ]
+ },
+ {
+  "unit": "callers",
+  "z_vs_human": 4.7,
+  "z_vs_noskill": 2.1,
+  "skill_per1k": 1.015,
+  "noskill_per1k": 0.655,
+  "human_orig_per1k": 0.165,
+  "human_base_per1k": 0.0464,
+  "skill_docs": 15,
+  "topics": 9,
+  "models": {
+   "opus": 7,
+   "sonnet": 5,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/pep-0590: Callers do not need to know which path is taken.",
+   "opus/2316-safe-unsafe-trait-methods: By leaving off `unsafe`, you promise that callers of `Checked::read_at` do not need to uphold the trait's safety precondition.",
+   "opus/pep-0383: Every caller must then handle a list that mixes `str` and `bytes`, and most callers will not.",
+   "opus/1040-duration-reform: For a timeout, truncation means waking early, and some callers treat an early wakeup as a spurious one and loop."
+  ]
+ },
+ {
+  "unit": "step",
+  "z_vs_human": 4.7,
+  "z_vs_noskill": 2.1,
+  "skill_per1k": 1.037,
+  "noskill_per1k": 0.682,
+  "human_orig_per1k": 0.186,
+  "human_base_per1k": 0.3426,
+  "skill_docs": 22,
+  "topics": 18,
+  "models": {
+   "opus": 9,
+   "sonnet": 8,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/pep-0327: Rounding to two places is a separate, explicit step.",
+   "opus/3173-float-next-up-down: With them, a program can step through the floating-point values of a type in order, one value at a time.",
+   "opus/pep-0352: Leaving aside the hierarchy question above, step 1 does not change the behavior of `raise` for code that runs on 2.4.",
+   "opus/2603-rust-symbol-name-mangling-v0: Rollback before step 3 is the removal of the option."
+  ]
+ },
+ {
+  "unit": "answer",
+  "z_vs_human": 3.8,
+  "z_vs_noskill": 3.0,
+  "skill_per1k": 0.794,
+  "noskill_per1k": 0.375,
+  "human_orig_per1k": 0.206,
+  "human_base_per1k": 0.1308,
+  "skill_docs": 26,
+  "topics": 18,
+  "models": {
+   "opus": 6,
+   "sonnet": 11,
+   "haiku": 9
+  },
+  "examples": [
+   "opus/pep-0296: Without these, the first objection a reviewer will raise (\"why not use or extend the existing type?\") has no answer in the text.",
+   "opus/pep-0520: Each one comes with a suggested answer for the author to evaluate.",
+   "opus/pep-0327: Or they can use `float` and round at the end, which gives the right answer in most cases and the wrong answer in a few, without saying which.",
+   "opus/1040-duration-reform: Neither answer is wrong."
+  ]
+ },
+ {
+  "unit": "abstract pep",
+  "z_vs_human": 4.1,
+  "z_vs_noskill": 2.7,
+  "skill_per1k": 0.949,
+  "noskill_per1k": 0.522,
+  "human_orig_per1k": 0.248,
+  "human_base_per1k": 0.2522,
+  "skill_docs": 43,
+  "topics": 18,
+  "models": {
+   "opus": 11,
+   "sonnet": 18,
+   "haiku": 14
+  },
+  "examples": [
+   "opus/pep-0532: The central question is whether one protocol should carry all the cases listed in the abstract, or whether PEP 505 and PEP 535 should keep separate, narrower mechanisms.",
+   "sonnet/pep-0590: The note in the abstract limits the PEP to the Python/C API.",
+   "sonnet/pep-0383: The abstract says the PEP embeds undecodable bytes \"in character strings in such a way that allows recreation of the original byte string.\" It does not state which characters carry the embedded bytes.",
+   "sonnet/pep-0234: The abstract notes that the PEP now describes the implementation already checked into the trunk of the 2.2 CVS tree, while also saying that the PEP is open for discussion."
+  ]
+ },
+ {
+  "unit": "existing code",
+  "z_vs_human": 4.3,
+  "z_vs_noskill": 2.5,
+  "skill_per1k": 0.993,
+  "noskill_per1k": 0.589,
+  "human_orig_per1k": 0.248,
+  "human_base_per1k": 0.1487,
+  "skill_docs": 25,
+  "topics": 17,
+  "models": {
+   "opus": 10,
+   "sonnet": 7,
+   "haiku": 8
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: Existing code that writes `Iter<u8>` in a signature gets warnings, and the fix is to add `'_` in each place.",
+   "opus/pep-0223: It argues that the change leads to clearer expression in all kinds of string, a cleaner story for Unicode, better compatibility with Perl regular expressions, and minimal risk to existing code.",
+   "opus/1445-restrict-constants-in-patterns: This RFC introduces mechanisms that rein in those semantics without breaking much, if any, existing code:",
+   "opus/pep-0367: The cost is that any existing code that binds `super`, such as a parameter named `super`, stops compiling."
+  ]
+ },
+ {
+  "unit": "standard",
+  "z_vs_human": 4.7,
+  "z_vs_noskill": 2.0,
+  "skill_per1k": 3.905,
+  "noskill_per1k": 3.184,
+  "human_orig_per1k": 2.189,
+  "human_base_per1k": 2.2196,
+  "skill_docs": 42,
+  "topics": 22,
+  "models": {
+   "opus": 14,
+   "sonnet": 18,
+   "haiku": 10
+  },
+  "examples": [
+   "opus/pep-0296: This PEP proposes a new standard type, `bytes`, together with a builtin constructor of the same name.",
+   "opus/pep-3141: A function that accepts numbers today has no standard way to ask what kind of number it was given.",
+   "opus/pep-0590: It does not affect the Python language or the standard library.",
+   "opus/pep-0383: - Whether the handler should be the default for any interfaces beyond the system interfaces listed here, for example for standard streams."
+  ]
+ },
+ {
+  "unit": "pep proposes",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 3.5,
+  "skill_per1k": 1.214,
+  "noskill_per1k": 0.602,
+  "human_orig_per1k": 0.578,
+  "human_base_per1k": 0.5008,
+  "skill_docs": 44,
+  "topics": 19,
+  "models": {
+   "opus": 16,
+   "sonnet": 16,
+   "haiku": 12
+  },
+  "examples": [
+   "opus/pep-0296: This PEP proposes a new standard type, `bytes`, together with a builtin constructor of the same name.",
+   "opus/pep-3141: The PEP proposes to register the built-in types as follows: `complex` as `Complex`, `float` as `Real`, and `int` as `Integral`.",
+   "opus/pep-0651: This PEP proposes that Python treat machine stack overflow differently from runaway recursion.",
+   "opus/pep-0532: This PEP proposes a circuit breaking protocol, made of two new special methods named `__then__` and `__else__`, that lets the type of the deciding operand choose the value an expression produces when evaluation stops ear"
+  ]
+ },
+ {
+  "unit": "claims",
+  "z_vs_human": 2.9,
+  "z_vs_noskill": 3.7,
+  "skill_per1k": 0.419,
+  "noskill_per1k": 0.027,
+  "human_orig_per1k": 0.021,
+  "human_base_per1k": 0.0131,
+  "skill_docs": 17,
+  "topics": 12,
+  "models": {
+   "opus": 7,
+   "sonnet": 4,
+   "haiku": 6
+  },
+  "examples": [
+   "opus/pep-0296: The proposal rests on two claims: none of those objects is the right general-purpose container for binary data, and a dedicated builtin type fixes that.",
+   "opus/pep-0223: The abstract claims four effects.",
+   "opus/1445-restrict-constants-in-patterns: The abstract claims that the change breaks \"not much, if any\" existing code.",
+   "opus/pep-0590: Until these numbers exist, the PEP claims only that vectorcall removes the construction of an argument tuple and a keyword dict when the caller already holds the arguments in an array."
+  ]
+ },
+ {
+  "unit": "rust rfc",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 3.2,
+  "skill_per1k": 0.507,
+  "noskill_per1k": 0.161,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.0178,
+  "skill_docs": 23,
+  "topics": 12,
+  "models": {
+   "opus": 4,
+   "sonnet": 7,
+   "haiku": 12
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: # Rust RFC 2115: argument_lifetimes",
+   "opus/1445-restrict-constants-in-patterns: # Rust RFC 1445: structural_match",
+   "opus/2008-non-exhaustive: # Rust RFC 2008: non_exhaustive",
+   "opus/2845-supertrait-item-shadowing: # Rust RFC 2845: supertrait_item_shadowing"
+  ]
+ },
+ {
+  "unit": "tool",
+  "z_vs_human": 4.0,
+  "z_vs_noskill": 2.6,
+  "skill_per1k": 1.147,
+  "noskill_per1k": 0.682,
+  "human_orig_per1k": 0.392,
+  "human_base_per1k": 0.3687,
+  "skill_docs": 16,
+  "topics": 13,
+  "models": {
+   "opus": 7,
+   "sonnet": 6,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/2316-safe-unsafe-trait-methods: It also adds an `unsafe` block to code that a reviewer or an audit tool must then inspect, although the block guards nothing.",
+   "opus/pep-0650: There is no standard file for declaring a project's dependencies, so dependencies written in one tool's format can be installed only by that tool, or by exporting them to a requirements file, which can lose information.",
+   "opus/1774-roadmap-2017: If several goals are missed, the roadmap loses credibility as a planning tool for the following year.",
+   "opus/2603-rust-symbol-name-mangling-v0: A tool cannot compute the symbol name of an item from its source-level description; it can only look the name up."
+  ]
+ },
+ {
+  "unit": "file",
+  "z_vs_human": 5.9,
+  "z_vs_noskill": 0.6,
+  "skill_per1k": 3.045,
+  "noskill_per1k": 2.863,
+  "human_orig_per1k": 1.218,
+  "human_base_per1k": 2.1994,
+  "skill_docs": 30,
+  "topics": 16,
+  "models": {
+   "opus": 14,
+   "sonnet": 10,
+   "haiku": 6
+  },
+  "examples": [
+   "opus/pep-0296: If they are mutable, a program can fill one in place from a file or socket, which avoids allocating a new object for each read.",
+   "opus/pep-0383: POSIX defines file names, environment variables and command line arguments as character data.",
+   "opus/pep-0346: Python code often needs to pair two actions around a block: acquire a lock and release it, open a file and close it, start a transaction and either commit or roll it back.",
+   "opus/pep-0234: The PEP also proposes specific iterators over the keys of a dictionary and over the lines of a file, and proposes that `dict.has_key(key)` may be spelled `key in dict`."
+  ]
+ },
+ {
+  "unit": "passes",
+  "z_vs_human": 3.7,
+  "z_vs_noskill": 2.8,
+  "skill_per1k": 0.618,
+  "noskill_per1k": 0.268,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.0797,
+  "skill_docs": 22,
+  "topics": 15,
+  "models": {
+   "opus": 12,
+   "sonnet": 6,
+   "haiku": 4
+  },
+  "examples": [
+   "opus/pep-3141: A third-party decimal or fixed-point type that registers as `Real` passes the check without `clamp` naming it.",
+   "opus/pep-0590: The fastcall convention passes positional arguments as a C array and keyword names as a tuple, without building an argument tuple or a keyword dict.",
+   "opus/pep-0651: Each level passes through C code, so each level uses machine stack.",
+   "opus/pep-0367: Code that passes the built-in as a value, for example `f = super`."
+  ]
+ },
+ {
+  "unit": "ends",
+  "z_vs_human": 2.8,
+  "z_vs_noskill": 3.6,
+  "skill_per1k": 0.397,
+  "noskill_per1k": 0.054,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.1356,
+  "skill_docs": 12,
+  "topics": 10,
+  "models": {
+   "opus": 5,
+   "sonnet": 7,
+   "haiku": 0
+  },
+  "examples": [
+   "opus/pep-0223: A reader must scan past the escape to know where it ends.",
+   "opus/pep-0346: When `BLOCK` ends, `__exit__()` resumes the generator.",
+   "opus/pep-0234: When `next()` raises `StopIteration`, the loop ends and runs its `else` clause, if any.",
+   "opus/1869-eprintln: For example, in `tool input.txt > out.txt`, an error message written to standard output ends up in `out.txt`, where the user does not see it and where it corrupts the result."
+  ]
+ },
+ {
+  "unit": "tension",
+  "z_vs_human": 3.0,
+  "z_vs_noskill": 3.4,
+  "skill_per1k": 0.441,
+  "noskill_per1k": 0.013,
+  "human_orig_per1k": 0.021,
+  "human_base_per1k": 0.0178,
+  "skill_docs": 17,
+  "topics": 13,
+  "models": {
+   "opus": 3,
+   "sonnet": 7,
+   "haiku": 7
+  },
+  "examples": [
+   "opus/pep-0650: The central tension in this proposal is between interoperability and installer diversity.",
+   "opus/2834-cargo-report-future-incompat: ## The central tension: visibility against noise",
+   "opus/2603-rust-symbol-name-mangling-v0: This is the central tension of the design: the more information a symbol name carries, the longer it is.",
+   "sonnet/2845-supertrait-item-shadowing: The first drawback is the main tension of the RFC."
+  ]
+ },
+ {
+  "unit": "todo",
+  "z_vs_human": 5.5,
+  "z_vs_noskill": 0.9,
+  "skill_per1k": 2.14,
+  "noskill_per1k": 0.0,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.0178,
+  "skill_docs": 28,
+  "topics": 28,
+  "models": {
+   "opus": 1,
+   "sonnet": 27,
+   "haiku": 0
+  },
+  "examples": [
+   "opus/pep-0296: Author:         [TODO]",
+   "opus/pep-3141: Author:         [TODO]",
+   "opus/2115-argument-lifetimes: - Start Date: [TODO]",
+   "opus/pep-0223: Author:         [TODO]"
+  ]
+ },
+ {
+  "unit": "wants",
+  "z_vs_human": 4.2,
+  "z_vs_noskill": 2.1,
+  "skill_per1k": 1.037,
+  "noskill_per1k": 0.682,
+  "human_orig_per1k": 0.289,
+  "human_base_per1k": 0.1653,
+  "skill_docs": 32,
+  "topics": 21,
+  "models": {
+   "opus": 10,
+   "sonnet": 16,
+   "haiku": 6
+  },
+  "examples": [
+   "opus/pep-0532: Each of those proposals wants an expression that stops evaluating early under a condition other than plain truth.",
+   "opus/pep-0504: The reason for switching on `seed()` is that a program which calls `seed()` has declared that it wants a repeatable sequence.",
+   "opus/pep-0383: A program that wants correctness would then need to use bytes throughout, which is the situation the `str` interfaces were meant to avoid.",
+   "opus/pep-0234: This works for lists, tuples and strings, but it forces any other object that wants to support `for` to pretend to be a sequence."
+  ]
+ },
+ {
+  "unit": "signature",
+  "z_vs_human": 5.5,
+  "z_vs_noskill": 0.8,
+  "skill_per1k": 1.456,
+  "noskill_per1k": 1.271,
+  "human_orig_per1k": 0.289,
+  "human_base_per1k": 0.3985,
+  "skill_docs": 23,
+  "topics": 14,
+  "models": {
+   "opus": 14,
+   "sonnet": 6,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: A signature binds any lifetime it mentions that is not already bound.",
+   "opus/pep-0590: Its signature is",
+   "opus/2845-supertrait-item-shadowing: This matters most when the two items have the same signature but different behavior.",
+   "opus/2316-safe-unsafe-trait-methods: Yet the signature says `unsafe fn`, and every caller who holds a `Checked` must write"
+  ]
+ },
+ {
+  "unit": "quo",
+  "z_vs_human": 2.9,
+  "z_vs_noskill": 3.4,
+  "skill_per1k": 0.441,
+  "noskill_per1k": 0.107,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.132,
+  "skill_docs": 19,
+  "topics": 16,
+  "models": {
+   "opus": 10,
+   "sonnet": 7,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/2316-safe-unsafe-trait-methods: - Keep the status quo, with a forwarding inherent method.",
+   "opus/3173-float-next-up-down: The status quo is that each program writes the bit manipulation itself or uses a crate.",
+   "opus/2834-cargo-report-future-incompat: The status quo leaves the warning period ineffective for dependencies, as the motivation describes.",
+   "opus/2093-infer-outlives: The status quo keeps the requirements visible at the cost of mechanical annotations."
+  ]
+ },
+ {
+  "unit": "status quo",
+  "z_vs_human": 2.9,
+  "z_vs_noskill": 3.4,
+  "skill_per1k": 0.441,
+  "noskill_per1k": 0.107,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.132,
+  "skill_docs": 19,
+  "topics": 16,
+  "models": {
+   "opus": 10,
+   "sonnet": 7,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/2316-safe-unsafe-trait-methods: - Keep the status quo, with a forwarding inherent method.",
+   "opus/3173-float-next-up-down: The status quo is that each program writes the bit manipulation itself or uses a crate.",
+   "opus/2834-cargo-report-future-incompat: The status quo leaves the warning period ineffective for dependencies, as the motivation describes.",
+   "opus/2093-infer-outlives: The status quo keeps the requirements visible at the cost of mechanical annotations."
+  ]
+ },
+ {
+  "unit": "specification",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 3.0,
+  "skill_per1k": 1.92,
+  "noskill_per1k": 1.217,
+  "human_orig_per1k": 1.094,
+  "human_base_per1k": 0.7958,
+  "skill_docs": 59,
+  "topics": 26,
+  "models": {
+   "opus": 21,
+   "sonnet": 18,
+   "haiku": 20
+  },
+  "examples": [
+   "opus/pep-0296: Everything else in the specification is open, and is laid out in the next section as a set of decisions.",
+   "opus/pep-0520: ## Specification",
+   "opus/pep-0590: ## Specification",
+   "opus/pep-0532: ## Specification"
+  ]
+ },
+ {
+  "unit": "classes",
+  "z_vs_human": 3.7,
+  "z_vs_noskill": 2.5,
+  "skill_per1k": 2.03,
+  "noskill_per1k": 1.418,
+  "human_orig_per1k": 1.074,
+  "human_base_per1k": 0.8743,
+  "skill_docs": 19,
+  "topics": 9,
+  "models": {
+   "opus": 8,
+   "sonnet": 7,
+   "haiku": 4
+  },
+  "examples": [
+   "opus/pep-3141: This proposal defines a hierarchy of Abstract Base Classes (ABCs), as introduced by PEP 3119, to represent number-like classes.",
+   "opus/pep-0520: ### Classes not defined by a class statement",
+   "opus/pep-0346: Classes that already manage a resource, such as locks and files, can implement the methods directly, and the decorator covers the case where a generator is easier to write.",
+   "opus/pep-0234: Rule 2 is what keeps existing sequence classes working in `for` loops."
+  ]
+ },
+ {
+  "unit": "item",
+  "z_vs_human": 4.5,
+  "z_vs_noskill": 1.7,
+  "skill_per1k": 1.456,
+  "noskill_per1k": 1.097,
+  "human_orig_per1k": 0.496,
+  "human_base_per1k": 0.5888,
+  "skill_docs": 17,
+  "topics": 10,
+  "models": {
+   "opus": 8,
+   "sonnet": 4,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: The lifetime is added to that item's generic parameters in order of first appearance.",
+   "opus/2008-non-exhaustive: Compared with the hidden-variant and private-field workarounds, the attribute states the author's intent directly, removes the dummy item, and has no effect inside the defining crate.",
+   "opus/2845-supertrait-item-shadowing: Change item resolution for generics and trait objects so that a trait bound does not bring its supertraits' items into scope if the subtrait defines an item with the same name itself.",
+   "opus/2316-safe-unsafe-trait-methods: Naming the method as a value, as in `<Checked as ReadAt>::read_at`, gives a function item."
+  ]
+ },
+ {
+  "unit": "behind",
+  "z_vs_human": 3.0,
+  "z_vs_noskill": 3.2,
+  "skill_per1k": 0.397,
+  "noskill_per1k": 0.094,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.1344,
+  "skill_docs": 17,
+  "topics": 15,
+  "models": {
+   "opus": 8,
+   "sonnet": 5,
+   "haiku": 4
+  },
+  "examples": [
+   "opus/1445-restrict-constants-in-patterns: The attribute is behind a feature gate, so stable code cannot write it directly.",
+   "opus/pep-0504: The force behind this decision is the one described in the motivation: the developers at risk are those who do not know their work is security-sensitive, and a warning in documentation does not reach them.",
+   "opus/pep-0346: The generator form also hides the call to `__exit__()` behind the decorator, so a reader must understand both generators and the decorator to follow the control flow.",
+   "opus/pep-0327: The force behind this decision is that the type must serve both calculations that need a fixed number of decimal places, such as currency, and calculations that do not, such as a rate compounded over many periods."
+  ]
+ },
+ {
+  "unit": "parts",
+  "z_vs_human": 2.7,
+  "z_vs_noskill": 3.5,
+  "skill_per1k": 0.86,
+  "noskill_per1k": 0.361,
+  "human_orig_per1k": 0.413,
+  "human_base_per1k": 0.2867,
+  "skill_docs": 26,
+  "topics": 15,
+  "models": {
+   "opus": 8,
+   "sonnet": 11,
+   "haiku": 7
+  },
+  "examples": [
+   "opus/2316-safe-unsafe-trait-methods: All other parts of the signature must match the trait as they do today.",
+   "opus/pep-0346: It takes the parts of PEP 340 that this PEP's author considers sound, combines them with parts of PEP 310, and arranges the result into one proposal for a statement that runs setup code before a block and cleanup code af",
+   "opus/2834-cargo-report-future-incompat: The mechanism has three parts.",
+   "opus/pep-3127: The parts that do not break existing code are also added to Python 2.6, so that every integer literal valid in 3.0 is also valid in 2.6."
+  ]
+ },
+ {
+  "unit": "carries",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 2.7,
+  "skill_per1k": 0.64,
+  "noskill_per1k": 0.294,
+  "human_orig_per1k": 0.021,
+  "human_base_per1k": 0.0333,
+  "skill_docs": 24,
+  "topics": 17,
+  "models": {
+   "opus": 9,
+   "sonnet": 8,
+   "haiku": 7
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: The reader must know that `Iter` carries a lifetime.",
+   "opus/1445-restrict-constants-in-patterns: When the compiler expands a constant of struct or enum type into an equivalent pattern, require that the type carries `#[structural_match]`.",
+   "opus/pep-0520: Every class created by a class statement carries one extra tuple.",
+   "opus/2603-rust-symbol-name-mangling-v0: This is the central tension of the design: the more information a symbol name carries, the longer it is."
+  ]
+ },
+ {
+  "unit": "add",
+  "z_vs_human": 2.8,
+  "z_vs_noskill": 3.3,
+  "skill_per1k": 1.809,
+  "noskill_per1k": 1.07,
+  "human_orig_per1k": 1.115,
+  "human_base_per1k": 1.6332,
+  "skill_docs": 47,
+  "topics": 30,
+  "models": {
+   "opus": 18,
+   "sonnet": 25,
+   "haiku": 4
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: Existing code that writes `Iter<u8>` in a signature gets warnings, and the fix is to add `'_` in each place.",
+   "opus/2008-non-exhaustive: On an enum, the attribute forces downstream crates to add a wildcard arm to `match` expressions, so that adding a new variant is not a breaking change.",
+   "opus/pep-0532: Today each such proposal must add its own syntax and its own rules for evaluation order.",
+   "opus/pep-0504: ### Why change the default rather than add warnings"
+  ]
+ },
+ {
+  "unit": "programs",
+  "z_vs_human": 5.8,
+  "z_vs_noskill": 0.2,
+  "skill_per1k": 1.875,
+  "noskill_per1k": 1.819,
+  "human_orig_per1k": 0.475,
+  "human_base_per1k": 0.2522,
+  "skill_docs": 42,
+  "topics": 26,
+  "models": {
+   "opus": 11,
+   "sonnet": 20,
+   "haiku": 11
+  },
+  "examples": [
+   "opus/pep-0296: Programs that read files in binary mode, parse network protocols, or hand buffers to C extensions all work with sequences of raw bytes.",
+   "opus/pep-0651: Programs could then set the maximum recursion depth to fit their needs, and the interpreter would give additional safety guarantees.",
+   "opus/pep-0532: If `and` and `or` are redefined through the protocol, existing programs keep their behavior for every type that does not define `__then__` or `__else__`.",
+   "opus/pep-0504: A program can get a repeatable sequence from the module-level functions today only by calling `seed()` or `setstate()`, so programs that rely on determinism keep working without changes."
+  ]
+ },
+ {
+  "unit": "read",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 2.4,
+  "skill_per1k": 1.743,
+  "noskill_per1k": 1.204,
+  "human_orig_per1k": 0.908,
+  "human_base_per1k": 0.7589,
+  "skill_docs": 45,
+  "topics": 29,
+  "models": {
+   "opus": 18,
+   "sonnet": 19,
+   "haiku": 8
+  },
+  "examples": [
+   "opus/pep-0296: Programs that read files in binary mode, parse network protocols, or hand buffers to C extensions all work with sequences of raw bytes.",
+   "opus/2115-argument-lifetimes: In `next_token`, `'input` refers to the lifetime bound by the `impl` header, because it is already bound when the method signature is read.",
+   "opus/pep-0223: The extra digits are read and then discarded.",
+   "opus/2008-non-exhaustive: Other crates can read the public fields, but they cannot write `Options { verbose: true, depth: 3 }`."
+  ]
+ },
+ {
+  "unit": "stores",
+  "z_vs_human": 3.3,
+  "z_vs_noskill": 2.6,
+  "skill_per1k": 0.485,
+  "noskill_per1k": 0.201,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.0749,
+  "skill_docs": 15,
+  "topics": 12,
+  "models": {
+   "opus": 6,
+   "sonnet": 6,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/pep-0296: Each instance stores its byte values compactly.",
+   "opus/pep-0327: Python's `float` stores a number as a binary fraction.",
+   "opus/2834-cargo-report-future-incompat: At the end of the build, if any package produced such a message, Cargo prints the summary note and stores the full report, so that the report command can display it later.",
+   "opus/pep-0352: The built-in exceptions inherit from `Exception`, which stores its constructor arguments in `args` and defines `__str__`."
+  ]
+ },
+ {
+  "unit": "mentions",
+  "z_vs_human": 2.8,
+  "z_vs_noskill": 3.1,
+  "skill_per1k": 0.353,
+  "noskill_per1k": 0.08,
+  "human_orig_per1k": 0.062,
+  "human_base_per1k": 0.0274,
+  "skill_docs": 9,
+  "topics": 6,
+  "models": {
+   "opus": 3,
+   "sonnet": 5,
+   "haiku": 1
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: A signature binds any lifetime it mentions that is not already bound.",
+   "opus/pep-0234: - The \"more esoteric\" points that the abstract mentions.",
+   "opus/2093-infer-outlives: A requirement that mentions a lifetime or type that is not a parameter of the struct being defined is not inferred.",
+   "sonnet/2115-argument-lifetimes: - A signature binds any lifetime it mentions that is not already bound."
+  ]
+ },
+ {
+  "unit": "downstream",
+  "z_vs_human": 4.2,
+  "z_vs_noskill": 1.7,
+  "skill_per1k": 1.037,
+  "noskill_per1k": 0.736,
+  "human_orig_per1k": 0.289,
+  "human_base_per1k": 0.1189,
+  "skill_docs": 9,
+  "topics": 5,
+  "models": {
+   "opus": 4,
+   "sonnet": 3,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/2008-non-exhaustive: On an enum, the attribute forces downstream crates to add a wildcard arm to `match` expressions, so that adding a new variant is not a breaking change.",
+   "opus/2316-safe-unsafe-trait-methods: Once a crate publishes `impl ReadAt for Checked` with a safe `read_at`, downstream code calls it without `unsafe`.",
+   "opus/2834-cargo-report-future-incompat: Cargo may also suggest what the maintainer of the downstream crate can do about it.",
+   "opus/2093-infer-outlives: The inferred requirement `T: 'a` appears on `Cache`, and a downstream crate that used `Cache<'a, T>` with a `T` that does not outlive `'a` stops compiling."
+  ]
+ },
+ {
+  "unit": "compiled",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 2.5,
+  "skill_per1k": 0.485,
+  "noskill_per1k": 0.214,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.2712,
+  "skill_docs": 11,
+  "topics": 7,
+  "models": {
+   "opus": 5,
+   "sonnet": 4,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/2008-non-exhaustive: Applying the attribute to an existing public type is itself a breaking change, because it rejects downstream code that compiled before.",
+   "opus/pep-0590: Once extension modules are compiled against a public signature or a public type slot, changing it breaks those modules.",
+   "opus/2603-rust-symbol-name-mangling-v0: A symbol name identifies a function or static to the linker, and to tools that read compiled code: debuggers, profilers, crash reporters, and disassemblers.",
+   "opus/1937-ques-in-main: The doctest change in step 3 changes how existing doctests are compiled."
+  ]
+ },
+ {
+  "unit": "reaches",
+  "z_vs_human": 2.7,
+  "z_vs_noskill": 3.2,
+  "skill_per1k": 0.331,
+  "noskill_per1k": 0.054,
+  "human_orig_per1k": 0.021,
+  "human_base_per1k": 0.0262,
+  "skill_docs": 13,
+  "topics": 9,
+  "models": {
+   "opus": 7,
+   "sonnet": 5,
+   "haiku": 1
+  },
+  "examples": [
+   "opus/3173-float-next-up-down: No fixed increment therefore reaches \"the next value\".",
+   "opus/1869-eprintln: Standard error is not buffered, so each `eprint!` call reaches the operating system when it returns.",
+   "opus/2930-read-buf: This is where the benefit reaches most users, because they call `read_to_end` and do not call `read_buf` directly.",
+   "opus/pep-0442: When the count reaches zero, the object's finalizer runs if the flag is clear."
+  ]
+ },
+ {
+  "unit": "stabilized",
+  "z_vs_human": 3.9,
+  "z_vs_noskill": 2.0,
+  "skill_per1k": 0.662,
+  "noskill_per1k": 0.388,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.1071,
+  "skill_docs": 6,
+  "topics": 4,
+  "models": {
+   "opus": 1,
+   "sonnet": 2,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/1040-duration-reform: These APIs cannot be stabilized until the type they take is stable.",
+   "sonnet/2008-non-exhaustive: The attribute is hard to reverse once stabilized: it is part of the public contract of every crate that uses it.",
+   "sonnet/1040-duration-reform: The stabilized surface is small enough that every method in it has no known caveat.",
+   "haiku/1040-duration-reform: A stabilized conversion keeps its behavior fixed across later releases, so a conversion with an unresolved caveat cannot be stabilized without deciding that caveat now."
+  ]
+ },
+ {
+  "unit": "carry",
+  "z_vs_human": 3.6,
+  "z_vs_noskill": 2.2,
+  "skill_per1k": 0.574,
+  "noskill_per1k": 0.308,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.0583,
+  "skill_docs": 23,
+  "topics": 19,
+  "models": {
+   "opus": 7,
+   "sonnet": 7,
+   "haiku": 9
+  },
+  "examples": [
+   "opus/2008-non-exhaustive: Whether unit structs and unit variants may carry the attribute (Unit structs and unit variants).",
+   "opus/pep-0590: The cost of staging is that third-party projects that adopt vectorcall in 3.8 depend on private names, which carry no compatibility promise.",
+   "opus/pep-0532: The central question is whether one protocol should carry all the cases listed in the abstract, or whether PEP 505 and PEP 535 should keep separate, narrower mechanisms.",
+   "opus/1869-eprintln: Two differences between the streams carry over to the macros, because they are properties of the streams, not of the macros:"
+  ]
+ },
+ {
+  "unit": "alone",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 2.4,
+  "skill_per1k": 0.507,
+  "noskill_per1k": 0.241,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.0952,
+  "skill_docs": 20,
+  "topics": 15,
+  "models": {
+   "opus": 8,
+   "sonnet": 7,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/pep-3141: A type that is numeric but fits none of the lower levels can register here alone.",
+   "opus/2115-argument-lifetimes: `'_` alone addresses that case without in-band binding.",
+   "opus/pep-0346: A `with` statement's effect depends on the manager, so a reader cannot tell from the statement alone whether an exception from the block will propagate.",
+   "opus/3173-float-next-up-down: For `-0.0`, whose bit pattern is the sign bit alone, adding one produces the smallest negative subnormal, which is less than `-0.0`."
+  ]
+ },
+ {
+  "unit": "removes",
+  "z_vs_human": 3.9,
+  "z_vs_noskill": 1.8,
+  "skill_per1k": 0.64,
+  "noskill_per1k": 0.401,
+  "human_orig_per1k": 0.062,
+  "human_base_per1k": 0.0714,
+  "skill_docs": 24,
+  "topics": 16,
+  "models": {
+   "opus": 10,
+   "sonnet": 8,
+   "haiku": 6
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: This RFC removes the declaration cost, so that requiring the annotation on structs no longer costs a `<'a>` list.",
+   "opus/2008-non-exhaustive: Both workarounds have costs that the attribute removes:",
+   "opus/pep-0590: Until these numbers exist, the PEP claims only that vectorcall removes the construction of an argument tuple and a keyword dict when the caller already holds the arguments in an array.",
+   "opus/pep-0651: A high limit removes the protection for the machine stack, and the program can then crash."
+  ]
+ },
+ {
+  "unit": "breaks",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 2.2,
+  "skill_per1k": 0.574,
+  "noskill_per1k": 0.308,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.0987,
+  "skill_docs": 20,
+  "topics": 16,
+  "models": {
+   "opus": 6,
+   "sonnet": 11,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/1445-restrict-constants-in-patterns: The abstract claims that the change breaks \"not much, if any\" existing code.",
+   "opus/pep-0590: Once extension modules are compiled against a public signature or a public type slot, changing it breaks those modules.",
+   "opus/pep-0352: A new-style class that does not derive from `BaseException` cannot be raised in 2.4, so the new restriction on new-style classes in step 1 breaks nothing.",
+   "opus/1869-eprintln: - Whether adding the names to the prelude breaks crates that define macros with the same names."
+  ]
+ },
+ {
+  "unit": "document",
+  "z_vs_human": 4.2,
+  "z_vs_noskill": 1.5,
+  "skill_per1k": 1.633,
+  "noskill_per1k": 1.284,
+  "human_orig_per1k": 0.681,
+  "human_base_per1k": 0.9409,
+  "skill_docs": 47,
+  "topics": 33,
+  "models": {
+   "opus": 7,
+   "sonnet": 13,
+   "haiku": 27
+  },
+  "examples": [
+   "opus/pep-0234: This document proposes an iteration interface that objects can provide to control the behavior of `for` loops.",
+   "opus/pep-0352: This document has been placed in the public domain.",
+   "opus/pep-0227: This document has been placed in the public domain.",
+   "opus/pep-3127: This document has been placed in the public domain."
+  ]
+ },
+ {
+  "unit": "gap",
+  "z_vs_human": 3.0,
+  "z_vs_noskill": 2.7,
+  "skill_per1k": 0.397,
+  "noskill_per1k": 0.134,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.0345,
+  "skill_docs": 9,
+  "topics": 7,
+  "models": {
+   "opus": 3,
+   "sonnet": 4,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/pep-0327: For a program that handles money, the gap is a correctness problem.",
+   "opus/3173-float-next-up-down: The gap between an `f64` and its neighbor is 2^-52 just above 1.0, 1.0 just above 2^52, and 2^-1074 between the smallest subnormals.",
+   "opus/pep-0352: The plan to allow new-style classes in 2.5 widens the gap.",
+   "sonnet/pep-0650: The abstract names the specific gap: there is no standard requirements file for declaring dependencies."
+  ]
+ },
+ {
+  "unit": "measure",
+  "z_vs_human": 2.6,
+  "z_vs_noskill": 3.1,
+  "skill_per1k": 0.353,
+  "noskill_per1k": 0.08,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.0476,
+  "skill_docs": 7,
+  "topics": 5,
+  "models": {
+   "opus": 1,
+   "sonnet": 3,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/1774-roadmap-2017: A goal that cannot be checked at the end of the year is not useful as a roadmap item, so each one has a measure.",
+   "sonnet/1774-roadmap-2017: The measure for each goal.",
+   "sonnet/3037-roadmap-2021: - The measure of success for each effort.",
+   "sonnet/pep-0439: That is a goal, and the supplied material gives no measure of it."
+  ]
+ },
+ {
+  "unit": "drawbacks",
+  "z_vs_human": 3.3,
+  "z_vs_noskill": 2.4,
+  "skill_per1k": 1.125,
+  "noskill_per1k": 0.696,
+  "human_orig_per1k": 0.496,
+  "human_base_per1k": 0.5817,
+  "skill_docs": 47,
+  "topics": 25,
+  "models": {
+   "opus": 25,
+   "sonnet": 17,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: ## Drawbacks",
+   "opus/1445-restrict-constants-in-patterns: ## Drawbacks",
+   "opus/2008-non-exhaustive: ## Drawbacks",
+   "opus/2845-supertrait-item-shadowing: ## Drawbacks"
+  ]
+ },
+ {
+  "unit": "field",
+  "z_vs_human": 4.6,
+  "z_vs_noskill": 1.1,
+  "skill_per1k": 2.515,
+  "noskill_per1k": 2.194,
+  "human_orig_per1k": 1.198,
+  "human_base_per1k": 1.0123,
+  "skill_docs": 18,
+  "topics": 10,
+  "models": {
+   "opus": 9,
+   "sonnet": 6,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/1445-restrict-constants-in-patterns: It asserts that, for this type, comparing two values field by field gives the same result as `==`.",
+   "opus/pep-0520: id = Field(int)",
+   "opus/2008-non-exhaustive: On a struct or an enum variant, it prevents downstream crates from constructing values and from matching exhaustively on fields, so that adding a new field is not a breaking change.",
+   "opus/3173-float-next-up-down: For `f64::MAX`, the result is infinity, which is correct, but only because of how the exponent field happens to overflow."
+  ]
+ },
+ {
+  "unit": "depend",
+  "z_vs_human": 4.3,
+  "z_vs_noskill": 1.3,
+  "skill_per1k": 0.883,
+  "noskill_per1k": 0.669,
+  "human_orig_per1k": 0.165,
+  "human_base_per1k": 0.2141,
+  "skill_docs": 33,
+  "topics": 25,
+  "models": {
+   "opus": 10,
+   "sonnet": 13,
+   "haiku": 10
+  },
+  "examples": [
+   "opus/pep-0296: The `repr` of a `bytes` object and its pickle format are both formats that other code will depend on.",
+   "opus/2115-argument-lifetimes: The rule also makes the meaning of a name inside a method depend on the enclosing `impl` header.",
+   "opus/pep-0590: The cost of staging is that third-party projects that adopt vectorcall in 3.8 depend on private names, which carry no compatibility promise.",
+   "opus/pep-0504: A developer who does not recognize the work as security-sensitive uses the module-level functions, and their users then depend on values an attacker may be able to predict, because Mersenne Twister output can be reconstr"
+  ]
+ },
+ {
+  "unit": "hierarchy",
+  "z_vs_human": 3.1,
+  "z_vs_noskill": 2.5,
+  "skill_per1k": 0.927,
+  "noskill_per1k": 0.535,
+  "human_orig_per1k": 0.392,
+  "human_base_per1k": 0.1356,
+  "skill_docs": 11,
+  "topics": 5,
+  "models": {
+   "opus": 5,
+   "sonnet": 3,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/pep-3141: # PEP 3141: A Type Hierarchy for Numbers",
+   "opus/2845-supertrait-item-shadowing: When the lookup finds candidates from a trait `Sub` and from one of its supertraits, directly or through a chain of supertraits, and `Sub` is a subtrait of the other trait, the candidate from the trait lower in the hiera",
+   "opus/pep-0651: Code that catches `RecursionError` to handle deep recursion is affected by the place of `StackOverflow` in the hierarchy (see above).",
+   "opus/pep-0367: Depending on the hierarchy, this either skips a class or calls the same method again."
+  ]
+ },
+ {
+  "unit": "knows",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 2.1,
+  "skill_per1k": 0.596,
+  "noskill_per1k": 0.334,
+  "human_orig_per1k": 0.124,
+  "human_base_per1k": 0.0892,
+  "skill_docs": 21,
+  "topics": 13,
+  "models": {
+   "opus": 11,
+   "sonnet": 8,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/pep-3141: An implementation's `__add__` handles operands of types it knows and returns `NotImplemented` for others.",
+   "opus/pep-0504: A developer who knows that a value is a session token, a password reset code or a nonce will use `secrets`-style interfaces such as `random.SystemRandom`.",
+   "opus/2316-safe-unsafe-trait-methods: Code that knows it has a `Checked` can then call the method without an `unsafe` block:",
+   "opus/pep-0650: A tool that knows nothing about that installer can install the project's dependencies by calling a standard interface."
+  ]
+ },
+ {
+  "unit": "plan",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 2.2,
+  "skill_per1k": 0.684,
+  "noskill_per1k": 0.388,
+  "human_orig_per1k": 0.186,
+  "human_base_per1k": 0.1963,
+  "skill_docs": 13,
+  "topics": 7,
+  "models": {
+   "opus": 4,
+   "sonnet": 6,
+   "haiku": 3
+  },
+  "examples": [
+   "opus/pep-0590: The plan is to finalize its semantics and make it public in Python 3.9.",
+   "opus/pep-0346: - The transition plan for the new keyword.",
+   "opus/pep-0352: The plan to allow new-style classes in 2.5 widens the gap.",
+   "opus/1937-ques-in-main: ## Deployment plan"
+  ]
+ },
+ {
+  "unit": "programmer",
+  "z_vs_human": 4.5,
+  "z_vs_noskill": 1.1,
+  "skill_per1k": 0.949,
+  "noskill_per1k": 0.749,
+  "human_orig_per1k": 0.165,
+  "human_base_per1k": 0.1927,
+  "skill_docs": 24,
+  "topics": 18,
+  "models": {
+   "opus": 7,
+   "sonnet": 11,
+   "haiku": 6
+  },
+  "examples": [
+   "opus/pep-0367: A programmer who writes them by hand can get them wrong in ways that do not fail immediately.",
+   "opus/pep-0346: The programmer must remember to put the acquisition outside the `try`, so that a failed acquisition does not trigger a release.",
+   "opus/1774-roadmap-2017: Reaching this goal means that a programmer who knows another systems or application language can write working Rust for everyday tasks sooner than today.",
+   "opus/2514-union-initialization-and-drop: To prevent the compiler from inserting a drop that the programmer did not ask for, it also restricts implicit uses of `DerefMut` on union fields."
+  ]
+ },
+ {
+  "unit": "learn",
+  "z_vs_human": 3.1,
+  "z_vs_noskill": 2.4,
+  "skill_per1k": 0.552,
+  "noskill_per1k": 0.268,
+  "human_orig_per1k": 0.145,
+  "human_base_per1k": 0.1059,
+  "skill_docs": 20,
+  "topics": 12,
+  "models": {
+   "opus": 7,
+   "sonnet": 9,
+   "haiku": 4
+  },
+  "examples": [
+   "opus/pep-0504: The difficulty is that the delay between introducing the flaw and someone exploiting it is often long, so the developer who made the choice rarely sees its consequence and cannot learn from it.",
+   "opus/pep-0346: The proposal adds two ways to write a manager, a class and a decorated generator, which a reader must learn to recognize.",
+   "opus/pep-0327: Users must learn when to use it rather than `float`, and must still understand rounding, because the type rounds when a result exceeds its precision.",
+   "opus/2834-cargo-report-future-incompat: If the note is too loud, developers learn to ignore it, which defeats the purpose."
+  ]
+ },
+ {
+  "unit": "operating system",
+  "z_vs_human": 3.7,
+  "z_vs_noskill": 1.8,
+  "skill_per1k": 0.574,
+  "noskill_per1k": 0.348,
+  "human_orig_per1k": 0.062,
+  "human_base_per1k": 0.1594,
+  "skill_docs": 12,
+  "topics": 6,
+  "models": {
+   "opus": 6,
+   "sonnet": 4,
+   "haiku": 2
+  },
+  "examples": [
+   "opus/pep-0504: This PEP proposes that the module-level functions use the operating system's random number generator by default, and that a program which needs a repeatable sequence asks for one explicitly.",
+   "opus/pep-0383: Each value arrives from the operating system as bytes and is decoded with the file system encoding, which on POSIX systems comes from the locale.",
+   "opus/1869-eprintln: Standard error is not buffered, so each `eprint!` call reaches the operating system when it returns.",
+   "opus/1040-duration-reform: Sleeping a thread, waiting on a condition variable, and setting read or write timeouts on a socket all end in an operating system call that accepts some representation of a time span."
+  ]
+ },
+ {
+  "unit": "treatment",
+  "z_vs_human": 3.0,
+  "z_vs_noskill": 2.5,
+  "skill_per1k": 0.463,
+  "noskill_per1k": 0.201,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.0559,
+  "skill_docs": 18,
+  "topics": 16,
+  "models": {
+   "opus": 2,
+   "sonnet": 11,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/pep-0367: Today only `None` has this treatment.",
+   "opus/pep-0352: - The treatment of string exceptions.",
+   "sonnet/pep-3141: The treatment of `float` and of decimal types.",
+   "sonnet/1445-restrict-constants-in-patterns: - The treatment of generics: whether a generic type's attribute depends on its parameters."
+  ]
+ },
+ {
+  "unit": "returns",
+  "z_vs_human": 4.7,
+  "z_vs_noskill": 0.7,
+  "skill_per1k": 2.559,
+  "noskill_per1k": 2.354,
+  "human_orig_per1k": 1.198,
+  "human_base_per1k": 0.8184,
+  "skill_docs": 36,
+  "topics": 22,
+  "models": {
+   "opus": 20,
+   "sonnet": 11,
+   "haiku": 5
+  },
+  "examples": [
+   "opus/pep-0296: Indexing a `str` returns a string of length 1, while indexing an `array.array('B')` returns an integer.",
+   "opus/pep-3141: For a `Real`, `real` returns the value itself and `imag` returns 0, so that a `Real` is also a valid `Complex`.",
+   "opus/pep-0520: The first is a metaclass whose `__prepare__` returns an ordered mapping, which then records the order somewhere on the class:",
+   "opus/pep-0532: Whether this unification is worth its cost is the central question of this PEP, and the section \"Open questions\" returns to it."
+  ]
+ },
+ {
+  "unit": "summary",
+  "z_vs_human": 4.0,
+  "z_vs_noskill": 1.4,
+  "skill_per1k": 1.214,
+  "noskill_per1k": 0.936,
+  "human_orig_per1k": 0.434,
+  "human_base_per1k": 0.634,
+  "skill_docs": 41,
+  "topics": 16,
+  "models": {
+   "opus": 16,
+   "sonnet": 16,
+   "haiku": 9
+  },
+  "examples": [
+   "opus/2115-argument-lifetimes: ## Summary",
+   "opus/1445-restrict-constants-in-patterns: ## Summary",
+   "opus/2008-non-exhaustive: ## Summary",
+   "opus/2845-supertrait-item-shadowing: ## Summary"
+  ]
+ },
+ {
+  "unit": "lint",
+  "z_vs_human": 4.0,
+  "z_vs_noskill": 1.4,
+  "skill_per1k": 1.522,
+  "noskill_per1k": 1.204,
+  "human_orig_per1k": 0.64,
+  "human_base_per1k": 0.4746,
+  "skill_docs": 14,
+  "topics": 7,
+  "models": {
+   "opus": 6,
+   "sonnet": 6,
+   "haiku": 2
+  }
+ },
+ {
+  "unit": "written",
+  "z_vs_human": 5.8,
+  "z_vs_noskill": -0.5,
+  "skill_per1k": 1.897,
+  "noskill_per1k": 2.02,
+  "human_orig_per1k": 0.496,
+  "human_base_per1k": 0.7446,
+  "skill_docs": 50,
+  "topics": 29,
+  "models": {
+   "opus": 21,
+   "sonnet": 16,
+   "haiku": 13
+  }
+ },
+ {
+  "unit": "meaning",
+  "z_vs_human": 3.1,
+  "z_vs_noskill": 2.1,
+  "skill_per1k": 1.655,
+  "noskill_per1k": 1.177,
+  "human_orig_per1k": 0.929,
+  "human_base_per1k": 0.4401,
+  "skill_docs": 37,
+  "topics": 20,
+  "models": {
+   "opus": 16,
+   "sonnet": 9,
+   "haiku": 12
+  }
+ },
+ {
+  "unit": "receives",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 2.0,
+  "skill_per1k": 0.441,
+  "noskill_per1k": 0.227,
+  "human_orig_per1k": 0.041,
+  "human_base_per1k": 0.0357,
+  "skill_docs": 14,
+  "topics": 11,
+  "models": {
+   "opus": 3,
+   "sonnet": 6,
+   "haiku": 5
+  }
+ },
+ {
+  "unit": "shared",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 1.6,
+  "skill_per1k": 0.728,
+  "noskill_per1k": 0.495,
+  "human_orig_per1k": 0.206,
+  "human_base_per1k": 0.339,
+  "skill_docs": 13,
+  "topics": 9,
+  "models": {
+   "opus": 5,
+   "sonnet": 4,
+   "haiku": 4
+  }
+ },
+ {
+  "unit": "points",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 1.6,
+  "skill_per1k": 0.662,
+  "noskill_per1k": 0.441,
+  "human_orig_per1k": 0.165,
+  "human_base_per1k": 0.2997,
+  "skill_docs": 22,
+  "topics": 17,
+  "models": {
+   "opus": 9,
+   "sonnet": 9,
+   "haiku": 4
+  }
+ },
+ {
+  "unit": "built",
+  "z_vs_human": 4.8,
+  "z_vs_noskill": 0.3,
+  "skill_per1k": 2.118,
+  "noskill_per1k": 2.02,
+  "human_orig_per1k": 0.867,
+  "human_base_per1k": 0.8671,
+  "skill_docs": 35,
+  "topics": 22,
+  "models": {
+   "opus": 19,
+   "sonnet": 13,
+   "haiku": 3
+  }
+ },
+ {
+  "unit": "operating",
+  "z_vs_human": 3.6,
+  "z_vs_noskill": 1.5,
+  "skill_per1k": 0.596,
+  "noskill_per1k": 0.401,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.2653,
+  "skill_docs": 12,
+  "topics": 6,
+  "models": {
+   "opus": 6,
+   "sonnet": 4,
+   "haiku": 2
+  }
+ },
+ {
+  "unit": "open issues",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 1.6,
+  "skill_per1k": 0.596,
+  "noskill_per1k": 0.388,
+  "human_orig_per1k": 0.124,
+  "human_base_per1k": 0.1106,
+  "skill_docs": 27,
+  "topics": 18,
+  "models": {
+   "opus": 3,
+   "sonnet": 9,
+   "haiku": 15
+  }
+ },
+ {
+  "unit": "follow",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 1.6,
+  "skill_per1k": 0.838,
+  "noskill_per1k": 0.589,
+  "human_orig_per1k": 0.289,
+  "human_base_per1k": 0.3925,
+  "skill_docs": 29,
+  "topics": 21,
+  "models": {
+   "opus": 11,
+   "sonnet": 13,
+   "haiku": 5
+  }
+ },
+ {
+  "unit": "refers",
+  "z_vs_human": 3.0,
+  "z_vs_noskill": 1.9,
+  "skill_per1k": 0.463,
+  "noskill_per1k": 0.254,
+  "human_orig_per1k": 0.103,
+  "human_base_per1k": 0.1427,
+  "skill_docs": 13,
+  "topics": 9,
+  "models": {
+   "opus": 5,
+   "sonnet": 4,
+   "haiku": 4
+  }
+ },
+ {
+  "unit": "lets",
+  "z_vs_human": 3.8,
+  "z_vs_noskill": 1.1,
+  "skill_per1k": 0.618,
+  "noskill_per1k": 0.468,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.0666,
+  "skill_docs": 26,
+  "topics": 18,
+  "models": {
+   "opus": 10,
+   "sonnet": 13,
+   "haiku": 3
+  }
+ },
+ {
+  "unit": "bound",
+  "z_vs_human": 4.6,
+  "z_vs_noskill": 0.3,
+  "skill_per1k": 2.096,
+  "noskill_per1k": 2.007,
+  "human_orig_per1k": 0.908,
+  "human_base_per1k": 0.6126,
+  "skill_docs": 24,
+  "topics": 12,
+  "models": {
+   "opus": 10,
+   "sonnet": 9,
+   "haiku": 5
+  }
+ },
+ {
+  "unit": "run",
+  "z_vs_human": 4.3,
+  "z_vs_noskill": 0.6,
+  "skill_per1k": 1.633,
+  "noskill_per1k": 1.498,
+  "human_orig_per1k": 0.661,
+  "human_base_per1k": 0.7874,
+  "skill_docs": 30,
+  "topics": 17,
+  "models": {
+   "opus": 11,
+   "sonnet": 12,
+   "haiku": 7
+  }
+ },
+ {
+  "unit": "project",
+  "z_vs_human": 5.3,
+  "z_vs_noskill": -0.4,
+  "skill_per1k": 1.853,
+  "noskill_per1k": 1.953,
+  "human_orig_per1k": 0.578,
+  "human_base_per1k": 1.2513,
+  "skill_docs": 17,
+  "topics": 11,
+  "models": {
+   "opus": 6,
+   "sonnet": 8,
+   "haiku": 3
+  }
+ },
+ {
+  "unit": "surface",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 1.6,
+  "skill_per1k": 0.463,
+  "noskill_per1k": 0.281,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.1178,
+  "skill_docs": 9,
+  "topics": 6,
+  "models": {
+   "opus": 3,
+   "sonnet": 2,
+   "haiku": 4
+  }
+ },
+ {
+  "unit": "value",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 1.5,
+  "skill_per1k": 4.192,
+  "noskill_per1k": 3.638,
+  "human_orig_per1k": 2.932,
+  "human_base_per1k": 3.0153,
+  "skill_docs": 54,
+  "topics": 27,
+  "models": {
+   "opus": 24,
+   "sonnet": 21,
+   "haiku": 9
+  }
+ },
+ {
+  "unit": "trait",
+  "z_vs_human": 3.8,
+  "z_vs_noskill": 0.9,
+  "skill_per1k": 3.31,
+  "noskill_per1k": 2.996,
+  "human_orig_per1k": 2.003,
+  "human_base_per1k": 1.9829,
+  "skill_docs": 20,
+  "topics": 9,
+  "models": {
+   "opus": 8,
+   "sonnet": 7,
+   "haiku": 5
+  }
+ },
+ {
+  "unit": "accepted",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 1.1,
+  "skill_per1k": 0.772,
+  "noskill_per1k": 0.602,
+  "human_orig_per1k": 0.248,
+  "human_base_per1k": 0.4116,
+  "skill_docs": 30,
+  "topics": 24,
+  "models": {
+   "opus": 6,
+   "sonnet": 20,
+   "haiku": 4
+  }
+ },
+ {
+  "unit": "reviewer",
+  "z_vs_human": 0.8,
+  "z_vs_noskill": 3.6,
+  "skill_per1k": 0.53,
+  "noskill_per1k": 0.013,
+  "human_orig_per1k": 0.0,
+  "human_base_per1k": 0.0226,
+  "skill_docs": 22,
+  "topics": 16,
+  "models": {
+   "opus": 3,
+   "sonnet": 10,
+   "haiku": 9
+  }
+ },
+ {
+  "unit": "recorded",
+  "z_vs_human": 1.0,
+  "z_vs_noskill": 3.4,
+  "skill_per1k": 0.53,
+  "noskill_per1k": 0.161,
+  "human_orig_per1k": 0.0,
+  "human_base_per1k": 0.0381,
+  "skill_docs": 23,
+  "topics": 19,
+  "models": {
+   "opus": 7,
+   "sonnet": 15,
+   "haiku": 1
+  }
+ },
+ {
+  "unit": "makes",
+  "z_vs_human": 3.6,
+  "z_vs_noskill": 0.7,
+  "skill_per1k": 1.942,
+  "noskill_per1k": 1.752,
+  "human_orig_per1k": 1.012,
+  "human_base_per1k": 0.9337,
+  "skill_docs": 59,
+  "topics": 35,
+  "models": {
+   "opus": 23,
+   "sonnet": 22,
+   "haiku": 14
+  }
+ },
+ {
+  "unit": "produces",
+  "z_vs_human": 3.7,
+  "z_vs_noskill": 0.5,
+  "skill_per1k": 0.64,
+  "noskill_per1k": 0.562,
+  "human_orig_per1k": 0.124,
+  "human_base_per1k": 0.1106,
+  "skill_docs": 20,
+  "topics": 15,
+  "models": {
+   "opus": 11,
+   "sonnet": 7,
+   "haiku": 2
+  }
+ },
+ {
+  "unit": "compiler",
+  "z_vs_human": 4.1,
+  "z_vs_noskill": 0.1,
+  "skill_per1k": 3.53,
+  "noskill_per1k": 3.505,
+  "human_orig_per1k": 2.106,
+  "human_base_per1k": 1.6903,
+  "skill_docs": 36,
+  "topics": 18,
+  "models": {
+   "opus": 16,
+   "sonnet": 15,
+   "haiku": 5
+  }
+ },
+ {
+  "unit": "wrong",
+  "z_vs_human": 3.1,
+  "z_vs_noskill": 1.0,
+  "skill_per1k": 0.618,
+  "noskill_per1k": 0.482,
+  "human_orig_per1k": 0.186,
+  "human_base_per1k": 0.1511,
+  "skill_docs": 18,
+  "topics": 13,
+  "models": {
+   "opus": 12,
+   "sonnet": 5,
+   "haiku": 1
+  }
+ },
+ {
+  "unit": "attribute",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 0.6,
+  "skill_per1k": 2.14,
+  "noskill_per1k": 1.966,
+  "human_orig_per1k": 1.198,
+  "human_base_per1k": 1.6772,
+  "skill_docs": 19,
+  "topics": 10,
+  "models": {
+   "opus": 10,
+   "sonnet": 6,
+   "haiku": 3
+  }
+ },
+ {
+  "unit": "byte",
+  "z_vs_human": 3.7,
+  "z_vs_noskill": 0.3,
+  "skill_per1k": 1.059,
+  "noskill_per1k": 1.003,
+  "human_orig_per1k": 0.392,
+  "human_base_per1k": 0.3378,
+  "skill_docs": 12,
+  "topics": 6,
+  "models": {
+   "opus": 6,
+   "sonnet": 4,
+   "haiku": 2
+  }
+ },
+ {
+  "unit": "conversion",
+  "z_vs_human": 3.3,
+  "z_vs_noskill": 0.7,
+  "skill_per1k": 0.75,
+  "noskill_per1k": 0.642,
+  "human_orig_per1k": 0.248,
+  "human_base_per1k": 0.3473,
+  "skill_docs": 11,
+  "topics": 7,
+  "models": {
+   "opus": 5,
+   "sonnet": 3,
+   "haiku": 3
+  }
+ },
+ {
+  "unit": "rollout",
+  "z_vs_human": 0.5,
+  "z_vs_noskill": 3.5,
+  "skill_per1k": 0.485,
+  "noskill_per1k": 0.013,
+  "human_orig_per1k": 0.0,
+  "human_base_per1k": 0.0071,
+  "skill_docs": 20,
+  "topics": 19,
+  "models": {
+   "opus": 2,
+   "sonnet": 8,
+   "haiku": 10
+  }
+ },
+ {
+  "unit": "third",
+  "z_vs_human": 3.0,
+  "z_vs_noskill": 0.9,
+  "skill_per1k": 1.059,
+  "noskill_per1k": 0.883,
+  "human_orig_per1k": 0.496,
+  "human_base_per1k": 0.4354,
+  "skill_docs": 32,
+  "topics": 20,
+  "models": {
+   "opus": 12,
+   "sonnet": 10,
+   "haiku": 10
+  }
+ },
+ {
+  "unit": "rejected",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 0.4,
+  "skill_per1k": 0.949,
+  "noskill_per1k": 0.883,
+  "human_orig_per1k": 0.351,
+  "human_base_per1k": 0.5436,
+  "skill_docs": 29,
+  "topics": 25,
+  "models": {
+   "opus": 11,
+   "sonnet": 6,
+   "haiku": 12
+  }
+ },
+ {
+  "unit": "rationale",
+  "z_vs_human": 3.6,
+  "z_vs_noskill": 0.2,
+  "skill_per1k": 1.434,
+  "noskill_per1k": 1.391,
+  "human_orig_per1k": 0.661,
+  "human_base_per1k": 0.7077,
+  "skill_docs": 60,
+  "topics": 37,
+  "models": {
+   "opus": 18,
+   "sonnet": 28,
+   "haiku": 14
+  }
+ },
+ {
+  "unit": "limit",
+  "z_vs_human": 3.6,
+  "z_vs_noskill": 0.2,
+  "skill_per1k": 0.927,
+  "noskill_per1k": 0.896,
+  "human_orig_per1k": 0.31,
+  "human_base_per1k": 0.2308,
+  "skill_docs": 13,
+  "topics": 8,
+  "models": {
+   "opus": 5,
+   "sonnet": 6,
+   "haiku": 2
+  }
+ },
+ {
+  "unit": "inside",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 0.4,
+  "skill_per1k": 1.147,
+  "noskill_per1k": 1.07,
+  "human_orig_per1k": 0.496,
+  "human_base_per1k": 0.5567,
+  "skill_docs": 23,
+  "topics": 14,
+  "models": {
+   "opus": 12,
+   "sonnet": 8,
+   "haiku": 3
+  }
+ },
+ {
+  "unit": "fix",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 0.4,
+  "skill_per1k": 0.574,
+  "noskill_per1k": 0.522,
+  "human_orig_per1k": 0.124,
+  "human_base_per1k": 0.3271,
+  "skill_docs": 14,
+  "topics": 10,
+  "models": {
+   "opus": 8,
+   "sonnet": 5,
+   "haiku": 1
+  }
+ },
+ {
+  "unit": "literal",
+  "z_vs_human": 4.5,
+  "z_vs_noskill": -0.7,
+  "skill_per1k": 0.927,
+  "noskill_per1k": 1.057,
+  "human_orig_per1k": 0.165,
+  "human_base_per1k": 0.6209,
+  "skill_docs": 9,
+  "topics": 5,
+  "models": {
+   "opus": 3,
+   "sonnet": 4,
+   "haiku": 2
+  }
+ },
+ {
+  "unit": "applies",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": 0.4,
+  "skill_per1k": 0.684,
+  "noskill_per1k": 0.615,
+  "human_orig_per1k": 0.186,
+  "human_base_per1k": 0.2105,
+  "skill_docs": 28,
+  "topics": 21,
+  "models": {
+   "opus": 11,
+   "sonnet": 12,
+   "haiku": 5
+  }
+ },
+ {
+  "unit": "stays",
+  "z_vs_human": 0.7,
+  "z_vs_noskill": 3.1,
+  "skill_per1k": 0.397,
+  "noskill_per1k": 0.107,
+  "human_orig_per1k": 0.0,
+  "human_base_per1k": 0.0178,
+  "skill_docs": 13,
+  "topics": 12,
+  "models": {
+   "opus": 6,
+   "sonnet": 7,
+   "haiku": 0
+  }
+ },
+ {
+  "unit": "leaves",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": 0.3,
+  "skill_per1k": 0.684,
+  "noskill_per1k": 0.629,
+  "human_orig_per1k": 0.021,
+  "human_base_per1k": 0.0737,
+  "skill_docs": 27,
+  "topics": 22,
+  "models": {
+   "opus": 8,
+   "sonnet": 15,
+   "haiku": 4
+  }
+ },
+ {
+  "unit": "happens",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 0.5,
+  "skill_per1k": 0.574,
+  "noskill_per1k": 0.508,
+  "human_orig_per1k": 0.145,
+  "human_base_per1k": 0.2438,
+  "skill_docs": 22,
+  "topics": 19,
+  "models": {
+   "opus": 5,
+   "sonnet": 10,
+   "haiku": 7
+  }
+ },
+ {
+  "unit": "options considered",
+  "z_vs_human": 0.5,
+  "z_vs_noskill": 3.2,
+  "skill_per1k": 0.375,
+  "noskill_per1k": 0.013,
+  "human_orig_per1k": 0.0,
+  "human_base_per1k": 0.0048,
+  "skill_docs": 17,
+  "topics": 12,
+  "models": {
+   "opus": 1,
+   "sonnet": 10,
+   "haiku": 6
+  }
+ },
+ {
+  "unit": "exact",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 0.5,
+  "skill_per1k": 0.772,
+  "noskill_per1k": 0.696,
+  "human_orig_per1k": 0.268,
+  "human_base_per1k": 0.2486,
+  "skill_docs": 23,
+  "topics": 19,
+  "models": {
+   "opus": 6,
+   "sonnet": 13,
+   "haiku": 4
+  }
+ },
+ {
+  "unit": "current rule",
+  "z_vs_human": 0.4,
+  "z_vs_noskill": 3.2,
+  "skill_per1k": 0.331,
+  "noskill_per1k": 0.054,
+  "human_orig_per1k": 0.0,
+  "human_base_per1k": 0.0024,
+  "skill_docs": 6,
+  "topics": 4,
+  "models": {
+   "opus": 1,
+   "sonnet": 1,
+   "haiku": 4
+  }
+ },
+ {
+  "unit": "raises",
+  "z_vs_human": 3.3,
+  "z_vs_noskill": 0.3,
+  "skill_per1k": 0.794,
+  "noskill_per1k": 0.749,
+  "human_orig_per1k": 0.268,
+  "human_base_per1k": 0.2343,
+  "skill_docs": 18,
+  "topics": 12,
+  "models": {
+   "opus": 11,
+   "sonnet": 5,
+   "haiku": 2
+  }
+ },
+ {
+  "unit": "goals non",
+  "z_vs_human": 0.3,
+  "z_vs_noskill": 3.3,
+  "skill_per1k": 0.397,
+  "noskill_per1k": 0.013,
+  "human_orig_per1k": 0.0,
+  "human_base_per1k": 0.0012,
+  "skill_docs": 18,
+  "topics": 16,
+  "models": {
+   "opus": 4,
+   "sonnet": 14,
+   "haiku": 0
+  }
+ },
+ {
+  "unit": "goals non goals",
+  "z_vs_human": 0.3,
+  "z_vs_noskill": 3.3,
+  "skill_per1k": 0.397,
+  "noskill_per1k": 0.013,
+  "human_orig_per1k": 0.0,
+  "human_base_per1k": 0.0012,
+  "skill_docs": 18,
+  "topics": 16,
+  "models": {
+   "opus": 4,
+   "sonnet": 14,
+   "haiku": 0
+  }
+ },
+ {
+  "unit": "reports",
+  "z_vs_human": 3.2,
+  "z_vs_noskill": 0.2,
+  "skill_per1k": 0.463,
+  "noskill_per1k": 0.441,
+  "human_orig_per1k": 0.083,
+  "human_base_per1k": 0.0702,
+  "skill_docs": 11,
+  "topics": 9,
+  "models": {
+   "opus": 5,
+   "sonnet": 4,
+   "haiku": 2
+  }
+ },
+ {
+  "unit": "reading",
+  "z_vs_human": 3.4,
+  "z_vs_noskill": -0.0,
+  "skill_per1k": 0.574,
+  "noskill_per1k": 0.575,
+  "human_orig_per1k": 0.124,
+  "human_base_per1k": 0.226,
+  "skill_docs": 21,
+  "topics": 15,
+  "models": {
+   "opus": 11,
+   "sonnet": 7,
+   "haiku": 3
+  }
+ },
+ {
+  "unit": "break",
+  "z_vs_human": 3.1,
+  "z_vs_noskill": 0.3,
+  "skill_per1k": 0.618,
+  "noskill_per1k": 0.575,
+  "human_orig_per1k": 0.186,
+  "human_base_per1k": 0.3687,
+  "skill_docs": 20,
+  "topics": 17,
+  "models": {
+   "opus": 5,
+   "sonnet": 12,
+   "haiku": 3
+  }
+ },
+ {
+  "unit": "affected",
+  "z_vs_human": 3.1,
+  "z_vs_noskill": 0.2,
+  "skill_per1k": 0.64,
+  "noskill_per1k": 0.602,
+  "human_orig_per1k": 0.206,
+  "human_base_per1k": 0.1808,
+  "skill_docs": 20,
+  "topics": 16,
+  "models": {
+   "opus": 10,
+   "sonnet": 7,
+   "haiku": 3
+  }
+ },
+ {
+  "unit": "reader cannot",
+  "z_vs_human": 0.2,
+  "z_vs_noskill": 3.1,
+  "skill_per1k": 0.287,
+  "noskill_per1k": 0.04,
+  "human_orig_per1k": 0.0,
+  "human_base_per1k": 0.0,
+  "skill_docs": 11,
+  "topics": 10,
+  "models": {
+   "opus": 4,
+   "sonnet": 1,
+   "haiku": 6
+  }
+ },
+ {
+  "unit": "failure behavior",
+  "z_vs_human": 0.2,
+  "z_vs_noskill": 3.1,
+  "skill_per1k": 0.331,
+  "noskill_per1k": 0.013,
+  "human_orig_per1k": 0.0,
+  "human_base_per1k": 0.0,
+  "skill_docs": 15,
+  "topics": 14,
+  "models": {
+   "opus": 1,
+   "sonnet": 14,
+   "haiku": 0
+  }
+ },
+ {
+  "unit": "section",
+  "z_vs_human": -1.0,
+  "z_vs_noskill": 4.2,
+  "skill_per1k": 0.728,
+  "noskill_per1k": 0.187,
+  "human_orig_per1k": 0.908,
+  "human_base_per1k": 1.0396,
+  "skill_docs": 25,
+  "topics": 20,
+  "models": {
+   "opus": 12,
+   "sonnet": 9,
+   "haiku": 4
+  }
+ },
+ {
+  "unit": "new",
+  "z_vs_human": 3.1,
+  "z_vs_noskill": -0.1,
+  "skill_per1k": 6.001,
+  "noskill_per1k": 6.06,
+  "human_orig_per1k": 4.522,
+  "human_base_per1k": 5.1481,
+  "skill_docs": 91,
+  "topics": 39,
+  "models": {
+   "opus": 34,
+   "sonnet": 35,
+   "haiku": 22
+  }
+ },
+ {
+  "unit": "non",
+  "z_vs_human": -0.9,
+  "z_vs_noskill": 3.4,
+  "skill_per1k": 1.633,
+  "noskill_per1k": 0.923,
+  "human_orig_per1k": 1.879,
+  "human_base_per1k": 1.4179,
+  "skill_docs": 43,
+  "topics": 24,
+  "models": {
+   "opus": 14,
+   "sonnet": 19,
+   "haiku": 10
+  }
+ },
+ {
+  "unit": "ordering",
+  "z_vs_human": 3.0,
+  "z_vs_noskill": -1.1,
+  "skill_per1k": 0.53,
+  "noskill_per1k": 0.696,
+  "human_orig_per1k": 0.145,
+  "human_base_per1k": 0.1618,
+  "skill_docs": 11,
+  "topics": 5,
+  "models": {
+   "opus": 4,
+   "sonnet": 3,
+   "haiku": 4
+  }
+ },
+ {
+  "unit": "interpreter",
+  "z_vs_human": 3.5,
+  "z_vs_noskill": -2.9,
+  "skill_per1k": 1.324,
+  "noskill_per1k": 2.06,
+  "human_orig_per1k": 0.599,
+  "human_base_per1k": 0.6768,
+  "skill_docs": 24,
+  "topics": 12,
+  "models": {
+   "opus": 7,
+   "sonnet": 10,
+   "haiku": 7
+  }
+ },
+ {
+  "unit": "example",
+  "z_vs_human": -4.2,
+  "z_vs_noskill": 3.9,
+  "skill_per1k": 2.471,
+  "noskill_per1k": 1.471,
+  "human_orig_per1k": 4.068,
+  "human_base_per1k": 4.2179,
+  "skill_docs": 70,
+  "topics": 38,
+  "models": {
+   "opus": 33,
+   "sonnet": 25,
+   "haiku": 12
+  }
+ }
+]

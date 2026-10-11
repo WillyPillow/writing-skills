@@ -1,0 +1,187 @@
+{
+ "register_terms": 129,
+ "human_register_hits_median": 27.9,
+ "opus, no skill": {
+  "docs": 40,
+  "median_words": 1067,
+  "todo_markers_per_doc": 0.0,
+  "register_hits_median": 69.9,
+  "auc_vs_human": 0.955,
+  "claims_per_1k_words": {
+   "universal claims": 7.281,
+   "compatibility reassurance": 0.988,
+   "cost assertions": 0.161,
+   "silent/deliberate": 0.643
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.528,
+   "numeric quantities": 0.069,
+   "trade-off statements": 0.459,
+   "suggestion labels": 0.092
+  }
+ },
+ "opus, skill 6294586": {
+  "docs": 40,
+  "median_words": 976,
+  "todo_markers_per_doc": 11.9,
+  "register_hits_median": 88.4,
+  "auc_vs_human": 0.968,
+  "claims_per_1k_words": {
+   "universal claims": 8.11,
+   "compatibility reassurance": 0.898,
+   "cost assertions": 1.162,
+   "silent/deliberate": 0.264
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.264,
+   "numeric quantities": 0.132,
+   "trade-off statements": 1.215,
+   "suggestion labels": 0.819
+  }
+ },
+ "opus, skill 8c1b061": {
+  "docs": 40,
+  "median_words": 888,
+  "todo_markers_per_doc": 14.1,
+  "register_hits_median": 83.3,
+  "auc_vs_human": 0.976,
+  "claims_per_1k_words": {
+   "universal claims": 7.783,
+   "compatibility reassurance": 0.743,
+   "cost assertions": 0.495,
+   "silent/deliberate": 0.303
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.165,
+   "numeric quantities": 0.028,
+   "trade-off statements": 0.853,
+   "suggestion labels": 0.11
+  }
+ },
+ "sonnet, no skill": {
+  "docs": 40,
+  "median_words": 1274,
+  "todo_markers_per_doc": 0.0,
+  "register_hits_median": 68.2,
+  "auc_vs_human": 0.949,
+  "claims_per_1k_words": {
+   "universal claims": 5.322,
+   "compatibility reassurance": 0.998,
+   "cost assertions": 0.528,
+   "silent/deliberate": 0.489
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.333,
+   "numeric quantities": 0.039,
+   "trade-off statements": 0.626,
+   "suggestion labels": 0.157
+  }
+ },
+ "sonnet, skill 6294586": {
+  "docs": 40,
+  "median_words": 769,
+  "todo_markers_per_doc": 17.6,
+  "register_hits_median": 90.5,
+  "auc_vs_human": 0.985,
+  "claims_per_1k_words": {
+   "universal claims": 7.056,
+   "compatibility reassurance": 0.49,
+   "cost assertions": 1.111,
+   "silent/deliberate": 0.163
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.359,
+   "numeric quantities": 0.0,
+   "trade-off statements": 1.437,
+   "suggestion labels": 2.058
+  }
+ },
+ "sonnet, skill 8c1b061": {
+  "docs": 40,
+  "median_words": 801,
+  "todo_markers_per_doc": 14.5,
+  "register_hits_median": 92.8,
+  "auc_vs_human": 0.976,
+  "claims_per_1k_words": {
+   "universal claims": 6.929,
+   "compatibility reassurance": 0.577,
+   "cost assertions": 0.912,
+   "silent/deliberate": 0.182
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.365,
+   "numeric quantities": 0.03,
+   "trade-off statements": 0.881,
+   "suggestion labels": 0.03
+  }
+ },
+ "haiku, no skill": {
+  "docs": 40,
+  "median_words": 1150,
+  "todo_markers_per_doc": 0.0,
+  "register_hits_median": 82.3,
+  "auc_vs_human": 0.978,
+  "claims_per_1k_words": {
+   "universal claims": 4.011,
+   "compatibility reassurance": 1.301,
+   "cost assertions": 0.542,
+   "silent/deliberate": 0.412
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.282,
+   "numeric quantities": 0.087,
+   "trade-off statements": 0.477,
+   "suggestion labels": 0.238
+  }
+ },
+ "haiku, skill 6294586": {
+  "docs": 40,
+  "median_words": 370,
+  "todo_markers_per_doc": 16.6,
+  "register_hits_median": 89.8,
+  "auc_vs_human": 0.975,
+  "claims_per_1k_words": {
+   "universal claims": 4.607,
+   "compatibility reassurance": 0.691,
+   "cost assertions": 1.497,
+   "silent/deliberate": 0.115
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.115,
+   "numeric quantities": 0.0,
+   "trade-off statements": 0.749,
+   "suggestion labels": 1.037
+  }
+ },
+ "haiku, skill 8c1b061": {
+  "docs": 40,
+  "median_words": 403,
+  "todo_markers_per_doc": 13.2,
+  "register_hits_median": 87.3,
+  "auc_vs_human": 0.98,
+  "claims_per_1k_words": {
+   "universal claims": 5.874,
+   "compatibility reassurance": 0.568,
+   "cost assertions": 1.516,
+   "silent/deliberate": 0.126
+  },
+  "statements_per_1k_words": {
+   "performance claims": 0.126,
+   "numeric quantities": 0.0,
+   "trade-off statements": 1.263,
+   "suggestion labels": 0.0
+  }
+ },
+ "human (40 test originals), claims_per_1k_words": {
+  "universal claims": 3.067,
+  "compatibility reassurance": 0.264,
+  "cost assertions": 0.033,
+  "silent/deliberate": 0.11
+ },
+ "human (40 test originals), statements_per_1k_words": {
+  "performance claims": 0.143,
+  "numeric quantities": 0.231,
+  "trade-off statements": 0.319,
+  "suggestion labels": 0.473
+ }
+}
