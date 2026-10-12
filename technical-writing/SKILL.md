@@ -133,8 +133,6 @@ For each derivation or proof:
 
 For each definition, say what problem it solves and why the simpler alternative is inadequate. Give one example and, where useful, a non-example. State it twice, formally and informally (Knuth). For each assumption, name the step that uses it and what breaks without it.
 
-**The blah test** (Knuth). Many readers skip formulas on a first reading, so the text must still read smoothly with every nontrivial formula replaced by "blah." A stronger version: the prose between displayed equations must tell the whole story on its own (the goal, the obstacle, the idea, the payoff). If it reads as "We have ... Then ... Thus ... Hence ...", rewrite it.
-
 Knuth's rules for formulas (*Mathematical Writing*, 1989):
 
 - Define every variable when it is introduced. Never use one notation for two things, or two notations for one thing.
@@ -145,6 +143,8 @@ Knuth's rules for formulas (*Mathematical Writing*, 1989):
 - Separate adjacent formulas with words: "Consider S_q, where q < p", not "Consider S_q, q < p". Otherwise they read as one formula.
 - Start each sentence with a word, not a symbol. Otherwise the reader cannot see where the sentence begins, and the symbol cannot be capitalized.
 - In running text, write words instead of ∴, ⇒, ∀ and ∃.
+
+**The blah test** (Knuth). Many readers skip formulas on a first reading, so the text must still read smoothly with every nontrivial formula replaced by "blah." A stronger version: the prose between displayed equations must tell the whole story on its own (the goal, the obstacle, the idea, the payoff). If it reads as "We have ... Then ... Thus ... Hence ...", rewrite it.
 
 ## Form
 
