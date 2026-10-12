@@ -47,8 +47,8 @@ When you mark a passage as bad, the agent names the specific fault and offers to
 - Argument.
 - Design docs, RFCs and decision records.
 - Mathematical exposition.
-- Sentences, including a loose adaptation of Simplified Technical English (ASD-STE100) and a list of leftover LLM habits to scan for.
 - Form, with section outlines for papers and design docs.
+- Sentences, including a loose adaptation of Simplified Technical English (ASD-STE100) and a list of leftover LLM habits to scan for.
 - Process, including a review pass separate from drafting.
 
 The agent applies the sections by content rather than by document type, so a design doc that contains a derivation also gets the rules for mathematical exposition.
