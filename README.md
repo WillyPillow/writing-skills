@@ -6,6 +6,8 @@ This repository collects skills for writing. Each skill lives in its own directo
 | --- | --- |
 | [`technical-writing`](technical-writing/SKILL.md) | Draft, revise or review design docs, RFCs, architecture decision records, research papers, technical reports, mathematical exposition and technical blog posts. |
 
+Part 1 of [`technical-writing/SKILL.md`](technical-writing/SKILL.md#part-1-writing-guide) also works as a writing guide for people, with no agent involved. Part 2 holds the rules for an agent writing on an author's behalf.
+
 ## Installation
 
 To install a skill, copy its directory into the skills directory your agent reads. Check your agent's documentation for the path. For example, to install `technical-writing` for Claude Code in all your projects, run:
@@ -40,16 +42,20 @@ When you mark a passage as bad, the agent names the specific fault and offers to
 
 ### Contents
 
-`technical-writing/SKILL.md` is a single file, so the skill can be copied or shared as one document. It opens with how to route a drafting, revising or reviewing task and the three levels, followed by these sections:
+`technical-writing/SKILL.md` is a single file, so the skill can be copied or shared as one document. It has two parts.
 
-- Rules that are never broken.
+Part 1 is a writing guide for anyone, and you can read it on its own without using an agent. It holds the rules that do not depend on who writes:
+
+- What goes wrong, in order of importance: the three levels.
 - Plan before drafting.
 - Argument.
 - Design docs, RFCs and decision records.
 - Mathematical exposition.
 - Form, with section outlines for papers and design docs.
-- Sentences, including a loose adaptation of Simplified Technical English (ASD-STE100) and a list of leftover LLM habits to scan for.
+- Sentences, including a loose adaptation of Simplified Technical English (ASD-STE100) and a list of stock phrases and moves to scan for.
 - Process, including a review pass separate from drafting.
+
+Part 2 is for an agent that writes on an author's behalf. It holds how to route a drafting, revising or reviewing task, the rules that are never broken, how to plan with the author, the drafting rules that come from working with someone else's material, the Part 1 rules that agent drafts break most often with the evidence for each, and the changes to the process for an agent.
 
 The agent applies the sections by content rather than by document type, so a design doc that contains a derivation also gets the rules for mathematical exposition.
 

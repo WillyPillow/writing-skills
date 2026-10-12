@@ -6,28 +6,15 @@ license: Unlicense
 
 # Technical writing
 
-## How to use this skill
+This file has two parts. Part 1 is a writing guide for anyone, human or agent, and can be read on its own. Part 2 is for an agent that drafts, revises or reviews a document on an author's behalf. It adds the rules that come from writing with someone else's material, and the failures agent drafts are known for.
 
-Identify the task, then follow its path:
+An agent follows both parts, and starts with "How to use this skill" at the top of Part 2.
 
-- **Drafting** a document or section: plan, draft one section at a time, then review (see "Process").
-- **Revising** an author's draft: review it first, then make the smallest edit that fixes each finding.
-- **Reviewing** a document: go straight to the review pass in "Process", and report findings rather than rewriting.
+## Part 1: Writing guide
 
-The author's instructions take precedence over this skill: a venue template, a required section or a house style wins. The rules under "Rules that are never broken" still hold. When you set a rule aside because the author asked, say which one in your note to the author.
+Apply the sections by content, not by document type. A design doc with a derivation uses "Mathematical exposition", and a paper that justifies a system design uses "Design docs, RFCs and decision records".
 
-Apply sections by content, not by document type. A design doc with a derivation uses "Mathematical exposition", and a paper that justifies a system design uses "Design docs, RFCs and decision records".
-
-For anything longer than a few paragraphs, track this checklist in your working notes. It is for you, not for the document:
-
-```
-- [ ] Write the planning notes and get the author's corrections
-- [ ] Draft one section at a time
-- [ ] Review in a separate pass: substance, argument, design, math, sentences
-- [ ] Report each finding with its location and a minimal fix
-```
-
-## What goes wrong, in order of importance
+### What goes wrong, in order of importance
 
 Technical prose fails at three levels:
 
@@ -39,50 +26,36 @@ Work top-down. Polishing sentences while the first two levels are broken produce
 
 Design docs are where missing motivation does the most damage, because the reasons are the content (see "Design docs, RFCs and decision records").
 
-## Rules that are never broken
+### Plan before drafting
 
-The author answers for the document, and a reader cannot tell invented support from real support. So:
-
-- Work only from the author's material: results, logs, notes, drafts, data, benchmarks, incident reports, and the references they supply. Never invent numbers, experiments, examples, citations, or the story of how an idea or design was arrived at.
-- In particular, never invent decision history: which alternatives were considered, why they lost, or what constraint drove a choice. Readers later rely on a design doc as the record of why the system is the way it is. Ask the author.
-- If support is missing, ask, mark `[TODO: ...]`, or narrow the claim to what the evidence shows.
-- A gap in what the author gave you goes to the author, not to the reader. Mark it with `[TODO: ...]` or raise it in the report to the author. Don't explain it in the prose ("the abstract does not say why", "the material does not record which alternatives were weighed"). A question that is open in the design itself is different: the document lists it (see "Open questions are listed" under "Design docs, RFCs and decision records"). A question about what the author meant or decided goes to the author.
-- Add no references the author did not supply. If the author asks you to find sources, give them to the author as candidates to check, each with the claim it would support. Cite them in the document only after the author confirms them. Do not change reported numbers.
-- When revising, make the smallest edit that fixes the problem. Never paraphrase just to disguise a pattern, and never add text whose only job is to satisfy a checklist item. List improvements beyond what the author asked for after the text, not in it.
-
-## Plan before drafting
-
-Prose drafted before the argument is settled fills its gaps with filler. For anything longer than a few paragraphs, write these notes and get the author's corrections before drafting any prose:
+Prose drafted before the argument is settled fills its gaps with filler. For anything longer than a few paragraphs, write these notes before drafting any prose:
 
 1. **Reader.** For a paper, default to a researcher in an adjacent area, who knows the field's basics but not this work's specifics. For a design doc, write for three readers: the reviewers who must approve it, the engineers who will build it, and a future maintainer asking why the system is the way it is. Knuth: if you write for the novice you reach the experts too.
 2. **The point.** For a paper or post, the one claim the piece exists to make, in one sentence, stated so that it could turn out to be wrong (Peyton Jones: one clear, sharp idea, with contributions that can be refuted). For a design doc, the problem and the decisions that solve it.
 3. **Instances.** The concrete examples, cases, failures, benchmarks or incidents available in the material.
 4. **The skeptic.** The first three objections an expert or reviewer will raise, and where the text answers each. In a design doc the first objection is almost always "why not the simpler or obvious option?"
-5. **Argument skeleton.** One sentence per paragraph stating its claim, each with its evidence source. A paragraph whose claim cannot be stated in one sentence is not ready to draft: split it, or settle its claim with the author first.
+5. **Argument skeleton.** One sentence per paragraph stating its claim, each with its evidence source. A paragraph whose claim cannot be stated in one sentence is not ready to draft: split it, or settle its claim first.
 6. **Dependency map.** For a paper: every definition, assumption, lemma, equation, figure and table, with what it is used for and where. For a design doc: every requirement and constraint, with the decisions it drives. Anything nothing depends on is cut or moved to an appendix. A decision that no constraint drives, or a constraint that drives no decision, is a sign something is missing.
-7. **Questions for the author.** Above all, why each nonobvious design choice or proof step is the way it is, and what else was considered. Motivation the author has not supplied must be asked for, not made up.
+7. **Open questions.** Above all, why each nonobvious design choice or proof step is the way it is, and what else was considered. Settle these before drafting, or mark them `[TODO: ...]`. Motivation nobody has recorded is found out, not made up.
 
-Write the notes in your reply, not only in your reasoning, so the author can correct them. Ask all your questions for the author at once, then end your turn. Once the author has answered, draft the whole document without stopping to ask again, and mark anything still open with `[TODO: ...]`.
+### Argument
 
-If the author cannot answer before you draft, for example because no one is in the loop, draft anyway and mark each unanswered gap with `[TODO: ...]` rather than filling it. Give the planning notes and open questions to the author in a separate note outside the document, or leave them out if the output is only the document. Never write them into the document text.
-
-## Argument
-
+- **Every claim has support.** Numbers, experiments, examples, citations, and the story of how an idea or design was arrived at all come from the material: results, logs, notes, data, benchmarks, incident reports, and references you have read. A reader cannot tell invented support from real support. If support is missing, find it, narrow the claim to what the evidence shows, or mark `[TODO: ...]`.
 - **Explicit epistemic status.** Distinguish what is known, what this work shows, and what is conjecture. In a design doc, distinguish what is decided, what is proposed, and what is open. Hedge once, where the uncertainty is, and only as much as the evidence warrants. Use no superlatives about your own work (Knuth).
 - **Claim only qualities you evaluated.** Adjectives and adverbs such as "seamless", "elegant" and "dramatically" assign the work qualities nobody measured, and each one invites a reviewer to ask for the evidence (Buschek 2026). Delete them, or replace them with the measured result. A result that is better on one measure and worse on another is a fine finding when the text says why.
 - **At least one displayed instance.** Aggregate results need a shown example, case or failure from the material, or readers will assume individual cases were inspected. If none exists, say so plainly and limit claims about how individual cases behave to what the aggregates support.
-- **Universal, compatibility and cost claims need support.** Three kinds of claim read as plain facts, so a missing source is easy to overlook. A universal claim says something holds in every case ("every tool already parses them", "this cannot fail"). A compatibility claim says existing code or users are unaffected. A cost claim says what a change costs ("the overhead is a single branch"). Keep each one only if the author's material supports it. Otherwise narrow it to what the material shows, or mark `[TODO: ...]`. In a comparison made for this skill, three Claude models each wrote 120 PEPs and Rust RFCs from the titles and abstracts of human-written ones from before 2022. The models had no benchmarks or compatibility data. Even so, compatibility claims appeared 5.6 to 7.6 times as often as in about 1,100 human-written PEPs and RFCs.
-- **Restated findings keep their scope.** When you summarize a result, whether this work's or a cited work's, keep its conditions: the population or dataset, the setting, the sample size, and the tense. "Improved accuracy on two benchmarks" does not become "improves accuracy". Peters and Chin-Yee (2025) found LLM summaries of scientific papers nearly five times as likely as human summaries to generalize beyond the source, even when prompted for accuracy. A summary also adds no concept the results lack. If no reported quote or question concerns unobtrusiveness, the summary does not call the feature an "unobtrusive guardrail" (Buschek 2026). Mark any metaphor as the authors' interpretation, not as something participants said.
-- **Attributions name their sources.** "Studies show", "experts argue" and "prior work has found" need the specific citations, as many as the plural claims. Each cited work must say what the sentence attributes to it. If the author has not supplied the citation, mark `[TODO: citation]`.
-- **Cited work is described from its text.** Describe what a cited work shows only from its text or the author's notes on it, never from memory or a generated summary. Otherwise ask the author to confirm the description, or mark `[TODO: check]`. Buschek's (2026) example: a submission credited a study with showing that doing X causes effect E, but X was part of the task in every condition, so the study never compared it. Restate what a cited work found in your own words, and put any wording you take from it in quotation marks.
-- **Cite the most fitting work.** A citation supports its claim directly and comes from a context close to this work's. Flag a citation that makes the point only in passing, or that comes from a distant domain, such as a smart-home finding cited for touchscreen keyboards (Buschek 2026). Reviewers in the field spot such citations as filler. Ask the author whether closer work exists; don't search for it yourself unless the author asks.
+- **Universal, compatibility and cost claims need support.** Three kinds of claim read as plain facts, so a missing source is easy to overlook. A universal claim says something holds in every case ("every tool already parses them", "this cannot fail"). A compatibility claim says existing code or users are unaffected. A cost claim says what a change costs ("the overhead is a single branch"). Keep each one only if the material supports it. Otherwise narrow it to what the material shows, or mark `[TODO: ...]`.
+- **Restated findings keep their scope.** When you summarize a result, whether this work's or a cited work's, keep its conditions: the population or dataset, the setting, the sample size, and the tense. "Improved accuracy on two benchmarks" does not become "improves accuracy". A summary also adds no concept the results lack. If no reported quote or question concerns unobtrusiveness, the summary does not call the feature an "unobtrusive guardrail" (Buschek 2026). Mark any metaphor as the authors' interpretation, not as something participants said.
+- **Attributions name their sources.** "Studies show", "experts argue" and "prior work has found" need the specific citations, as many as the plural claims. Each cited work must say what the sentence attributes to it. If you don't have the citation, mark `[TODO: citation]`.
+- **Cited work is described from its text.** Describe what a cited work shows only from its text, not from memory or someone else's summary. If you have not checked, mark `[TODO: check]`. Buschek's (2026) example: a submission credited a study with showing that doing X causes effect E, but X was part of the task in every condition, so the study never compared it. Restate what a cited work found in your own words, and put any wording you take from it in quotation marks.
+- **Cite the most fitting work.** A citation supports its claim directly and comes from a context close to this work's. Replace a citation that makes the point only in passing, or that comes from a distant domain, such as a smart-home finding cited for touchscreen keyboards (Buschek 2026). Reviewers in the field spot such citations as filler.
 - **Context before claim.** Set out the limitation, observation or constraint first, then state the claim or decision it supports. The reader can only judge a claim once they have its context, so a document that announces its conclusion first has declared the claim, not argued it. An abstract or a contributions list may still give the result first, because the argument follows it.
 - **Concrete motivation.** Motivation is a goal ("we need to bound X by Y", "writes must stay under 50 ms at p99") or an obstacle ("bounding each term separately loses a factor of n, because ...", "a single leader saturates at 12k writes/s"). A sentence that only announces the next step ("Naturally, one asks ...", "We now turn to ...") is not motivation.
 - **Example before generalization** (Peyton Jones). A specific instance gives the reader something to test the general statement against.
 - **Why before significance.** Readers want to know why a result holds before being told it matters (Knuth).
 - **Comparisons say which wins, on what, and why.** A list of A's strengths beside a list of B's ("A is simple and fast; B is flexible and widely used") is not a comparison. It never says how A and B differ on any one criterion, or which criterion matters here. Compare them on the same criteria: what A does, what B does, and how large the difference is. Then name the criterion that decides, tie it to a stated goal or force, and say which option wins and what the winner costs. Each difference needs evidence from the material, such as a measurement, a documented limit, an incident or a prototype result. If the material has none, mark `[TODO: ...]` instead of asserting a difference. "SQLite is simpler; Postgres scales better" compares nothing. "We expect 200 concurrent writers. SQLite allows one writer at a time, and our prototype's throughput stopped growing at 30 writers, while Postgres sustained 200. So Postgres, at the cost of running a database server" does.
 - **Results, not history** (Widom). In a paper, tell the story of the results, not of how you arrived at them. Keep the story linear, and move significant interruptions to an appendix. This does not apply to design docs, where the alternatives considered are part of the content (see "Design docs, RFCs and decision records").
-- **The text stands without the conversation.** The reader sees only the finished document, not the conversation or the drafts that produced it. The usual leak: you suggest A, the author rejects it and asks for B, and the text then says "B rather than A" or "we do not use A" with no reason. To a first-time reader, A comes from nowhere and its rejection looks arbitrary. Other leaks are corrections of claims the reader never saw ("unlike a cache, ..."), words that point at an earlier version ("now", "instead", "no longer", "the revised approach"), and extra emphasis on a point only because the author stressed it in the conversation. Mention a rejected option only if a reader would plausibly think of it, and then give the reason it loses (see "Design docs, RFCs and decision records"). If the author rejected it without a reason, ask for one or leave the option out. Test each contrast and emphasis by asking whether a reader who has only this document would know why it is there.
+- **The text stands on its own.** The reader sees only the finished document, not the discussions, review threads or earlier drafts that produced it. The usual leak is a contrast with an option the reader never saw: "B rather than A" or "we do not use A" with no reason, because A was dropped in a discussion. To a first-time reader, A comes from nowhere and its rejection looks arbitrary. Other leaks are corrections of claims the reader never saw ("unlike a cache, ..."), words that point at an earlier version ("now", "instead", "no longer", "the revised approach"), and extra emphasis on a point only because someone stressed it in a discussion. Mention a rejected option only if a reader would plausibly think of it, and then give the reason it loses (see "Design docs, RFCs and decision records"). If there is no recorded reason, find it or leave the option out. Test each contrast and emphasis by asking whether a reader who has only this document would know why it is there.
 - **Every object is used.** Refer to each figure, table, diagram and important equation from a sentence that reads something off it or draws a conclusion from it. Put that sentence where the reader needs the object.
 - **Positioned citations.** When you discuss a prior work, say how it relates to this work or to another cited work. The relation can be a shared limitation, a different assumption, or what this work takes from it or does differently. The failure is a run of sentences that each describe one prior work in isolation ("X proposed A. Y extended A to B. Z applied B to C."). That lists the literature but never shows where this work fits in it. Citing one work per sentence is fine when the sentence states such a relation. The same holds for prior systems in a design doc.
 - **No recycled text.** A sentence that repeats an earlier section either adds what its own section needs (a detail, a consequence, a qualification) or is deleted.
@@ -90,24 +63,24 @@ If the author cannot answer before you draft, for example because no one is in t
 
 The rules on used objects, recycled text, positioned citations, displayed instances and diagrams, along with context before claim, adapt the six scientific-slop patterns of Oh et al. (2026).
 
-## Design docs, RFCs and decision records
+### Design docs, RFCs and decision records
 
 Ubl ("Design Docs at Google") puts it directly: the design doc is the place to write down trade-offs. A doc that says "this is how we will build it" without trade-offs, alternatives and the reasoning behind decisions is an implementation manual. If there truly were no trade-offs, the doc probably should not exist.
 
 The default failure is a confident tour of the chosen design. It lists components, presents every property as a benefit, and appends an alternatives section of strawmen afterward. Prevent it by treating each significant choice as a decision record (Nygard's architecture decision records: context, decision, consequences). For each decision, state:
 
 1. **The force.** The requirement, constraint or failure that makes a decision necessary, with numbers where they exist: load, latency budget, data size, cost, team size, deadline, compatibility. "Must be scalable" is not a force; "must sustain 40k writes/s with p99 under 50 ms" is.
-2. **The options actually considered,** each in its strongest form, including keeping the status quo if the author considered it. Each rejected option gets the reason it lost, tied to a specific goal or constraint, and compared with the chosen option on that criterion (see "Comparisons say which wins" under "Argument").
+2. **The options actually considered,** each in its strongest form, including keeping the status quo if it was considered. Each rejected option gets the reason it lost, tied to a specific goal or constraint, and compared with the chosen option on that criterion (see "Comparisons say which wins" under "Argument").
 3. **The deciding reason.** Usually one or two factors decide. Say which, and why they outweigh the others. Naming a goal is not a reason: "this matches the self-hosted goal" says which goal the choice serves, not why it serves that goal better than the alternatives.
 4. **The cost accepted.** What the chosen design gives up or makes harder. Rust's RFC template has a "Drawbacks" section. A decision with no stated cost either had no real alternative (state it in one sentence and move on) or hides its trade-off.
 5. **Reversibility.** Say which decisions are expensive to undo: data formats, public APIs, storage engines, anything clients depend on. These get the most justification; cheap, reversible choices get the least.
 
-Mark each alternative you think of yourself with a `[TODO: ...]` marker asking the author whether it was considered. Never present it as an option that was considered and rejected. An option you suggested while drafting and the author turned down is not, for that reason alone, part of the decision record. Include it only if the author agrees it belongs there and gives the reason it lost.
+Never present an option as considered and rejected unless it was. Readers later rely on a design doc as the record of why the system is the way it is, so the decision history must be the real one.
 
 Further rules:
 
 - **Evidence where it exists.** Use benchmarks, prototypes and incidents from the material. Ubl: "I tried it out and it works" is one of the best arguments for a design. Back-of-envelope estimates show their inputs, and no estimate is more precise than its inputs. A timeline in exact hours with no measured basis is false precision.
-- **The hardest problem gets the most space.** Name the design's central tension and spend the most words on it. In Lynch's blind comparison of a hand-written design doc with two AI-drafted ones, the human doc centered on security against usability for a self-hosted photo app. Both AI docs missed that tension and offered generic lists of web-app best practices instead.
+- **The hardest problem gets the most space.** Name the design's central tension and spend the most words on it. In Lynch's example of a self-hosted photo app, the tension is security against usability. A generic list of web-app best practices does not address it.
 - **The context section is facts.** It gives objective background briefly and links to details (Ubl). Arguments for the design belong elsewhere.
 - **Goals are checkable, and non-goals are real.** A goal says how you would know it was met. A non-goal is something a reader could reasonably expect the system to do that is deliberately excluded, such as Ubl's example of ACID compliance for a database. A negated goal like "the system should not crash" is not a non-goal.
 - **Present the design through its decisions.** Start with an overview, then go into the parts where decisions live. Sketch only the parts of APIs and schemas that bear on a trade-off, and don't paste full definitions, which bury the trade-offs and go stale (Ubl). A system-context diagram shows where the system sits among things the reader already knows.
@@ -120,12 +93,12 @@ Further rules:
 
 The five parts of a decision record are a checklist for the writer, not vocabulary for the document. Write each one in the terms of the domain: "Writes must stay under 50 ms at p99, so a second round trip is ruled out", not "The force behind this decision is the latency budget". The same holds for "deciding reason", "cost accepted" and "expensive to reverse".
 
-## Mathematical exposition
+### Mathematical exposition
 
 For each derivation or proof:
 
 1. State the goal first, exactly: the statement to be proved or the quantity to be bounded.
-2. Say why the obvious approach fails, concretely. If you don't know why, ask the author.
+2. Say why the obvious approach fails, concretely.
 3. Keep the reader synchronized with the strategy, with short clauses saying what the current subgoal is and how the proof will reach it. Knuth's model proof does this. Signposts about the proof's goals are good; signposts about the document's own layout are not.
 4. Mark the crux and give the intuition for why it works. Compress routine steps or move them to an appendix.
 5. Prefer a direct proof to an unnecessary proof by contradiction. It shows why the result holds, and in Knuth's example it also needed fewer assumptions.
@@ -146,9 +119,7 @@ Knuth's rules for formulas (*Mathematical Writing*, 1989):
 - Start each sentence with a word, not a symbol. Otherwise the reader cannot see where the sentence begins, and the symbol cannot be capitalized.
 - In running text, write words instead of ∴, ⇒, ∀ and ∃.
 
-## Form
-
-Keep the author's source format: LaTeX, Markdown, reStructuredText, or the team's wiki or template. Return a draft as the document text only, and keep any note to the author separate.
+### Form
 
 Papers:
 
@@ -179,14 +150,14 @@ Blog posts can use the first person and more voice. Open with the concrete probl
 
 Write prose paragraphs. Use lists only for genuinely parallel items, such as a contributions list, hyperparameters, goals and non-goals, or procedure steps. Use headers only at the depth the venue uses. A table is good for comparing alternatives against the same criteria, but the prose must still say which criterion decided and why. A table with a separate column of pros for each option is two lists, not a comparison (see "Argument").
 
-## Sentences
+### Sentences
 
 - **Specific over general.** Give numbers with conditions and baselines, not "significantly improves" or "highly scalable".
 - **Name the reasons and the items** (Widom). Give the reasons instead of writing "for various reasons". Use "etc." only when the remaining items are obvious ("phases 1, 3, 5, 7, etc."), never to stand for items you have not named ("volatility, scalability, etc.").
 - **The curse of knowledge** (Pinker). Define what the reader doesn't know, and never define what they do.
 - **The opening sentence is the best sentence.** Don't open with a sentence of the form "An X is Y" (Knuth).
 - **Reader expectations** (Gopen and Swan, "The Science of Scientific Writing"). Readers take the end of a sentence as its emphasis. Put familiar information that links backward at the start, and new or important information at the end. Keep the subject close to its verb. Give context before asking the reader to take in something new.
-- **Characters as subjects, actions as verbs** (Joseph Williams, *Style*). Turn nominalizations back into verbs: "we performed an optimization of" becomes "we optimized". Journal editors who measured AI-assisted submissions found them harder to read, with more nominalizations, longer words and more jargon (Organization Science AI Task Force 2026). A corpus study of NLP papers found the same shift toward longer words and formal substitutes such as "utilize" and "enhance" (Miletić and Falk 2026). Expert readers in its small pilot, however, rated LLM-edited paragraphs slightly clearer. Apply the rule because a nominalization hides the actor and the action, not because it signals machine writing.
+- **Characters as subjects, actions as verbs** (Joseph Williams, *Style*). Turn nominalizations back into verbs: "we performed an optimization of" becomes "we optimized". A nominalization hides the actor and the action.
 - **Orwell's six rules** ("Politics and the English Language", paraphrased):
   1. Don't use figures of speech you are used to seeing in print. Readers no longer see them, and they stand in for a precise statement. The same holds for fresh figures that perform rather than inform: "most of the latency is spent waiting in the scheduler queue", not "the scheduler is where latency goes to hide" (Anthropic's prompting guide for Claude Fable 5.1 calls this mannered prose).
   2. Prefer the short word.
@@ -200,7 +171,7 @@ Write prose paragraphs. Use lists only for genuinely parallel items, such as a c
 - **Say who "we" is.** In papers and mathematical exposition, "we" means the author and the reader together. In a design doc it usually means the team; say so if it could be ambiguous.
 - **Start each sentence with a word, not a code identifier.** This is Knuth's rule for formulas (see "Mathematical exposition") applied to code. An identifier at the start hides where the sentence begins, and it cannot be capitalized, because code is case-sensitive. Write "The `parse_header` function returns `None` on EOF", not "`parse_header` returns `None` on EOF".
 
-### Simplified Technical English (ASD-STE100), applied loosely
+#### Simplified Technical English (ASD-STE100), applied loosely
 
 ASD-STE100 is the controlled-language standard used in aerospace maintenance documentation. Its idea is that a reader should not be able to misread a sentence. Use its rules as defaults and as review triggers, not literally: its approved dictionary and ban on most "-ing" forms are too restrictive for papers and design docs.
 
@@ -213,9 +184,10 @@ ASD-STE100 is the controlled-language standard used in aerospace maintenance doc
 - **Simple tenses, and name the actor** when it matters: which service, which team, which user. This is where Orwell's active-voice rule matters most: procedures, method descriptions and the description of a design.
 - **Noun clusters of at most three words.** Break longer chains with prepositions: "inlet valve of the high-pressure fuel pump", not "high-pressure fuel pump inlet valve". Knuth's example of a long chain is "packet switched data communication network protocol problem".
 
-Scan last for leftover LLM habits. This list is for scanning, not a target. Many items come from Wikipedia's "Signs of AI writing" guide. No item proves a text was machine-written, and people use all of them; each is listed because it weakens the sentence it appears in. When an item turns up, rewrite the sentence rather than swapping in a synonym, since a synonym keeps the empty sentence.
+#### Stock phrases and moves
 
-- **Chat residue:** "I hope this helps", "let me know if", "as discussed", placeholders such as `[Describe ...]` or `2025-XX-XX`, citation markup left by a chat tool, and contrasts with options or drafts the reader never saw (see "The text stands without the conversation").
+Scan last for stock phrases and moves. This list is for scanning, not a target. Many items come from Wikipedia's "Signs of AI writing" guide, but people use all of them; each is listed because it weakens the sentence it appears in. When an item turns up, rewrite the sentence rather than swapping in a synonym, since a synonym keeps the empty sentence.
+
 - **Typography:** bold or italics for emphasis (italics are for definitions and quotes; Widom), headers on everything, title-case headings, bullets where prose belongs (often each opening with a bold label and a colon), frequent em dashes.
 - **Stock moves:**
   - Closing sentences that restate the paragraph, and formulaic closing sections ("Despite these challenges, ...", "Future outlook").
@@ -230,18 +202,18 @@ Scan last for leftover LLM habits. This list is for scanning, not a target. Many
 - **Stock vocabulary:** delve, leverage, utilize, enhance, subsequently, robust, seamless, harness, unlock, showcase, nuanced, intricate. In design docs also: scalable, flexible, extensible, maintainable, future-proof, best practices, when used without a number or a concrete scenario.
 - **Avoided "is" and "has":** "serves as", "stands as", "boasts", "features", where the plain verb would do.
 
-## Process
+### Process
 
-1. Write the plan (see "Plan before drafting") and get the author's corrections.
+1. Write the plan (see "Plan before drafting").
 2. Draft one section at a time, because a whole document drafted in one pass comes out uniform and thin. Revise earlier sections when later ones change them (Halmos: write in spirals).
-3. Review in a separate pass, so the draft is not judged by the context that wrote it. If you can hand the review to a fresh agent or session that did not see the drafting, do so. Otherwise, review as a separate step after drafting, rereading the document from the start as a reader who has only the document. Work top-down:
-   - **Substance.** Check every number against the material. Confirm nothing is invented, including decision history, and locate each claim's evidence. Check that no gap in the author's material is explained in the prose instead of marked with `[TODO: ...]`. Check that every quality claimed for the work was evaluated and that aggregate results come with a displayed instance. Check that each universal, compatibility and cost claim has support in the material. Check that each restated finding keeps its source's scope and adds no concept the results lack. Check that each cited work exists, says what it is cited for, and is the most fitting support available in the material. Check that every bibliography entry is complete and consistent with the others.
-   - **Argument.** For each sentence, ask what it claims, whether it is true, and whether it follows from what came before. Check that the skeptic's objections are answered. Check that each comparison says how the options differ on a shared criterion, with evidence, and which criterion decides. Read as a first-time reader: flag each rejection, contrast or emphasis that only makes sense to someone who saw the drafting conversation or an earlier draft. Compare the dependency map against the text, looking for claims before their context, undefined terms, unused objects and isolated citations.
+3. Review in a separate pass, so the draft is not judged by the context that wrote it. Have someone who did not see the drafting review it, or set the draft aside and reread it from the start as a reader who has only the document. Work top-down:
+   - **Substance.** Check every number against its source, and locate each claim's evidence. Check that every quality claimed for the work was evaluated and that aggregate results come with a displayed instance. Check that each universal, compatibility and cost claim has support in the material. Check that each restated finding keeps its source's scope and adds no concept the results lack. Check that each cited work exists, says what it is cited for, and is the most fitting support available. Check that every bibliography entry is complete and consistent with the others.
+   - **Argument.** For each sentence, ask what it claims, whether it is true, and whether it follows from what came before. Check that the skeptic's objections are answered. Check that each comparison says how the options differ on a shared criterion, with evidence, and which criterion decides. Read as a first-time reader: flag each rejection, contrast or emphasis that only makes sense to someone who saw a discussion or an earlier draft. Compare the dependency map against the text, looking for claims before their context, undefined terms, unused objects and isolated citations.
    - **Design.** For each significant decision, check that the force, the options, the deciding reason and the cost are all present, and that the most expensive-to-reverse decisions are the best justified. Check that the hardest problem gets the most space. Check that non-goals are real and that failure behavior is concrete. Apply the disagreement test. Check that no section is template filler and that the decision-record terms (force, deciding reason, cost accepted) do not appear as prose.
    - **Math.** Check that each derivation states its goal first, that the crux is marked, and that each assumption is linked to its use. Apply the blah test.
    - **Sentences.** Flag every sentence whose removal loses nothing. Apply "Sentences", including the STE triggers: terms used in two senses or two terms for one concept, two new facts in one sentence, sentences over about 25 words, and noun clusters over three words.
 
-   Report each finding with its location and a proposed minimal fix, rather than silently rewriting. A finding names a specific passage and judges what the document does against its own goals and method, not what a different document could have done (Buschek 2025). This holds for the author's draft and for someone else's paper alike. For example:
+   Report each finding with its location and a proposed minimal fix, rather than silently rewriting. A finding names a specific passage and judges what the document does against its own goals and method, not what a different document could have done (Buschek 2025). This holds for your own draft and for someone else's paper alike. For example:
 
    ```
    Substance, section 3.2, "the cache adds negligible overhead": a cost claim
@@ -250,7 +222,75 @@ Scan last for leftover LLM habits. This list is for scanning, not a target. Many
    ```
 
    Concerns that fit any document are findings only when tied to this one. Examples are scalability, generalization, sample size, study duration, "more objective metrics" and "the analysis could go deeper". Name the stated goal the concern threatens or the claim it undercuts. In a design doc, an alternative is a finding when a stated force favors it (see "Design docs, RFCs and decision records"), not merely because the design could have been different. Drop untied concerns rather than listing them. A long list of generic concerns is not a review, and an author who acts on it can make the document worse. If a level has no findings, say so in one line. A short review of a sound document is a correct result.
-4. When the author marks a passage as bad, name the specific fault and offer to add it to this skill as a rule.
+
+## Part 2: Writing for an author
+
+This part is for an agent working on someone else's document. Everything in Part 1 applies; this part adds to it.
+
+### How to use this skill
+
+Identify the task, then follow its path:
+
+- **Drafting** a document or section: plan, draft one section at a time, then review (see "Process" in Part 1 and "Process for an agent" below).
+- **Revising** an author's draft: review it first, then make the smallest edit that fixes each finding.
+- **Reviewing** a document: go straight to the review pass in "Process", and report findings rather than rewriting.
+
+The author's instructions take precedence over this skill: a venue template, a required section or a house style wins. The rules under "Rules that are never broken" still hold. When you set a rule aside because the author asked, say which one in your note to the author.
+
+For anything longer than a few paragraphs, track this checklist in your working notes. It is for you, not for the document:
+
+```
+- [ ] Write the planning notes and get the author's corrections
+- [ ] Draft one section at a time
+- [ ] Review in a separate pass: substance, argument, design, math, sentences
+- [ ] Report each finding with its location and a minimal fix
+```
+
+### Rules that are never broken
+
+The author answers for the document, and a reader cannot tell invented support from real support. So:
+
+- Work only from the author's material: results, logs, notes, drafts, data, benchmarks, incident reports, and the references they supply. Never invent numbers, experiments, examples, citations, or the story of how an idea or design was arrived at.
+- In particular, never invent decision history: which alternatives were considered, why they lost, or what constraint drove a choice. Readers later rely on a design doc as the record of why the system is the way it is. Ask the author.
+- If support is missing, ask, mark `[TODO: ...]`, or narrow the claim to what the evidence shows.
+- A gap in what the author gave you goes to the author, not to the reader. Mark it with `[TODO: ...]` or raise it in the report to the author. Don't explain it in the prose ("the abstract does not say why", "the material does not record which alternatives were weighed"). A question that is open in the design itself is different: the document lists it (see "Open questions are listed" under "Design docs, RFCs and decision records"). A question about what the author meant or decided goes to the author.
+- Add no references the author did not supply. If the author asks you to find sources, give them to the author as candidates to check, each with the claim it would support. Cite them in the document only after the author confirms them. Do not change reported numbers.
+- When revising, make the smallest edit that fixes the problem. Never paraphrase just to disguise a pattern, and never add text whose only job is to satisfy a checklist item. List improvements beyond what the author asked for after the text, not in it.
+
+### Planning with the author
+
+Write the notes from "Plan before drafting" in your reply, not only in your reasoning, so the author can correct them. The open questions (item 7) are questions for the author: motivation the author has not supplied must be asked for, not made up. Ask all your questions for the author at once, then end your turn. Once the author has answered, draft the whole document without stopping to ask again, and mark anything still open with `[TODO: ...]`.
+
+If the author cannot answer before you draft, for example because no one is in the loop, draft anyway and mark each unanswered gap with `[TODO: ...]` rather than filling it. Give the planning notes and open questions to the author in a separate note outside the document, or leave them out if the output is only the document. Never write them into the document text.
+
+### Drafting for an author
+
+- **Keep the author's source format:** LaTeX, Markdown, reStructuredText, or the team's wiki or template. Return a draft as the document text only, and keep any note to the author separate.
+- **Alternatives you thought of are questions.** Mark each alternative you think of yourself with a `[TODO: ...]` marker asking the author whether it was considered. Never present it as an option that was considered and rejected.
+- **The conversation is not in the document.** The usual leak of "The text stands on its own": you suggest A, the author rejects it and asks for B, and the text then says "B rather than A" or "we do not use A" with no reason. An option you suggested and the author turned down is not, for that reason alone, part of the decision record. Include it only if the author agrees it belongs there and gives the reason it lost. Likewise, don't emphasize a point only because the author stressed it in the conversation.
+- **Cited work comes from its text or the author.** Describe what a cited work shows only from its text or the author's notes on it, never from memory or a generated summary. Otherwise ask the author to confirm the description, or mark `[TODO: check]`.
+- **Ask about closer citations.** When a citation does not fit (see "Cite the most fitting work"), flag it and ask the author whether closer work exists; don't search for it yourself unless the author asks.
+- **Ask about proof motivation.** If the material does not say why the obvious approach fails, ask the author rather than supplying a reason.
+
+### Where agent drafts go wrong
+
+Agent drafts break some Part 1 rules far more often than human drafts do. Check these first:
+
+- **Unsupported compatibility claims** ("Universal, compatibility and cost claims need support"). In a comparison made for this skill, three Claude models each wrote 120 PEPs and Rust RFCs from the titles and abstracts of human-written ones from before 2022. The models had no benchmarks or compatibility data. Even so, compatibility claims appeared 5.6 to 7.6 times as often as in about 1,100 human-written PEPs and RFCs.
+- **Overgeneralized summaries** ("Restated findings keep their scope"). Peters and Chin-Yee (2025) found LLM summaries of scientific papers nearly five times as likely as human summaries to generalize beyond the source, even when prompted for accuracy.
+- **A missing central tension** ("The hardest problem gets the most space"). In Lynch's blind comparison of a hand-written design doc with two AI-drafted ones, the human doc centered on security against usability for a self-hosted photo app. Both AI docs missed that tension and offered generic lists of web-app best practices instead.
+- **Nominalizations and long words** ("Characters as subjects, actions as verbs"). Journal editors who measured AI-assisted submissions found them harder to read, with more nominalizations, longer words and more jargon (Organization Science AI Task Force 2026). A corpus study of NLP papers found the same shift toward longer words and formal substitutes such as "utilize" and "enhance" (Miletić and Falk 2026). Expert readers in its small pilot, however, rated LLM-edited paragraphs slightly clearer. Apply the rule because a nominalization hides the actor and the action, not because it signals machine writing.
+- **Chat residue** (scan for it with "Stock phrases and moves"): "I hope this helps", "let me know if", "as discussed", placeholders such as `[Describe ...]` or `2025-XX-XX`, citation markup left by a chat tool, and contrasts with options or drafts the reader never saw (see "The conversation is not in the document").
+
+### Process for an agent
+
+Follow "Process" in Part 1, with these changes:
+
+- Get the author's corrections to the plan before drafting (see "Planning with the author").
+- For the review pass, hand the review to a fresh agent or session that did not see the drafting, if you can. Otherwise, review as a separate step after drafting, rereading the document from the start as a reader who has only the document.
+- In the substance review, also check every number against the author's material, confirm nothing is invented, including decision history, and check that no gap in the author's material is explained in the prose instead of marked with `[TODO: ...]`. Check that every reference came from the author or was confirmed by them.
+- In the argument review, flag each rejection, contrast or emphasis that only makes sense to someone who saw the drafting conversation.
+- When the author marks a passage as bad, name the specific fault and offer to add it to this skill as a rule.
 
 <!--
 Sources
