@@ -164,6 +164,7 @@ Knuth's rules for formulas (*Mathematical Writing*, 1989):
 - **Name the reasons and the items** (Widom). Give the reasons instead of writing "for various reasons". Use "etc." only when the remaining items are obvious ("phases 1, 3, 5, 7, etc."), never to stand for items you have not named ("volatility, scalability, etc.").
 - **Every "this" has a referent** (Widom, after Ullman). When "this", "that", "these" or "it" could point to more than one thing, add the noun: "this gap", not "this".
 - **Say who "we" is.** In papers and mathematical exposition, "we" means the author and the reader together. In a design doc it usually means the team; say so if it could be ambiguous.
+- **Start each sentence with a word, not a code identifier.** This is Knuth's rule for formulas (see "Mathematical exposition") applied to code. An identifier at the start hides where the sentence begins, and it cannot be capitalized, because code is case-sensitive. Write "The `parse_header` function returns `None` on EOF", not "`parse_header` returns `None` on EOF".
 - **The opening sentence is the best sentence.** Don't open with a sentence of the form "An X is Y" (Knuth).
 
 ### Simplified Technical English (ASD-STE100), applied loosely
